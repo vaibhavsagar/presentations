@@ -4,10 +4,12 @@ Git Internals
 This is a 5-minute (hopefully) talk on `git` internals.
 
 # Steps
+1. Mention this is copied almost verbatim from the `git` book.
 1. Show contents of `display_object.py`. Leave open in `tmux`.
 1. `alias show="~/Documents/git-internals/display_object.py"`
 1. Navigate to the root of a git repository.
 1. `ls .git/objects`
+1. `git` stores every version of every file/directory layout.
 1. `cat .git/HEAD`
 1. Explain that this used to be a symlink but was changed to run on other
    platforms.
@@ -24,7 +26,7 @@ This is a 5-minute (hopefully) talk on `git` internals.
 1. `git cat-file -p <tree-ref>`
 1. Explain about trees and blobs.
 1. Try `show <tree-ref>`
-1. Explain about byte/hex representation.
+1. Explain about byte/hex representation (mention cryptopals challenges).
 1. Remove ".decode()" from script.
 1. Copy a blob ref from `git cat-file -p <tree-ref>`
 1. `git cat-file -p <blob-ref>`
