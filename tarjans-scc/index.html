@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Vaibhav Sagar">
+  <title>Tarjan's Strongly Connected Components Algorithm</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Tarjan's Strongly Connected Components Algorithm</h1>
+  <p class="author">Vaibhav Sagar</p>
+</section>
+
+<section><section id="what-is-a-strongly-connected-component" class="titleslide slide level1"><h1>What is a strongly connected component</h1></section><section id="definition" class="slide level2">
+<h2>Definition</h2>
+<ul>
+<li>A subgraph is said to be strongly connected if every vertex is reachable from every other vertex.</li>
+</ul>
+</section><section id="section" class="slide level2">
+<h2></h2>
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png" />
+</figure>
+</section></section>
+<section><section id="the-algorithm" class="titleslide slide level1"><h1>The Algorithm</h1></section><section id="pseudocode" class="slide level2">
+<h2>Pseudocode</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm#The_algorithm_in_pseudocode">Wikipedia!</a></li>
+</ul>
+</section><section id="code" class="slide level2">
+<h2>Code</h2>
+<ul>
+<li><a href="https://github.com/vaibhavsagar/courses/blob/master/algorithms1/week4/SCC.ipynb">I did it in Haskell</a></li>
+</ul>
+</section><section id="linear-time" class="slide level2">
+<h2>Linear Time!</h2>
+</section><section id="so-why-is-this-useful" class="slide level2">
+<h2>So why is this useful?</h2>
+</section></section>
+<section><section id="directed-acyclic-graphs" class="titleslide slide level1"><h1>Directed Acyclic Graphs</h1></section><section id="definition-1" class="slide level2">
+<h2>Definition</h2>
+<ul>
+<li>A finite directed graph with no directed cycles.</li>
+</ul>
+</section><section id="section-1" class="slide level2">
+<h2></h2>
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Tred-G.svg" />
+</figure>
+</section><section id="section-2" class="slide level2">
+<h2></h2>
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Graph_Condensation.svg" />
+</figure>
+</section></section>
+<section><section id="git-build-tools" class="titleslide slide level1"><h1>Git &amp; Build Tools</h1></section><section id="git" class="slide level2">
+<h2>Git</h2>
+<ul>
+<li>If I draw a commit graph, would it be a valid history?</li>
+</ul>
+</section><section id="build-tools" class="slide level2">
+<h2>Build Tools</h2>
+<ul>
+<li>Can the components of this project be built in the correct order?</li>
+</ul>
+</section></section>
+<section><section id="topological-sorting" class="titleslide slide level1"><h1>Topological sorting</h1></section><section id="definition-2" class="slide level2">
+<h2>Definition</h2>
+<ul>
+<li>A linear ordering of its vertices such that for every directed edge <em>uv</em> from vertex <em>u</em> to vertex <em>v</em>, <em>u</em> comes before <em>v</em> in the ordering.</li>
+</ul>
+</section><section id="section-3" class="slide level2">
+<h2></h2>
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Topological_Ordering.svg" />
+</figure>
+</section><section id="why-tarjans-scc-is-awesome" class="slide level2">
+<h2>Why Tarjan's SCC is awesome</h2>
+<ul>
+<li>It computes the SCCs <em>and</em> a reverse topological sort at the same time!</li>
+</ul>
+</section></section>
+<section><section id="sat" class="titleslide slide level1"><h1>2SAT</h1></section><section id="definition-3" class="slide level2">
+<h2>Definition</h2>
+<ul>
+<li>Can a collection of boolean variables with constraints on pairs of variables be assigned values satisfying all the constraints?</li>
+</ul>
+</section><section id="its-a-graph-problem" class="slide level2">
+<h2>It's a graph problem</h2>
+<ul>
+<li><code>(u || v) == (not u =&gt; v) || (not v =&gt; u)</code></li>
+<li>find the SCCs</li>
+<li>if a SCC contains <em>u</em> and <em>not u</em>, it's unsatisfiable</li>
+<li>otherwise, topologically sort the results and use this to assign <em>T</em> and <em>F</em> to the variables</li>
+</ul>
+</section><section id="code-1" class="slide level2">
+<h2>Code</h2>
+<ul>
+<li><a href="https://github.com/vaibhavsagar/courses/blob/master/algorithms2/week6/Week6.ipynb">I did it in Haskell</a></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
