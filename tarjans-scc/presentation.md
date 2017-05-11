@@ -10,7 +10,7 @@
 
 ##
 
-![](https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png)
+![Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png)
 
 # The Algorithm
 
@@ -34,10 +34,10 @@
 
 ##
 
-![](https://upload.wikimedia.org/wikipedia/commons/f/fe/Tred-G.svg)
+![Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/f/fe/Tred-G.svg)
 
 ##
-![](https://upload.wikimedia.org/wikipedia/commons/2/20/Graph_Condensation.svg)
+![Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Graph_Condensation.svg)
 
 # Git & Build Tools
 
@@ -53,11 +53,11 @@
 
 ## Definition
 
-- A linear ordering of its vertices such that for every directed edge _uv_ from vertex _u_ to vertex _v_, _u_ comes before _v_ in the ordering. 
+- A linear ordering of its vertices such that for every directed edge _uv_ from vertex _u_ to vertex _v_, _u_ comes before _v_ in the ordering.
 
 ##
 
-![](https://upload.wikimedia.org/wikipedia/commons/c/c6/Topological_Ordering.svg)
+![Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/c6/Topological_Ordering.svg)
 
 ## Why Tarjan's SCC is awesome
 
