@@ -274,7 +274,7 @@ m (>>=) k s = case m s of
 
 ## Equality
 
-```
+```haskell
 eqMutVar :: MutVar s a -> MutVar s a -> Bool
 eqMutArr :: Ix i => MutArr s i a -> MutArr s i a -> Bool
 ```

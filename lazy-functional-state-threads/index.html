@@ -270,8 +270,8 @@ newVar init (<span class="dt">MkState</span> s<span class="fu">#</span>)
                 (r, s&#39;) <span class="ot">-&gt;</span> k r s&#39;</code></pre></div>
 </section><section id="equality" class="slide level2">
 <h2>Equality</h2>
-<pre><code>eqMutVar :: MutVar s a -&gt; MutVar s a -&gt; Bool
-eqMutArr :: Ix i =&gt; MutArr s i a -&gt; MutArr s i a -&gt; Bool</code></pre>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">eqMutVar ::</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">Bool</span>
+<span class="ot">eqMutArr ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> <span class="dt">MutArr</span> s i a <span class="ot">-&gt;</span> <span class="dt">MutArr</span> s i a <span class="ot">-&gt;</span> <span class="dt">Bool</span></code></pre></div>
 </section><section id="interleaved-and-parallel-operations" class="slide level2">
 <h2>Interleaved and parallel operations</h2>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">interleaveST ::</span> <span class="dt">ST</span> s a <span class="ot">-&gt;</span> <span class="dt">ST</span> s a
