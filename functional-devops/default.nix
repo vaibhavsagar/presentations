@@ -1,5 +1,9 @@
 let
-  pkgs = import <nixpkgs> {};
+  inherit (import <nixpkgs> {}) fetchFromGitHub lib;
+  versions = lib.mapAttrs
+    (_: fetchFromGitHub)
+    (builtins.fromJSON (builtins.readFile ./versions.json));
+  pkgs = import versions.nixpkgs {};
 in pkgs.runCommand "functional-devops" {
   buildInputs = [
     pkgs.haskellPackages.pandoc
@@ -9,5 +13,5 @@ in pkgs.runCommand "functional-devops" {
 } ''
   mkdir -p $out
   pandoc --standalone -t revealjs -V theme:simple $src/presentation.md -o $out/index.html
-  cp -R $src/reveal.js $out/
+  cp -R ${versions.revealjs} $out/reveal.js
 ''

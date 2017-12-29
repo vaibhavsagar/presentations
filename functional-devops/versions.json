@@ -1,0 +1,14 @@
+{
+  "revealjs": {
+    "owner": "hakimel",
+    "repo": "reveal.js",
+    "rev": "65bdccd5807b6dfecad6eb3ea38872436d291e81",
+    "sha256": "07460ij4v7l2j0agqd2dsg28gv18bf320rikcbj4pb54k5pr1218"
+  },
+  "nixpkgs": {
+    "owner": "NixOS",
+    "repo": "nixpkgs-channels",
+    "rev": "ed3b1bc8448901a9868d57a237c3db3a94a3b93c",
+    "sha256": "0x7n6mz0gxvvjwshwdlfi1ypd84z9v9s3qpkixgjhzr1lx6q94ag"
+  }
+}
