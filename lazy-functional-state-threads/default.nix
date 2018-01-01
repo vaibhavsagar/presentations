@@ -9,9 +9,8 @@ in pkgs.runCommand "lazy-functional-state-threads" {
     pkgs.haskellPackages.pandoc
     pkgs.python3
   ];
-  src = ./.;
 } ''
   mkdir -p $out
-  pandoc --standalone -t revealjs -V theme:simple $src/presentation.md -o $out/index.html
+  pandoc --standalone -t revealjs -V theme:simple ${./presentation.md} -o $out/index.html
   cp -R ${versions.revealjs} $out/reveal.js
 ''
