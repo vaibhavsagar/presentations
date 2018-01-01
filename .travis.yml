@@ -1,0 +1,2 @@
+language: nix
+after_success: bash .ci/update_pages.sh
