@@ -2,7 +2,7 @@ let
   inherit (import <nixpkgs> {}) fetchFromGitHub lib;
   versions = lib.mapAttrs
     (_: fetchFromGitHub)
-    (builtins.fromJSON (builtins.readFile ./versions.json));
+    (builtins.fromJSON (builtins.readFile ../nix/versions.json));
   # ./updater versions.json ihaskell
   IHaskell = versions.ihaskell;
   # ./updater versions.json nixpkgs nixos-17.09
