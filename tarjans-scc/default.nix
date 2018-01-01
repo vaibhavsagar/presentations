@@ -13,5 +13,5 @@ in pkgs.runCommand "tarjans-scc" {
 } ''
   mkdir -p $out
   pandoc --standalone -t revealjs -V theme:simple $src/presentation.md -o $out/index.html
-  cp -R $src/reveal.js $out/
+  cp -R ${versions.revealjs} $out/reveal.js
 ''
