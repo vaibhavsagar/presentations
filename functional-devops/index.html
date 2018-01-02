@@ -10,6 +10,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
@@ -35,11 +72,6 @@
 <section><section id="about-me" class="titleslide slide level1"><h1>About Me</h1></section></section>
 <section><section id="why-devops" class="titleslide slide level1"><h1>Why DevOps?</h1></section><section id="works-on-my-machine" class="slide level2">
 <h2>Works on my machine</h2>
-<ul>
-<li>Not good enough for users</li>
-<li>Not good enough for leadership</li>
-<li>Not good enough for future you</li>
-</ul>
 </section><section id="what-happens-after-you-write-the-last-line-of-code" class="slide level2">
 <h2>What happens after you write the last line of code?</h2>
 </section></section>
@@ -54,7 +86,143 @@
 </section><section id="atomic" class="slide level2">
 <h2>Atomic</h2>
 </section></section>
-<section><section id="a-tiny-web-service" class="titleslide slide level1"><h1>A Tiny Web Service</h1></section></section>
+<section><section id="a-tiny-web-service" class="titleslide slide level1"><h1>A Tiny Web Service</h1></section><section id="blank-me-up" class="slide level2">
+<h2>Blank Me Up</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"> <span class="ot">{-# LANGUAGE OverloadedStrings #-}</span>
+
+<span class="kw">import </span><span class="dt">Web.Scotty</span>
+
+<span class="kw">import </span><span class="dt">Data.Monoid</span> (mconcat)
+
+main <span class="fu">=</span> scotty <span class="dv">3000</span> <span class="fu">$</span> <span class="kw">do</span>
+    get <span class="st">&quot;/:word&quot;</span> <span class="fu">$</span> <span class="kw">do</span>
+        beam <span class="ot">&lt;-</span> param <span class="st">&quot;word&quot;</span>
+        html <span class="fu">$</span> mconcat [<span class="st">&quot;&lt;h1&gt;Scotty, &quot;</span>, beam, <span class="st">&quot; me up!&lt;/h1&gt;&quot;</span>]</code></pre></div>
+<p><em>app/Main.hs</em></p>
+</section><section id="blank-me-up-1" class="slide level2">
+<h2>Blank Me Up</h2>
+<pre class="cabal"><code>name:                blank-me-up
+version:             0.1.0.0
+license:             BSD3
+build-type:          Simple
+cabal-version:       &gt;=1.10
+
+executable blank-me-up
+  main-is:             Main.hs
+  build-depends:       base &gt;=4.9 &amp;&amp; &lt;5
+                     , scotty
+  default-language:    Haskell2010</code></pre>
+<p><em>app/blank-me-up.cabal</em></p>
+</section><section id="nix" class="slide level2">
+<h2>Nix</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">mkdir</span> nix
+$ <span class="bu">cd</span> nix/
+$ <span class="ex">cabal2nix</span> --shell ../app/ <span class="op">&gt;</span> default.nix
+$ <span class="ex">nix-build</span>
+<span class="op">&lt;</span><span class="ex">...</span><span class="op">&gt;</span>
+$ <span class="ex">nix-build</span>
+$ <span class="ex">result/bin/blank-me-up</span></code></pre></div>
+</section><section id="service" class="slide level2">
+<h2>Service</h2>
+<div class="sourceCode"><pre class="sourceCode nix"><code class="sourceCode bash"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:
+
+<span class="bu">let</span>
+
+<span class="kw">in</span> <span class="kw">{</span>
+  <span class="ex">options</span>                             =                                 <span class="kw">;</span>
+
+  <span class="ex">config</span> =                      
+                                                   
+
+                                    
+                                  
+                                   
+                                         
+                       
+                                                     
+                           
+                             
+        
+      
+   ;
+<span class="kw">}</span></code></pre></div>
+<p><em>nix/service.nix</em></p>
+</section><section id="service-1" class="slide level2">
+<h2>Service</h2>
+<div class="sourceCode"><pre class="sourceCode nix"><code class="sourceCode bash"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:
+
+<span class="bu">let</span>
+  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> };
+<span class="kw">in</span> <span class="kw">{</span>
+  <span class="ex">options</span>                             =                                 <span class="kw">;</span>
+
+  <span class="ex">config</span> =
+
+
+
+
+
+
+
+
+
+
+
+
+   ;
+<span class="kw">}</span></code></pre></div>
+<p><em>nix/service.nix</em></p>
+</section><section id="service-2" class="slide level2">
+<h2>Service</h2>
+<div class="sourceCode"><pre class="sourceCode nix"><code class="sourceCode bash"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:
+
+<span class="bu">let</span>
+  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> };
+<span class="kw">in</span> <span class="kw">{</span>
+  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span>
+
+  <span class="ex">config</span> = lib.mkIf config.services.blank-me-up.enable {
+
+
+
+
+
+
+
+
+
+
+
+
+  <span class="kw">}</span>;
+}</code></pre></div>
+<p><em>nix/service.nix</em></p>
+</section><section id="service-3" class="slide level2">
+<h2>Service</h2>
+<div class="sourceCode"><pre class="sourceCode nix"><code class="sourceCode bash"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:
+
+<span class="bu">let</span>
+  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> };
+<span class="kw">in</span> <span class="kw">{</span>
+  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span>
+
+  <span class="ex">config</span> = lib.mkIf config.services.blank-me-up.enable {
+    <span class="ex">networking.firewall.allowedTCPPorts</span> = [ 3000 ]<span class="kw">;</span>
+
+    <span class="ex">systemd.services.blank-me-up</span> = {
+      <span class="ex">description</span> = <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span>
+      <span class="ex">after</span> = [ <span class="st">&quot;network.target&quot;</span> ]<span class="kw">;</span>
+      <span class="ex">wantedBy</span> = [ <span class="st">&quot;multi-user.target&quot;</span> ]<span class="kw">;</span>
+      <span class="ex">serviceConfig</span> = {
+        <span class="ex">ExecStart</span> = <span class="st">&quot;</span><span class="va">${blank-</span>me-up<span class="va">}</span><span class="st">/bin/blank-me-up&quot;</span><span class="kw">;</span>
+        <span class="ex">Restart</span> = <span class="st">&quot;always&quot;</span><span class="kw">;</span>
+        <span class="ex">KillMode</span> = <span class="st">&quot;process&quot;</span><span class="kw">;</span>
+      <span class="kw">}</span>;
+    };
+  };
+}</code></pre></div>
+<p><em>nix/service.nix</em></p>
+</section></section>
 <section><section id="shipping-it" class="titleslide slide level1"><h1>Shipping It</h1></section></section>
 <section><section id="requirements-change" class="titleslide slide level1"><h1>Requirements Change</h1></section></section>
     </div>
