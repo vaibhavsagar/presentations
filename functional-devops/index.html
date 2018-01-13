@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Vaibhav Sagar">
-  <title>Functional DevOps in a Dysfunctional World</title>
+  <meta name="author" content="(in a dysfunctional world)">
+  <title>Functional DevOps</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -65,8 +65,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     <div class="slides">
 
 <section>
-  <h1 class="title">Functional DevOps in a Dysfunctional World</h1>
-  <p class="author">Vaibhav Sagar</p>
+  <h1 class="title">Functional DevOps</h1>
+  <p class="author">(in a dysfunctional world)</p>
+  <p class="date">Vaibhav Sagar</p>
 </section>
 
 <section><section id="about-me" class="titleslide slide level1"><h1>About Me</h1></section></section>
@@ -223,7 +224,50 @@ $ <span class="ex">result/bin/blank-me-up</span></code></pre></div>
 }</code></pre></div>
 <p><em>nix/service.nix</em></p>
 </section></section>
-<section><section id="shipping-it" class="titleslide slide level1"><h1>Shipping It</h1></section></section>
+<section><section id="shipping-it" class="titleslide slide level1"><h1>Shipping It</h1></section><section id="webserver" class="slide level2">
+<h2>Webserver</h2>
+<div class="sourceCode"><pre class="sourceCode nix"><code class="sourceCode bash"><span class="kw">{</span> <span class="ex">...</span> <span class="kw">}</span>: <span class="kw">{</span>
+  <span class="ex">imports</span> = [ ../nix/service.nix ]<span class="kw">;</span>
+  <span class="ex">services.blank-me-up.enable</span> = true<span class="kw">;</span>
+<span class="kw">}</span></code></pre></div>
+<p><em>ops/webserver.nix</em></p>
+</section><section id="webserver-1" class="slide level2">
+<h2>Webserver</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">cd</span> ops/
+$ <span class="ex">nix-instantiate</span> --eval -E <span class="st">&#39;(import &lt;nixpkgs/nixos/lib/eval-config.nix&gt; { modules = [./webserver.nix]; }).config.systemd.units.&quot;blank-me-up.service&quot;.unit.text&#39;</span> <span class="kw">|</span> <span class="ex">jq</span> -r
+[<span class="ex">Unit</span>]
+<span class="va">After=</span>network.target
+<span class="va">Description=</span>Blank <span class="ex">Me</span> Up
+
+[<span class="ex">Service</span>]
+<span class="va">Environment=</span><span class="st">&quot;LOCALE_ARCHIVE=/nix/store/xhmzzbq06fbzhvjamnb1192iwqb4wl0i-glibc-locales-2.25-49/lib/locale/locale-archive&quot;</span>
+<span class="va">Environment=</span><span class="st">&quot;PATH=/nix/store/r90xqqmd36fv3s53bf92s3vxhdnbwfn7-coreutils-8.28/bin:/nix/store/02xjvflg03d9wlzdw1ig54rgwa32jwxq-findutils-4.6.0/bin:/nix/store/wia9b594w2ghzhpcjdi9mnlf8j24nm3i-gnugrep-3.1/bin:/nix/store/j4rqdjgf0im2dv7gycg80hplnjrnawxx-gnused-4.4/bin:/nix/store/dq33ar4qk4fvxx5ji4fg99nw282f08ia-systemd-234/bin:/nix/store/r90xqqmd36fv3s53bf92s3vxhdnbwfn7-coreutils-8.28/sbin:/nix/store/02xjvflg03d9wlzdw1ig54rgwa32jwxq-findutils-4.6.0/sbin:/nix/store/wia9b594w2ghzhpcjdi9mnlf8j24nm3i-gnugrep-3.1/sbin:/nix/store/j4rqdjgf0im2dv7gycg80hplnjrnawxx-gnused-4.4/sbin:/nix/store/dq33ar4qk4fvxx5ji4fg99nw282f08ia-systemd-234/sbin&quot;</span>
+<span class="va">Environment=</span><span class="st">&quot;TZDIR=/nix/store/1sa5cpnrbdab2463bzbi3xfl3hck3aqk-tzdata-2017c/share/zoneinfo&quot;</span>
+
+
+
+<span class="va">ExecStart=</span>/nix/store/n6ky98lzs0abl1sabc270004hjf7pvnq-blank-me-up-0.1.0.0/bin/blank-me-up
+<span class="va">KillMode=</span>process
+<span class="va">Restart=</span>always</code></pre></div>
+</section><section id="deployment" class="slide level2">
+<h2>Deployment</h2>
+<div class="sourceCode"><pre class="sourceCode nix"><code class="sourceCode bash"><span class="kw">{</span>
+  <span class="ex">network.description</span> = <span class="st">&quot;Web server&quot;</span><span class="kw">;</span>
+
+  <span class="ex">webserver</span> = import ./webserver.nix<span class="kw">;</span>
+<span class="kw">}</span></code></pre></div>
+<p><em>ops/trivial.nix</em></p>
+</section><section id="deployment-1" class="slide level2">
+<h2>Deployment</h2>
+<div class="sourceCode"><pre class="sourceCode nix"><code class="sourceCode bash"><span class="kw">{</span>
+  <span class="ex">webserver</span> =
+    <span class="kw">{</span> <span class="ex">config</span>, pkgs, ... <span class="kw">}</span>:
+    <span class="kw">{</span> <span class="ex">deployment.targetEnv</span> = <span class="st">&quot;virtualbox&quot;</span><span class="kw">;</span>
+      <span class="ex">deployment.virtualbox.memorySize</span> = 1024<span class="kw">;</span> <span class="co"># megabytes</span>
+      <span class="ex">deployment.virtualbox.vcpu</span> = 2<span class="kw">;</span> <span class="co"># number of cpus</span>
+    <span class="kw">}</span>;
+<span class="kw">}</span></code></pre></div>
+</section></section>
 <section><section id="requirements-change" class="titleslide slide level1"><h1>Requirements Change</h1></section></section>
     </div>
   </div>
