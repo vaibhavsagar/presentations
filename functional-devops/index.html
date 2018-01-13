@@ -267,8 +267,85 @@ $ <span class="ex">nix-instantiate</span> --eval -E <span class="st">&#39;(impor
       <span class="ex">deployment.virtualbox.vcpu</span> = 2<span class="kw">;</span> <span class="co"># number of cpus</span>
     <span class="kw">}</span>;
 <span class="kw">}</span></code></pre></div>
+<p><em>ops/trivial-vbox.nix</em></p>
+</section><section id="deployment-2" class="slide level2">
+<h2>Deployment</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">cd</span> ops
+$ <span class="ex">nixops</span> create trivial.nix trivial-vbox.nix -d trivial
+$ <span class="ex">nixops</span> deploy -d trivial
+<span class="op">&lt;</span><span class="ex">tons</span> of output...<span class="op">&gt;</span>
+$ <span class="ex">nixops</span> deploy -d trivial
+$ <span class="ex">curl</span> <span class="op">&lt;</span>ip<span class="op">&gt;</span>:3000/help</code></pre></div>
 </section></section>
-<section><section id="requirements-change" class="titleslide slide level1"><h1>Requirements Change</h1></section></section>
+<section><section id="requirements-change" class="titleslide slide level1"><h1>Requirements Change</h1></section><section id="patched" class="slide level2">
+<h2>Patched</h2>
+<div class="sourceCode"><pre class="sourceCode nix"><code class="sourceCode bash"><span class="ex">args@</span>{ nixpkgs ? import <span class="op">&lt;</span>nixpkgs<span class="op">&gt;</span> <span class="dt">{}</span>, compiler ? <span class="st">&quot;default&quot;</span> }:
+
+<span class="kw">(</span><span class="ex">import</span> ./default.nix args<span class="kw">)</span><span class="ex">.overrideAttrs</span> (old: {
+  <span class="ex">postPatch</span> = let
+    <span class="ex">oldImport</span> = <span class="st">&#39;&#39;</span>
+      <span class="ex">import</span> Web.Scotty
+    <span class="st">&#39;&#39;</span>;
+    <span class="ex">newImport</span> = <span class="st">&#39;&#39;</span>
+      <span class="ex">import</span> Web.Scotty
+      <span class="ex">import</span> System.Environment (getArgs)
+    <span class="st">&#39;&#39;</span>;
+    <span class="ex">oldMain</span> = <span class="st">&#39;&#39;</span>
+      <span class="ex">main</span> = scotty 3000 $ do
+    <span class="st">&#39;&#39;</span>;
+    <span class="ex">newMain</span> = <span class="st">&#39;&#39;</span>
+      <span class="ex">main</span> = getArgs <span class="op">&gt;&gt;</span>= <span class="dt">\(</span>port:_) <span class="ex">-</span><span class="op">&gt;</span> scotty (read port) $ <span class="kw">do</span>
+    <span class="st">&#39;&#39;</span>;
+  <span class="kw">in</span> <span class="st">&#39;&#39;</span>
+    <span class="ex">substituteInPlace</span> Main.hs --replace <span class="st">&#39;${oldImport}&#39;</span> <span class="st">&#39;${newImport}&#39;</span>
+    <span class="ex">substituteInPlace</span> Main.hs --replace <span class="st">&#39;${oldMain}&#39;</span>   <span class="st">&#39;${newMain}&#39;</span>
+    <span class="fu">cat</span> Main.hs
+  <span class="st">&#39;&#39;</span>;
+})</code></pre></div>
+<p><em>nix/patched.nix</em></p>
+</section><section id="service-4" class="slide level2">
+<h2>Service</h2>
+<div class="sourceCode"><pre class="sourceCode nix"><code class="sourceCode bash"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:
+
+<span class="bu">let</span>
+  <span class="ex">blank-me-up</span> = pkgs.callPackage ./patched.nix { nixpkgs = pkgs<span class="kw">;</span> };
+  <span class="ex">cfg</span> = config.services.blank-me-up<span class="kw">;</span>
+<span class="kw">in</span> <span class="kw">{</span>
+  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span>
+  <span class="ex">options.services.blank-me-up.port</span> = lib.mkOption {
+    <span class="ex">default</span> = 3000<span class="kw">;</span>
+    <span class="bu">type</span> = lib.types.int<span class="kw">;</span>
+  <span class="kw">}</span>;
+
+  <span class="ex">config</span> = lib.mkIf cfg.enable {
+    <span class="ex">networking.firewall.allowedTCPPorts</span> = [ cfg.port ]<span class="kw">;</span>
+
+    <span class="ex">systemd.services.blank-me-up</span> = {
+      <span class="ex">description</span> = <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span>
+      <span class="ex">after</span> = [ <span class="st">&quot;network.target&quot;</span> ]<span class="kw">;</span>
+      <span class="ex">wantedBy</span> = [ <span class="st">&quot;multi-user.target&quot;</span> ]<span class="kw">;</span>
+      <span class="ex">serviceConfig</span> = {
+        <span class="ex">ExecStart</span> = <span class="st">&quot;</span><span class="va">${blank-</span>me-up<span class="va">}</span><span class="st">/bin/blank-me-up </span><span class="va">${toString</span><span class="er"> cfg.port</span><span class="va">}</span><span class="st">&quot;</span><span class="kw">;</span>
+        <span class="ex">Restart</span> = <span class="st">&quot;always&quot;</span><span class="kw">;</span>
+        <span class="ex">KillMode</span> = <span class="st">&quot;process&quot;</span><span class="kw">;</span>
+      };
+    };
+  };
+}</code></pre></div>
+<p><em>nix/service-patched.nix</em></p>
+</section><section id="webserver-2" class="slide level2">
+<h2>Webserver</h2>
+<div class="sourceCode"><pre class="sourceCode nix"><code class="sourceCode bash"><span class="kw">{</span> <span class="ex">...</span> <span class="kw">}</span>: <span class="kw">{</span>
+  <span class="ex">imports</span> = [ ../nix/service-patched.nix ]<span class="kw">;</span>
+  <span class="ex">services.blank-me-up.enable</span> = true<span class="kw">;</span>
+  <span class="ex">services.blank-me-up.port</span> = 3001<span class="kw">;</span>
+<span class="kw">}</span></code></pre></div>
+<p><em>nix/webserver.nix</em></p>
+</section><section id="deploy" class="slide level2">
+<h2>Deploy</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">nixops</span> deploy -d trivial
+$ <span class="ex">curl</span> <span class="op">&lt;</span>ip<span class="op">&gt;</span>:3001/pull</code></pre></div>
+</section></section>
     </div>
   </div>
 
