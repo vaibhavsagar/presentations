@@ -253,6 +253,7 @@ $ <span class="ex">nix-instantiate</span> --eval -E <span class="st">&#39;(impor
 <h2>Deployment</h2>
 <div class="sourceCode"><pre class="sourceCode nix"><code class="sourceCode bash"><span class="kw">{</span>
   <span class="ex">network.description</span> = <span class="st">&quot;Web server&quot;</span><span class="kw">;</span>
+  <span class="ex">network.enableRollback</span> = true<span class="kw">;</span>
 
   <span class="ex">webserver</span> = import ./webserver.nix<span class="kw">;</span>
 <span class="kw">}</span></code></pre></div>
@@ -345,7 +346,39 @@ $ <span class="ex">curl</span> <span class="op">&lt;</span>ip<span class="op">&g
 <h2>Deploy</h2>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">nixops</span> deploy -d trivial
 $ <span class="ex">curl</span> <span class="op">&lt;</span>ip<span class="op">&gt;</span>:3001/pull</code></pre></div>
+</section><section id="rollback" class="slide level2">
+<h2>Rollback</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">nixops</span> rollback -d trivial 1</code></pre></div>
 </section></section>
+<section><section id="summary" class="titleslide slide level1"><h1>Summary</h1></section><section id="nix-1" class="slide level2">
+<h2>Nix</h2>
+<ul>
+<li>Package manager</li>
+<li>Programming language</li>
+<li>Build/environment tool</li>
+</ul>
+</section><section id="nixos" class="slide level2">
+<h2>NixOS</h2>
+<ul>
+<li>Operating system built around Nix</li>
+</ul>
+</section><section id="nixops" class="slide level2">
+<h2>NixOps</h2>
+<ul>
+<li>Cloud deployment tool on top of NixOS</li>
+</ul>
+</section><section id="devops-with-nix" class="slide level2">
+<h2>DevOps with Nix</h2>
+<ul>
+<li>Automatic</li>
+<li>Repeatable</li>
+<li>Idempotent</li>
+<li>Reversible</li>
+<li>Atomic</li>
+</ul>
+</section></section>
+<section><section id="thank-you" class="titleslide slide level1"><h1>Thank You</h1></section></section>
+<section><section id="questions" class="titleslide slide level1"><h1>Questions?</h1></section></section>
     </div>
   </div>
 
