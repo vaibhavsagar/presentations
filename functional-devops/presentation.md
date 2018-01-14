@@ -219,6 +219,7 @@ Restart=always
 ```nix
 {
   network.description = "Web server";
+  network.enableRollback = true;
 
   webserver = import ./webserver.nix;
 }
@@ -331,3 +332,37 @@ in {
 $ nixops deploy -d trivial
 $ curl <ip>:3001/pull
 ```
+
+## Rollback
+
+```bash
+$ nixops rollback -d trivial 1
+```
+
+# Summary
+
+## Nix
+
+- Package manager
+- Programming language
+- Build/environment tool
+
+## NixOS
+
+- Operating system built around Nix
+
+## NixOps
+
+- Cloud deployment tool on top of NixOS
+
+## DevOps with Nix
+
+- Automatic
+- Repeatable
+- Idempotent
+- Reversible
+- Atomic
+
+# Thank You
+
+# Questions?
