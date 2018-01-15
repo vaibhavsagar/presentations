@@ -181,6 +181,8 @@ in {
 ```
 *nix/service.nix*
 
+## Functional?
+
 # Shipping It
 
 ## Webserver
@@ -250,6 +252,8 @@ $ nixops deploy -d trivial
 $ nixops deploy -d trivial
 $ curl <ip>:3000/help
 ```
+
+## Functional?
 
 # Requirements Change
 
@@ -362,6 +366,7 @@ $ nixops rollback -d trivial 1
 - Idempotent
 - Reversible
 - Atomic
+- Functional!
 
 # Thank You
 
