@@ -1,1 +1,1 @@
-import ../nix/default.nix "functional-devops" ./.
+import ../.nix/default.nix "functional-devops" ./.

@@ -1,1 +1,1 @@
-import (../nix/default.nix) "tarjans-scc" ./.
+import (../.nix/default.nix) "tarjans-scc" ./.
