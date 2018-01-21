@@ -266,6 +266,7 @@ $ <span class="ex">nix-instantiate</span> --eval -E <span class="st">&#39;(impor
   <span class="ex">webserver</span> =
     <span class="kw">{</span> <span class="ex">config</span>, pkgs, ... <span class="kw">}</span>:
     <span class="kw">{</span> <span class="ex">deployment.targetEnv</span> = <span class="st">&quot;virtualbox&quot;</span><span class="kw">;</span>
+      <span class="ex">deployment.virtualbox.headless</span> = true<span class="kw">;</span> <span class="co"># don&#39;t show a display</span>
       <span class="ex">deployment.virtualbox.memorySize</span> = 1024<span class="kw">;</span> <span class="co"># megabytes</span>
       <span class="ex">deployment.virtualbox.vcpu</span> = 2<span class="kw">;</span> <span class="co"># number of cpus</span>
     <span class="kw">}</span>;
