@@ -4,6 +4,12 @@
 
 # About Me
 
+## Lapsed web developer
+
+## Functional programming enthusiast
+
+## DevOps Engineer
+
 # Why DevOps?
 
 ## Works on my machine
