@@ -1,6 +1,6 @@
 % Functional DevOps
 % (in a dysfunctional world)
-% Vaibhav Sagar
+% Vaibhav Sagar (@vbhvsgr)
 
 # About Me
 
