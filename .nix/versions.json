@@ -8,8 +8,8 @@
   "nixpkgs": {
     "owner": "NixOS",
     "repo": "nixpkgs-channels",
-    "rev": "c831224528cd6bfd49bfc2c18b9c5d9015651077",
-    "sha256": "1qpksmnikqh7lwa5s3jix3mw5f08mgzfmibjdar0qmcnnn3z21z2"
+    "rev": "c665fcca9e7be8cd06c1f3c5bbe2b00d4c8f2a92",
+    "sha256": "1zpjrzspzf382vd4pf40rq0wqryr141hqm7pp54vsl1df8sy5ijw"
   },
   "revealjs": {
     "owner": "hakimel",
