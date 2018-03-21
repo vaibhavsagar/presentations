@@ -12,5 +12,8 @@ displayVect (x :: y) = "[" ++ show x ++ go y ++ "]"
 
 map : (a -> b) -> Vect k a -> Vect k b
 
+plusOne : Int -> Int
+plusOne i = i + 1
+
 main : IO ()
-main = putStrLn (displayVect (map (+1) [1,2,3]))
+main = putStrLn (displayVect (map plusOne [1,2,3]))
