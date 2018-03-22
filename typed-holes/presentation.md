@@ -66,28 +66,22 @@ True
 
 # Haskell
 
-## Haskell
-
-- Statically typed!
-- Type inference!
-- Typed holes!
+## Statically typed!
+## Type inference!
+## Typed holes!
 
 # Idris
 
-## Idris
-
-- More sophisticated type system!
-- Weaker type inference :(
-- Better editor integration!
-- Fancier typed holes!
+## More sophisticated type system!
+## Weaker type inference :(
+## Better editor integration!
+## Fancier typed holes!
 
 # We did it!
 
-## Takeaways
-
-- Typed holes exist!!!
-- Programming can be fun and interesting!
-- Types are friends, not food!
+## Typed holes exist!!!
+## Types are friends, not food!
+## Programming can be fun and interesting!
 
 ## Resources
 
