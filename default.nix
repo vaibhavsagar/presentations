@@ -8,4 +8,5 @@ in linkFarm "presentations" (presentations [
   "functional-devops"
   "lazy-functional-state-threads"
   "tarjans-scc"
+  "typed-holes"
 ])
