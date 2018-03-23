@@ -89,4 +89,4 @@ True
 - [Conor McBride - What are Types for, or are they only Against?](https://www.youtube.com/watch?v=3U3lV5VPmOU)
 - [Conor McBride - Is a type a lifebuoy or a lamp?](https://skillsmatter.com/skillscasts/8893-is-a-type-a-lifebuoy-or-a-lamp)
 
-# The End
+# Thank You
