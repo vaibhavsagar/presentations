@@ -1,7 +1,7 @@
 import Prelude hiding (map)
 
 map :: (a -> b) -> [a] -> [b]
-map f ls = _
+map f ls = undefined
 
 plusOne :: Int -> Int
 plusOne i = i + 1
