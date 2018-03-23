@@ -21,7 +21,10 @@ None
 ## A simple function in Python
 
 ```python
->>> def map(f, ls): return "banana"
+>>> def map(f, ls): return (f(e) for e in ls)
+...
+>>> print(map(plusOne, [1, 2, 3]))
+<generator object map.<locals>.<genexpr> at 0x7ffb92103ca8>
 ```
 
 ## A simple function in Python
@@ -34,12 +37,11 @@ None
 
 ## "Just be smarter!"
 
-- A trifecta of badness: non-actionable, elitist, blames the victim
-- Worse than useless!
+<img src="https://media.giphy.com/media/Fml0fgAxVx1eM/giphy.gif"></img>
 
 ## Write tests!
 
-- Actually useful advice!
+Actually useful advice!
 
 ## Write tests!
 
@@ -55,10 +57,9 @@ True
 
 ## Write tests!
 
-- Clearly not enough
 - Two programs that might be wrong instead of one
 - Tests are a specification of the problem that Python doesn't know about
-- We need to communicate with the computer so it can help us!
+- We need to communicate with our language so it can help us!
 
 ## Tests are a specification that the language does not understand
 
