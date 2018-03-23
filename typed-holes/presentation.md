@@ -27,7 +27,7 @@ None
 ## A simple function in Python
 
 ```python
->>> def map(f, ls): return ls
+>>> def map(f, ls): return []
 ```
 
 ## How do I write a program that works?
