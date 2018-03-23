@@ -57,9 +57,7 @@ True
 
 ## Write tests!
 
-- Two programs that might be wrong instead of one
-- Tests are a specification of the problem that Python doesn't know about
-- We need to communicate with our language so it can help us!
+<img src="https://media.giphy.com/media/t02k4SiBnDoTS/giphy.gif"></img>
 
 ## Tests are a specification that the language does not understand
 
