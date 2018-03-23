@@ -60,9 +60,9 @@ True
 - Tests are a specification of the problem that Python doesn't know about
 - We need to communicate with the computer so it can help us!
 
-## Tests are a specification that the computer does not understand
+## Tests are a specification that the language does not understand
 
-## Types are a specification that the computer can understand
+## Types are a specification that the language can understand
 
 # Haskell
 
