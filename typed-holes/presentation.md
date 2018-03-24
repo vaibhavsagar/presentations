@@ -4,8 +4,6 @@
 
 # Let's write a program
 
-## I write programs for a living
-
 ## I am a terrible programmer
 
 ## A simple function in Python
