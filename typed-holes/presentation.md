@@ -4,15 +4,13 @@
 
 # Let's write a program
 
-## I am a terrible programmer
-
-## A simple function in Python
+## Is this program correct?
 
 ```python
 >>> def map(f, ls): return []
 ```
 
-## A simple function in Python
+## Is this program correct?
 
 ```python
 >>> def map(f, ls): [f(e) for e in ls]
@@ -22,7 +20,7 @@
 None
 ```
 
-## A simple function in Python
+## Is this program correct?
 
 ```python
 >>> def map(f, ls): return (f(e) for e in ls)
@@ -31,17 +29,7 @@ None
 <generator object map.<locals>.<genexpr> at 0x7ffb92103ca8>
 ```
 
-## How do I write a program that works?
-
-## "Just be smarter!"
-
-<img src="https://media.giphy.com/media/Fml0fgAxVx1eM/giphy.gif"></img>
-
-## Write tests!
-
-Actually useful advice!
-
-## Write tests!
+## We need tests!
 
 ```python
 >>> def map(f, ls):
@@ -53,9 +41,7 @@ Where are your tests now?
 True
 ```
 
-## Write tests!
-
-<img src="https://media.giphy.com/media/t02k4SiBnDoTS/giphy.gif"></img>
+## Tests aren't enough
 
 ## Tests are a specification that the language does not understand
 
