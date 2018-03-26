@@ -87,3 +87,22 @@ True
 - [Conor McBride - Is a type a lifebuoy or a lamp?](https://skillsmatter.com/skillscasts/8893-is-a-type-a-lifebuoy-or-a-lamp)
 
 # Thank You
+
+# Untyped Holes: Program Sketching!
+
+## 1. Write a program with gaps (a 'sketch')
+
+## 2. Write some test cases
+
+## 3. Give a SAT/SMT solver your sketch and test cases
+
+## 4. ???
+
+## 5. Profit!
+
+## Still a research topic for now :'(
+
+## Resources
+
+- [Armando Solar-Lezama - Program Synthesis by Sketching](https://people.csail.mit.edu/asolar/papers/thesis.pdf)
+- [Synquid](http://comcom.csail.mit.edu/comcom/#Synquid)
