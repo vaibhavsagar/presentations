@@ -9,6 +9,12 @@
 ## A simple function in Python
 
 ```python
+>>> def map(f, ls): return []
+```
+
+## A simple function in Python
+
+```python
 >>> def map(f, ls): [f(e) for e in ls]
 ...
 >>> plusOne = lambda i: i + 1
@@ -23,12 +29,6 @@ None
 ...
 >>> print(map(plusOne, [1, 2, 3]))
 <generator object map.<locals>.<genexpr> at 0x7ffb92103ca8>
-```
-
-## A simple function in Python
-
-```python
->>> def map(f, ls): return []
 ```
 
 ## How do I write a program that works?
