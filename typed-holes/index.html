@@ -74,20 +74,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2>I am a terrible programmer</h2>
 </section><section id="a-simple-function-in-python" class="slide level2">
 <h2>A simple function in Python</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls): <span class="cf">return</span> []</code></pre></div>
+</section><section id="a-simple-function-in-python-1" class="slide level2">
+<h2>A simple function in Python</h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls): [f(e) <span class="cf">for</span> e <span class="kw">in</span> ls]
 ...
 <span class="op">&gt;&gt;&gt;</span> plusOne <span class="op">=</span> <span class="kw">lambda</span> i: i <span class="op">+</span> <span class="dv">1</span>
 <span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="bu">map</span>(plusOne, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))
 <span class="va">None</span></code></pre></div>
-</section><section id="a-simple-function-in-python-1" class="slide level2">
+</section><section id="a-simple-function-in-python-2" class="slide level2">
 <h2>A simple function in Python</h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls): <span class="cf">return</span> (f(e) <span class="cf">for</span> e <span class="kw">in</span> ls)
 ...
 <span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="bu">map</span>(plusOne, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))
 <span class="op">&lt;</span>generator <span class="bu">object</span> <span class="bu">map</span>.<span class="op">&lt;</span><span class="bu">locals</span><span class="op">&gt;</span>.<span class="op">&lt;</span>genexpr<span class="op">&gt;</span> at <span class="bn">0x7ffb92103ca8</span><span class="op">&gt;</span></code></pre></div>
-</section><section id="a-simple-function-in-python-2" class="slide level2">
-<h2>A simple function in Python</h2>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls): <span class="cf">return</span> []</code></pre></div>
 </section><section id="how-do-i-write-a-program-that-works" class="slide level2">
 <h2>How do I write a program that works?</h2>
 </section><section id="just-be-smarter" class="slide level2">
