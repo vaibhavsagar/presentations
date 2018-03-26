@@ -41,7 +41,7 @@ Where are your tests now?
 True
 ```
 
-## Tests aren't enough
+## Tests are not sufficient
 
 ## Tests are a specification that the language does not understand
 
