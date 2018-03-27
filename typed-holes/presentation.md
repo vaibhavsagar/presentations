@@ -2,7 +2,15 @@
 % Collaborating with your computer using typed holes!
 % Vaibhav Sagar (@vbhvsgr)
 
-# Let's write a program
+# What's a typed hole?
+
+## Typed holes
+
+A placeholder for an expression with a known type and an unknown value.
+
+# Why do holes need to be typed?
+
+## Let's write a program in Python
 
 ## Is this program correct?
 
@@ -43,9 +51,9 @@ True
 
 ## Tests are not sufficient
 
-## Tests are a specification that the language does not understand
+## The language does not understand tests
 
-## Types are a specification that the language can understand
+## The language can understand types
 
 # Haskell
 
