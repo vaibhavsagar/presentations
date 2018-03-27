@@ -12,4 +12,4 @@ plusOne : Int -> Int
 plusOne i = i + 1
 
 main : IO ()
-main = printLn (map plusOne [1, 2, 3] == [2, 3, 4])
+main = printLn ((map plusOne [1, 2, 3]) == [2, 3, 4])
