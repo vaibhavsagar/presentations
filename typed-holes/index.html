@@ -73,6 +73,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section><section id="whats-a-typed-hole" class="titleslide slide level1"><h1>What's a typed hole?</h1></section><section id="typed-holes" class="slide level2">
 <h2>Typed holes</h2>
 <p>A placeholder for an expression with a known type and an unknown value.</p>
+</section><section id="why" class="slide level2">
+<h2>Why?</h2>
+<p>They allow the programming language to help us write programs!</p>
 </section></section>
 <section><section id="why-do-holes-need-to-be-typed" class="titleslide slide level1"><h1>Why do holes need to be typed?</h1></section><section id="lets-write-a-program-in-python" class="slide level2">
 <h2>Let's write a program in Python</h2>
@@ -92,6 +95,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ...
 <span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="bu">map</span>(plusOne, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))
 <span class="op">&lt;</span>generator <span class="bu">object</span> <span class="bu">map</span>.<span class="op">&lt;</span><span class="bu">locals</span><span class="op">&gt;</span>.<span class="op">&lt;</span>genexpr<span class="op">&gt;</span> at <span class="bn">0x7ffb92103ca8</span><span class="op">&gt;</span></code></pre></div>
+</section><section id="how-do-i-write-programs-that-work" class="slide level2">
+<h2>How do I write programs that work?</h2>
 </section><section id="we-need-tests" class="slide level2">
 <h2>We need tests!</h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls):
