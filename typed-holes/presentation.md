@@ -8,6 +8,10 @@
 
 A placeholder for an expression with a known type and an unknown value.
 
+## Why?
+
+They allow the programming language to help us write programs!
+
 # Why do holes need to be typed?
 
 ## Let's write a program in Python
@@ -36,6 +40,8 @@ None
 >>> print(map(plusOne, [1, 2, 3]))
 <generator object map.<locals>.<genexpr> at 0x7ffb92103ca8>
 ```
+
+## How do I write programs that work?
 
 ## We need tests!
 
