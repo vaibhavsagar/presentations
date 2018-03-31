@@ -83,7 +83,7 @@ True
 ## Resources
 
 - [Typed Holes for beginners](https://www.shimweasel.com/2015/02/17/typed-holes-for-beginners)
-- [Conor McBride - What are Types for, or are they only Against?](https://www.youtube.com/watch?v=3U3lV5VPmOU)
+- [Conor McBride - What Are Types For, Or Are They Only Against?](https://www.youtube.com/watch?v=3U3lV5VPmOU)
 - [Conor McBride - Is a type a lifebuoy or a lamp?](https://skillsmatter.com/skillscasts/8893-is-a-type-a-lifebuoy-or-a-lamp)
 
 # Thank You
