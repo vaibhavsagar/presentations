@@ -11,5 +11,5 @@ let
     sha256 = "00vrrik1cn5n5901ahi943mj5n2gn9f7dfg2qywfrn3z0hy9r590";
   }) {};
 in pkgs.runCommand "dummy" {
-  buildInputs = lib.singleton (pkgs.haskell.packages.ghc841.ghcWithPackages (p: [ p.ghcid ]));
+  buildInputs = lib.singleton (pkgs.haskell.packages.ghc822.ghcWithPackages (p: [ p.ghcid ]));
 } ""
