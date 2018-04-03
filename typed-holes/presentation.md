@@ -29,7 +29,7 @@ code.sourceCode.python {
 >>> def map(f, ls): return []
 ```
 
-## Is this program correct?
+## What about this one?
 
 ```python
 >>> def map(f, ls): [f(e) for e in ls]
@@ -39,7 +39,7 @@ code.sourceCode.python {
 None
 ```
 
-## Is this program correct?
+## This one?
 
 ```python
 >>> def map(f, ls): return (f(e) for e in ls)
