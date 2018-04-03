@@ -16,6 +16,13 @@ They allow the programming language to help us write programs!
 
 ## Let's write a program in Python
 
+<style>
+code.sourceCode.python {
+  font-size: 150%;
+  line-height: 125%;
+}
+</style>
+
 ## Is this program correct?
 
 ```python
