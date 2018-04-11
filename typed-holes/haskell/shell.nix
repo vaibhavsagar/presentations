@@ -9,8 +9,8 @@ let
       src = fetcher {
         owner  = "ndmitchell";
         repo   = "ghcid";
-        rev    = "9773482fd83bf0bc528bbcb0ad121191a8fd809b";
-        sha256 = "18wi0ghxl9kszivyf50aixpbq7srrdncawk7x1fzxhyimm89qqqq";
+        rev    = "8b8f71f8f31d497dc472f0de08db62290802775a";
+        sha256 = "093i2j3rwk5bjlazylsjzaf0ig7r2sv2xnz439qymmfp6g412qkh";
       };
     };
   };
