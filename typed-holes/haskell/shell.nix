@@ -1,10 +1,13 @@
 let
-  fetch   = (import <nixpkgs> {}).fetchFromGitHub;
-  pinned  = fetch (builtins.fromJSON (builtins.readFile ../../.nix/versions.json)).nixpkgs;
+  fetcher = { owner, repo, rev, sha256 }: builtins.fetchTarball {
+    inherit sha256;
+    url = "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz";
+  };
+  pinned  = fetcher (builtins.fromJSON (builtins.readFile ../../.nix/versions.json)).nixpkgs;
   nixpkgs = import pinned {};
   ext     = self: super: {
     ghcid = nixpkgs.haskell.lib.overrideSrc super.ghcid {
-      src = fetch {
+      src = fetcher {
         owner  = "ndmitchell";
         repo   = "ghcid";
         rev    = "9773482fd83bf0bc528bbcb0ad121191a8fd809b";
