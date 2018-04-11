@@ -1,10 +1,5 @@
 let
-  fetcher = { owner, repo, rev, sha256 }: builtins.fetchTarball {
-    inherit sha256;
-    url = "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz";
-  };
-  pinned  = fetcher (builtins.fromJSON (builtins.readFile ../../.nix/versions.json)).nixpkgs;
-  nixpkgs = import pinned {};
+  nixpkgs = import (import ../../.nix/pkgs.nix).nixpkgs {};
   ext     = self: super: {
     ghcid = nixpkgs.haskell.lib.overrideSrc super.ghcid {
       src = fetcher {
@@ -16,5 +11,9 @@ let
     };
   };
 in nixpkgs.mkShell {
-  buildInputs = [ ((nixpkgs.haskell.packages.ghc822.extend ext).ghcWithPackages (p: [ p.ghcid ])) ];
+  buildInputs = [
+    ((nixpkgs.haskell.packages.ghc822.extend ext).ghcWithPackages (p: [
+        p.ghcid
+    ]))
+  ];
 }
