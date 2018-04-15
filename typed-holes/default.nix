@@ -1,1 +1,7 @@
-import ../.nix/default.nix { name = "typed-holes"; src = ./.; }
+let command = src: pkgs: ''
+    mkdir -p $out
+    pandoc --standalone -t revealjs -V theme:solarized ${src + "/presentation.md"} -o $out/index.html
+    cp -R ${pkgs.revealjs} $out/reveal.js
+  '';
+in
+import ../.nix/default.nix { inherit command; name = "typed-holes"; src = ./.; }
