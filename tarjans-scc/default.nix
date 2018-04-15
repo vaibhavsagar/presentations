@@ -1,1 +1,1 @@
-import ../.nix/default.nix "tarjans-scc" ./.
+import ../.nix/default.nix { name = "tarjans-scc"; src = ./.; }

@@ -1,1 +1,1 @@
-import ../.nix/default.nix "typed-holes" ./.
+import ../.nix/default.nix { name = "typed-holes"; src = ./.; }
