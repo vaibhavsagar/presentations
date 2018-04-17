@@ -1,6 +1,6 @@
 data Vect : Nat -> Type -> Type where
-    Nil  : Vect Z a
-    (::) : a -> Vect length a -> Vect (S length) a
+    Nil  : Vect 0 a
+    (::) : a -> Vect length a -> Vect (1 + length) a
 
 implementation (Eq a) => Eq (Vect l a) where
     (==) []      []      = True
