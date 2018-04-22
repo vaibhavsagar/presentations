@@ -7,8 +7,8 @@ let
     cp -R ${pkgs.revealjs} $out/reveal.js
   '';
 in { command ? defaultCommand, name, src }: nixpkgs.runCommand name {
-  buildInputs = [
-    nixpkgs.haskellPackages.pandoc
-    nixpkgs.haskellPackages.wai-app-static
+  buildInputs = with nixpkgs.haskellPackages; [
+    pandoc
+    wai-app-static
   ];
 } (command src pkgs)
