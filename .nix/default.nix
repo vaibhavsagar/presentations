@@ -9,6 +9,6 @@ let
 in { command ? defaultCommand, name, src }: nixpkgs.runCommand name {
   buildInputs = [
     nixpkgs.haskellPackages.pandoc
-    nixpkgs.python3
+    nixpkgs.haskellPackages.wai-app-static
   ];
 } (command src pkgs)
