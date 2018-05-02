@@ -113,3 +113,4 @@ True
 
 - [Armando Solar-Lezama - Program Synthesis by Sketching](https://people.csail.mit.edu/asolar/papers/thesis.pdf)
 - [Synquid](http://comcom.csail.mit.edu/comcom/#Synquid)
+- [Barliman](https://github.com/webyrd/Barliman)
