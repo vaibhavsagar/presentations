@@ -1,4 +1,4 @@
-% Functional DevOps Workshop
+% Your First Functional Deployment!
 % Vaibhav Sagar (@vbhvsgr)
 
 # Build

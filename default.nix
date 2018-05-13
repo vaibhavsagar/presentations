@@ -6,8 +6,8 @@ let
   });
 in linkFarm "presentations" (presentations [
   "functional-devops"
-  "functional-devops-workshop"
   "lazy-functional-state-threads"
   "tarjans-scc"
   "typed-holes"
+  "your-first-functional-deployment"
 ])
