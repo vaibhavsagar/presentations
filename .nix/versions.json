@@ -2,14 +2,14 @@
   "ihaskell": {
     "owner": "gibiansky",
     "repo": "IHaskell",
-    "rev": "7a41fa209d071cf7ff7c4e63dbc9f584006efb0d",
-    "sha256": "11cl9j1hmgmfm3hza4vsy37l94f6mcin1zfrjbjvlz4aqcyxv372"
+    "rev": "39380616c10c9e698c393844767e55ec30ee3ba6",
+    "sha256": "1ync6lsh6vcjpsghf4w0mvz1nadxqjlh40nmnqqamzgw4awgvcba"
   },
   "nixpkgs": {
     "owner": "NixOS",
     "repo": "nixpkgs-channels",
-    "rev": "2352d46904d7f5ba0b81c2dd3dfb058905f0551e",
-    "sha256": "0wk3b7n3gmfy9rdkp2yj68xylhj6rfpaf6v6akzfhmkhd603hvjl"
+    "rev": "ef74cafd3e5914fdadd08bf20303328d72d65d6c",
+    "sha256": "0xj5gv8k40vi7fczrqv0ppcmhczddh30kyizvzfg5wyc15fm2dmg"
   },
   "revealjs": {
     "owner": "hakimel",
