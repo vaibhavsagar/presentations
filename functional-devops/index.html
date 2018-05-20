@@ -316,7 +316,7 @@ executable blank-me-up
 <h2>Deployment</h2>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1">$ <span class="bu">cd</span> ops</a>
 <a class="sourceLine" id="cb12-2" data-line-number="2">$ <span class="ex">nixops</span> create trivial.nix trivial-vbox.nix -d trivial</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">$ <span class="ex">nixops</span> deploy -d trivial</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">$ <span class="ex">nixops</span> deploy -d trivial --force-reboot</a>
 <a class="sourceLine" id="cb12-4" data-line-number="4"><span class="op">&lt;</span><span class="ex">tons</span> of output...<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb12-5" data-line-number="5">$ <span class="ex">nixops</span> deploy -d trivial</a>
 <a class="sourceLine" id="cb12-6" data-line-number="6">$ <span class="ex">curl</span> <span class="op">&lt;</span>ip<span class="op">&gt;</span>:3000/help</a></code></pre></div>
