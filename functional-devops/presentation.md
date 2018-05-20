@@ -255,7 +255,7 @@ Restart=always
 ```bash
 $ cd ops
 $ nixops create trivial.nix trivial-vbox.nix -d trivial
-$ nixops deploy -d trivial
+$ nixops deploy -d trivial --force-reboot
 <tons of output...>
 $ nixops deploy -d trivial
 $ curl <ip>:3000/help
