@@ -9,5 +9,4 @@ in linkFarm "presentations" (presentations [
   "lazy-functional-state-threads"
   "tarjans-scc"
   "typed-holes"
-  "your-first-functional-deployment"
 ])
