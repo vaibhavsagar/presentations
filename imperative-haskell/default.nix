@@ -3,6 +3,7 @@ let
   IHaskell = pkgs.ihaskell;
   pinned   = pkgs.nixpkgs;
 in import "${IHaskell}/release.nix" {
+  compiler = "ghc822";
   nixpkgs = import pinned {};
   packages = self: with self; [
     containers
