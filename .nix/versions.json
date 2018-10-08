@@ -2,15 +2,16 @@
   "ihaskell": {
     "owner": "gibiansky",
     "repo": "IHaskell",
-    "rev": "673ad74b427882d1f30d2934e38ef843186b9dfa",
-    "sha256": "1a78rbky3vavz5ayj19kzzxd2x43hkbl74vm53zh3yg1q8mgkrm2"
+    "branch": "master",
+    "rev": "d57489ae80f5a2eb261b687541fed07bcd4ff12b",
+    "sha256": "1m4y84v5dc18r9jm13jcayfpyy0bqcc06xg5qmkm8mc9wnfxpygp"
   },
   "nixpkgs": {
     "owner": "NixOS",
     "repo": "nixpkgs-channels",
-    "branch": "nixos-18.03",
-    "rev": "01f5e794913a18494642b5f237bd76c054339d61",
-    "sha256": "1a5k4a2i95brssc80l3f3ys9icl03zdw0rg25zlg4qcxld894hwh"
+    "branch": "nixos-18.09",
+    "rev": "617607e0437ff0ad34687498746e8970aae6d9bc",
+    "sha256": "1wiba0yf5zpgz87jjhv42aa68am1cz3i95xw1fmqpc25662z3cna"
   },
   "revealjs": {
     "owner": "hakimel",
