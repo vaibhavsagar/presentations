@@ -6,6 +6,7 @@ let
   });
 in linkFarm "presentations" (presentations [
   "functional-devops"
+  "functional-ingsoc"
   "lazy-functional-state-threads"
   "tarjans-scc"
   "typed-holes"
