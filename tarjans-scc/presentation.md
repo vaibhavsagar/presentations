@@ -1,82 +1,46 @@
-% Tarjan's Strongly Connected Components Algorithm
+% Now You're Cooking with DAGs!
 % Vaibhav Sagar
 
-# What is a strongly connected component
+# Drawing a Git repository
 
-## Definition
+# All Git commit graphs are DAGs
 
-- A subgraph is said to be strongly connected if every vertex is
-  reachable from every other vertex.
+## Here's a DAG
 
-##
+## Here's a not-DAG
 
-![Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png)
+# What I need
 
-# The Algorithm
+## Determinining DAGness
 
-## Pseudocode
+## Highlighting not-DAG bits
 
-- [Wikipedia!](https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm#The_algorithm_in_pseudocode)
+## Processing vertices in some order
 
-## Code
+# How???
 
-- [I did it in Haskell](https://github.com/vaibhavsagar/courses/blob/master/algorithms1/week4/SCC.ipynb)
+## StackOverflow search
 
-## Linear Time!
+## Tarjan's Algorithm
 
-## So why is this useful?
+## What's an SCC?
 
-# Directed Acyclic Graphs
+## Topological sort
 
-## Definition
+# Demonstration
 
--  A finite directed graph with no directed cycles.
+# Applications
 
-##
+## Build tools
 
-![Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/f/fe/Tred-G.svg)
+## Dataflow processing (Tensorflow)
 
-##
-![Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Graph_Condensation.svg)
+## 2-SAT
 
-# Git & Build Tools
+# Takeaways
 
-## Git
+## Reverse topological sort
 
-- If I draw a commit graph, would it be a valid history?
+## Strongly connected components
 
-## Build Tools
-
-- Can the components of this project be built in the correct order?
-
-# Topological sorting
-
-## Definition
-
-- A linear ordering of its vertices such that for every directed edge _uv_ from vertex _u_ to vertex _v_, _u_ comes before _v_ in the ordering.
-
-##
-
-![Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/c/c6/Topological_Ordering.svg)
-
-## Why Tarjan's SCC is awesome
-
-- It computes the SCCs _and_ a reverse topological sort at the same time!
-
-# 2SAT
-
-## Definition
-
-- Can a collection of boolean variables with constraints on pairs of variables be assigned values satisfying all the constraints?
-
-## It's a graph problem
-
-- `(u || v) == (not u => v) || (not v => u)`
-- find the SCCs
-- if a SCC contains _u_ and _not u_, it's unsatisfiable
-- otherwise, topologically sort the results and use this to assign _T_ and _F_
-  to the variables
-
-## Code
-
-- [I did it in Haskell](https://github.com/vaibhavsagar/courses/blob/master/algorithms2/week6/Week6.ipynb)
+## Tarjan's Algorithm
