@@ -31,111 +31,111 @@
 
 ##
 
-<img src=/demo/0.svg>
+<img src=demo/0.svg>
 
 ##
 
-<img src=/demo/1.svg>
+<img src=demo/1.svg>
 
 ##
 
-<img src=/demo/2.svg>
+<img src=demo/2.svg>
 
 ##
 
-<img src=/demo/3.svg>
+<img src=demo/3.svg>
 
 ##
 
-<img src=/demo/4.svg>
+<img src=demo/4.svg>
 
 ##
 
-<img src=/demo/5.svg>
+<img src=demo/5.svg>
 
 ##
 
-<img src=/demo/6.svg>
+<img src=demo/6.svg>
 
 ##
 
-<img src=/demo/7.svg>
+<img src=demo/7.svg>
 
 ##
 
-<img src=/demo/8.svg>
+<img src=demo/8.svg>
 
 ##
 
-<img src=/demo/9.svg>
+<img src=demo/9.svg>
 
 ##
 
-<img src=/demo/10.svg>
+<img src=demo/10.svg>
 
 ##
 
-<img src=/demo/11.svg>
+<img src=demo/11.svg>
 
 ##
 
-<img src=/demo/12.svg>
+<img src=demo/12.svg>
 
 ##
 
-<img src=/demo/13.svg>
+<img src=demo/13.svg>
 
 ##
 
-<img src=/demo/14.svg>
+<img src=demo/14.svg>
 
 ##
 
-<img src=/demo/15.svg>
+<img src=demo/15.svg>
 
 ##
 
-<img src=/demo/16.svg>
+<img src=demo/16.svg>
 
 ##
 
-<img src=/demo/17.svg>
+<img src=demo/17.svg>
 
 ##
 
-<img src=/demo/18.svg>
+<img src=demo/18.svg>
 
 ##
 
-<img src=/demo/19.svg>
+<img src=demo/19.svg>
 
 ##
 
-<img src=/demo/20.svg>
+<img src=demo/20.svg>
 
 ##
 
-<img src=/demo/21.svg>
+<img src=demo/21.svg>
 
 ##
 
-<img src=/demo/22.svg>
+<img src=demo/22.svg>
 
 ##
 
-<img src=/demo/23.svg>
+<img src=demo/23.svg>
 
 ##
 
-<img src=/demo/24.svg>
+<img src=demo/24.svg>
 
 ##
 
-<img src=/demo/25.svg>
+<img src=demo/25.svg>
 
 ##
 
-<img src=/demo/26.svg>
+<img src=demo/26.svg>
 
 # Applications
 
