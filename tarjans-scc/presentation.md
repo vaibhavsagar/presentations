@@ -76,6 +76,8 @@
 
 ## (Reverse) topological sort
 
+## Linear time!
+
 # Demonstration
 
 ##
@@ -279,3 +281,5 @@
 ## Strongly connected components
 
 ## Tarjan's Algorithm
+
+# Thanks!
