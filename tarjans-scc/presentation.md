@@ -7,7 +7,11 @@
 
 ## Here's a DAG
 
+<img src=images/dag.svg>
+
 ## Here's a not-DAG
+
+<img src=images/notdag.svg>
 
 # What I need
 
@@ -21,7 +25,21 @@
 
 ## StackOverflow search
 
-## What's an SCC?
+<img src=images/question.png>
+
+*Source: https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic*
+
+## Topological sort
+
+<img src=images/toposort.png>
+
+*Source: https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic*
+
+## SCCs
+
+<img src=images/tarjansccalgo.png>
+
+*Source: https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic*
 
 ## Tarjan's Algorithm
 
@@ -82,186 +100,186 @@
 
 ##
 
-<img src=demo/0.svg>
+<img src=images/0.svg>
 
 ##
 
-<img src=demo/1.svg>
+<img src=images/1.svg>
 
 - stack: []
 - output: []
 
 ##
 
-<img src=demo/2.svg>
+<img src=images/2.svg>
 
 - stack: [ 1 ]
 - output: []
 
 ##
 
-<img src=demo/3.svg>
+<img src=images/3.svg>
 
 - stack: [ 2, 1 ]
 - output: []
 
 ##
 
-<img src=demo/4.svg>
+<img src=images/4.svg>
 
 - stack: [ 3, 2, 1 ]
 - output: []
 
 ##
 
-<img src=demo/5.svg>
+<img src=images/5.svg>
 
 - stack: [ 3, 2, 1 ]
 - output: []
 
 ##
 
-<img src=demo/6.svg>
+<img src=images/6.svg>
 
 - stack: [ 3, 2, 1 ]
 - output: []
 
 ##
 
-<img src=demo/7.svg>
+<img src=images/7.svg>
 
 - stack: [ 3, 2, 1 ]
 - output: []
 
 ##
 
-<img src=demo/8.svg>
+<img src=images/8.svg>
 
 - stack: []
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/9.svg>
+<img src=images/9.svg>
 
 - stack: [ 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/10.svg>
+<img src=images/10.svg>
 
 - stack: [ 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/11.svg>
+<img src=images/11.svg>
 
 - stack: [ 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/12.svg>
+<img src=images/12.svg>
 
 - stack: [ 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/13.svg>
+<img src=images/13.svg>
 
 - stack: [ 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/14.svg>
+<img src=images/14.svg>
 
 - stack: [ 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/15.svg>
+<img src=images/15.svg>
 
 - stack: [ 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/16.svg>
+<img src=images/16.svg>
 
 - stack: [ 7, 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/17.svg>
+<img src=images/17.svg>
 
 - stack: [ 7, 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/18.svg>
+<img src=images/18.svg>
 
 - stack: [ 7, 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/19.svg>
+<img src=images/19.svg>
 
 - stack: [ 7, 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=demo/20.svg>
+<img src=images/20.svg>
 
 - stack: [ 5, 4 ]
 - output: [ [3, 2, 1], [ 7, 6 ] ]
 
 ##
 
-<img src=demo/21.svg>
+<img src=images/21.svg>
 
 - stack: [ 5, 4 ]
 - output: [ [3, 2, 1], [ 7, 6 ] ]
 
 ##
 
-<img src=demo/22.svg>
+<img src=images/22.svg>
 
 - stack: [ 5, 4 ]
 - output: [ [3, 2, 1], [ 7, 6 ] ]
 
 ##
 
-<img src=demo/23.svg>
+<img src=images/23.svg>
 
 - stack: []
 - output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ] ]
 
 ##
 
-<img src=demo/24.svg>
+<img src=images/24.svg>
 
 - stack: [ 8 ]
 - output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ] ]
 
 ##
 
-<img src=demo/25.svg>
+<img src=images/25.svg>
 
 - stack: [ 8 ]
 - output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ] ]
 
 ##
 
-<img src=demo/26.svg>
+<img src=images/26.svg>
 
 - stack: []
 - output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ], [ 8 ] ]
@@ -270,7 +288,11 @@
 
 ## Build tools
 
-## Dataflow processing (Tensorflow)
+## Dataflow processing
+
+## Dataflow processing
+
+<img src=images/tensorflowscc.png>
 
 ## 2-SAT
 
