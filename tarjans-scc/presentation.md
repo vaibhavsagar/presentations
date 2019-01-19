@@ -1,5 +1,6 @@
 % Now You're Cooking with DAGs!
 % Vaibhav Sagar
+% @vbhvsgr
 
 # Drawing a Git repository
 
