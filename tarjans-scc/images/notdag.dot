@@ -1,8 +1,8 @@
 digraph {
-    A -> { B C }
-    B -> E
-    C -> E
-    C -> D [dir=back]
-    D -> E [dir=back,color=red]
+    A -> { B C } [dir=back]
+    B -> E [dir=back]
+    C -> E [dir=back]
+    C -> D
+    D -> E [color=red]
 {rank=same; B C D}
 }
