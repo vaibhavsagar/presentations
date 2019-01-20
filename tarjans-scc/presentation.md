@@ -8,11 +8,11 @@
 
 ## Here's a DAG
 
-<img src=images/dag.svg>
+<img src="images/dag.svg">
 
 ## Here's a not-DAG
 
-<img src=images/notdag.svg>
+<img src="images/notdag.svg">
 
 # What I need
 
@@ -36,11 +36,23 @@
 
 *Source: https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic*
 
+## Topological sort
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Topological_Ordering.svg" style="height: 9em;">
+
+*Source: https://upload.wikimedia.org/wikipedia/commons/c/c6/Topological_Ordering.svg*
+
 ## SCCs
 
 <img src=images/tarjansccalgo.png>
 
 *Source: https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic*
+
+## SCCs
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png">
+
+*Source: https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png*
 
 ## Tarjan's Algorithm
 
@@ -101,186 +113,186 @@
 
 ##
 
-<img src=images/0.svg>
+<img src="images/0.svg" style="height: 9em;">
 
 ##
 
-<img src=images/1.svg>
+<img src="images/1.svg" style="height: 9em;">
 
 - stack: []
 - output: []
 
 ##
 
-<img src=images/2.svg>
+<img src="images/2.svg" style="height: 9em;">
 
 - stack: [ 1 ]
 - output: []
 
 ##
 
-<img src=images/3.svg>
+<img src="images/3.svg" style="height: 9em;">
 
 - stack: [ 2, 1 ]
 - output: []
 
 ##
 
-<img src=images/4.svg>
+<img src="images/4.svg" style="height: 9em;">
 
 - stack: [ 3, 2, 1 ]
 - output: []
 
 ##
 
-<img src=images/5.svg>
+<img src="images/5.svg" style="height: 9em;">
 
 - stack: [ 3, 2, 1 ]
 - output: []
 
 ##
 
-<img src=images/6.svg>
+<img src="images/6.svg" style="height: 9em;">
 
 - stack: [ 3, 2, 1 ]
 - output: []
 
 ##
 
-<img src=images/7.svg>
+<img src="images/7.svg" style="height: 9em;">
 
 - stack: [ 3, 2, 1 ]
 - output: []
 
 ##
 
-<img src=images/8.svg>
+<img src="images/8.svg" style="height: 9em;">
 
 - stack: []
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/9.svg>
+<img src="images/9.svg" style="height: 9em;">
 
 - stack: [ 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/10.svg>
+<img src="images/10.svg" style="height: 9em;">
 
 - stack: [ 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/11.svg>
+<img src="images/11.svg" style="height: 9em;">
 
 - stack: [ 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/12.svg>
+<img src="images/12.svg" style="height: 9em;">
 
 - stack: [ 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/13.svg>
+<img src="images/13.svg" style="height: 9em;">
 
 - stack: [ 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/14.svg>
+<img src="images/14.svg" style="height: 9em;">
 
 - stack: [ 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/15.svg>
+<img src="images/15.svg" style="height: 9em;">
 
 - stack: [ 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/16.svg>
+<img src="images/16.svg" style="height: 9em;">
 
 - stack: [ 7, 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/17.svg>
+<img src="images/17.svg" style="height: 9em;">
 
 - stack: [ 7, 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/18.svg>
+<img src="images/18.svg" style="height: 9em;">
 
 - stack: [ 7, 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/19.svg>
+<img src="images/19.svg" style="height: 9em;">
 
 - stack: [ 7, 6, 5, 4 ]
 - output: [ [3, 2, 1] ]
 
 ##
 
-<img src=images/20.svg>
+<img src="images/20.svg" style="height: 9em;">
 
 - stack: [ 5, 4 ]
 - output: [ [3, 2, 1], [ 7, 6 ] ]
 
 ##
 
-<img src=images/21.svg>
+<img src="images/21.svg" style="height: 9em;">
 
 - stack: [ 5, 4 ]
 - output: [ [3, 2, 1], [ 7, 6 ] ]
 
 ##
 
-<img src=images/22.svg>
+<img src="images/22.svg" style="height: 9em;">
 
 - stack: [ 5, 4 ]
 - output: [ [3, 2, 1], [ 7, 6 ] ]
 
 ##
 
-<img src=images/23.svg>
+<img src="images/23.svg" style="height: 9em;">
 
 - stack: []
 - output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ] ]
 
 ##
 
-<img src=images/24.svg>
+<img src="images/24.svg" style="height: 9em;">
 
 - stack: [ 8 ]
 - output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ] ]
 
 ##
 
-<img src=images/25.svg>
+<img src="images/25.svg" style="height: 9em;">
 
 - stack: [ 8 ]
 - output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ] ]
 
 ##
 
-<img src=images/26.svg>
+<img src="images/26.svg" style="height: 9em;">
 
 - stack: []
 - output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ], [ 8 ] ]
