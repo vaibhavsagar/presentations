@@ -104,10 +104,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section><section id="drawing-a-git-repository" class="title-slide slide level1"><h1>Drawing a Git repository</h1></section></section>
 <section><section id="all-git-commit-graphs-are-dags" class="title-slide slide level1"><h1>All Git commit graphs are DAGs</h1></section><section id="heres-a-dag" class="slide level2">
 <h2>Here’s a DAG</h2>
-<p><img src=images/dag.svg></p>
+<p><img src="images/dag.svg"></p>
 </section><section id="heres-a-not-dag" class="slide level2">
 <h2>Here’s a not-DAG</h2>
-<p><img src=images/notdag.svg></p>
+<p><img src="images/notdag.svg"></p>
 </section></section>
 <section><section id="what-i-need" class="title-slide slide level1"><h1>What I need</h1></section><section id="determinining-dagness" class="slide level2">
 <h2>Determinining DAGness</h2>
@@ -124,10 +124,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Topological sort</h2>
 <p><img src=images/toposort.png></p>
 <p><em>Source: https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic</em></p>
+</section><section id="topological-sort-1" class="slide level2">
+<h2>Topological sort</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Topological_Ordering.svg" style="height: 9em;"></p>
+<p><em>Source: https://upload.wikimedia.org/wikipedia/commons/c/c6/Topological_Ordering.svg</em></p>
 </section><section id="sccs" class="slide level2">
 <h2>SCCs</h2>
 <p><img src=images/tarjansccalgo.png></p>
 <p><em>Source: https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic</em></p>
+</section><section id="sccs-1" class="slide level2">
+<h2>SCCs</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png"></p>
+<p><em>Source: https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png</em></p>
 </section><section id="tarjans-algorithm" class="slide level2">
 <h2>Tarjan’s Algorithm</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><a class="sourceLine" id="cb1-1" data-line-number="1"> algorithm tarjan is</a>
@@ -183,185 +191,185 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section></section>
 <section><section id="demonstration" class="title-slide slide level1"><h1>Demonstration</h1></section><section id="section" class="slide level2">
 <h2></h2>
-<p><img src=images/0.svg></p>
+<p><img src="images/0.svg" style="height: 9em;"></p>
 </section><section id="section-1" class="slide level2">
 <h2></h2>
-<p><img src=images/1.svg></p>
+<p><img src="images/1.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: <a href="#/section-26"></a></li>
 <li>output: <a href="#/section-26"></a></li>
 </ul>
 </section><section id="section-2" class="slide level2">
 <h2></h2>
-<p><img src=images/2.svg></p>
+<p><img src="images/2.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 1 ]</li>
 <li>output: <a href="#/section-26"></a></li>
 </ul>
 </section><section id="section-3" class="slide level2">
 <h2></h2>
-<p><img src=images/3.svg></p>
+<p><img src="images/3.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 2, 1 ]</li>
 <li>output: <a href="#/section-26"></a></li>
 </ul>
 </section><section id="section-4" class="slide level2">
 <h2></h2>
-<p><img src=images/4.svg></p>
+<p><img src="images/4.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 3, 2, 1 ]</li>
 <li>output: <a href="#/section-26"></a></li>
 </ul>
 </section><section id="section-5" class="slide level2">
 <h2></h2>
-<p><img src=images/5.svg></p>
+<p><img src="images/5.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 3, 2, 1 ]</li>
 <li>output: <a href="#/section-26"></a></li>
 </ul>
 </section><section id="section-6" class="slide level2">
 <h2></h2>
-<p><img src=images/6.svg></p>
+<p><img src="images/6.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 3, 2, 1 ]</li>
 <li>output: <a href="#/section-26"></a></li>
 </ul>
 </section><section id="section-7" class="slide level2">
 <h2></h2>
-<p><img src=images/7.svg></p>
+<p><img src="images/7.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 3, 2, 1 ]</li>
 <li>output: <a href="#/section-26"></a></li>
 </ul>
 </section><section id="section-8" class="slide level2">
 <h2></h2>
-<p><img src=images/8.svg></p>
+<p><img src="images/8.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: <a href="#/section-26"></a></li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-9" class="slide level2">
 <h2></h2>
-<p><img src=images/9.svg></p>
+<p><img src="images/9.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 4 ]</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-10" class="slide level2">
 <h2></h2>
-<p><img src=images/10.svg></p>
+<p><img src="images/10.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 4 ]</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-11" class="slide level2">
 <h2></h2>
-<p><img src=images/11.svg></p>
+<p><img src="images/11.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 4 ]</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-12" class="slide level2">
 <h2></h2>
-<p><img src=images/12.svg></p>
+<p><img src="images/12.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 5, 4 ]</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-13" class="slide level2">
 <h2></h2>
-<p><img src=images/13.svg></p>
+<p><img src="images/13.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 5, 4 ]</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-14" class="slide level2">
 <h2></h2>
-<p><img src=images/14.svg></p>
+<p><img src="images/14.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 6, 5, 4 ]</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-15" class="slide level2">
 <h2></h2>
-<p><img src=images/15.svg></p>
+<p><img src="images/15.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 6, 5, 4 ]</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-16" class="slide level2">
 <h2></h2>
-<p><img src=images/16.svg></p>
+<p><img src="images/16.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 7, 6, 5, 4 ]</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-17" class="slide level2">
 <h2></h2>
-<p><img src=images/17.svg></p>
+<p><img src="images/17.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 7, 6, 5, 4 ]</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-18" class="slide level2">
 <h2></h2>
-<p><img src=images/18.svg></p>
+<p><img src="images/18.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 7, 6, 5, 4 ]</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-19" class="slide level2">
 <h2></h2>
-<p><img src=images/19.svg></p>
+<p><img src="images/19.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 7, 6, 5, 4 ]</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-20" class="slide level2">
 <h2></h2>
-<p><img src=images/20.svg></p>
+<p><img src="images/20.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 5, 4 ]</li>
 <li>output: [ [3, 2, 1], [ 7, 6 ] ]</li>
 </ul>
 </section><section id="section-21" class="slide level2">
 <h2></h2>
-<p><img src=images/21.svg></p>
+<p><img src="images/21.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 5, 4 ]</li>
 <li>output: [ [3, 2, 1], [ 7, 6 ] ]</li>
 </ul>
 </section><section id="section-22" class="slide level2">
 <h2></h2>
-<p><img src=images/22.svg></p>
+<p><img src="images/22.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 5, 4 ]</li>
 <li>output: [ [3, 2, 1], [ 7, 6 ] ]</li>
 </ul>
 </section><section id="section-23" class="slide level2">
 <h2></h2>
-<p><img src=images/23.svg></p>
+<p><img src="images/23.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: <a href="#/section-26"></a></li>
 <li>output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ] ]</li>
 </ul>
 </section><section id="section-24" class="slide level2">
 <h2></h2>
-<p><img src=images/24.svg></p>
+<p><img src="images/24.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 8 ]</li>
 <li>output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ] ]</li>
 </ul>
 </section><section id="section-25" class="slide level2">
 <h2></h2>
-<p><img src=images/25.svg></p>
+<p><img src="images/25.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 8 ]</li>
 <li>output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ] ]</li>
 </ul>
 </section><section id="section-26" class="slide level2">
 <h2></h2>
-<p><img src=images/26.svg></p>
+<p><img src="images/26.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: <a href="#/section-26"></a></li>
 <li>output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ], [ 8 ] ]</li>
