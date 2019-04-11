@@ -9,13 +9,13 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
+  <style>
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
@@ -33,7 +33,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -126,16 +126,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section></section>
 <section><section id="a-tiny-web-service" class="title-slide slide level1"><h1>A Tiny Web Service</h1></section><section id="blank-me-up" class="slide level2">
 <h2>Blank Me Up</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb1-1" data-line-number="1"> <span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">import</span> <span class="dt">Web.Scotty</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">import</span> <span class="dt">Data.Monoid</span> (mconcat)</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">main <span class="fu">=</span> scotty <span class="dv">3000</span> <span class="fu">$</span> <span class="kw">do</span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">    get <span class="st">&quot;/:word&quot;</span> <span class="fu">$</span> <span class="kw">do</span></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9">        beam <span class="ot">&lt;-</span> param <span class="st">&quot;word&quot;</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10">        html <span class="fu">$</span> mconcat [<span class="st">&quot;&lt;h1&gt;Scotty, &quot;</span>, beam, <span class="st">&quot; me up!&lt;/h1&gt;&quot;</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb1-1" title="1"> <span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">import</span> <span class="dt">Web.Scotty</span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="kw">import</span> <span class="dt">Data.Monoid</span> (mconcat)</a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7">main <span class="ot">=</span> scotty <span class="dv">3000</span> <span class="op">$</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb1-8" title="8">    get <span class="st">&quot;/:word&quot;</span> <span class="op">$</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb1-9" title="9">        beam <span class="ot">&lt;-</span> param <span class="st">&quot;word&quot;</span></a>
+<a class="sourceLine" id="cb1-10" title="10">        html <span class="op">$</span> <span class="fu">mconcat</span> [<span class="st">&quot;&lt;h1&gt;Scotty, &quot;</span>, beam, <span class="st">&quot; me up!&lt;/h1&gt;&quot;</span>]</a></code></pre></div>
 <p><em>app/Main.hs</em></p>
 </section><section id="blank-me-up-1" class="slide level2">
 <h2>Blank Me Up</h2>
@@ -153,245 +153,245 @@ executable blank-me-up
 <p><em>app/blank-me-up.cabal</em></p>
 </section><section id="nix" class="slide level2">
 <h2>Nix</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1">$ <span class="fu">mkdir</span> nix</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">$ <span class="bu">cd</span> nix/</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">$ <span class="ex">cabal2nix</span> --shell ../app/ <span class="op">&gt;</span> default.nix</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">$ <span class="ex">nix-build</span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="op">&lt;</span><span class="ex">...</span><span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">$ <span class="ex">nix-build</span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">$ <span class="ex">result/bin/blank-me-up</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1">$ <span class="fu">mkdir</span> nix</a>
+<a class="sourceLine" id="cb3-2" title="2">$ <span class="bu">cd</span> nix/</a>
+<a class="sourceLine" id="cb3-3" title="3">$ <span class="ex">cabal2nix</span> --shell ../app/ <span class="op">&gt;</span> default.nix</a>
+<a class="sourceLine" id="cb3-4" title="4">$ <span class="ex">nix-build</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="op">&lt;</span><span class="ex">...</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb3-6" title="6">$ <span class="ex">nix-build</span></a>
+<a class="sourceLine" id="cb3-7" title="7">$ <span class="ex">result/bin/blank-me-up</span></a></code></pre></div>
 </section><section id="service" class="slide level2">
 <h2>Service</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="bu">let</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw">in</span> <span class="kw">{</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">  <span class="ex">options</span>                             =                                 <span class="kw">;</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8">  <span class="ex">config</span> =                      </a>
-<a class="sourceLine" id="cb4-9" data-line-number="9">                                                   </a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11">                                    </a>
-<a class="sourceLine" id="cb4-12" data-line-number="12">                                  </a>
-<a class="sourceLine" id="cb4-13" data-line-number="13">                                   </a>
-<a class="sourceLine" id="cb4-14" data-line-number="14">                                         </a>
-<a class="sourceLine" id="cb4-15" data-line-number="15">                       </a>
-<a class="sourceLine" id="cb4-16" data-line-number="16">                                                     </a>
-<a class="sourceLine" id="cb4-17" data-line-number="17">                           </a>
-<a class="sourceLine" id="cb4-18" data-line-number="18">                             </a>
-<a class="sourceLine" id="cb4-19" data-line-number="19">        </a>
-<a class="sourceLine" id="cb4-20" data-line-number="20">      </a>
-<a class="sourceLine" id="cb4-21" data-line-number="21">   ;</a>
-<a class="sourceLine" id="cb4-22" data-line-number="22"><span class="kw">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:</a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="bu">let</span></a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="kw">in</span> <span class="kw">{</span></a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="ex">options</span>                             =                                 <span class="kw">;</span></a>
+<a class="sourceLine" id="cb4-7" title="7"></a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="ex">config</span> =                      </a>
+<a class="sourceLine" id="cb4-9" title="9">                                                   </a>
+<a class="sourceLine" id="cb4-10" title="10"></a>
+<a class="sourceLine" id="cb4-11" title="11">                                    </a>
+<a class="sourceLine" id="cb4-12" title="12">                                  </a>
+<a class="sourceLine" id="cb4-13" title="13">                                   </a>
+<a class="sourceLine" id="cb4-14" title="14">                                         </a>
+<a class="sourceLine" id="cb4-15" title="15">                       </a>
+<a class="sourceLine" id="cb4-16" title="16">                                                     </a>
+<a class="sourceLine" id="cb4-17" title="17">                           </a>
+<a class="sourceLine" id="cb4-18" title="18">                             </a>
+<a class="sourceLine" id="cb4-19" title="19">        </a>
+<a class="sourceLine" id="cb4-20" title="20">      </a>
+<a class="sourceLine" id="cb4-21" title="21">   ;</a>
+<a class="sourceLine" id="cb4-22" title="22"><span class="kw">}</span></a></code></pre></div>
 <p><em>nix/service.nix</em></p>
 </section><section id="service-1" class="slide level2">
 <h2>Service</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="bu">let</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> };</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="kw">in</span> <span class="kw">{</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">  <span class="ex">options</span>                             =                                 <span class="kw">;</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">  <span class="ex">config</span> =</a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb5-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb5-20" data-line-number="20"></a>
-<a class="sourceLine" id="cb5-21" data-line-number="21">   ;</a>
-<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="kw">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:</a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="bu">let</span></a>
+<a class="sourceLine" id="cb5-4" title="4">  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> };</a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="kw">in</span> <span class="kw">{</span></a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="ex">options</span>                             =                                 <span class="kw">;</span></a>
+<a class="sourceLine" id="cb5-7" title="7"></a>
+<a class="sourceLine" id="cb5-8" title="8">  <span class="ex">config</span> =</a>
+<a class="sourceLine" id="cb5-9" title="9"></a>
+<a class="sourceLine" id="cb5-10" title="10"></a>
+<a class="sourceLine" id="cb5-11" title="11"></a>
+<a class="sourceLine" id="cb5-12" title="12"></a>
+<a class="sourceLine" id="cb5-13" title="13"></a>
+<a class="sourceLine" id="cb5-14" title="14"></a>
+<a class="sourceLine" id="cb5-15" title="15"></a>
+<a class="sourceLine" id="cb5-16" title="16"></a>
+<a class="sourceLine" id="cb5-17" title="17"></a>
+<a class="sourceLine" id="cb5-18" title="18"></a>
+<a class="sourceLine" id="cb5-19" title="19"></a>
+<a class="sourceLine" id="cb5-20" title="20"></a>
+<a class="sourceLine" id="cb5-21" title="21">   ;</a>
+<a class="sourceLine" id="cb5-22" title="22"><span class="kw">}</span></a></code></pre></div>
 <p><em>nix/service.nix</em></p>
 </section><section id="service-2" class="slide level2">
 <h2>Service</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="bu">let</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> };</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw">in</span> <span class="kw">{</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8">  <span class="ex">config</span> = lib.mkIf config.services.blank-me-up.enable {</a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb6-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb6-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb6-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb6-17" data-line-number="17"></a>
-<a class="sourceLine" id="cb6-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb6-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb6-20" data-line-number="20"></a>
-<a class="sourceLine" id="cb6-21" data-line-number="21">  <span class="kw">}</span>;</a>
-<a class="sourceLine" id="cb6-22" data-line-number="22">}</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:</a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="bu">let</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> };</a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="kw">in</span> <span class="kw">{</span></a>
+<a class="sourceLine" id="cb6-6" title="6">  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb6-7" title="7"></a>
+<a class="sourceLine" id="cb6-8" title="8">  <span class="ex">config</span> = lib.mkIf config.services.blank-me-up.enable {</a>
+<a class="sourceLine" id="cb6-9" title="9"></a>
+<a class="sourceLine" id="cb6-10" title="10"></a>
+<a class="sourceLine" id="cb6-11" title="11"></a>
+<a class="sourceLine" id="cb6-12" title="12"></a>
+<a class="sourceLine" id="cb6-13" title="13"></a>
+<a class="sourceLine" id="cb6-14" title="14"></a>
+<a class="sourceLine" id="cb6-15" title="15"></a>
+<a class="sourceLine" id="cb6-16" title="16"></a>
+<a class="sourceLine" id="cb6-17" title="17"></a>
+<a class="sourceLine" id="cb6-18" title="18"></a>
+<a class="sourceLine" id="cb6-19" title="19"></a>
+<a class="sourceLine" id="cb6-20" title="20"></a>
+<a class="sourceLine" id="cb6-21" title="21">  <span class="kw">}</span>;</a>
+<a class="sourceLine" id="cb6-22" title="22">}</a></code></pre></div>
 <p><em>nix/service.nix</em></p>
 </section><section id="service-3" class="slide level2">
 <h2>Service</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="bu">let</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> };</a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="kw">in</span> <span class="kw">{</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6">  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8">  <span class="ex">config</span> = lib.mkIf config.services.blank-me-up.enable {</a>
-<a class="sourceLine" id="cb7-9" data-line-number="9">    <span class="ex">networking.firewall.allowedTCPPorts</span> = [ 3000 ]<span class="kw">;</span></a>
-<a class="sourceLine" id="cb7-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb7-11" data-line-number="11">    <span class="ex">systemd.services.blank-me-up</span> = {</a>
-<a class="sourceLine" id="cb7-12" data-line-number="12">      <span class="ex">description</span> = <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb7-13" data-line-number="13">      <span class="ex">after</span> = [ <span class="st">&quot;network.target&quot;</span> ]<span class="kw">;</span></a>
-<a class="sourceLine" id="cb7-14" data-line-number="14">      <span class="ex">wantedBy</span> = [ <span class="st">&quot;multi-user.target&quot;</span> ]<span class="kw">;</span></a>
-<a class="sourceLine" id="cb7-15" data-line-number="15">      <span class="ex">serviceConfig</span> = {</a>
-<a class="sourceLine" id="cb7-16" data-line-number="16">        <span class="ex">ExecStart</span> = <span class="st">&quot;</span><span class="va">${blank-</span>me-up<span class="va">}</span><span class="st">/bin/blank-me-up&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb7-17" data-line-number="17">        <span class="ex">Restart</span> = <span class="st">&quot;always&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb7-18" data-line-number="18">        <span class="ex">KillMode</span> = <span class="st">&quot;process&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb7-19" data-line-number="19">      <span class="kw">}</span>;</a>
-<a class="sourceLine" id="cb7-20" data-line-number="20">    };</a>
-<a class="sourceLine" id="cb7-21" data-line-number="21">  };</a>
-<a class="sourceLine" id="cb7-22" data-line-number="22">}</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:</a>
+<a class="sourceLine" id="cb7-2" title="2"></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="bu">let</span></a>
+<a class="sourceLine" id="cb7-4" title="4">  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> };</a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="kw">in</span> <span class="kw">{</span></a>
+<a class="sourceLine" id="cb7-6" title="6">  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb7-7" title="7"></a>
+<a class="sourceLine" id="cb7-8" title="8">  <span class="ex">config</span> = lib.mkIf config.services.blank-me-up.enable {</a>
+<a class="sourceLine" id="cb7-9" title="9">    <span class="ex">networking.firewall.allowedTCPPorts</span> = [ 3000 ]<span class="kw">;</span></a>
+<a class="sourceLine" id="cb7-10" title="10"></a>
+<a class="sourceLine" id="cb7-11" title="11">    <span class="ex">systemd.services.blank-me-up</span> = {</a>
+<a class="sourceLine" id="cb7-12" title="12">      <span class="ex">description</span> = <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb7-13" title="13">      <span class="ex">after</span> = [ <span class="st">&quot;network.target&quot;</span> ]<span class="kw">;</span></a>
+<a class="sourceLine" id="cb7-14" title="14">      <span class="ex">wantedBy</span> = [ <span class="st">&quot;multi-user.target&quot;</span> ]<span class="kw">;</span></a>
+<a class="sourceLine" id="cb7-15" title="15">      <span class="ex">serviceConfig</span> = {</a>
+<a class="sourceLine" id="cb7-16" title="16">        <span class="ex">ExecStart</span> = <span class="st">&quot;</span><span class="va">${blank-</span>me-up<span class="va">}</span><span class="st">/bin/blank-me-up&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb7-17" title="17">        <span class="ex">Restart</span> = <span class="st">&quot;always&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb7-18" title="18">        <span class="ex">KillMode</span> = <span class="st">&quot;process&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb7-19" title="19">      <span class="kw">}</span>;</a>
+<a class="sourceLine" id="cb7-20" title="20">    };</a>
+<a class="sourceLine" id="cb7-21" title="21">  };</a>
+<a class="sourceLine" id="cb7-22" title="22">}</a></code></pre></div>
 <p><em>nix/service.nix</em></p>
 </section><section id="functional" class="slide level2">
 <h2>Functional?</h2>
 </section></section>
 <section><section id="shipping-it" class="title-slide slide level1"><h1>Shipping It</h1></section><section id="webserver" class="slide level2">
 <h2>Webserver</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">{</span> <span class="ex">...</span> <span class="kw">}</span>: <span class="kw">{</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">  <span class="ex">imports</span> = [ ../nix/service.nix ]<span class="kw">;</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">  <span class="ex">services.blank-me-up.enable</span> = true<span class="kw">;</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="kw">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">{</span> <span class="ex">...</span> <span class="kw">}</span>: <span class="kw">{</span></a>
+<a class="sourceLine" id="cb8-2" title="2">  <span class="ex">imports</span> = [ ../nix/service.nix ]<span class="kw">;</span></a>
+<a class="sourceLine" id="cb8-3" title="3">  <span class="ex">services.blank-me-up.enable</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="kw">}</span></a></code></pre></div>
 <p><em>ops/webserver.nix</em></p>
 </section><section id="webserver-1" class="slide level2">
 <h2>Webserver</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1">$ <span class="bu">cd</span> ops/</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">$ <span class="ex">nix-instantiate</span> --eval -E <span class="st">&#39;(import &lt;nixpkgs/nixos/lib/eval-config.nix&gt; { modules = [./webserver.nix]; }).config.systemd.units.&quot;blank-me-up.service&quot;.unit.text&#39;</span> <span class="kw">|</span> <span class="ex">jq</span> -r</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">[<span class="ex">Unit</span>]</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="va">After=</span>network.target</a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="va">Description=</span>Blank <span class="ex">Me</span> Up</a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7">[<span class="ex">Service</span>]</a>
-<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="va">Environment=</span><span class="st">&quot;LOCALE_ARCHIVE=/nix/store/xhmzzbq06fbzhvjamnb1192iwqb4wl0i-glibc-locales-2.25-49/lib/locale/locale-archive&quot;</span></a>
-<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="va">Environment=</span><span class="st">&quot;PATH=/nix/store/r90xqqmd36fv3s53bf92s3vxhdnbwfn7-coreutils-8.28/bin:/nix/store/02xjvflg03d9wlzdw1ig54rgwa32jwxq-findutils-4.6.0/bin:/nix/store/wia9b594w2ghzhpcjdi9mnlf8j24nm3i-gnugrep-3.1/bin:/nix/store/j4rqdjgf0im2dv7gycg80hplnjrnawxx-gnused-4.4/bin:/nix/store/dq33ar4qk4fvxx5ji4fg99nw282f08ia-systemd-234/bin:/nix/store/r90xqqmd36fv3s53bf92s3vxhdnbwfn7-coreutils-8.28/sbin:/nix/store/02xjvflg03d9wlzdw1ig54rgwa32jwxq-findutils-4.6.0/sbin:/nix/store/wia9b594w2ghzhpcjdi9mnlf8j24nm3i-gnugrep-3.1/sbin:/nix/store/j4rqdjgf0im2dv7gycg80hplnjrnawxx-gnused-4.4/sbin:/nix/store/dq33ar4qk4fvxx5ji4fg99nw282f08ia-systemd-234/sbin&quot;</span></a>
-<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="va">Environment=</span><span class="st">&quot;TZDIR=/nix/store/1sa5cpnrbdab2463bzbi3xfl3hck3aqk-tzdata-2017c/share/zoneinfo&quot;</span></a>
-<a class="sourceLine" id="cb9-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb9-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb9-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="va">ExecStart=</span>/nix/store/n6ky98lzs0abl1sabc270004hjf7pvnq-blank-me-up-0.1.0.0/bin/blank-me-up</a>
-<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="va">KillMode=</span>process</a>
-<a class="sourceLine" id="cb9-16" data-line-number="16"><span class="va">Restart=</span>always</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1">$ <span class="bu">cd</span> ops/</a>
+<a class="sourceLine" id="cb9-2" title="2">$ <span class="ex">nix-instantiate</span> --eval -E <span class="st">&#39;(import &lt;nixpkgs/nixos/lib/eval-config.nix&gt; { modules = [./webserver.nix]; }).config.systemd.units.&quot;blank-me-up.service&quot;.unit.text&#39;</span> <span class="kw">|</span> <span class="ex">jq</span> -r</a>
+<a class="sourceLine" id="cb9-3" title="3">[<span class="ex">Unit</span>]</a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="va">After=</span>network.target</a>
+<a class="sourceLine" id="cb9-5" title="5"><span class="va">Description=</span>Blank <span class="ex">Me</span> Up</a>
+<a class="sourceLine" id="cb9-6" title="6"></a>
+<a class="sourceLine" id="cb9-7" title="7">[<span class="ex">Service</span>]</a>
+<a class="sourceLine" id="cb9-8" title="8"><span class="va">Environment=</span><span class="st">&quot;LOCALE_ARCHIVE=/nix/store/xhmzzbq06fbzhvjamnb1192iwqb4wl0i-glibc-locales-2.25-49/lib/locale/locale-archive&quot;</span></a>
+<a class="sourceLine" id="cb9-9" title="9"><span class="va">Environment=</span><span class="st">&quot;PATH=/nix/store/r90xqqmd36fv3s53bf92s3vxhdnbwfn7-coreutils-8.28/bin:/nix/store/02xjvflg03d9wlzdw1ig54rgwa32jwxq-findutils-4.6.0/bin:/nix/store/wia9b594w2ghzhpcjdi9mnlf8j24nm3i-gnugrep-3.1/bin:/nix/store/j4rqdjgf0im2dv7gycg80hplnjrnawxx-gnused-4.4/bin:/nix/store/dq33ar4qk4fvxx5ji4fg99nw282f08ia-systemd-234/bin:/nix/store/r90xqqmd36fv3s53bf92s3vxhdnbwfn7-coreutils-8.28/sbin:/nix/store/02xjvflg03d9wlzdw1ig54rgwa32jwxq-findutils-4.6.0/sbin:/nix/store/wia9b594w2ghzhpcjdi9mnlf8j24nm3i-gnugrep-3.1/sbin:/nix/store/j4rqdjgf0im2dv7gycg80hplnjrnawxx-gnused-4.4/sbin:/nix/store/dq33ar4qk4fvxx5ji4fg99nw282f08ia-systemd-234/sbin&quot;</span></a>
+<a class="sourceLine" id="cb9-10" title="10"><span class="va">Environment=</span><span class="st">&quot;TZDIR=/nix/store/1sa5cpnrbdab2463bzbi3xfl3hck3aqk-tzdata-2017c/share/zoneinfo&quot;</span></a>
+<a class="sourceLine" id="cb9-11" title="11"></a>
+<a class="sourceLine" id="cb9-12" title="12"></a>
+<a class="sourceLine" id="cb9-13" title="13"></a>
+<a class="sourceLine" id="cb9-14" title="14"><span class="va">ExecStart=</span>/nix/store/n6ky98lzs0abl1sabc270004hjf7pvnq-blank-me-up-0.1.0.0/bin/blank-me-up</a>
+<a class="sourceLine" id="cb9-15" title="15"><span class="va">KillMode=</span>process</a>
+<a class="sourceLine" id="cb9-16" title="16"><span class="va">Restart=</span>always</a></code></pre></div>
 </section><section id="deployment" class="slide level2">
 <h2>Deployment</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">{</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">  <span class="ex">network.description</span> = <span class="st">&quot;Web server&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">  <span class="ex">network.enableRollback</span> = true<span class="kw">;</span></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5">  <span class="ex">webserver</span> = import ./webserver.nix<span class="kw">;</span></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="kw">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">{</span></a>
+<a class="sourceLine" id="cb10-2" title="2">  <span class="ex">network.description</span> = <span class="st">&quot;Web server&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb10-3" title="3">  <span class="ex">network.enableRollback</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb10-4" title="4"></a>
+<a class="sourceLine" id="cb10-5" title="5">  <span class="ex">webserver</span> = import ./webserver.nix<span class="kw">;</span></a>
+<a class="sourceLine" id="cb10-6" title="6"><span class="kw">}</span></a></code></pre></div>
 <p><em>ops/trivial.nix</em></p>
 </section><section id="deployment-1" class="slide level2">
 <h2>Deployment</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">{</span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">  <span class="ex">webserver</span> =</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3">    <span class="kw">{</span> <span class="ex">config</span>, pkgs, ... <span class="kw">}</span>:</a>
-<a class="sourceLine" id="cb11-4" data-line-number="4">    <span class="kw">{</span> <span class="ex">deployment.targetEnv</span> = <span class="st">&quot;virtualbox&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb11-5" data-line-number="5">      <span class="ex">deployment.virtualbox.headless</span> = true<span class="kw">;</span> <span class="co"># don&#39;t show a display</span></a>
-<a class="sourceLine" id="cb11-6" data-line-number="6">      <span class="ex">deployment.virtualbox.memorySize</span> = 1024<span class="kw">;</span> <span class="co"># megabytes</span></a>
-<a class="sourceLine" id="cb11-7" data-line-number="7">      <span class="ex">deployment.virtualbox.vcpu</span> = 2<span class="kw">;</span> <span class="co"># number of cpus</span></a>
-<a class="sourceLine" id="cb11-8" data-line-number="8">      <span class="ex">nixpkgs.system</span> = <span class="st">&quot;x86_64-linux&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb11-9" data-line-number="9">    <span class="kw">}</span>;</a>
-<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="kw">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">{</span></a>
+<a class="sourceLine" id="cb11-2" title="2">  <span class="ex">webserver</span> =</a>
+<a class="sourceLine" id="cb11-3" title="3">    <span class="kw">{</span> <span class="ex">config</span>, pkgs, ... <span class="kw">}</span>:</a>
+<a class="sourceLine" id="cb11-4" title="4">    <span class="kw">{</span> <span class="ex">deployment.targetEnv</span> = <span class="st">&quot;virtualbox&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb11-5" title="5">      <span class="ex">deployment.virtualbox.headless</span> = true<span class="kw">;</span> <span class="co"># don&#39;t show a display</span></a>
+<a class="sourceLine" id="cb11-6" title="6">      <span class="ex">deployment.virtualbox.memorySize</span> = 1024<span class="kw">;</span> <span class="co"># megabytes</span></a>
+<a class="sourceLine" id="cb11-7" title="7">      <span class="ex">deployment.virtualbox.vcpu</span> = 2<span class="kw">;</span> <span class="co"># number of cpus</span></a>
+<a class="sourceLine" id="cb11-8" title="8">      <span class="ex">nixpkgs.system</span> = <span class="st">&quot;x86_64-linux&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb11-9" title="9">    <span class="kw">}</span>;</a>
+<a class="sourceLine" id="cb11-10" title="10"><span class="kw">}</span></a></code></pre></div>
 <p><em>ops/trivial-vbox.nix</em></p>
 </section><section id="deployment-2" class="slide level2">
 <h2>Deployment</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1">$ <span class="bu">cd</span> ops</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">$ <span class="ex">nixops</span> create trivial.nix trivial-vbox.nix -d trivial</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">$ <span class="ex">nixops</span> deploy -d trivial --force-reboot</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="op">&lt;</span><span class="ex">tons</span> of output...<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5">$ <span class="ex">nixops</span> deploy -d trivial</a>
-<a class="sourceLine" id="cb12-6" data-line-number="6">$ <span class="ex">curl</span> <span class="op">&lt;</span>ip<span class="op">&gt;</span>:3000/help</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1">$ <span class="bu">cd</span> ops</a>
+<a class="sourceLine" id="cb12-2" title="2">$ <span class="ex">nixops</span> create trivial.nix trivial-vbox.nix -d trivial</a>
+<a class="sourceLine" id="cb12-3" title="3">$ <span class="ex">nixops</span> deploy -d trivial --force-reboot</a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="op">&lt;</span><span class="ex">tons</span> of output...<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb12-5" title="5">$ <span class="ex">nixops</span> deploy -d trivial</a>
+<a class="sourceLine" id="cb12-6" title="6">$ <span class="ex">curl</span> <span class="op">&lt;</span>ip<span class="op">&gt;</span>:3000/help</a></code></pre></div>
 </section><section id="functional-1" class="slide level2">
 <h2>Functional?</h2>
 </section></section>
 <section><section id="requirements-change" class="title-slide slide level1"><h1>Requirements Change</h1></section><section id="patched" class="slide level2">
 <h2>Patched</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="ex">args@</span>{ nixpkgs ? import <span class="op">&lt;</span>nixpkgs<span class="op">&gt;</span> <span class="dt">{}</span>, compiler ? <span class="st">&quot;default&quot;</span> }:</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="kw">(</span><span class="ex">import</span> ./default.nix args<span class="kw">)</span><span class="ex">.overrideAttrs</span> (old: {</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4">  <span class="ex">postPatch</span> = let</a>
-<a class="sourceLine" id="cb13-5" data-line-number="5">    <span class="ex">oldImport</span> = <span class="st">&#39;&#39;</span></a>
-<a class="sourceLine" id="cb13-6" data-line-number="6">      <span class="ex">import</span> Web.Scotty</a>
-<a class="sourceLine" id="cb13-7" data-line-number="7">    <span class="st">&#39;&#39;</span>;</a>
-<a class="sourceLine" id="cb13-8" data-line-number="8">    <span class="ex">newImport</span> = <span class="st">&#39;&#39;</span></a>
-<a class="sourceLine" id="cb13-9" data-line-number="9">      <span class="ex">import</span> Web.Scotty</a>
-<a class="sourceLine" id="cb13-10" data-line-number="10">      <span class="ex">import</span> System.Environment (getArgs)</a>
-<a class="sourceLine" id="cb13-11" data-line-number="11">    <span class="st">&#39;&#39;</span>;</a>
-<a class="sourceLine" id="cb13-12" data-line-number="12">    <span class="ex">oldMain</span> = <span class="st">&#39;&#39;</span></a>
-<a class="sourceLine" id="cb13-13" data-line-number="13">      <span class="ex">main</span> = scotty 3000 $ do</a>
-<a class="sourceLine" id="cb13-14" data-line-number="14">    <span class="st">&#39;&#39;</span>;</a>
-<a class="sourceLine" id="cb13-15" data-line-number="15">    <span class="ex">newMain</span> = <span class="st">&#39;&#39;</span></a>
-<a class="sourceLine" id="cb13-16" data-line-number="16">      <span class="ex">main</span> = getArgs <span class="op">&gt;&gt;</span>= <span class="dt">\(</span>port:_) <span class="ex">-</span><span class="op">&gt;</span> scotty (read port) $ <span class="kw">do</span></a>
-<a class="sourceLine" id="cb13-17" data-line-number="17">    <span class="st">&#39;&#39;</span>;</a>
-<a class="sourceLine" id="cb13-18" data-line-number="18">  <span class="kw">in</span> <span class="st">&#39;&#39;</span></a>
-<a class="sourceLine" id="cb13-19" data-line-number="19">    <span class="ex">substituteInPlace</span> Main.hs --replace <span class="st">&#39;${oldImport}&#39;</span> <span class="st">&#39;${newImport}&#39;</span></a>
-<a class="sourceLine" id="cb13-20" data-line-number="20">    <span class="ex">substituteInPlace</span> Main.hs --replace <span class="st">&#39;${oldMain}&#39;</span>   <span class="st">&#39;${newMain}&#39;</span></a>
-<a class="sourceLine" id="cb13-21" data-line-number="21">    <span class="fu">cat</span> Main.hs</a>
-<a class="sourceLine" id="cb13-22" data-line-number="22">  <span class="st">&#39;&#39;</span>;</a>
-<a class="sourceLine" id="cb13-23" data-line-number="23">})</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" title="1"><span class="ex">args@</span>{ nixpkgs ? import <span class="op">&lt;</span>nixpkgs<span class="op">&gt;</span> {}, <span class="ex">compiler</span> ? <span class="st">&quot;default&quot;</span> }:</a>
+<a class="sourceLine" id="cb13-2" title="2"></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="kw">(</span><span class="ex">import</span> ./default.nix args<span class="kw">)</span><span class="ex">.overrideAttrs</span> (old: {</a>
+<a class="sourceLine" id="cb13-4" title="4">  <span class="ex">postPatch</span> = let</a>
+<a class="sourceLine" id="cb13-5" title="5">    <span class="ex">oldImport</span> = <span class="st">&#39;&#39;</span></a>
+<a class="sourceLine" id="cb13-6" title="6">      <span class="ex">import</span> Web.Scotty</a>
+<a class="sourceLine" id="cb13-7" title="7">    <span class="st">&#39;&#39;</span>;</a>
+<a class="sourceLine" id="cb13-8" title="8">    <span class="ex">newImport</span> = <span class="st">&#39;&#39;</span></a>
+<a class="sourceLine" id="cb13-9" title="9">      <span class="ex">import</span> Web.Scotty</a>
+<a class="sourceLine" id="cb13-10" title="10">      <span class="ex">import</span> System.Environment (getArgs)</a>
+<a class="sourceLine" id="cb13-11" title="11">    <span class="st">&#39;&#39;</span>;</a>
+<a class="sourceLine" id="cb13-12" title="12">    <span class="ex">oldMain</span> = <span class="st">&#39;&#39;</span></a>
+<a class="sourceLine" id="cb13-13" title="13">      <span class="ex">main</span> = scotty 3000 $ do</a>
+<a class="sourceLine" id="cb13-14" title="14">    <span class="st">&#39;&#39;</span>;</a>
+<a class="sourceLine" id="cb13-15" title="15">    <span class="ex">newMain</span> = <span class="st">&#39;&#39;</span></a>
+<a class="sourceLine" id="cb13-16" title="16">      <span class="ex">main</span> = getArgs <span class="op">&gt;&gt;</span>= <span class="dt">\(</span>port:_) <span class="ex">-</span><span class="op">&gt;</span> scotty (read port) $ <span class="kw">do</span></a>
+<a class="sourceLine" id="cb13-17" title="17">    <span class="st">&#39;&#39;</span>;</a>
+<a class="sourceLine" id="cb13-18" title="18">  <span class="kw">in</span> <span class="st">&#39;&#39;</span></a>
+<a class="sourceLine" id="cb13-19" title="19">    <span class="ex">substituteInPlace</span> Main.hs --replace <span class="st">&#39;${oldImport}&#39;</span> <span class="st">&#39;${newImport}&#39;</span></a>
+<a class="sourceLine" id="cb13-20" title="20">    <span class="ex">substituteInPlace</span> Main.hs --replace <span class="st">&#39;${oldMain}&#39;</span>   <span class="st">&#39;${newMain}&#39;</span></a>
+<a class="sourceLine" id="cb13-21" title="21">    <span class="fu">cat</span> Main.hs</a>
+<a class="sourceLine" id="cb13-22" title="22">  <span class="st">&#39;&#39;</span>;</a>
+<a class="sourceLine" id="cb13-23" title="23">})</a></code></pre></div>
 <p><em>nix/patched.nix</em></p>
 </section><section id="service-4" class="slide level2">
 <h2>Service</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="bu">let</span></a>
-<a class="sourceLine" id="cb14-4" data-line-number="4">  <span class="ex">blank-me-up</span> = pkgs.callPackage ./patched.nix { nixpkgs = pkgs<span class="kw">;</span> };</a>
-<a class="sourceLine" id="cb14-5" data-line-number="5">  <span class="ex">cfg</span> = config.services.blank-me-up<span class="kw">;</span></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="kw">in</span> <span class="kw">{</span></a>
-<a class="sourceLine" id="cb14-7" data-line-number="7">  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb14-8" data-line-number="8">  <span class="ex">options.services.blank-me-up.port</span> = lib.mkOption {</a>
-<a class="sourceLine" id="cb14-9" data-line-number="9">    <span class="ex">default</span> = 3000<span class="kw">;</span></a>
-<a class="sourceLine" id="cb14-10" data-line-number="10">    <span class="bu">type</span> = lib.types.int<span class="kw">;</span></a>
-<a class="sourceLine" id="cb14-11" data-line-number="11">  <span class="kw">}</span>;</a>
-<a class="sourceLine" id="cb14-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb14-13" data-line-number="13">  <span class="ex">config</span> = lib.mkIf cfg.enable {</a>
-<a class="sourceLine" id="cb14-14" data-line-number="14">    <span class="ex">networking.firewall.allowedTCPPorts</span> = [ cfg.port ]<span class="kw">;</span></a>
-<a class="sourceLine" id="cb14-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb14-16" data-line-number="16">    <span class="ex">systemd.services.blank-me-up</span> = {</a>
-<a class="sourceLine" id="cb14-17" data-line-number="17">      <span class="ex">description</span> = <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb14-18" data-line-number="18">      <span class="ex">after</span> = [ <span class="st">&quot;network.target&quot;</span> ]<span class="kw">;</span></a>
-<a class="sourceLine" id="cb14-19" data-line-number="19">      <span class="ex">wantedBy</span> = [ <span class="st">&quot;multi-user.target&quot;</span> ]<span class="kw">;</span></a>
-<a class="sourceLine" id="cb14-20" data-line-number="20">      <span class="ex">serviceConfig</span> = {</a>
-<a class="sourceLine" id="cb14-21" data-line-number="21">        <span class="ex">ExecStart</span> = <span class="st">&quot;</span><span class="va">${blank-</span>me-up<span class="va">}</span><span class="st">/bin/blank-me-up </span><span class="va">${toString</span><span class="er"> cfg.port</span><span class="va">}</span><span class="st">&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb14-22" data-line-number="22">        <span class="ex">Restart</span> = <span class="st">&quot;always&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb14-23" data-line-number="23">        <span class="ex">KillMode</span> = <span class="st">&quot;process&quot;</span><span class="kw">;</span></a>
-<a class="sourceLine" id="cb14-24" data-line-number="24">      };</a>
-<a class="sourceLine" id="cb14-25" data-line-number="25">    };</a>
-<a class="sourceLine" id="cb14-26" data-line-number="26">  };</a>
-<a class="sourceLine" id="cb14-27" data-line-number="27">}</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">{</span> <span class="ex">config</span>, lib, pkgs, ... <span class="kw">}</span>:</a>
+<a class="sourceLine" id="cb14-2" title="2"></a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="bu">let</span></a>
+<a class="sourceLine" id="cb14-4" title="4">  <span class="ex">blank-me-up</span> = pkgs.callPackage ./patched.nix { nixpkgs = pkgs<span class="kw">;</span> };</a>
+<a class="sourceLine" id="cb14-5" title="5">  <span class="ex">cfg</span> = config.services.blank-me-up<span class="kw">;</span></a>
+<a class="sourceLine" id="cb14-6" title="6"><span class="kw">in</span> <span class="kw">{</span></a>
+<a class="sourceLine" id="cb14-7" title="7">  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb14-8" title="8">  <span class="ex">options.services.blank-me-up.port</span> = lib.mkOption {</a>
+<a class="sourceLine" id="cb14-9" title="9">    <span class="ex">default</span> = 3000<span class="kw">;</span></a>
+<a class="sourceLine" id="cb14-10" title="10">    <span class="bu">type</span> = lib.types.int<span class="kw">;</span></a>
+<a class="sourceLine" id="cb14-11" title="11">  <span class="kw">}</span>;</a>
+<a class="sourceLine" id="cb14-12" title="12"></a>
+<a class="sourceLine" id="cb14-13" title="13">  <span class="ex">config</span> = lib.mkIf cfg.enable {</a>
+<a class="sourceLine" id="cb14-14" title="14">    <span class="ex">networking.firewall.allowedTCPPorts</span> = [ cfg.port ]<span class="kw">;</span></a>
+<a class="sourceLine" id="cb14-15" title="15"></a>
+<a class="sourceLine" id="cb14-16" title="16">    <span class="ex">systemd.services.blank-me-up</span> = {</a>
+<a class="sourceLine" id="cb14-17" title="17">      <span class="ex">description</span> = <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb14-18" title="18">      <span class="ex">after</span> = [ <span class="st">&quot;network.target&quot;</span> ]<span class="kw">;</span></a>
+<a class="sourceLine" id="cb14-19" title="19">      <span class="ex">wantedBy</span> = [ <span class="st">&quot;multi-user.target&quot;</span> ]<span class="kw">;</span></a>
+<a class="sourceLine" id="cb14-20" title="20">      <span class="ex">serviceConfig</span> = {</a>
+<a class="sourceLine" id="cb14-21" title="21">        <span class="ex">ExecStart</span> = <span class="st">&quot;</span><span class="va">${blank-</span>me-up<span class="va">}</span><span class="st">/bin/blank-me-up </span><span class="va">${toString</span><span class="er"> cfg.port</span><span class="va">}</span><span class="st">&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb14-22" title="22">        <span class="ex">Restart</span> = <span class="st">&quot;always&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb14-23" title="23">        <span class="ex">KillMode</span> = <span class="st">&quot;process&quot;</span><span class="kw">;</span></a>
+<a class="sourceLine" id="cb14-24" title="24">      };</a>
+<a class="sourceLine" id="cb14-25" title="25">    };</a>
+<a class="sourceLine" id="cb14-26" title="26">  };</a>
+<a class="sourceLine" id="cb14-27" title="27">}</a></code></pre></div>
 <p><em>nix/service-patched.nix</em></p>
 </section><section id="webserver-2" class="slide level2">
 <h2>Webserver</h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">{</span> <span class="ex">...</span> <span class="kw">}</span>: <span class="kw">{</span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2">  <span class="ex">imports</span> = [ ../nix/service-patched.nix ]<span class="kw">;</span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3">  <span class="ex">services.blank-me-up.enable</span> = true<span class="kw">;</span></a>
-<a class="sourceLine" id="cb15-4" data-line-number="4">  <span class="ex">services.blank-me-up.port</span> = 3001<span class="kw">;</span></a>
-<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="kw">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode nix"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">{</span> <span class="ex">...</span> <span class="kw">}</span>: <span class="kw">{</span></a>
+<a class="sourceLine" id="cb15-2" title="2">  <span class="ex">imports</span> = [ ../nix/service-patched.nix ]<span class="kw">;</span></a>
+<a class="sourceLine" id="cb15-3" title="3">  <span class="ex">services.blank-me-up.enable</span> = true<span class="kw">;</span></a>
+<a class="sourceLine" id="cb15-4" title="4">  <span class="ex">services.blank-me-up.port</span> = 3001<span class="kw">;</span></a>
+<a class="sourceLine" id="cb15-5" title="5"><span class="kw">}</span></a></code></pre></div>
 <p><em>nix/webserver.nix</em></p>
 </section><section id="deploy" class="slide level2">
 <h2>Deploy</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1">$ <span class="ex">nixops</span> deploy -d trivial</a>
-<a class="sourceLine" id="cb16-2" data-line-number="2">$ <span class="ex">curl</span> <span class="op">&lt;</span>ip<span class="op">&gt;</span>:3001/pull</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" title="1">$ <span class="ex">nixops</span> deploy -d trivial</a>
+<a class="sourceLine" id="cb16-2" title="2">$ <span class="ex">curl</span> <span class="op">&lt;</span>ip<span class="op">&gt;</span>:3001/pull</a></code></pre></div>
 </section><section id="rollback" class="slide level2">
 <h2>Rollback</h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb17-1" data-line-number="1">$ <span class="ex">nixops</span> rollback -d trivial 1</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb17-1" title="1">$ <span class="ex">nixops</span> rollback -d trivial 1</a></code></pre></div>
 </section></section>
 <section><section id="summary" class="title-slide slide level1"><h1>Summary</h1></section><section id="nix-1" class="slide level2">
 <h2>Nix</h2>
@@ -421,8 +421,8 @@ executable blank-me-up
 <li>Functional!</li>
 </ul>
 </section></section>
-<section><section id="thank-you" class="title-slide slide level1"><h1>Thank You</h1></section></section>
-<section><section id="questions" class="title-slide slide level1"><h1>Questions?</h1></section></section>
+<section id="thank-you" class="title-slide slide level1"><h1>Thank You</h1></section>
+<section id="questions" class="title-slide slide level1"><h1>Questions?</h1></section>
     </div>
   </div>
 

@@ -9,13 +9,13 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
+  <style>
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
@@ -33,7 +33,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -101,7 +101,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="date"><span class="citation" data-cites="vbhvsgr">@vbhvsgr</span></p>
 </section>
 
-<section><section id="drawing-a-git-repository" class="title-slide slide level1"><h1>Drawing a Git repository</h1></section></section>
+<section id="drawing-a-git-repository" class="title-slide slide level1"><h1>Drawing a Git repository</h1></section>
 <section><section id="all-git-commit-graphs-are-dags" class="title-slide slide level1"><h1>All Git commit graphs are DAGs</h1></section><section id="heres-a-dag" class="slide level2">
 <h2>Here’s a DAG</h2>
 <p><img src="images/dag.svg"></p>
@@ -138,52 +138,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Source: https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png</em></p>
 </section><section id="tarjans-algorithm" class="slide level2">
 <h2>Tarjan’s Algorithm</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><a class="sourceLine" id="cb1-1" data-line-number="1"> algorithm tarjan is</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">  input: graph G = (V, E)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">  output: set of strongly connected components (sets of vertices)</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">  index := 0</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">  S := empty array</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">  for each v in V do</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">    if (v.index is undefined) then</a>
-<a class="sourceLine" id="cb1-9" data-line-number="9">      strongconnect(v)</a>
-<a class="sourceLine" id="cb1-10" data-line-number="10">    end if</a>
-<a class="sourceLine" id="cb1-11" data-line-number="11">  end for</a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb1-13" data-line-number="13">  function strongconnect(v)</a>
-<a class="sourceLine" id="cb1-14" data-line-number="14">    // Set the depth index for v to the smallest unused index</a>
-<a class="sourceLine" id="cb1-15" data-line-number="15">    v.index := index</a>
-<a class="sourceLine" id="cb1-16" data-line-number="16">    v.lowlink := index</a>
-<a class="sourceLine" id="cb1-17" data-line-number="17">    index := index + 1</a>
-<a class="sourceLine" id="cb1-18" data-line-number="18">    S.push(v)</a>
-<a class="sourceLine" id="cb1-19" data-line-number="19">    v.onStack := true</a>
-<a class="sourceLine" id="cb1-20" data-line-number="20"></a>
-<a class="sourceLine" id="cb1-21" data-line-number="21">    // Consider successors of v</a>
-<a class="sourceLine" id="cb1-22" data-line-number="22">    for each (v, w) in E do</a>
-<a class="sourceLine" id="cb1-23" data-line-number="23">      if (w.index is undefined) then</a>
-<a class="sourceLine" id="cb1-24" data-line-number="24">        // Successor w has not yet been visited; recurse on it</a>
-<a class="sourceLine" id="cb1-25" data-line-number="25">        strongconnect(w)</a>
-<a class="sourceLine" id="cb1-26" data-line-number="26">        v.lowlink  := min(v.lowlink, w.lowlink)</a>
-<a class="sourceLine" id="cb1-27" data-line-number="27">      else if (w.onStack) then</a>
-<a class="sourceLine" id="cb1-28" data-line-number="28">        // Successor w is in stack S and hence in the current SCC</a>
-<a class="sourceLine" id="cb1-29" data-line-number="29">        // If w is not on stack, then (v, w) is a cross-edge in the DFS tree and must be ignored</a>
-<a class="sourceLine" id="cb1-30" data-line-number="30">        // Note: The next line may look odd - but is correct.</a>
-<a class="sourceLine" id="cb1-31" data-line-number="31">        // It says w.index not w.lowlink; that is deliberate and from the original paper</a>
-<a class="sourceLine" id="cb1-32" data-line-number="32">        v.lowlink  := min(v.lowlink, w.index)</a>
-<a class="sourceLine" id="cb1-33" data-line-number="33">      end if</a>
-<a class="sourceLine" id="cb1-34" data-line-number="34">    end for</a>
-<a class="sourceLine" id="cb1-35" data-line-number="35"></a>
-<a class="sourceLine" id="cb1-36" data-line-number="36">    // If v is a root node, pop the stack and generate an SCC</a>
-<a class="sourceLine" id="cb1-37" data-line-number="37">    if (v.lowlink = v.index) then</a>
-<a class="sourceLine" id="cb1-38" data-line-number="38">      start a new strongly connected component</a>
-<a class="sourceLine" id="cb1-39" data-line-number="39">      repeat</a>
-<a class="sourceLine" id="cb1-40" data-line-number="40">        w := S.pop()</a>
-<a class="sourceLine" id="cb1-41" data-line-number="41">        w.onStack := false</a>
-<a class="sourceLine" id="cb1-42" data-line-number="42">        add w to current strongly connected component</a>
-<a class="sourceLine" id="cb1-43" data-line-number="43">      while (w != v)</a>
-<a class="sourceLine" id="cb1-44" data-line-number="44">      output the current strongly connected component</a>
-<a class="sourceLine" id="cb1-45" data-line-number="45">    end if</a>
-<a class="sourceLine" id="cb1-46" data-line-number="46">  end function</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><a class="sourceLine" id="cb1-1" title="1"> algorithm tarjan is</a>
+<a class="sourceLine" id="cb1-2" title="2">  input: graph G = (V, E)</a>
+<a class="sourceLine" id="cb1-3" title="3">  output: set of strongly connected components (sets of vertices)</a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5">  index := 0</a>
+<a class="sourceLine" id="cb1-6" title="6">  S := empty array</a>
+<a class="sourceLine" id="cb1-7" title="7">  for each v in V do</a>
+<a class="sourceLine" id="cb1-8" title="8">    if (v.index is undefined) then</a>
+<a class="sourceLine" id="cb1-9" title="9">      strongconnect(v)</a>
+<a class="sourceLine" id="cb1-10" title="10">    end if</a>
+<a class="sourceLine" id="cb1-11" title="11">  end for</a>
+<a class="sourceLine" id="cb1-12" title="12"></a>
+<a class="sourceLine" id="cb1-13" title="13">  function strongconnect(v)</a>
+<a class="sourceLine" id="cb1-14" title="14">    // Set the depth index for v to the smallest unused index</a>
+<a class="sourceLine" id="cb1-15" title="15">    v.index := index</a>
+<a class="sourceLine" id="cb1-16" title="16">    v.lowlink := index</a>
+<a class="sourceLine" id="cb1-17" title="17">    index := index + 1</a>
+<a class="sourceLine" id="cb1-18" title="18">    S.push(v)</a>
+<a class="sourceLine" id="cb1-19" title="19">    v.onStack := true</a>
+<a class="sourceLine" id="cb1-20" title="20"></a>
+<a class="sourceLine" id="cb1-21" title="21">    // Consider successors of v</a>
+<a class="sourceLine" id="cb1-22" title="22">    for each (v, w) in E do</a>
+<a class="sourceLine" id="cb1-23" title="23">      if (w.index is undefined) then</a>
+<a class="sourceLine" id="cb1-24" title="24">        // Successor w has not yet been visited; recurse on it</a>
+<a class="sourceLine" id="cb1-25" title="25">        strongconnect(w)</a>
+<a class="sourceLine" id="cb1-26" title="26">        v.lowlink  := min(v.lowlink, w.lowlink)</a>
+<a class="sourceLine" id="cb1-27" title="27">      else if (w.onStack) then</a>
+<a class="sourceLine" id="cb1-28" title="28">        // Successor w is in stack S and hence in the current SCC</a>
+<a class="sourceLine" id="cb1-29" title="29">        // If w is not on stack, then (v, w) is a cross-edge in the DFS tree and must be ignored</a>
+<a class="sourceLine" id="cb1-30" title="30">        // Note: The next line may look odd - but is correct.</a>
+<a class="sourceLine" id="cb1-31" title="31">        // It says w.index not w.lowlink; that is deliberate and from the original paper</a>
+<a class="sourceLine" id="cb1-32" title="32">        v.lowlink  := min(v.lowlink, w.index)</a>
+<a class="sourceLine" id="cb1-33" title="33">      end if</a>
+<a class="sourceLine" id="cb1-34" title="34">    end for</a>
+<a class="sourceLine" id="cb1-35" title="35"></a>
+<a class="sourceLine" id="cb1-36" title="36">    // If v is a root node, pop the stack and generate an SCC</a>
+<a class="sourceLine" id="cb1-37" title="37">    if (v.lowlink = v.index) then</a>
+<a class="sourceLine" id="cb1-38" title="38">      start a new strongly connected component</a>
+<a class="sourceLine" id="cb1-39" title="39">      repeat</a>
+<a class="sourceLine" id="cb1-40" title="40">        w := S.pop()</a>
+<a class="sourceLine" id="cb1-41" title="41">        w.onStack := false</a>
+<a class="sourceLine" id="cb1-42" title="42">        add w to current strongly connected component</a>
+<a class="sourceLine" id="cb1-43" title="43">      while (w != v)</a>
+<a class="sourceLine" id="cb1-44" title="44">      output the current strongly connected component</a>
+<a class="sourceLine" id="cb1-45" title="45">    end if</a>
+<a class="sourceLine" id="cb1-46" title="46">  end function</a></code></pre></div>
 </section><section id="reverse-topological-sort" class="slide level2">
 <h2>(Reverse) topological sort</h2>
 </section><section id="linear-time" class="slide level2">
@@ -392,7 +392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="tarjans-algorithm-1" class="slide level2">
 <h2>Tarjan’s Algorithm</h2>
 </section></section>
-<section><section id="thanks" class="title-slide slide level1"><h1>Thanks!</h1></section></section>
+<section id="thanks" class="title-slide slide level1"><h1>Thanks!</h1></section>
     </div>
   </div>
 
