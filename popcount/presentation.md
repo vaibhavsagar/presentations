@@ -31,7 +31,7 @@ Counts the number of bits set to `1` in a machine word.
 
 ## The NSA Instruction
 
-<img src="images/the-nsa-instruction.png">
+<img src="images/the-nsa-instruction.png" style="height: 13em;">
 
 ## Hamming weight
 
