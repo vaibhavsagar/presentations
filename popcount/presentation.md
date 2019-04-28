@@ -31,6 +31,8 @@ Counts the number of bits set to `1` in a machine word.
 
 ## The NSA Instruction
 
+<img src="images/the-nsa-instruction.png">
+
 ## Hamming weight
 
 The number of symbols that are different from the zero-symbol of the alphabet.
