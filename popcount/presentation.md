@@ -16,7 +16,7 @@ Counts the number of bits set to `1` in a machine word.
 
 ## That doesn't seem very useful??
 
-## CPU instruction sets containing `popcount`
+## CPUs with `popcount`
 
 - IBM STRETCH
 - CDC 6000
@@ -37,15 +37,15 @@ The number of symbols that are different from the zero-symbol of the alphabet.
 
 ## Cryptanalysis
 
-1. Set a bit for each character in each line the input
+1. Set a bit for each character in each line of the input
 2. `popcount` => count distinct characters
 3. Use the count as a hash, or to do further analysis
 4. ???
 5. Profit!
 
-(source: http://www.talkchess.com/forum3/viewtopic.php?t=38521)
+[source](http://www.talkchess.com/forum3/viewtopic.php?t=38521)
 
-# Error correcting
+# Error correction
 
 ## Hamming distance
 
@@ -62,7 +62,7 @@ the error rate.
 
 ## Error Correcting Codes
 
-Based on your error correction requirements, chose sufficiently distant
+Based on your error correction requirements, choose sufficiently distant
 symbols to assemble your message out of!
 
 # Binary convolutional neural networks
