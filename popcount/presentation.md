@@ -3,7 +3,7 @@
 
 # `popcount`?
 
-## `popcount`
+## Population Count
 
 Counts the number of bits set to `1` in a machine word.
 
@@ -32,6 +32,17 @@ Counts the number of bits set to `1` in a machine word.
 ## The NSA Instruction
 
 <img src="images/the-nsa-instruction.png" style="height: 13em;">
+
+[source](https://groups.google.com/forum/#!msg/comp.arch/UXEi7G6WHuU/Z2z7fC7Xhr8J)
+
+## The NSA Instruction
+
+> It was almost a tradition that one of the first of any new
+> faster CDC machine was delivered to a "good customer" - picked
+> up at the factory by an anonymous truck, and never heard
+> from again.
+
+[source](http://cryptome.org/jya/sadd.htm)
 
 ## Hamming weight
 
