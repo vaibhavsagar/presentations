@@ -37,9 +37,89 @@
   <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
-<section class="slide level6">
-
-</section>
+<section><section id="popcount" class="title-slide slide level1"><h1><code>popcount</code>?</h1></section><section id="popcount-1" class="slide level2">
+<h2><code>popcount</code></h2>
+<p>Counts the number of bits set to <code>1</code> in a machine word.</p>
+</section><section id="popcount-2" class="slide level2">
+<h2><code>popcount</code></h2>
+<p><code>popcount(00100110) == 3</code> <code>popcount(01100000) == 2</code></p>
+</section><section id="thats-it-thats-all-it-does." class="slide level2">
+<h2>That’s it, that’s all it does.</h2>
+</section><section id="that-doesnt-seem-very-useful" class="slide level2">
+<h2>That doesn’t seem very useful??</h2>
+</section><section id="cpu-instruction-sets-containing-popcount" class="slide level2">
+<h2>CPU instruction sets containing <code>popcount</code></h2>
+<ul>
+<li>IBM STRETCH</li>
+<li>CDC 6000</li>
+<li>Cray</li>
+<li>SPARC</li>
+<li>Intel Core (since 2008)</li>
+<li>ARM NEON</li>
+</ul>
+</section><section id="whats-going-on" class="slide level2">
+<h2>What’s going on?</h2>
+</section></section>
+<section><section id="cryptography" class="title-slide slide level1"><h1>Cryptography</h1></section><section id="the-nsa-instruction" class="slide level2">
+<h2>The NSA Instruction</h2>
+</section><section id="hamming-weight" class="slide level2">
+<h2>Hamming weight</h2>
+<p>The number of symbols that are different from the zero-symbol of the alphabet.</p>
+</section><section id="cryptanalysis" class="slide level2">
+<h2>Cryptanalysis</h2>
+<ol type="1">
+<li>Set a bit for each character in each line the input</li>
+<li><code>popcount</code> =&gt; count distinct characters</li>
+<li>Use the count as a hash, or to do further analysis</li>
+<li>???</li>
+<li>Profit!</li>
+</ol>
+<p>(source: http://www.talkchess.com/forum3/viewtopic.php?t=38521)</p>
+</section></section>
+<section><section id="error-correcting" class="title-slide slide level1"><h1>Error correcting</h1></section><section id="hamming-distance" class="slide level2">
+<h2>Hamming distance</h2>
+<p>The number of differing positions between two strings of identical length.</p>
+</section><section id="hamming-distance-1" class="slide level2">
+<h2>Hamming distance</h2>
+<p>For binary strings: <code>popcount(x ^ y)</code></p>
+</section><section id="signal-distance" class="slide level2">
+<h2>Signal distance</h2>
+<p>Send some data over the wire and compare it at both ends to get an estimate of the error rate.</p>
+</section><section id="error-correcting-codes" class="slide level2">
+<h2>Error Correcting Codes</h2>
+<p>Based on your error correction requirements, chose sufficiently distant symbols to assemble your message out of!</p>
+</section></section>
+<section><section id="binary-convolutional-neural-networks" class="title-slide slide level1"><h1>Binary convolutional neural networks</h1></section><section id="binary" class="slide level2">
+<h2>Binary</h2>
+<p>Uses +1 and -1 (coded as 0) instead of 32-bit floating point numbers.</p>
+</section><section id="convolutional" class="slide level2">
+<h2>Convolutional</h2>
+<p>Not clear on what this means, but for our purposes it means matrix multiplication.</p>
+</section><section id="neural-network" class="slide level2">
+<h2>Neural Network</h2>
+<p>¯\<em>(ツ)</em>/¯</p>
+</section><section id="why" class="slide level2">
+<h2>Why?</h2>
+<p>Simpler and smaller, suitable for less powerful devices like mobile phones</p>
+</section><section id="matrix-multiplication" class="slide level2">
+<h2>Matrix multiplication</h2>
+<ol type="1">
+<li>x = xnor(a, b)</li>
+<li>p = popcount(x)</li>
+<li>n = len(a)</li>
+<li>2*p - n</li>
+</ol>
+</section></section>
+<section><section id="other-fun-uses-of-popcount" class="title-slide slide level1"><h1>Other fun uses of <code>popcount</code></h1></section><section id="chess-engines" class="slide level2">
+<h2>Chess engines</h2>
+</section><section id="molecular-fingerprinting" class="slide level2">
+<h2>Molecular fingerprinting</h2>
+</section><section id="hash-array-mapped-tries" class="slide level2">
+<h2>Hash Array Mapped Tries</h2>
+</section><section id="succinct-data-structures" class="slide level2">
+<h2>succinct data structures</h2>
+</section></section>
+<section id="thanks" class="title-slide slide level1"><h1>Thanks!</h1></section>
     </div>
   </div>
 
