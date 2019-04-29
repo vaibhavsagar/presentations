@@ -31,7 +31,7 @@ Counts the number of bits set to `1` in a machine word.
 
 ## The NSA Instruction
 
-<img src="images/the-nsa-instruction.png" style="height: 13em;">
+<img src="images/the-nsa-instruction.png" style="height: 11em;">
 
 [source](https://groups.google.com/forum/#!msg/comp.arch/UXEi7G6WHuU/Z2z7fC7Xhr8J)
 
