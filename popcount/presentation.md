@@ -24,6 +24,7 @@ Counts the number of bits set to `1` in a machine word.
 - SPARC
 - Intel Core (since 2008)
 - ARM NEON
+- RISC-V B extension
 
 ## What's going on?
 
@@ -57,6 +58,8 @@ The number of symbols that are different from the zero-symbol of the alphabet.
 5. Profit!
 
 [source](http://www.talkchess.com/forum3/viewtopic.php?t=38521)
+
+## `popcount` disappears from CPUs: a conspiracy???
 
 # Error correction
 
