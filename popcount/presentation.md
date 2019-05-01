@@ -52,10 +52,11 @@ The number of symbols that are different from the zero-symbol of the alphabet.
 ## Cryptanalysis
 
 1. Set a bit for each character in each line of the input
-2. `popcount` => count distinct characters
-3. Use the count as a hash, or to do further analysis
-4. ???
-5. Profit!
+2. You have 60-bit words, enough to handle most alphabets
+3. `popcount` => count distinct characters
+4. Use the count as a hash, or to do further analysis
+5. ???
+6. Profit!
 
 [source](http://www.talkchess.com/forum3/viewtopic.php?t=38521)
 
@@ -89,8 +90,7 @@ Uses +1 and -1 (coded as 0) instead of 32-bit floating point numbers.
 
 ## Convolutional
 
-Not clear on what this means, but for our purposes it means matrix
-multiplication.
+Matrix multiplication?
 
 ## Neural Network
 
@@ -109,12 +109,14 @@ Simpler and smaller, suitable for less powerful devices like mobile phones
 
 # Other fun uses of `popcount`
 
-## Chess engines
+## Chess Engines
 
-## Molecular fingerprinting
+## Molecular Fingerprinting
 
 ## Hash Array Mapped Tries
 
-## succinct data structures
+## Succinct Data Structures
+
+## Testing compiler optimisations
 
 # Thanks!
