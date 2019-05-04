@@ -114,6 +114,8 @@ $$b = popcount(a)$$
 $$c = len(a)$$
 $$dot(x,y) = 2\times b \minus c$$
 
+[source](https://sushscience.wordpress.com/2017/10/01/understanding-binary-neural-networks/)
+
 # Other fun uses of `popcount`
 
 ## Chess Engines
@@ -127,3 +129,7 @@ $$dot(x,y) = 2\times b \minus c$$
 ## Testing compiler optimisations
 
 # Thanks!
+
+## Slides
+
+Slides are at [https://vaibhavsagar.com/presentations/popcount](https://vaibhavsagar.com/presentations/popcount)!
