@@ -18,13 +18,13 @@ Counts the number of bits set to `1` in a machine word.
 
 ## CPUs with `popcount`
 
-- IBM STRETCH
-- CDC 6000
-- Cray
-- SPARC
-- Intel Core (since 2008)
-- ARM NEON
-- RISC-V B extension
+- 1960: IBM STRETCH
+- 1964: CDC 6000
+- 1975: Cray
+- 2005: SPARC
+- 2005: ARM NEON
+- 2007: AMD K10
+- 2008: Intel Core
 
 ## What's going on?
 
@@ -72,6 +72,13 @@ The number of differing positions between two strings of identical length.
 
 For binary strings: `popcount(x ^ y)`
 
+```
+00100110
+01100000
+--------
+01000110 => 3
+```
+
 ## Signal distance
 
 Send some data over the wire and compare it at both ends to get an estimate of
@@ -102,10 +109,10 @@ Simpler and smaller, suitable for less powerful devices like mobile phones
 
 ## Matrix multiplication
 
-1. x = xnor(a, b)
-2. p = popcount(x)
-3. n = len(a)
-4. 2\*p - n
+$$a = xnor(x, y)$$
+$$b = popcount(a)$$
+$$c = len(a)$$
+$$dot(x,y) = 2\times b \minus c$$
 
 # Other fun uses of `popcount`
 
