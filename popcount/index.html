@@ -50,13 +50,13 @@
 </section><section id="cpus-with-popcount" class="slide level2">
 <h2>CPUs with <code>popcount</code></h2>
 <ul>
-<li>IBM STRETCH</li>
-<li>CDC 6000</li>
-<li>Cray</li>
-<li>SPARC</li>
-<li>Intel Core (since 2008)</li>
-<li>ARM NEON</li>
-<li>RISC-V B extension</li>
+<li>1960: IBM STRETCH</li>
+<li>1964: CDC 6000</li>
+<li>1975: Cray</li>
+<li>2005: SPARC</li>
+<li>2005: ARM NEON</li>
+<li>2007: AMD K10</li>
+<li>2008: Intel Core</li>
 </ul>
 </section><section id="whats-going-on" class="slide level2">
 <h2>What’s going on?</h2>
@@ -94,6 +94,10 @@
 </section><section id="hamming-distance-1" class="slide level2">
 <h2>Hamming distance</h2>
 <p>For binary strings: <code>popcount(x ^ y)</code></p>
+<pre><code>00100110
+01100000
+--------
+01000110 =&gt; 3</code></pre>
 </section><section id="signal-distance" class="slide level2">
 <h2>Signal distance</h2>
 <p>Send some data over the wire and compare it at both ends to get an estimate of the error rate.</p>
@@ -115,12 +119,7 @@
 <p>Simpler and smaller, suitable for less powerful devices like mobile phones</p>
 </section><section id="matrix-multiplication" class="slide level2">
 <h2>Matrix multiplication</h2>
-<ol type="1">
-<li>x = xnor(a, b)</li>
-<li>p = popcount(x)</li>
-<li>n = len(a)</li>
-<li>2*p - n</li>
-</ol>
+<p><br /><span class="math display"><em>a</em> = <em>x</em><em>n</em><em>o</em><em>r</em>(<em>x</em>, <em>y</em>)</span><br /> <br /><span class="math display"><em>b</em> = <em>p</em><em>o</em><em>p</em><em>c</em><em>o</em><em>u</em><em>n</em><em>t</em>(<em>a</em>)</span><br /> <br /><span class="math display"><em>c</em> = <em>l</em><em>e</em><em>n</em>(<em>a</em>)</span><br /> <br /><span class="math display"><em>d</em><em>o</em><em>t</em>(<em>x</em>, <em>y</em>) = 2 × <em>b</em> − <em>c</em></span><br /></p>
 </section></section>
 <section><section id="other-fun-uses-of-popcount" class="title-slide slide level1"><h1>Other fun uses of <code>popcount</code></h1></section><section id="chess-engines" class="slide level2">
 <h2>Chess Engines</h2>
