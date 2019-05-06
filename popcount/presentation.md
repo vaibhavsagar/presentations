@@ -126,10 +126,12 @@ $$dot(x,y) = 2\times b \minus c$$
 
 ## Succinct Data Structures
 
-## Testing compiler optimisations
+## Compiler optimisations
+
+[GCC](https://godbolt.org/z/JUzmD8), [Clang](https://godbolt.org/z/AVqMGl)
 
 # Thanks!
 
 ## Slides
 
-Slides are at [https://vaibhavsagar.com/presentations/popcount](https://vaibhavsagar.com/presentations/popcount)!
+[https://vaibhavsagar.com/presentations/popcount](https://vaibhavsagar.com/presentations/popcount)
