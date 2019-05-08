@@ -51,9 +51,9 @@ The number of symbols that are different from the zero-symbol of the alphabet.
 
 ## Cryptanalysis
 
-1. Set a bit for each character in each line of the input
-2. You have 60-bit words, enough to handle most alphabets
-3. `popcount` => count distinct characters
+1. You have 60-bit words, enough to handle most alphabets
+2. Set a bit for each character in each line of the input
+3. Count distinct characters with `popcount`
 4. Use the count as a hash, or to do further analysis
 5. ???
 6. Profit!
@@ -76,7 +76,9 @@ For binary strings: `popcount(x ^ y)`
 00100110
 01100000
 --------
-01000110 => 3
+01000110
+
+popcount(01000110) = 3
 ```
 
 ## Signal distance
@@ -88,6 +90,10 @@ the error rate.
 
 Based on your error correction requirements, choose sufficiently distant
 symbols to assemble your message out of!
+
+<img src="images/golomb_ruler.svg" style="height: 8em;">
+
+[source](https://commons.wikimedia.org/wiki/File:Golomb_Ruler-4.svg)
 
 # Binary convolutional neural networks
 
