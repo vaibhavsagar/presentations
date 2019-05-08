@@ -77,9 +77,9 @@
 </section><section id="cryptanalysis" class="slide level2">
 <h2>Cryptanalysis</h2>
 <ol type="1">
-<li>Set a bit for each character in each line of the input</li>
 <li>You have 60-bit words, enough to handle most alphabets</li>
-<li><code>popcount</code> =&gt; count distinct characters</li>
+<li>Set a bit for each character in each line of the input</li>
+<li>Count distinct characters with <code>popcount</code></li>
 <li>Use the count as a hash, or to do further analysis</li>
 <li>???</li>
 <li>Profit!</li>
@@ -97,13 +97,17 @@
 <pre><code>00100110
 01100000
 --------
-01000110 =&gt; 3</code></pre>
+01000110
+
+popcount(01000110) = 3</code></pre>
 </section><section id="signal-distance" class="slide level2">
 <h2>Signal distance</h2>
 <p>Send some data over the wire and compare it at both ends to get an estimate of the error rate.</p>
 </section><section id="error-correcting-codes" class="slide level2">
 <h2>Error Correcting Codes</h2>
 <p>Based on your error correction requirements, choose sufficiently distant symbols to assemble your message out of!</p>
+<p><img src="images/golomb_ruler.svg" style="height: 8em;"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Golomb_Ruler-4.svg">source</a></p>
 </section></section>
 <section><section id="binary-convolutional-neural-networks" class="title-slide slide level1"><h1>Binary convolutional neural networks</h1></section><section id="binary" class="slide level2">
 <h2>Binary</h2>
