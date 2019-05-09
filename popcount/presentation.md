@@ -91,8 +91,6 @@ the error rate.
 Based on your error correction requirements, choose sufficiently distant
 symbols to assemble your message out of!
 
-[source](https://commons.wikimedia.org/wiki/File:Golomb_Ruler-4.svg)
-
 # Binary convolutional neural networks
 
 ## Binary
