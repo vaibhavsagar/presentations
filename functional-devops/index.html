@@ -101,15 +101,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="date">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
-<section><section id="about-me" class="title-slide slide level1"><h1>About Me</h1></section><section id="lapsed-web-developer" class="slide level2">
-<h2>Lapsed web developer</h2>
-</section><section id="functional-programming-enthusiast" class="slide level2">
-<h2>Functional programming enthusiast</h2>
-</section><section id="devops-engineer" class="slide level2">
-<h2>DevOps Engineer</h2>
-</section></section>
 <section><section id="why-devops" class="title-slide slide level1"><h1>Why DevOps?</h1></section><section id="works-on-my-machine" class="slide level2">
 <h2>Works on my machine</h2>
+</section><section id="works-on-my-machine-1" class="slide level2">
+<h2><del>Works on my machine</del></h2>
 </section><section id="what-happens-after-you-write-the-last-line-of-code" class="slide level2">
 <h2>What happens after you write the last line of code?</h2>
 </section></section>
@@ -314,7 +309,7 @@ executable blank-me-up
 <h2>Deployment</h2>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1">$ <span class="bu">cd</span> ops</a>
 <a class="sourceLine" id="cb12-2" title="2">$ <span class="ex">nixops</span> create trivial.nix trivial-vbox.nix -d trivial</a>
-<a class="sourceLine" id="cb12-3" title="3">$ <span class="ex">nixops</span> deploy -d trivial --force-reboot</a>
+<a class="sourceLine" id="cb12-3" title="3">$ <span class="ex">nixops</span> deploy -d trivial</a>
 <a class="sourceLine" id="cb12-4" title="4"><span class="op">&lt;</span><span class="ex">tons</span> of output...<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb12-5" title="5">$ <span class="ex">nixops</span> deploy -d trivial</a>
 <a class="sourceLine" id="cb12-6" title="6">$ <span class="ex">curl</span> <span class="op">&lt;</span>ip<span class="op">&gt;</span>:3000/help</a></code></pre></div>
