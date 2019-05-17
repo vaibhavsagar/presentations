@@ -2,17 +2,11 @@
 % (in a dysfunctional world)
 % Vaibhav Sagar (@vbhvsgr)
 
-# About Me
-
-## Lapsed web developer
-
-## Functional programming enthusiast
-
-## DevOps Engineer
-
 # Why DevOps?
 
 ## Works on my machine
+
+## ~~Works on my machine~~
 
 ## What happens after you write the last line of code?
 
@@ -255,7 +249,7 @@ Restart=always
 ```bash
 $ cd ops
 $ nixops create trivial.nix trivial-vbox.nix -d trivial
-$ nixops deploy -d trivial --force-reboot
+$ nixops deploy -d trivial
 <tons of output...>
 $ nixops deploy -d trivial
 $ curl <ip>:3000/help
