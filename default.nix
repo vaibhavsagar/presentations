@@ -7,6 +7,7 @@ let
 in linkFarm "presentations" (presentations [
   "functional-devops"
   "functional-ingsoc"
+  "ihaskell-can-do-that"
   "javascript-in-haskell"
   "lazy-functional-state-threads"
   "popcount"
