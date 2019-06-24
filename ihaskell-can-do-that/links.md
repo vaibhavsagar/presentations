@@ -1,0 +1,14 @@
+- https://github.com/gibiansky/IHaskell/
+- http://blog.ezyang.com/2012/01/problem-set-the-codensity-transformation/
+- https://github.com/vaibhavsagar/notebooks/blob/master/codensity/Codensity.ipynb
+- https://nbviewer.jupyter.org/github/vaibhavsagar/notebooks/blob/master/continuations/DiscoveringContinuationsWithTypedHoles.ipynb
+- https://vaibhavsagar.com/blog/2017/05/22/discovering-continuations/
+- https://nbviewer.jupyter.org/github/vaibhavsagar/notebooks/blob/master/git-from-scratch/Git.ipynb 
+- https://www.youtube.com/watch?v=nVvvY5VRs8o
+- https://mybinder.org/v2/gh/gibiansky/IHaskell/146659e040c5cae70a303a1016aa305f5be2a293
+- https://cocalc.com/projects/83f61217-0b89-4ad4-88bf-15fa303a2c96/files/?session=default
+- https://github.com/theam/haskell-do
+- https://github.com/HeinrichApfelmus/hyper-haskell
+- https://github.com/litxio/ptghci
+- http://neilmitchell.blogspot.com/2019/02/announcing-ghc-lib.html
+- https://github.com/ekmett/codex/
