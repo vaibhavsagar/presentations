@@ -46,3 +46,9 @@
 # Thanks!
 
 # Questions?
+
+## How did I get involved?
+
+## Can it do X?
+
+## Can I use it for X?
