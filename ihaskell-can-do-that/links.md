@@ -1,3 +1,4 @@
+- http://localhost:8888
 - https://github.com/gibiansky/IHaskell/
 - http://blog.ezyang.com/2012/01/problem-set-the-codensity-transformation/
 - https://github.com/vaibhavsagar/notebooks/blob/master/codensity/Codensity.ipynb
