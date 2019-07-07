@@ -1,2 +1,5 @@
+before_install:
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install
+  - cachix use vaibhavsagar
 language: nix
 after_success: bash .ci/update_pages.sh
