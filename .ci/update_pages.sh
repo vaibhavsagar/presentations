@@ -10,7 +10,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 	git config --global user.name "Travis"
     fi
     # Using token, clone gh-pages branch
-    git clone --depth 1 --quiet --branch=$BRANCH "https://$GH_TOKEN@github.com/$TARGET_REPO" build > /dev/null
+    git clone --depth 1 --quiet --branch=$BRANCH "https://$GH_TOKEN@github.com/$TARGET_REPO" build > /dev/null 2>&1
     # Go into directory and copy data we're interested in to that directory
     cd build || exit 1
     rsync -avL --delete --exclude=.git  ../$OUTPUT_FOLDER/ ./
