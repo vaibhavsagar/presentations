@@ -1,10 +1,11 @@
 let
-  inherit (import <nixpkgs> {}) linkFarm;
+  pkgs    = import .nix/pkgs.nix;
+  nixpkgs = import pkgs.nixpkgs {};
   presentations = map (folder: {
     name = folder;
     path = import (./. + "/${folder}");
   });
-in linkFarm "presentations" (presentations [
+in nixpkgs.linkFarm "presentations" (presentations [
   "functional-devops"
   "functional-ingsoc"
   "ihaskell-can-do-that"
