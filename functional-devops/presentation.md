@@ -379,3 +379,4 @@ $ nixops rollback -d trivial 1
 - Why would you use this instead of Docker?
 - Make a change to your slides with Nix!
 - Make a change to your website with Nix!
+- How well does this work for multi-language projects?
