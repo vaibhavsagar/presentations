@@ -370,7 +370,7 @@ $ nixops rollback -d trivial 1
 - Atomic
 - Functional!
 
-# Thank You
+# Thank You Strange Loop
 
 # Questions?
 
