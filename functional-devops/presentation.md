@@ -373,3 +373,9 @@ $ nixops rollback -d trivial 1
 # Thank You
 
 # Questions?
+
+## Suggestions
+
+- Why would you use this instead of Docker?
+- Make a change to your slides with Nix!
+- Make a change to your website with Nix!
