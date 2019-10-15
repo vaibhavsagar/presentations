@@ -8,6 +8,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reset.css">
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
   <style>
       code{white-space: pre-wrap;}
@@ -16,26 +17,27 @@
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <style>
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -44,9 +46,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,52 +140,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Source: https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png</em></p>
 </section><section id="tarjans-algorithm" class="slide level2">
 <h2>Tarjan’s Algorithm</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><a class="sourceLine" id="cb1-1" title="1"> algorithm tarjan is</a>
-<a class="sourceLine" id="cb1-2" title="2">  input: graph G = (V, E)</a>
-<a class="sourceLine" id="cb1-3" title="3">  output: set of strongly connected components (sets of vertices)</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5">  index := 0</a>
-<a class="sourceLine" id="cb1-6" title="6">  S := empty array</a>
-<a class="sourceLine" id="cb1-7" title="7">  for each v in V do</a>
-<a class="sourceLine" id="cb1-8" title="8">    if (v.index is undefined) then</a>
-<a class="sourceLine" id="cb1-9" title="9">      strongconnect(v)</a>
-<a class="sourceLine" id="cb1-10" title="10">    end if</a>
-<a class="sourceLine" id="cb1-11" title="11">  end for</a>
-<a class="sourceLine" id="cb1-12" title="12"></a>
-<a class="sourceLine" id="cb1-13" title="13">  function strongconnect(v)</a>
-<a class="sourceLine" id="cb1-14" title="14">    // Set the depth index for v to the smallest unused index</a>
-<a class="sourceLine" id="cb1-15" title="15">    v.index := index</a>
-<a class="sourceLine" id="cb1-16" title="16">    v.lowlink := index</a>
-<a class="sourceLine" id="cb1-17" title="17">    index := index + 1</a>
-<a class="sourceLine" id="cb1-18" title="18">    S.push(v)</a>
-<a class="sourceLine" id="cb1-19" title="19">    v.onStack := true</a>
-<a class="sourceLine" id="cb1-20" title="20"></a>
-<a class="sourceLine" id="cb1-21" title="21">    // Consider successors of v</a>
-<a class="sourceLine" id="cb1-22" title="22">    for each (v, w) in E do</a>
-<a class="sourceLine" id="cb1-23" title="23">      if (w.index is undefined) then</a>
-<a class="sourceLine" id="cb1-24" title="24">        // Successor w has not yet been visited; recurse on it</a>
-<a class="sourceLine" id="cb1-25" title="25">        strongconnect(w)</a>
-<a class="sourceLine" id="cb1-26" title="26">        v.lowlink  := min(v.lowlink, w.lowlink)</a>
-<a class="sourceLine" id="cb1-27" title="27">      else if (w.onStack) then</a>
-<a class="sourceLine" id="cb1-28" title="28">        // Successor w is in stack S and hence in the current SCC</a>
-<a class="sourceLine" id="cb1-29" title="29">        // If w is not on stack, then (v, w) is a cross-edge in the DFS tree and must be ignored</a>
-<a class="sourceLine" id="cb1-30" title="30">        // Note: The next line may look odd - but is correct.</a>
-<a class="sourceLine" id="cb1-31" title="31">        // It says w.index not w.lowlink; that is deliberate and from the original paper</a>
-<a class="sourceLine" id="cb1-32" title="32">        v.lowlink  := min(v.lowlink, w.index)</a>
-<a class="sourceLine" id="cb1-33" title="33">      end if</a>
-<a class="sourceLine" id="cb1-34" title="34">    end for</a>
-<a class="sourceLine" id="cb1-35" title="35"></a>
-<a class="sourceLine" id="cb1-36" title="36">    // If v is a root node, pop the stack and generate an SCC</a>
-<a class="sourceLine" id="cb1-37" title="37">    if (v.lowlink = v.index) then</a>
-<a class="sourceLine" id="cb1-38" title="38">      start a new strongly connected component</a>
-<a class="sourceLine" id="cb1-39" title="39">      repeat</a>
-<a class="sourceLine" id="cb1-40" title="40">        w := S.pop()</a>
-<a class="sourceLine" id="cb1-41" title="41">        w.onStack := false</a>
-<a class="sourceLine" id="cb1-42" title="42">        add w to current strongly connected component</a>
-<a class="sourceLine" id="cb1-43" title="43">      while (w != v)</a>
-<a class="sourceLine" id="cb1-44" title="44">      output the current strongly connected component</a>
-<a class="sourceLine" id="cb1-45" title="45">    end if</a>
-<a class="sourceLine" id="cb1-46" title="46">  end function</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a> algorithm tarjan is</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  input: graph G = (V, E)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>  output: set of strongly connected components (sets of vertices)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  index := 0</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  S := empty array</span>
+<span id="cb1-7"><a href="#cb1-7"></a>  for each v in V do</span>
+<span id="cb1-8"><a href="#cb1-8"></a>    if (v.index is undefined) then</span>
+<span id="cb1-9"><a href="#cb1-9"></a>      strongconnect(v)</span>
+<span id="cb1-10"><a href="#cb1-10"></a>    end if</span>
+<span id="cb1-11"><a href="#cb1-11"></a>  end for</span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a>  function strongconnect(v)</span>
+<span id="cb1-14"><a href="#cb1-14"></a>    // Set the depth index for v to the smallest unused index</span>
+<span id="cb1-15"><a href="#cb1-15"></a>    v.index := index</span>
+<span id="cb1-16"><a href="#cb1-16"></a>    v.lowlink := index</span>
+<span id="cb1-17"><a href="#cb1-17"></a>    index := index + 1</span>
+<span id="cb1-18"><a href="#cb1-18"></a>    S.push(v)</span>
+<span id="cb1-19"><a href="#cb1-19"></a>    v.onStack := true</span>
+<span id="cb1-20"><a href="#cb1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21"></a>    // Consider successors of v</span>
+<span id="cb1-22"><a href="#cb1-22"></a>    for each (v, w) in E do</span>
+<span id="cb1-23"><a href="#cb1-23"></a>      if (w.index is undefined) then</span>
+<span id="cb1-24"><a href="#cb1-24"></a>        // Successor w has not yet been visited; recurse on it</span>
+<span id="cb1-25"><a href="#cb1-25"></a>        strongconnect(w)</span>
+<span id="cb1-26"><a href="#cb1-26"></a>        v.lowlink  := min(v.lowlink, w.lowlink)</span>
+<span id="cb1-27"><a href="#cb1-27"></a>      else if (w.onStack) then</span>
+<span id="cb1-28"><a href="#cb1-28"></a>        // Successor w is in stack S and hence in the current SCC</span>
+<span id="cb1-29"><a href="#cb1-29"></a>        // If w is not on stack, then (v, w) is a cross-edge in the DFS tree and must be ignored</span>
+<span id="cb1-30"><a href="#cb1-30"></a>        // Note: The next line may look odd - but is correct.</span>
+<span id="cb1-31"><a href="#cb1-31"></a>        // It says w.index not w.lowlink; that is deliberate and from the original paper</span>
+<span id="cb1-32"><a href="#cb1-32"></a>        v.lowlink  := min(v.lowlink, w.index)</span>
+<span id="cb1-33"><a href="#cb1-33"></a>      end if</span>
+<span id="cb1-34"><a href="#cb1-34"></a>    end for</span>
+<span id="cb1-35"><a href="#cb1-35"></a></span>
+<span id="cb1-36"><a href="#cb1-36"></a>    // If v is a root node, pop the stack and generate an SCC</span>
+<span id="cb1-37"><a href="#cb1-37"></a>    if (v.lowlink = v.index) then</span>
+<span id="cb1-38"><a href="#cb1-38"></a>      start a new strongly connected component</span>
+<span id="cb1-39"><a href="#cb1-39"></a>      repeat</span>
+<span id="cb1-40"><a href="#cb1-40"></a>        w := S.pop()</span>
+<span id="cb1-41"><a href="#cb1-41"></a>        w.onStack := false</span>
+<span id="cb1-42"><a href="#cb1-42"></a>        add w to current strongly connected component</span>
+<span id="cb1-43"><a href="#cb1-43"></a>      while (w != v)</span>
+<span id="cb1-44"><a href="#cb1-44"></a>      output the current strongly connected component</span>
+<span id="cb1-45"><a href="#cb1-45"></a>    end if</span>
+<span id="cb1-46"><a href="#cb1-46"></a>  end function</span></code></pre></div>
 </section><section id="reverse-topological-sort" class="slide level2">
 <h2>(Reverse) topological sort</h2>
 </section><section id="linear-time" class="slide level2">
@@ -196,56 +198,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2></h2>
 <p><img src="images/1.svg" style="height: 9em;"></p>
 <ul>
-<li>stack: <a href="#/section-26"></a></li>
-<li>output: <a href="#/section-26"></a></li>
+<li>stack: []</li>
+<li>output: []</li>
 </ul>
 </section><section id="section-2" class="slide level2">
 <h2></h2>
 <p><img src="images/2.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 1 ]</li>
-<li>output: <a href="#/section-26"></a></li>
+<li>output: []</li>
 </ul>
 </section><section id="section-3" class="slide level2">
 <h2></h2>
 <p><img src="images/3.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 2, 1 ]</li>
-<li>output: <a href="#/section-26"></a></li>
+<li>output: []</li>
 </ul>
 </section><section id="section-4" class="slide level2">
 <h2></h2>
 <p><img src="images/4.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 3, 2, 1 ]</li>
-<li>output: <a href="#/section-26"></a></li>
+<li>output: []</li>
 </ul>
 </section><section id="section-5" class="slide level2">
 <h2></h2>
 <p><img src="images/5.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 3, 2, 1 ]</li>
-<li>output: <a href="#/section-26"></a></li>
+<li>output: []</li>
 </ul>
 </section><section id="section-6" class="slide level2">
 <h2></h2>
 <p><img src="images/6.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 3, 2, 1 ]</li>
-<li>output: <a href="#/section-26"></a></li>
+<li>output: []</li>
 </ul>
 </section><section id="section-7" class="slide level2">
 <h2></h2>
 <p><img src="images/7.svg" style="height: 9em;"></p>
 <ul>
 <li>stack: [ 3, 2, 1 ]</li>
-<li>output: <a href="#/section-26"></a></li>
+<li>output: []</li>
 </ul>
 </section><section id="section-8" class="slide level2">
 <h2></h2>
 <p><img src="images/8.svg" style="height: 9em;"></p>
 <ul>
-<li>stack: <a href="#/section-26"></a></li>
+<li>stack: []</li>
 <li>output: [ [3, 2, 1] ]</li>
 </ul>
 </section><section id="section-9" class="slide level2">
@@ -350,7 +352,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2></h2>
 <p><img src="images/23.svg" style="height: 9em;"></p>
 <ul>
-<li>stack: <a href="#/section-26"></a></li>
+<li>stack: []</li>
 <li>output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ] ]</li>
 </ul>
 </section><section id="section-24" class="slide level2">
@@ -371,7 +373,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2></h2>
 <p><img src="images/26.svg" style="height: 9em;"></p>
 <ul>
-<li>stack: <a href="#/section-26"></a></li>
+<li>stack: []</li>
 <li>output: [ [3, 2, 1], [ 7, 6 ], [ 5, 4 ], [ 8 ] ]</li>
 </ul>
 </section></section>
@@ -396,7 +398,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 
-  <script src="reveal.js/lib/js/head.min.js"></script>
   <script src="reveal.js/js/reveal.js"></script>
 
   <script>
