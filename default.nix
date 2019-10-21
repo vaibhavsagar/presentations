@@ -12,6 +12,7 @@ in nixpkgs.linkFarm "presentations" (presentations [
   "javascript-in-haskell"
   "lazy-functional-state-threads"
   "popcount"
+  "space-efficient-static-trees-graphs"
   "tarjans-scc"
   "typed-holes"
 ])
