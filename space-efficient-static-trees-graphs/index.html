@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Guy Jacobson">
+  <title>Space-efficient Static Trees and Graphs</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reset.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Space-efficient Static Trees and Graphs</h1>
+  <p class="author">Guy Jacobson</p>
+  <p class="date">(presented by Vaibhav Sagar)</p>
+</section>
+
+<section><section id="data-structures-take-up-too-much-space" class="title-slide slide level1"><h1>Data structures take up too much space!</h1></section><section id="a-pointer-to-n-possible-locations-needs-log_2-n-bits" class="slide level2">
+<h2>A pointer to <span class="math inline"><em>n</em></span> possible locations needs <span class="math inline">log<sub>2</sub><em>n</em></span> bits</h2>
+</section><section id="data-structures-with-n-items-need-onlog_2-n-space-for-pointers" class="slide level2">
+<h2>Data structures with <span class="math inline"><em>n</em></span> items need <span class="math inline"><em>O</em>(<em>n</em>log<sub>2</sub><em>n</em>)</span> space for pointers!</h2>
+</section><section id="the-rent-is-too-damn-high" class="slide level2">
+<h2>The rent is too damn high!</h2>
+<figure>
+<img data-src="https://cdn.theatlantic.com/assets/media/img/upload/wire/2014/08/26/AP101018137899/lead_720_405.jpg" alt="" /><figcaption>Source: The Atlantic</figcaption>
+</figure>
+</section><section id="unlabeled-binary-trees-only-need-2n-on-bits" class="slide level2">
+<h2>Unlabeled binary trees only need <span class="math inline">2<em>n</em> + <em>o</em>(<em>n</em>)</span> bits</h2>
+</section><section id="one-approach-balanced-parentheses" class="slide level2">
+<h2>One approach: balanced parentheses?</h2>
+</section><section id="better-space-usage-but-inefficient-to-use" class="slide level2">
+<h2>Better space usage, but inefficient to use</h2>
+</section><section id="how-do-we-get-efficient-space-usage-and-efficient-operations" class="slide level2">
+<h2>How do we get efficient space usage <em>and</em> efficient operations?</h2>
+</section><section id="metrics-for-space-and-time" class="slide level2">
+<h2>Metrics for space and time</h2>
+<ul>
+<li>Space: measured in bits</li>
+<li>Time: measured in bit-accesses</li>
+</ul>
+</section></section>
+<section><section id="ranking-and-selection" class="title-slide slide level1"><h1>Ranking and selection</h1></section><section id="rank" class="slide level2">
+<h2>Rank</h2>
+<p><span class="math inline"><em>r</em><em>a</em><em>n</em><em>k</em><sub><em>e</em></sub>(<em>S</em>, <em>i</em>)</span>: The number of <span class="math inline"><em>e</em></span>s at or before index <span class="math inline"><em>i</em></span></p>
+</section><section id="select" class="slide level2">
+<h2>Select</h2>
+<p><span class="math inline"><em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em><sub><em>e</em></sub>(<em>S</em>, <em>i</em>)</span>: The index of the <span class="math inline"><em>i</em></span>th <span class="math inline"><em>e</em></span></p>
+</section><section id="time-complexity" class="slide level2">
+<h2>Time complexity</h2>
+<ul>
+<li>$O(_2 {} n) at the time of writing, $O(1) now!</li>
+</ul>
+</section><section id="more-resources" class="slide level2">
+<h2>More resources</h2>
+<ul>
+<li><a href="https://dl.acm.org/citation.cfm?id=545411">Succinct indexable dictionaries with applications to encoding k-ary trees and multisets</a></li>
+<li><a href="https://users.dcc.uchile.cl/~gnavarro/ps/sea12.1.pdf">Fast, Small, Simple Rank/Select on Bitmaps</a></li>
+<li><a href="http://www.cs.cmu.edu/~dga/papers/zhou-sea2013.pdf">Space-Efficient, High-Performance Rank &amp; Select Structures on Uncompressed Bit Sequences</a></li>
+</ul>
+</section><section id="rankselect-beyond-bitmaps" class="slide level2">
+<h2>Rank/Select beyond bitmaps</h2>
+<ul>
+<li><a href="https://users.dcc.uchile.cl/~gnavarro/ps/cpm12.pdf">Wavelet Trees for All</a></li>
+</ul>
+</section></section>
+<section><section id="trees" class="title-slide slide level1"><h1>Trees</h1></section><section id="level-order-binary-marked" class="slide level2">
+<h2>Level-order binary marked</h2>
+</section><section id="level-order-unary-degree-sequence" class="slide level2">
+<h2>Level-order unary degree sequence</h2>
+</section></section>
+<section><section id="graphs" class="title-slide slide level1"><h1>Graphs</h1></section><section id="parentheses-balancing" class="slide level2">
+<h2>Parentheses balancing</h2>
+</section><section id="bounded-pagenumber-graphs" class="slide level2">
+<h2>Bounded pagenumber graphs</h2>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
