@@ -51,9 +51,29 @@ $select_e(S, i)$: The index of the $i$th $e$
 
 # Trees
 
+## Implicit bitmap
+
+<img src="images/implicit-bitmap.png" style="height: 12em;">
+
 ## Level-order binary marked
 
+<img src="images/lobm.png" style="height: 12em;">
+
+## Level-order binary marked
+
+- $left\mbox{-}child(m) = 2 \cdot rank(m)$
+- $right\mbox{-}child(m) = 2 \cdot rank(m) + 1$
+- $parent(m) = select(\lfloor m/2 \rfloor)$
+
 ## Level-order unary degree sequence
+
+<img src="images/louds.png" style="height: 10em;">
+
+## Level-order unary degree sequence
+
+- $first\mbox{-}child = select_0(rank(m)) + 1$
+- $next\mbox{-}sibling = m + 1$
+- $parent(m) = select(rank_0(m))$
 
 # Graphs
 
