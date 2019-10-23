@@ -1,6 +1,7 @@
 % Space-efficient Static Trees and Graphs
 % Guy Jacobson
 % (presented by Vaibhav Sagar)
+% @vbhvsgr
 
 # Data structures take up too much space!
 
