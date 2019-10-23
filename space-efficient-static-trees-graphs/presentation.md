@@ -102,4 +102,8 @@ $select_e(S, i)$: The index of the $i$th $e$
 
 # Thanks!
 
+## This presentation
+
+These slides are at https://vaibhavsagar.com/presentations/space-efficient-static-trees-graphs
+
 # Questions?
