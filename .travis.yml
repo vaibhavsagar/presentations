@@ -3,5 +3,5 @@ before_install:
   - echo "binary-caches = https://cache.nixos.org https://vaibhavsagar.cachix.org" >> $NIX_CONF_DIR/nix.conf
   - echo "binary-cache-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= vaibhavsagar.cachix.org-1:PxFckJ8oAzgF4sdFJ855Fw38yCVbXmzJ98Cc6dGzcE0=" >> $NIX_CONF_DIR/nix.conf
 language: nix
-nix: 2.2.2
+nix: 2.3
 after_success: bash .ci/update_pages.sh
