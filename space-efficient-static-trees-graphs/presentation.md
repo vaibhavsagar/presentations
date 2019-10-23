@@ -79,4 +79,27 @@ $select_e(S, i)$: The index of the $i$th $e$
 
 ## Parentheses balancing
 
+<img src="images/parentheses-balancer.png" style="height: 10em;">
+
 ## Bounded pagenumber graphs
+
+<img src="images/one-page-graph.png" style="height: 10em;">
+
+## Bounded pagenumber graphs
+
+- $node\mbox{-}to\mbox{-}edge(m) = rank_0(select(m) + 1)$
+- $edge\mbox{-}to\mbox{-}node(e) = rank(select_0(e))$
+
+# Succinct data structures today
+
+## Semi-indexing
+
+<img src="images/semi-index.png" style="height: 10em;">
+
+## Compact Data Structures
+
+<img src="https://users.dcc.uchile.cl/~gnavarro/CDSbook/cover.png" style="height: 10em;">
+
+# Thanks!
+
+# Questions?
