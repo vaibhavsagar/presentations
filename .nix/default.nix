@@ -3,7 +3,7 @@ let
   nixpkgs = import pkgs.nixpkgs {};
   defaultCommand = src: pkgs: ''
     mkdir -p $out
-    pandoc --standalone -t revealjs -V theme:simple ${src + "/presentation.md"} -o $out/index.html
+    pandoc --standalone -t revealjs -V theme:simple ${src + "/presentation.md"} -A ${../tracking.html} -o $out/index.html
     cp -R ${pkgs.revealjs} $out/reveal.js
   '';
 in { command ? defaultCommand, name, src }: nixpkgs.runCommand name {
