@@ -38,11 +38,71 @@
   <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
-<section><section id="partial-evaluation" class="title-slide slide level1"><h1>Partial Evaluation</h1></section><section id="programs-take-static-and-dynamic-input" class="title-slide slide level2"><h2>Programs take static and dynamic input</h2></section><section id="can-we-pre-compute-with-static-input" class="title-slide slide level2"><h2>Can we pre-compute with static input?</h2></section><section id="residual-program" class="title-slide slide level2"><h2>“Residual” program</h2></section><section id="specialisers" class="title-slide slide level2"><h2>Specialisers</h2></section></section>
-<section><section id="executables-for-free" class="title-slide slide level1"><h1>Executables for free</h1></section><section id="specialise-interpreter-with-source-program" class="title-slide slide level2"><h2>Specialise interpreter with source program</h2></section></section>
-<section><section id="compilers-for-nothing" class="title-slide slide level1"><h1>Compilers for nothing</h1></section><section id="specialise-specialiser-with-interpreter" class="title-slide slide level2"><h2>Specialise specialiser with interpreter</h2></section></section>
-<section><section id="compiler-compiler-deliveries" class="title-slide slide level1"><h1>Compiler-compiler deliveries</h1></section><section id="specialise-specialiser-with-specialiser" class="title-slide slide level2"><h2>Specialise specialiser with specialiser</h2></section></section>
-<section><section id="why" class="title-slide slide level1"><h1>Why?</h1></section><section id="optimisations" class="title-slide slide level2"><h2>Optimisations</h2></section><section id="jit" class="title-slide slide level2"><h2>JIT</h2></section><section id="pypy-graal-llvm" class="title-slide slide level2"><h2>PyPy, Graal, LLVM</h2></section></section>
+<section><section id="partial-evaluation" class="title-slide slide level1"><h1>Partial Evaluation</h1></section><section id="programs-take-static-and-dynamic-input" class="slide level2">
+<h2>Programs take static and dynamic input</h2>
+<ul>
+<li>e.g. anything that has a configuration file</li>
+</ul>
+</section><section id="can-we-pre-compute-with-static-input" class="slide level2">
+<h2>Can we pre-compute with static input?</h2>
+<ul>
+<li>Feed the program and the static input into a program</li>
+<li>Simple transformations like inlining constants and unrolling loops</li>
+</ul>
+</section><section id="residual-program" class="slide level2">
+<h2>“Residual” program</h2>
+<ul>
+<li>Behaves the same as the original program but is faster</li>
+</ul>
+</section><section id="specialisers" class="slide level2">
+<h2>Specialisers</h2>
+<ul>
+<li>Specialise a program P “with respect to” input I</li>
+</ul>
+</section></section>
+<section><section id="futamura-projections" class="title-slide slide level1"><h1>Futamura projections</h1></section><section id="specialise-interpreter-with-source-program" class="slide level2">
+<h2>Specialise interpreter with source program</h2>
+<ul>
+<li>Outputs a standalone program</li>
+<li>Faster than interpreter + source program</li>
+<li>We “compiled” it!</li>
+</ul>
+</section><section id="specialise-specialiser-with-interpreter" class="slide level2">
+<h2>Specialise specialiser with interpreter</h2>
+<ul>
+<li>Outputs a program that can then take a source program and output a standalone executable (like in step 1 above)</li>
+<li>We made a “compiler”!</li>
+</ul>
+</section><section id="specialise-specialiser-with-specialiser" class="slide level2">
+<h2>Specialise specialiser with specialiser</h2>
+<ul>
+<li>Outputs a program that can then take an interpreter and output a compiler (like in step 2)</li>
+<li>We made a “compiler compiler”!</li>
+</ul>
+</section></section>
+<section><section id="why" class="title-slide slide level1"><h1>Why?</h1></section><section id="interpreter---compiler" class="slide level2">
+<h2>Interpreter &lt;-&gt; Compiler?</h2>
+<ul>
+<li>A specialiser sits somewhere between an interpreter and a compiler</li>
+<li>Small, simpler programs are easier to write and work with</li>
+</ul>
+</section><section id="optimisations" class="slide level2">
+<h2>Optimisations</h2>
+<ul>
+<li>Was what we did optimisation?</li>
+<li>Static Analysis, Loop Unrolling, Constant Inlining…</li>
+</ul>
+</section><section id="pypy-trufflegraal-llvm" class="slide level2">
+<h2>PyPy, Truffle/Graal, LLVM</h2>
+<ul>
+<li>Write your language a certain way and get a JIT for free!</li>
+</ul>
+</section><section id="jit" class="slide level2">
+<h2>JIT</h2>
+<ul>
+<li>Roughly the same as the second Futamura projection!</li>
+</ul>
+</section></section>
 <section id="resources" class="title-slide slide level1"><h1>Resources</h1></section>
 <section id="thanks" class="title-slide slide level1"><h1>Thanks!</h1></section>
     </div>
