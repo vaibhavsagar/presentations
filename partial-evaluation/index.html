@@ -40,8 +40,23 @@
 
 <section><section id="partial-evaluation" class="title-slide slide level1"><h1>Partial Evaluation</h1></section><section id="programs-take-static-and-dynamic-input" class="slide level2">
 <h2>Programs take static and dynamic input</h2>
+<pre><code>+--------+   +---------+
+|        |   |         |
+| Static |   | Dynamic |
+|        |   |         |
++--------+   +---------+
+     ^---+  +----^
+         |  |
+      +--+--+---+        +--------+
+      |         |        |        |
+      | Program +-------&gt;+ Output |
+      |         |        |        |
+      +---------+        +--------+</code></pre>
+</section><section id="programs-take-static-and-dynamic-input-1" class="slide level2">
+<h2>Programs take static and dynamic input</h2>
 <ul>
 <li>e.g. anything that has a configuration file</li>
+<li>such as… Vim!</li>
 </ul>
 </section><section id="can-we-pre-compute-with-static-input" class="slide level2">
 <h2>Can we pre-compute with static input?</h2>
