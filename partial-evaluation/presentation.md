@@ -5,7 +5,25 @@
 
 ## Programs take static and dynamic input
 
+```
++--------+   +---------+
+|        |   |         |
+| Static |   | Dynamic |
+|        |   |         |
++--------+   +---------+
+     ^---+  +----^
+         |  |
+      +--+--+---+        +--------+
+      |         |        |        |
+      | Program +------->+ Output |
+      |         |        |        |
+      +---------+        +--------+
+```
+
+## Programs take static and dynamic input
+
 - e.g. anything that has a configuration file
+- such as... Vim!
 
 ## Can we pre-compute with static input?
 
