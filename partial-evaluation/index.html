@@ -38,6 +38,21 @@
   <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
+<section><section id="problem" class="title-slide slide level1"><h1>Problem</h1></section><section id="vim" class="slide level2">
+<h2>Vim</h2>
+<ul>
+<li>I have a <code>.vimrc</code></li>
+<li>Vim is fast, but could be faster</li>
+<li>Extra functionality that I don’t need</li>
+</ul>
+</section><section id="my-special-vim" class="slide level2">
+<h2>My Special Vim</h2>
+<ul>
+<li>Inline my <code>.vimrc</code> into the Vim source code</li>
+<li>Throw away anything else that isn’t needed</li>
+<li>Smaller, faster, no downside</li>
+</ul>
+</section></section>
 <section><section id="partial-evaluation" class="title-slide slide level1"><h1>Partial Evaluation</h1></section><section id="programs-take-static-and-dynamic-input" class="slide level2">
 <h2>Programs take static and dynamic input</h2>
 <pre><code>+--------+   +---------+
@@ -56,7 +71,6 @@
 <h2>Programs take static and dynamic input</h2>
 <ul>
 <li>e.g. anything that has a configuration file</li>
-<li>such as… Vim!</li>
 </ul>
 </section><section id="can-we-pre-compute-with-static-input" class="slide level2">
 <h2>Can we pre-compute with static input?</h2>
@@ -88,6 +102,25 @@
 <h2>Specialisers</h2>
 <ul>
 <li>Specialise a program P “with respect to” input I</li>
+</ul>
+</section></section>
+<section><section id="interpreters-vs.-compilers" class="title-slide slide level1"><h1>Interpreters vs. Compilers</h1></section><section id="interpreters" class="slide level2">
+<h2>Interpreters</h2>
+<ul>
+<li>Simpler to write</li>
+<li>Slow</li>
+</ul>
+</section><section id="compilers" class="slide level2">
+<h2>Compilers</h2>
+<ul>
+<li>Harder to write</li>
+<li>Fast</li>
+</ul>
+</section><section id="can-we-have-both" class="slide level2">
+<h2>Can we have both?</h2>
+<ul>
+<li>Simple to write</li>
+<li>Fast enough</li>
 </ul>
 </section></section>
 <section><section id="futamura-projections" class="title-slide slide level1"><h1>Futamura projections</h1></section><section id="specialise-interpreter-with-source-program" class="slide level2">
@@ -178,7 +211,17 @@
 <li>Roughly the same as the second Futamura projection!</li>
 </ul>
 </section></section>
-<section id="resources" class="title-slide slide level1"><h1>Resources</h1></section>
+<section><section id="resources" class="title-slide slide level1"><h1>Resources</h1></section><section id="links" class="slide level2">
+<h2>Links</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Partial_evaluation">The Wikipedia page</a></li>
+<li><a href="https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/103401">Yoshihiko Futamura’s seminal <em>Partial Computation of Programs</em></a></li>
+<li><a href="https://codon.com/compilers-for-free">Tom Stuart’s <em>Compilers for Free</em></a></li>
+<li><a href="https://www.itu.dk/people/sestoft/pebook/">A free online textbook</a></li>
+<li><a href="http://wry.me/~darius/writings/peval/">Darius Bacon’s <em>A Hacker’s Intro to Partial Evaluation</em></a></li>
+<li><a href="https://www.gwern.net/docs/cs/2009-gluck.pdf"><em>Is There a Fourth Futamura Projection?</em></a></li>
+</ul>
+</section></section>
 <section id="thanks" class="title-slide slide level1"><h1>Thanks!</h1></section>
     </div>
   </div>
