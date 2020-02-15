@@ -36,9 +36,45 @@
 
 ## Specialisers
 
+```
++---------+    +--------+  +---------+
+|         |    |        |  |         |
+| Program |    | Static |  | Dynamic |
+|         |    |        |  |         |
++---------+    +--------+  +---+-----+
+     ^---+     +----^          ^
+         |     |               |
+         |     |               |
+      +--+-----+----+      +---+------+   +--------+
+      |             |      |          |   |        |
+      | Specialiser +----->+ Residual +-->+ Output |
+      |             |      |          |   |        |
+      +-------------+      +----------+   +--------+
+```
+
+## Specialisers
+
 - Specialise a program P "with respect to" input I
 
 # Futamura projections
+
+## Specialise interpreter with source program
+
+```
++-------------+  +--------+  +-------+
+|             |  |        |  |       |
+| Interpreter |  | Source |  | Input |
+|             |  |        |  |       |
++-------------+  +--------+  +---+---+
+       ^---+     +----^          |
+           |     |               |
+           |     |               |
+        +--+-----+----+      +---+-----+    +--------+
+        |             |      |         |    |        |
+        | Specialiser +----->+    ?    +--->+ Output |
+        |             |      |         |    |        |
+        +-------------+      +---------+    +--------+
+```
 
 ## Specialise interpreter with source program
 
@@ -47,10 +83,46 @@
 - We "compiled" it!
 
 ## Specialise specialiser with interpreter
+```
++-------------+  +-------------+  +--------+
+|             |  |             |  |        |
+| Specialiser |  | Interpreter |  | Source |
+|             |  |             |  |        |
++-------------+  +-------------+  +---+----+
+       ^---+     +------^        +----^
+           |     |               |
+           |     |               |
+        +--+-----+----+      +---+-----+    +------------+
+        |             |      |         |    |            |
+        | Specialiser +----->+    ?    +--->+ Executable |
+        |             |      |         |    |            |
+        +-------------+      +---------+    +------------+
+```
+
+
+## Specialise specialiser with interpreter
 
 - Outputs a program that can then take a source program and output a standalone
   executable (like in step 1 above)
 - We made a "compiler"!
+
+## Specialise specialiser with specialiser
+
+```
++-------------+  +-------------+  +-------------+
+|             |  |             |  |             |
+| Specialiser |  | Specialiser |  | Interpreter |
+|             |  |             |  |             |
++-------------+  +-------------+  +-------------+
+       ^---+     +------^        +-------^
+           |     |               |
+           |     |               |
+        +--+-----+----+      +---+-----+    +----------+
+        |             |      |         |    |          |
+        | Specialiser +----->+    ?    +--->+ Compiler |
+        |             |      |         |    |          |
+        +-------------+      +---------+    +----------+
+```
 
 ## Specialise specialiser with specialiser
 
