@@ -1,6 +1,20 @@
 % Compilers for nothing, executables for free!
 % Vaibhav Sagar (@vbhvsgr)
 
+# Problem
+
+## Vim
+
+- I have a `.vimrc`
+- Vim is fast, but could be faster
+- Extra functionality that I don't need
+
+## My Special Vim
+
+- Inline my `.vimrc` into the Vim source code
+- Throw away anything else that isn't needed
+- Smaller, faster, no downside
+
 # Partial Evaluation
 
 ## Programs take static and dynamic input
@@ -23,7 +37,6 @@
 ## Programs take static and dynamic input
 
 - e.g. anything that has a configuration file
-- such as... Vim!
 
 ## Can we pre-compute with static input?
 
@@ -55,6 +68,23 @@
 ## Specialisers
 
 - Specialise a program P "with respect to" input I
+
+# Interpreters vs. Compilers
+
+## Interpreters
+
+- Simpler to write
+- Slow
+
+## Compilers
+
+- Harder to write
+- Fast
+
+## Can we have both?
+
+- Simple to write
+- Fast enough
 
 # Futamura projections
 
@@ -151,5 +181,14 @@
 - Roughly the same as the second Futamura projection!
 
 # Resources
+
+## Links
+
+- [The Wikipedia page](https://en.wikipedia.org/wiki/Partial_evaluation)
+- [Yoshihiko Futamura's seminal *Partial Computation of Programs*](https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/103401)
+- [Tom Stuart's *Compilers for Free*](https://codon.com/compilers-for-free)
+- [A free online textbook](https://www.itu.dk/people/sestoft/pebook/)
+- [Darius Bacon's *A Hacker's Intro to Partial Evaluation*](http://wry.me/~darius/writings/peval/)
+- [*Is There a Fourth Futamura Projection?*](https://www.gwern.net/docs/cs/2009-gluck.pdf)
 
 # Thanks!
