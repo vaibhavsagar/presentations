@@ -236,19 +236,19 @@
 <section id="thanks" class="title-slide slide level1"><h1>Thanks!</h1></section>
 <section><section id="bonus-the-fourth-futamura-projection" class="title-slide slide level1"><h1>Bonus: The Fourth Futamura Projection</h1></section><section id="fixed-point" class="slide level2">
 <h2>Fixed point</h2>
-<pre><code>+-------------+  +-------------+       +-------------+
-|             |  |             |       |             |
-| Specialiser |  | Specialiser |       | Specialiser |
-|             |  |             |       |             |
-+-------------+  +-------------+       +-------------+
-       ^---+     +------^             +-------^
-           |     |                    |
-           |     |                    |
-        +--+-----+----+      +--------+----------+    +-------------+
-        |             |      |                   |    |             |
-        | Specialiser +-----&gt;+ Compiler Compiler +---&gt;+ Specialiser |
-        |             |      |                   |    |             |
-        +-------------+      +-------------------+    +-------------+</code></pre>
+<pre><code>+-------------+  +-------------+  +-------------+
+|             |  |             |  |             |
+| Specialiser |  | Specialiser |  | Specialiser |
+|             |  |             |  |             |
++-------------+  +-------------+  +-------------+
+       ^---+     +------^        +-------^
+           |     |               |
+           |     |               |
+        +--+-----+----+      +---+-----+    +--------------+
+        |             |      |         |    |              |
+        | Specialiser +-----&gt;+    ?    +---&gt;+ Specialiser! |
+        |             |      |         |    |              |
+        +-------------+      +---------+    +--------------+</code></pre>
 </section></section>
     </div>
   </div>
