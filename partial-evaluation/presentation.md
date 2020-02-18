@@ -188,6 +188,10 @@
 
 - Roughly the same as the second Futamura projection!
 
+## Faster programs
+
+- i.e. the specialised Vim of my dreams!
+
 # Resources
 
 ## Links
