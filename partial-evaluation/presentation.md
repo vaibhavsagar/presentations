@@ -88,6 +88,14 @@
 
 # Futamura projections
 
+## Futurama?
+
+<img src=images/futurama-logo.png>
+
+## Futamura!
+
+<img src=images/futamura-logo.png>
+
 ## Specialise interpreter with source program
 
 ```
@@ -192,3 +200,23 @@
 - [*Is There a Fourth Futamura Projection?*](https://www.gwern.net/docs/cs/2009-gluck.pdf)
 
 # Thanks!
+
+# Bonus: The Fourth Futamura Projection
+
+## Fixed point
+
+```
++-------------+  +-------------+       +-------------+
+|             |  |             |       |             |
+| Specialiser |  | Specialiser |       | Specialiser |
+|             |  |             |       |             |
++-------------+  +-------------+       +-------------+
+       ^---+     +------^             +-------^
+           |     |                    |
+           |     |                    |
+        +--+-----+----+      +--------+----------+    +-------------+
+        |             |      |                   |    |             |
+        | Specialiser +----->+ Compiler Compiler +--->+ Specialiser |
+        |             |      |                   |    |             |
+        +-------------+      +-------------------+    +-------------+
+```
