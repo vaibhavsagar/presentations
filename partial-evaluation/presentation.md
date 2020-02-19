@@ -73,12 +73,14 @@
 
 ## Interpreters
 
+- E.g. Python
 - Execute instructions directly
 - Simpler to write
 - Slow
 
 ## Compilers
 
+- E.g. C
 - Generate standalone programs
 - Harder to write
 - Fast
@@ -90,13 +92,6 @@
 
 # Futamura projections
 
-## Futurama?
-
-<img src=images/futurama-logo.png>
-
-## Futamura!
-
-<img src=images/futamura-logo.png>
 
 ## Specialise interpreter with source program
 
@@ -194,9 +189,9 @@
 
 - i.e. the specialised Vim of my dreams!
 
-# Resources
+# Thanks!
 
-## Links
+## Resources
 
 - [The Wikipedia page](https://en.wikipedia.org/wiki/Partial_evaluation)
 - [Yoshihiko Futamura's seminal *Partial Computation of Programs*](https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/103401)
@@ -205,7 +200,9 @@
 - [Darius Bacon's *A Hacker's Intro to Partial Evaluation*](http://wry.me/~darius/writings/peval/)
 - [*Is There a Fourth Futamura Projection?*](https://www.gwern.net/docs/cs/2009-gluck.pdf)
 
-# Thanks!
+## Futamura!
+
+<img src=images/futamura-logo.png>
 
 # Bonus: The Fourth Futamura Projection
 
