@@ -25,9 +25,9 @@
 | Static |   | Dynamic |
 |        |   |         |
 +--------+   +---------+
-     ^---+  +----^
-         |  |
-      +--+--+---+        +--------+
+     ^---+   +---^
+         |   |
+      +--+---+--+        +--------+
       |         |        |        |
       | Program +------->+ Output |
       |         |        |        |
@@ -73,11 +73,13 @@
 
 ## Interpreters
 
+- Execute instructions directly
 - Simpler to write
 - Slow
 
 ## Compilers
 
+- Generate standalone programs
 - Harder to write
 - Fast
 
