@@ -135,7 +135,7 @@ insert_space()
 # Futamura projections
 
 
-## Specialise interpreter with source program
+## Interpreter with source program
 
 ```
 +-------------+  +--------+  +-------+
@@ -153,13 +153,14 @@ insert_space()
         +-------------+      +---------+    +--------+
 ```
 
-## Specialise interpreter with source program
+## Interpreter with source program
 
 - Outputs a standalone program
 - Faster than interpreter + source program
 - We "compiled" it!
+- E.g. Python interpreter + Python source program => "compiled" program
 
-## Specialise specialiser with interpreter
+## Specialiser with interpreter
 ```
 +-------------+  +-------------+  +--------+
 |             |  |             |  |        |
@@ -177,14 +178,14 @@ insert_space()
 ```
 
 
-## Specialise specialiser with interpreter
+## Specialiser with interpreter
 
 - Outputs a program that can then take a source program and output a standalone
-  executable (like in step 1 above)
+  executable (like in step 1)
 - We made a "compiler"!
 - E.g. a C specialiser + Python interpreter (in C) => Python "compiler"!
 
-## Specialise specialiser with specialiser
+## Specialiser with specialiser
 
 ```
 +-------------+  +-------------+  +-------------+
@@ -202,7 +203,7 @@ insert_space()
         +-------------+      +---------+    +----------+
 ```
 
-## Specialise specialiser with specialiser
+## Specialiser with specialiser
 
 - Outputs a program that can then take an interpreter and output a compiler
   (like in step 2)
