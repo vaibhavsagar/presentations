@@ -9,6 +9,15 @@
 - Vim could be faster
 - Extra functionality that I don't need
 
+## Vim
+
+```python
+tab_width = 4
+# ...
+for i in range(tab_width):
+    insert_space()
+```
+
 ## My Special Vim
 
 - Inline my `.vimrc` into the Vim source code
@@ -173,6 +182,7 @@ insert_space()
 - Outputs a program that can then take a source program and output a standalone
   executable (like in step 1 above)
 - We made a "compiler"!
+- E.g. a C specialiser + Python interpreter (in C) => Python "compiler"!
 
 ## Specialise specialiser with specialiser
 
@@ -205,6 +215,11 @@ insert_space()
 - A specialiser sits somewhere between an interpreter and a compiler
 - Small, simpler programs are easier to write and work with
 
+## Correctness
+
+- Easier to determine that a compiler is equivalent to an interpreter
+- Less time debugging
+
 ## Optimisations
 
 - Was what we did optimisation?
@@ -212,7 +227,7 @@ insert_space()
 
 ## PyPy, Truffle/Graal, LLVM
 
-- Write your language a certain way and get a JIT for free!
+- Write your language a certain way and get a JIT (just-in-time compiler) for free!
 
 ## JIT
 
