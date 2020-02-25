@@ -6,14 +6,14 @@
 ## Vim
 
 - I have a `.vimrc`
-- Vim is fast, but could be faster
+- Vim could be faster
 - Extra functionality that I don't need
 
 ## My Special Vim
 
 - Inline my `.vimrc` into the Vim source code
 - Throw away anything else that isn't needed
-- Smaller, faster, no downside
+- Smaller and faster!
 
 # Partial Evaluation
 
@@ -24,9 +24,10 @@
 |        |   |         |
 | Static |   | Dynamic |
 |        |   |         |
-+--------+   +---------+
-     ^---+   +---^
++----+---+   +---+-----+
+     \---+   +---/
          |   |
+         v   v
       +--+---+--+        +--------+
       |         |        |        |
       | Program +------->+ Output |
@@ -43,6 +44,38 @@
 - Feed the program and the static input into a program
 - Simple transformations like inlining constants and unrolling loops
 
+## Inlining
+
+```python
+tab_width = 4
+# ...
+for i in range(tab_width):
+    insert_space()
+```
+
+## Inlining
+
+```python
+for i in range(4):
+    insert_space()
+```
+
+## Unrolling
+
+```python
+for i in range(4):
+    insert_space()
+```
+
+## Unrolling
+
+```python
+insert_space()
+insert_space()
+insert_space()
+insert_space()
+```
+
 ## "Residual" program
 
 - Behaves the same as the original program but is faster
@@ -54,10 +87,10 @@
 |         |    |        |  |         |
 | Program |    | Static |  | Dynamic |
 |         |    |        |  |         |
-+---------+    +--------+  +---+-----+
-     ^---+     +----^          ^
++----+----+    +----+---+  +---+-----+
+     \---+     +----/          |
          |     |               |
-         |     |               |
+         v     v               v
       +--+-----+----+      +---+------+   +--------+
       |             |      |          |   |        |
       | Specialiser +----->+ Residual +-->+ Output |
@@ -100,10 +133,10 @@
 |             |  |        |  |       |
 | Interpreter |  | Source |  | Input |
 |             |  |        |  |       |
-+-------------+  +--------+  +---+---+
-       ^---+     +----^          ^
++------+------+  +---+----+  +---+---+
+       \---+     +---/           |
            |     |               |
-           |     |               |
+           v     v               v
         +--+-----+----+      +---+-----+    +--------+
         |             |      |         |    |        |
         | Specialiser +----->+    ?    +--->+ Output |
@@ -123,10 +156,10 @@
 |             |  |             |  |        |
 | Specialiser |  | Interpreter |  | Source |
 |             |  |             |  |        |
-+-------------+  +-------------+  +---+----+
-       ^---+     +------^        +----^
++------+------+  +------+------+  +---+----+
+       \---+     +------/        +----/
            |     |               |
-           |     |               |
+           v     v               v
         +--+-----+----+      +---+-----+    +------------+
         |             |      |         |    |            |
         | Specialiser +----->+    ?    +--->+ Executable |
@@ -148,10 +181,10 @@
 |             |  |             |  |             |
 | Specialiser |  | Specialiser |  | Interpreter |
 |             |  |             |  |             |
-+-------------+  +-------------+  +-------------+
-       ^---+     +------^        +-------^
++------+------+  +------+------+  +------+------+
+       \---+     +------/        +-------/
            |     |               |
-           |     |               |
+           v     v               v
         +--+-----+----+      +---+-----+    +----------+
         |             |      |         |    |          |
         | Specialiser +----->+    ?    +--->+ Compiler |
@@ -213,10 +246,10 @@
 |             |  |             |  |             |
 | Specialiser |  | Specialiser |  | Specialiser |
 |             |  |             |  |             |
-+-------------+  +-------------+  +-------------+
-       ^---+     +------^        +-------^
++------+------+  +------+------+  +------+------+
+       \---+     +------/        +-------/
            |     |               |
-           |     |               |
+           v     v               v
         +--+-----+----+      +---+-----+    +--------------+
         |             |      |         |    |              |
         | Specialiser +----->+    ?    +--->+ Specialiser! |
