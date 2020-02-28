@@ -218,8 +218,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Fast enough</li>
 </ul>
 </section></section>
-<section><section id="futamura-projections" class="title-slide slide level1"><h1>Futamura projections</h1></section><section id="specialise-interpreter-with-source-program" class="slide level2">
-<h2>Specialise interpreter with source program</h2>
+<section><section id="futamura-projections" class="title-slide slide level1"><h1>Futamura projections</h1></section><section id="interpreter-with-source-program" class="slide level2">
+<h2>Interpreter with source program</h2>
 <pre><code>+-------------+  +--------+  +-------+
 |             |  |        |  |       |
 | Interpreter |  | Source |  | Input |
@@ -233,15 +233,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         | Specialiser +-----&gt;+    ?    +---&gt;+ Output |
         |             |      |         |    |        |
         +-------------+      +---------+    +--------+</code></pre>
-</section><section id="specialise-interpreter-with-source-program-1" class="slide level2">
-<h2>Specialise interpreter with source program</h2>
+</section><section id="interpreter-with-source-program-1" class="slide level2">
+<h2>Interpreter with source program</h2>
 <ul>
 <li>Outputs a standalone program</li>
 <li>Faster than interpreter + source program</li>
 <li>We “compiled” it!</li>
+<li>E.g. Python interpreter + Python source program =&gt; “compiled” program</li>
 </ul>
-</section><section id="specialise-specialiser-with-interpreter" class="slide level2">
-<h2>Specialise specialiser with interpreter</h2>
+</section><section id="specialiser-with-interpreter" class="slide level2">
+<h2>Specialiser with interpreter</h2>
 <pre><code>+-------------+  +-------------+  +--------+
 |             |  |             |  |        |
 | Specialiser |  | Interpreter |  | Source |
@@ -255,15 +256,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         | Specialiser +-----&gt;+    ?    +---&gt;+ Executable |
         |             |      |         |    |            |
         +-------------+      +---------+    +------------+</code></pre>
-</section><section id="specialise-specialiser-with-interpreter-1" class="slide level2">
-<h2>Specialise specialiser with interpreter</h2>
+</section><section id="specialiser-with-interpreter-1" class="slide level2">
+<h2>Specialiser with interpreter</h2>
 <ul>
-<li>Outputs a program that can then take a source program and output a standalone executable (like in step 1 above)</li>
+<li>Outputs a program that can then take a source program and output a standalone executable (like in step 1)</li>
 <li>We made a “compiler”!</li>
 <li>E.g. a C specialiser + Python interpreter (in C) =&gt; Python “compiler”!</li>
 </ul>
-</section><section id="specialise-specialiser-with-specialiser" class="slide level2">
-<h2>Specialise specialiser with specialiser</h2>
+</section><section id="specialiser-with-specialiser" class="slide level2">
+<h2>Specialiser with specialiser</h2>
 <pre><code>+-------------+  +-------------+  +-------------+
 |             |  |             |  |             |
 | Specialiser |  | Specialiser |  | Interpreter |
@@ -277,8 +278,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         | Specialiser +-----&gt;+    ?    +---&gt;+ Compiler |
         |             |      |         |    |          |
         +-------------+      +---------+    +----------+</code></pre>
-</section><section id="specialise-specialiser-with-specialiser-1" class="slide level2">
-<h2>Specialise specialiser with specialiser</h2>
+</section><section id="specialiser-with-specialiser-1" class="slide level2">
+<h2>Specialiser with specialiser</h2>
 <ul>
 <li>Outputs a program that can then take an interpreter and output a compiler (like in step 2)</li>
 <li>We made a “compiler compiler”!</li>
@@ -330,7 +331,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="futamura" class="slide level2">
 <h2>Futamura!</h2>
+<p><img src=images/futamura-tweet.png></p>
+</section><section id="futamura-1" class="slide level2">
+<h2>Futamura!</h2>
+<p><img src=images/futurama-reply-tweet.png></p>
+</section><section id="futamura-2" class="slide level2">
+<h2>Futamura!</h2>
 <p><img src=images/futamura-logo.png></p>
+</section><section id="slides" class="slide level2">
+<h2>Slides</h2>
+<p><a href="https://vaibhavsagar.com/presentations/partial-evaluation">https://vaibhavsagar.com/presentations/partial-evaluation</a></p>
 </section></section>
 <section><section id="bonus-the-fourth-futamura-projection" class="title-slide slide level1"><h1>Bonus: The Fourth Futamura Projection</h1></section><section id="fixed-point" class="slide level2">
 <h2>Fixed point</h2>
