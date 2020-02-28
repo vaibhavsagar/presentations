@@ -251,7 +251,19 @@ insert_space()
 
 ## Futamura!
 
+<img src=images/futamura-tweet.png>
+
+## Futamura!
+
+<img src=images/futurama-reply-tweet.png>
+
+## Futamura!
+
 <img src=images/futamura-logo.png>
+
+## Slides
+
+[https://vaibhavsagar.com/presentations/partial-evaluation](https://vaibhavsagar.com/presentations/partial-evaluation)
 
 # Bonus: The Fourth Futamura Projection
 
