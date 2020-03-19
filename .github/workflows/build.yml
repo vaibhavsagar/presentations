@@ -2,7 +2,7 @@ name: "Build"
 on:
   push:
 jobs:
-  tests:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -10,3 +10,8 @@ jobs:
     - uses: cachix/cachix-action@v5
       with:
         name: vaibhavsagar
+    - run: ./.github/workflows/update_pages.sh
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+        TARGET_REPO: ${{ github.repository }}
+        RUN_NUMBER: ${{ github.run_number }}
