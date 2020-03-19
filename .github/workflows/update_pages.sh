@@ -9,7 +9,7 @@ if [ "$WORKFLOW" == "Build" ]; then
     git config --global user.name "GitHub Action"
 fi
 # Using token, clone gh-pages branch
-git clone --depth 1 --quiet --branch=$BRANCH "https://$GITHUB_TOKEN@github.com/$TARGET_REPO" build > /dev/null 2>&1
+git clone --depth 1 --quiet --branch=$BRANCH "https://vaibhavsagar:$GITHUB_TOKEN@github.com/$TARGET_REPO" build > /dev/null 2>&1
 # Go into directory and copy data we're interested in to that directory
 cd build || exit 1
 rsync -avvL --inplace --no-whole-file --delete --exclude=.git  ../$OUTPUT_FOLDER/ ./
