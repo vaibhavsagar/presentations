@@ -3,6 +3,7 @@ BRANCH=gh-pages
 OUTPUT_FOLDER=result
 
 echo -e "Starting to deploy to GitHub Pages\\n"
+echo -e "$WORKFLOW"
 if [ "$WORKFLOW" == "Build" ]; then
     git config --global user.email "action@github.com"
     git config --global user.name "GitHub Action"
