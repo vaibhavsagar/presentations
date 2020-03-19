@@ -10,6 +10,7 @@ jobs:
     - uses: cachix/cachix-action@v5
       with:
         name: vaibhavsagar
+        signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
     - run: ./.github/workflows/update_pages.sh
       env:
         GITHUB_TOKEN: ${{ github.token }}
