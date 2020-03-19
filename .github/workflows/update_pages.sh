@@ -3,7 +3,6 @@ BRANCH=gh-pages
 OUTPUT_FOLDER=result
 
 echo -e "Starting to deploy to GitHub Pages\\n"
-echo -e "$WORKFLOW"
 if [ "$WORKFLOW" == "Build" ]; then
     git config --global user.email "action@github.com"
     git config --global user.name "GitHub Action"
@@ -17,4 +16,4 @@ rsync -avvL --inplace --no-whole-file --delete --exclude=.git  ../$OUTPUT_FOLDER
 git add --all .
 git commit --allow-empty -m "build $RUN_NUMBER pushed to GitHub Pages"
 git push -fq origin $BRANCH > /dev/null
-echo -e "Deploy completed\n"
+echo -e "Deploy completed\\n"
