@@ -10,8 +10,8 @@
     "owner": "NixOS",
     "repo": "nixpkgs-channels",
     "branch": "nixos-19.09",
-    "rev": "28d2548a03f9ba76c23612599df88d82442fb32a",
-    "sha256": "09v5k1sxc54rhsisvka917fw4a7zcdn2xx0kr8ngzr7niz4pzxa8"
+    "rev": "bf7c0f0461e047bec108a5c5d5d1b144289a65ba",
+    "sha256": "01dsh9932x6xcba2p0xg4n563b85i3p7s2sakj7yf2ws8pgmwhq9"
   },
   "revealjs": {
     "owner": "hakimel",
