@@ -9,14 +9,14 @@
   "nixpkgs": {
     "owner": "NixOS",
     "repo": "nixpkgs-channels",
-    "branch": "nixos-19.09",
-    "rev": "bf7c0f0461e047bec108a5c5d5d1b144289a65ba",
-    "sha256": "01dsh9932x6xcba2p0xg4n563b85i3p7s2sakj7yf2ws8pgmwhq9"
+    "branch": "nixos-20.03",
+    "rev": "2faa76db27c4a8045d050d9b390dbb2249b0f3c0",
+    "sha256": "19g7bas7kd4cipbwxh1hw0kgh4670plsfmk5gqsnivq0x12lbhqd"
   },
   "revealjs": {
     "owner": "hakimel",
     "repo": "reveal.js",
-    "rev": "3da09f1fef1fa3c140d2daa5bdee2a32683dd964",
-    "sha256": "14cva2hxdv4gxpz2a996qs8xhxffw97a90gkz2mmgdczh1kyn1sc"
+    "rev": "94d98ff7d89e35c7d5b289ba387cdb0d42b30793",
+    "sha256": "1xaqgrib3m8ijnphph3aiz6d98w2mm1hlz643dargd12h4kx1lll"
   }
 }
