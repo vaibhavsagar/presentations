@@ -9,10 +9,11 @@ jobs:
     - uses: cachix/install-nix-action@v9
       with:
         skip_adding_nixpkgs_channel: true
-    - uses: cachix/cachix-action@v5
+    - uses: cachix/cachix-action@v6
       with:
         name: vaibhavsagar
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+    - run: nix-build
     - run: ./.github/workflows/update_pages.sh
       env:
         GITHUB_TOKEN: ${{ github.token }}
