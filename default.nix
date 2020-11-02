@@ -11,6 +11,7 @@ in nixpkgs.linkFarm "presentations" (presentations [
   "ihaskell-can-do-that"
   "javascript-in-haskell"
   "lazy-functional-state-threads"
+  "minimal-perfect-hashing"
   "partial-evaluation"
   "popcount"
   "space-efficient-static-trees-graphs"
