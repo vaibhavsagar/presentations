@@ -28,6 +28,7 @@ jobs:
         ls -alh nix-store-cache
         sudo rm -rf nix-store-cache || true
         nix copy ./result --to file://$PWD/nix-store-cache?compression=none
+        ls -alh $PWD/nix-store-cache
     - if: ${{ github.ref == 'refs/heads/master' }}
       run: ./.github/workflows/update_pages.sh
       env:
