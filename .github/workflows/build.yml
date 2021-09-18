@@ -9,11 +9,24 @@ jobs:
     - uses: cachix/install-nix-action@v13
       with:
         skip_adding_nixpkgs_channel: true
+        extra_nix_config: |
+          extra-substituters = file://${{ github.workspace }}/nix-store-cache?priority=10&trusted=true
     - uses: cachix/cachix-action@v10
       with:
         name: vaibhavsagar
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+      name: Setup Nix Cache
+    - uses: actions/cache@v2
+      with:
+        path: nix-store-cache
+        key: nix-store-cache-${{ github.sha }}
+        restore-keys: |
+          nix-store-cache-
     - run: nix-build
+    - name: Rebuild Nix Store Cache
+      run: |
+        rm -rf nix-store-cache || true
+        nix copy ./result --to file://$PWD/nix-store-cache?compression=none
     - run: ./.github/workflows/update_pages.sh
       env:
         GITHUB_TOKEN: ${{ github.token }}
