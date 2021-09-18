@@ -15,8 +15,8 @@ jobs:
       with:
         name: vaibhavsagar
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
-      name: Setup Nix Cache
-    - uses: actions/cache@v2
+    - name: Setup Nix Cache
+      uses: actions/cache@v2
       with:
         path: nix-store-cache
         key: nix-store-cache-${{ github.sha }}
@@ -25,10 +25,11 @@ jobs:
     - run: nix-build
     - name: Rebuild Nix Store Cache
       run: |
+        ls -alh nix-store-cache
         sudo rm -rf nix-store-cache || true
         nix copy ./result --to file://$PWD/nix-store-cache?compression=none
-      if: ${{ github.ref == 'refs/heads/master' }}
-    - run: ./.github/workflows/update_pages.sh
+    - if: ${{ github.ref == 'refs/heads/master' }}
+      run: ./.github/workflows/update_pages.sh
       env:
         GITHUB_TOKEN: ${{ github.token }}
         TARGET_REPO: ${{ github.repository }}
