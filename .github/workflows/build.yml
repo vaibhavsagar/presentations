@@ -25,7 +25,6 @@ jobs:
     - run: nix-build
     - name: Rebuild Nix Store Cache
       run: |
-        ls -alh nix-store-cache
         sudo rm -rf nix-store-cache || true
         nix copy ./result --to file://$PWD/nix-store-cache?compression=none
         chown -R $USER $PWD/nix-store-cache
