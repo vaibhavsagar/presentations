@@ -6,12 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v13
+    - uses: cachix/install-nix-action@v14
       with:
         extra_nix_config: |
-          extra-substituters = file://${{ github.workspace }}/nix-store-cache?priority=10&trusted=true
+          extra-substituters = file://${{ github.workspace }}/nix-store-cache?trusted=true
     - name: display nix.conf
       run: cat /etc/nix/nix.conf
+    - name: echo working directory
+      run: echo $PWD
     - uses: cachix/cachix-action@v10
       with:
         name: vaibhavsagar
@@ -25,7 +27,7 @@ jobs:
         key: nix-store-cache-${{ github.sha }}
         restore-keys: |
           nix-store-cache-
-    - run: nix-build -vvvvv
+    - run: nix-build -vv
     - name: Rebuild Nix Store Cache
       run: |
         sudo rm -rf $PWD/nix-store-cache || true
