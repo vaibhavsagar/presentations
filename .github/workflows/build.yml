@@ -17,7 +17,7 @@ jobs:
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
     - name: Delete existing nix-store-cache
       run: |
-        rm -rf $PWD/nix-store-cache
+        sudo rm -rf $PWD/nix-store-cache
     - name: Setup Nix Cache
       uses: actions/cache@v2
       with:
