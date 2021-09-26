@@ -15,9 +15,9 @@ jobs:
       with:
         name: vaibhavsagar
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
-    - name: Delete existing nix-store-cache
+    - name: Delete existing Nix Store Cache
       run: |
-        sudo rm -rf $PWD/nix-store-cache
+        sudo rm -rf $PWD/nix-store-cache || true
     - name: Setup Nix Cache
       uses: actions/cache@v2
       with:
@@ -30,8 +30,6 @@ jobs:
       run: |
         sudo rm -rf nix-store-cache || true
         nix copy ./result --to file://$PWD/nix-store-cache?compression=none
-        chown -R $USER $PWD/nix-store-cache
-        ls -alh $PWD/nix-store-cache
     - if: ${{ github.ref == 'refs/heads/master' }}
       run: ./.github/workflows/update_pages.sh
       env:
