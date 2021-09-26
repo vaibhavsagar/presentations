@@ -27,7 +27,7 @@ jobs:
         key: nix-store-cache-${{ github.sha }}
         restore-keys: |
           nix-store-cache-
-    - run: nix-build -vv
+    - run: nix-build -vv --substituters "file://$PWD/nix-store-cache"
     - name: Rebuild Nix Store Cache
       run: |
         sudo rm -rf $PWD/nix-store-cache || true
