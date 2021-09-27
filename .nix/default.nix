@@ -6,8 +6,8 @@ let
     pandoc --standalone -t revealjs -V theme:simple ${src + "/presentation.md"} -A ${../tracking.html} -o $out/index.html
   '';
 in { command ? defaultCommand, name, src }: nixpkgs.runCommand name {
-  buildInputs = with nixpkgs.haskellPackages; [
-    pandoc
-    wai-app-static
+  buildInputs = [
+    nixpkgs.pandoc
+    nixpkgs.haskellPackages.wai-app-static
   ];
 } (command src pkgs)
