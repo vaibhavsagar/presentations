@@ -3,20 +3,20 @@
     "owner": "gibiansky",
     "repo": "IHaskell",
     "branch": "master",
-    "rev": "17188f8c8c5004c51189ce4fbc353ae6e5af489c",
-    "sha256": "1ws5gkww7diz0jsj10c8p6kxyvxi5rdv5rz5lpk2vh1bbvybi148"
+    "rev": "cc47183edb7e881a6bc74cd0b57030225978346a",
+    "sha256": "1ra5g4sfl3f1r191h17q535r5gldk3fpsy73sih604a1jvyvn8bj"
   },
   "nixpkgs": {
     "owner": "NixOS",
-    "repo": "nixpkgs-channels",
-    "branch": "nixos-20.03",
-    "rev": "08d429920bcb2dba1d47c93e5ed30d0f92838c89",
-    "sha256": "0rzf3ln6gmn1dxjz2xx4bkzqhjsdpj54vssablvhq9k9d71hz0fz"
+    "repo": "nixpkgs",
+    "branch": "nixos-21.05",
+    "rev": "fd8a7fd07da0f3fc0e27575891f45c2f88e5dd44",
+    "sha256": "076d2r9bm8jkbjs3viaw9mcq177jparxfqsmihj14gx0xynz24kx"
   },
   "revealjs": {
     "owner": "hakimel",
     "repo": "reveal.js",
-    "rev": "94d98ff7d89e35c7d5b289ba387cdb0d42b30793",
-    "sha256": "1xaqgrib3m8ijnphph3aiz6d98w2mm1hlz643dargd12h4kx1lll"
+    "rev": "a453ac08a82069cd0a32109982b979232f7631f6",
+    "sha256": "0z42q4wv6ji1vrkbdx52g2jj5qnxv155il2wly70q0vjphdk0kgh"
   }
 }
