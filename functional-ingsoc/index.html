@@ -8,26 +8,18 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reset.css">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
 </head>
 <body>
   <div class="reveal">
@@ -38,53 +30,81 @@
   <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
-<section><section id="war-is-peace" class="title-slide slide level1"><h1>War is peace</h1></section><section id="non-functional-programming" class="slide level2">
+<section>
+<section id="war-is-peace" class="title-slide slide level1">
+<h1>War is peace</h1>
+
+</section>
+<section id="non-functional-programming" class="slide level2">
 <h2>Non-functional programming</h2>
 <ul>
 <li><p>It’s great to be able to write ‘intuitive’ code without interference from the language!</p></li>
 <li><p>Convenient when you’re writing your program, not so much when you have to run it.</p></li>
 </ul>
-</section><section id="functional-programming" class="slide level2">
+</section>
+<section id="functional-programming" class="slide level2">
 <h2>Functional programming</h2>
 <ul>
 <li><p>If there’s any way for my mistake to be caught at compile time, I will find it and use it.</p></li>
 <li><p>The compiler will declare all-out war on your program but when the dust settles, you have the peace of mind that it will do what you expect.</p></li>
 </ul>
 </section></section>
-<section><section id="freedom-is-slavery" class="title-slide slide level1"><h1>Freedom is slavery</h1></section><section id="non-functional-programming-1" class="slide level2">
+<section>
+<section id="freedom-is-slavery" class="title-slide slide level1">
+<h1>Freedom is slavery</h1>
+
+</section>
+<section id="non-functional-programming-1" class="slide level2">
 <h2>Non-functional programming</h2>
 <ul>
 <li><p>It’s so great that your functions are unrestricted in what they can do and you can just focus on writing your code!</p></li>
 <li><p>Easy to write the first time, nearly impossible to change afterwards because you are bound by past decisions.</p></li>
 </ul>
-</section><section id="functional-programming-1" class="slide level2">
+</section>
+<section id="functional-programming-1" class="slide level2">
 <h2>Functional programming</h2>
 <ul>
 <li><p>Let’s limit the scope of what each function can do so that we can easily make changes later, as we inevitably will.</p></li>
 <li><p>Not as easy to write the first time, but much easier to change afterwards</p></li>
 </ul>
 </section></section>
-<section><section id="ignorance-is-strength" class="title-slide slide level1"><h1>Ignorance is strength</h1></section><section id="non-functional-programming-2" class="slide level2">
+<section>
+<section id="ignorance-is-strength" class="title-slide slide level1">
+<h1>Ignorance is strength</h1>
+
+</section>
+<section id="non-functional-programming-2" class="slide level2">
 <h2>Non-functional programming</h2>
 <ul>
 <li><p>How good is not having to worry about purity and compositionality?</p></li>
 <li><p>Slow, hard to analyze, full of bugs</p></li>
 </ul>
-</section><section id="functional-programming-2" class="slide level2">
+</section>
+<section id="functional-programming-2" class="slide level2">
 <h2>Functional programming</h2>
 <ul>
 <li><p>How good is polymorphism (parametric, arbitrary-rank, levity, linearity, etc.)?</p></li>
 <li><p>Constraints liberate and liberties constrain (thanks Rúnar)</p></li>
 </ul>
 </section></section>
-<section><section id="doublethink" class="title-slide slide level1"><h1>Doublethink</h1></section><section id="what" class="slide level2">
+<section>
+<section id="doublethink" class="title-slide slide level1">
+<h1>Doublethink</h1>
+
+</section>
+<section id="what" class="slide level2">
 <h2>What!?</h2>
 <ul>
 <li><p>the acceptance of contrary opinions or beliefs at the same time, especially as a result of political indoctrination.</p></li>
 <li><p>I’d describe myself as extremely enthusiastic about FP, but not so long ago…</p></li>
 </ul>
 </section></section>
-<section><section id="whats-my-point" class="title-slide slide level1"><h1>What’s my point???</h1></section><section id="radicalisation" class="slide level2">
+<section>
+<section id="whats-my-point" class="title-slide slide level1">
+<h1>What’s my point???</h1>
+
+</section>
+<section id="radicalisation" class="slide level2">
 <h2>Radicalisation</h2>
 <ul>
 <li><p>My dynamically-typed programs failed over and over and over and over again</p></li>
@@ -92,37 +112,45 @@
 <li><p>The code I wrote was immediately better and more robust, even before tests</p></li>
 <li><p>It was still painful, and I wonder if there is an easier way.</p></li>
 </ul>
-</section><section id="empathy" class="slide level2">
+</section>
+<section id="empathy" class="slide level2">
 <h2>Empathy</h2>
 <ul>
 <li><p>There’s definitely a period of adjustment when learning to ‘think functionally’ and it does us no harm to be nicer to those who are trying</p></li>
 <li><p>Maybe there are more palatable ways to sell Haskell, rather than the justifications we use now</p></li>
 </ul>
-</section><section id="thanks" class="slide level2">
+</section>
+<section id="thanks" class="slide level2">
 <h2>Thanks!</h2>
 </section></section>
     </div>
   </div>
 
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
+      
         // Push each slide change to the browser history
         history: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>
     <script data-goatcounter="https://vaibhavsagar.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
+            async src="//gc.zgo.at/count.js"></script>
     </body>
 </html>

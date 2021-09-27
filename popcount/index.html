@@ -8,26 +8,18 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reset.css">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
 </head>
 <body>
   <div class="reveal">
@@ -38,17 +30,26 @@
   <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
-<section><section id="popcount" class="title-slide slide level1"><h1><code>popcount</code>?</h1></section><section id="population-count" class="slide level2">
+<section>
+<section id="popcount" class="title-slide slide level1">
+<h1><code>popcount</code>?</h1>
+
+</section>
+<section id="population-count" class="slide level2">
 <h2>Population Count</h2>
 <p>Counts the number of bits set to <code>1</code> in a machine word.</p>
-</section><section id="popcount-1" class="slide level2">
+</section>
+<section id="popcount-1" class="slide level2">
 <h2><code>popcount</code></h2>
 <p><code>popcount(00100110) == 3</code> <code>popcount(01100000) == 2</code></p>
-</section><section id="thats-it-thats-all-it-does." class="slide level2">
+</section>
+<section id="thats-it-thats-all-it-does." class="slide level2">
 <h2>That’s it, that’s all it does.</h2>
-</section><section id="that-doesnt-seem-very-useful" class="slide level2">
+</section>
+<section id="that-doesnt-seem-very-useful" class="slide level2">
 <h2>That doesn’t seem very useful??</h2>
-</section><section id="cpus-with-popcount" class="slide level2">
+</section>
+<section id="cpus-with-popcount" class="slide level2">
 <h2>CPUs with <code>popcount</code></h2>
 <ul>
 <li>1960: IBM STRETCH</li>
@@ -59,23 +60,32 @@
 <li>2007: AMD K10</li>
 <li>2008: Intel Core</li>
 </ul>
-</section><section id="whats-going-on" class="slide level2">
+</section>
+<section id="whats-going-on" class="slide level2">
 <h2>What’s going on?</h2>
 </section></section>
-<section><section id="cryptography" class="title-slide slide level1"><h1>Cryptography</h1></section><section id="the-nsa-instruction" class="slide level2">
+<section>
+<section id="cryptography" class="title-slide slide level1">
+<h1>Cryptography</h1>
+
+</section>
+<section id="the-nsa-instruction" class="slide level2">
 <h2>The NSA Instruction</h2>
 <p><img src="images/the-nsa-instruction.png" style="height: 11em;"></p>
 <p><a href="https://groups.google.com/forum/#!msg/comp.arch/UXEi7G6WHuU/Z2z7fC7Xhr8J">source</a></p>
-</section><section id="the-nsa-instruction-1" class="slide level2">
+</section>
+<section id="the-nsa-instruction-1" class="slide level2">
 <h2>The NSA Instruction</h2>
 <blockquote>
 <p>It was almost a tradition that one of the first of any new faster CDC machine was delivered to a “good customer” - picked up at the factory by an anonymous truck, and never heard from again.</p>
 </blockquote>
 <p><a href="http://cryptome.org/jya/sadd.htm">source</a></p>
-</section><section id="hamming-weight" class="slide level2">
+</section>
+<section id="hamming-weight" class="slide level2">
 <h2>Hamming weight</h2>
 <p>The number of symbols that are different from the zero-symbol of the alphabet.</p>
-</section><section id="cryptanalysis" class="slide level2">
+</section>
+<section id="cryptanalysis" class="slide level2">
 <h2>Cryptanalysis</h2>
 <ol type="1">
 <li>You have 60-bit words, enough to handle most alphabets</li>
@@ -86,13 +96,20 @@
 <li>Profit!</li>
 </ol>
 <p><a href="http://www.talkchess.com/forum3/viewtopic.php?t=38521">source</a></p>
-</section><section id="popcount-disappears-from-cpus-a-conspiracy" class="slide level2">
+</section>
+<section id="popcount-disappears-from-cpus-a-conspiracy" class="slide level2">
 <h2><code>popcount</code> disappears from CPUs: a conspiracy???</h2>
 </section></section>
-<section><section id="error-correction" class="title-slide slide level1"><h1>Error correction</h1></section><section id="hamming-distance" class="slide level2">
+<section>
+<section id="error-correction" class="title-slide slide level1">
+<h1>Error correction</h1>
+
+</section>
+<section id="hamming-distance" class="slide level2">
 <h2>Hamming distance</h2>
 <p>The number of differing positions between two strings of identical length.</p>
-</section><section id="hamming-distance-1" class="slide level2">
+</section>
+<section id="hamming-distance-1" class="slide level2">
 <h2>Hamming distance</h2>
 <p>For binary strings: <code>popcount(x ^ y)</code></p>
 <pre><code>00100110
@@ -101,68 +118,99 @@
 01000110
 
 popcount(01000110) = 3</code></pre>
-</section><section id="signal-distance" class="slide level2">
+</section>
+<section id="signal-distance" class="slide level2">
 <h2>Signal distance</h2>
 <p>Send some data over the wire and compare it at both ends to get an estimate of the error rate.</p>
-</section><section id="error-correcting-codes" class="slide level2">
+</section>
+<section id="error-correcting-codes" class="slide level2">
 <h2>Error Correcting Codes</h2>
 <p>Based on your error correction requirements, choose sufficiently distant symbols to assemble your message out of!</p>
 </section></section>
-<section><section id="binary-convolutional-neural-networks" class="title-slide slide level1"><h1>Binary convolutional neural networks</h1></section><section id="binary" class="slide level2">
+<section>
+<section id="binary-convolutional-neural-networks" class="title-slide slide level1">
+<h1>Binary convolutional neural networks</h1>
+
+</section>
+<section id="binary" class="slide level2">
 <h2>Binary</h2>
 <p>Uses +1 and -1 (coded as 0) instead of 32-bit floating point numbers.</p>
-</section><section id="convolutional" class="slide level2">
+</section>
+<section id="convolutional" class="slide level2">
 <h2>Convolutional</h2>
 <p>Matrix multiplication?</p>
-</section><section id="neural-network" class="slide level2">
+</section>
+<section id="neural-network" class="slide level2">
 <h2>Neural Network</h2>
 <p>¯\<em>(ツ)</em>/¯</p>
-</section><section id="why" class="slide level2">
+</section>
+<section id="why" class="slide level2">
 <h2>Why?</h2>
 <p>Simpler and smaller, suitable for less powerful devices like mobile phones</p>
-</section><section id="matrix-multiplication" class="slide level2">
+</section>
+<section id="matrix-multiplication" class="slide level2">
 <h2>Matrix multiplication</h2>
-<p><br /><span class="math display"><em>a</em> = <em>x</em><em>n</em><em>o</em><em>r</em>(<em>x</em>, <em>y</em>)</span><br /> <br /><span class="math display"><em>b</em> = <em>p</em><em>o</em><em>p</em><em>c</em><em>o</em><em>u</em><em>n</em><em>t</em>(<em>a</em>)</span><br /> <br /><span class="math display"><em>c</em> = <em>l</em><em>e</em><em>n</em>(<em>a</em>)</span><br /> <br /><span class="math display"><em>d</em><em>o</em><em>t</em>(<em>x</em>, <em>y</em>) = 2 × <em>b</em> − <em>c</em></span><br /></p>
+<p><span class="math display"><em>a</em> = <em>x</em><em>n</em><em>o</em><em>r</em>(<em>x</em>,<em>y</em>)</span> <span class="math display"><em>b</em> = <em>p</em><em>o</em><em>p</em><em>c</em><em>o</em><em>u</em><em>n</em><em>t</em>(<em>a</em>)</span> <span class="math display"><em>c</em> = <em>l</em><em>e</em><em>n</em>(<em>a</em>)</span> <span class="math display"><em>d</em><em>o</em><em>t</em>(<em>x</em>,<em>y</em>) = 2 × <em>b</em> − <em>c</em></span></p>
 <p><a href="https://sushscience.wordpress.com/2017/10/01/understanding-binary-neural-networks/">source</a></p>
 </section></section>
-<section><section id="other-fun-uses-of-popcount" class="title-slide slide level1"><h1>Other fun uses of <code>popcount</code></h1></section><section id="chess-engines" class="slide level2">
+<section>
+<section id="other-fun-uses-of-popcount" class="title-slide slide level1">
+<h1>Other fun uses of <code>popcount</code></h1>
+
+</section>
+<section id="chess-engines" class="slide level2">
 <h2>Chess Engines</h2>
-</section><section id="molecular-fingerprinting" class="slide level2">
+</section>
+<section id="molecular-fingerprinting" class="slide level2">
 <h2>Molecular Fingerprinting</h2>
-</section><section id="hash-array-mapped-tries" class="slide level2">
+</section>
+<section id="hash-array-mapped-tries" class="slide level2">
 <h2>Hash Array Mapped Tries</h2>
-</section><section id="succinct-data-structures" class="slide level2">
+</section>
+<section id="succinct-data-structures" class="slide level2">
 <h2>Succinct Data Structures</h2>
-</section><section id="compiler-optimisations" class="slide level2">
+</section>
+<section id="compiler-optimisations" class="slide level2">
 <h2>Compiler optimisations</h2>
 <p><a href="https://godbolt.org/z/JUzmD8">GCC</a>, <a href="https://godbolt.org/z/AVqMGl">Clang</a></p>
 </section></section>
-<section><section id="thanks" class="title-slide slide level1"><h1>Thanks!</h1></section><section id="slides" class="slide level2">
+<section>
+<section id="thanks" class="title-slide slide level1">
+<h1>Thanks!</h1>
+
+</section>
+<section id="slides" class="slide level2">
 <h2>Slides</h2>
 <p><a href="https://vaibhavsagar.com/presentations/popcount">https://vaibhavsagar.com/presentations/popcount</a></p>
 </section></section>
     </div>
   </div>
 
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
+      
         // Push each slide change to the browser history
         history: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>
     <script data-goatcounter="https://vaibhavsagar.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
+            async src="//gc.zgo.at/count.js"></script>
     </body>
 </html>

@@ -8,90 +8,81 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reset.css">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <style>
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
 </head>
 <body>
   <div class="reveal">
@@ -102,28 +93,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
-<section><section id="minimal-perfect-hashing" class="title-slide slide level1"><h1>Minimal Perfect Hashing</h1></section><section id="fossasia-2018" class="slide level2">
+<section>
+<section id="minimal-perfect-hashing" class="title-slide slide level1">
+<h1>Minimal Perfect Hashing</h1>
+
+</section>
+<section id="fossasia-2018" class="slide level2">
 <h2>FOSSASIA 2018</h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8Zu-EVjN24s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-</section><section id="minimal-perfect-hashing-1" class="slide level2">
+</section>
+<section id="minimal-perfect-hashing-1" class="slide level2">
 <h2>Minimal Perfect Hashing?</h2>
 <ul>
 <li>Minimal</li>
 <li>Perfect</li>
 <li>Hashing</li>
 </ul>
-</section><section id="hashing" class="slide level2">
+</section>
+<section id="hashing" class="slide level2">
 <h2>Hashing</h2>
 <ul>
 <li>function that takes a key to a fixed size value (often an integer)</li>
 </ul>
-</section><section id="perfect-hashing" class="slide level2">
+</section>
+<section id="perfect-hashing" class="slide level2">
 <h2>Perfect Hashing</h2>
 <ul>
 <li>hashing without collisions (injective)</li>
 </ul>
-</section><section id="minimal-perfect-hashing-2" class="slide level2">
+</section>
+<section id="minimal-perfect-hashing-2" class="slide level2">
 <h2>Minimal Perfect Hashing</h2>
 <ul>
 <li>perfect hashing without gaps</li>
@@ -131,45 +131,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>downsides: static, produces nonsense results for absent keys</li>
 </ul>
 </section></section>
-<section><section id="approaches" class="title-slide slide level1"><h1>Approaches</h1></section><section id="not-discussed-today" class="slide level2">
+<section>
+<section id="approaches" class="title-slide slide level1">
+<h1>Approaches</h1>
+
+</section>
+<section id="not-discussed-today" class="slide level2">
 <h2>Not Discussed Today</h2>
 <ul>
 <li>Hash, Displace, and Compress (CHD)</li>
 <li>Hypergraph peeling?</li>
 </ul>
-</section><section id="discussed-today" class="slide level2">
+</section>
+<section id="discussed-today" class="slide level2">
 <h2>Discussed Today</h2>
 <ul>
 <li>Fast and scalable minimal perfect hashing for massive key sets</li>
 <li><a href="https://arxiv.org/abs/1702.03154">https://arxiv.org/abs/1702.03154</a></li>
 </ul>
 </section></section>
-<section><section id="how-does-it-work" class="title-slide slide level1"><h1>How does it work?</h1></section><section id="cascading-collisionless-bitarrays" class="slide level2">
+<section>
+<section id="how-does-it-work" class="title-slide slide level1">
+<h1>How does it work?</h1>
+
+</section>
+<section id="cascading-collisionless-bitarrays" class="slide level2">
 <h2>Cascading Collisionless Bitarrays</h2>
 <p><img src="images/cascading-collisionless-arrays.svg" style="height: 11em;"></p>
-</section><section id="requirements" class="slide level2">
+</section>
+<section id="requirements" class="slide level2">
 <h2>Requirements</h2>
 <ul>
 <li>Family of hash functions</li>
 <li>Bitvectors supporting rank (and select)</li>
 </ul>
-</section><section id="family-of-hash-functions" class="slide level2">
+</section>
+<section id="family-of-hash-functions" class="slide level2">
 <h2>Family of hash functions?</h2>
 <ul>
 <li>My understanding is that hash functions that take a salt should work</li>
 </ul>
-</section><section id="bitvectors-supporting-rank-and-select" class="slide level2">
+</section>
+<section id="bitvectors-supporting-rank-and-select" class="slide level2">
 <h2>Bitvectors supporting rank and select?</h2>
 <ul>
 <li>Rank(i) is the number of <span class="math inline">1</span>s at or prior to index <span class="math inline"><em>i</em></span> (1-indexed)</li>
 <li>Select(i) is the index <span class="math inline"><em>n</em></span> where the <span class="math inline"><em>i</em></span>th 1 is located (1-indexed)</li>
 <li>Fun phrase to google: “succinct data structures”</li>
 </ul>
-</section><section id="bitvectors-supporting-rank-and-select-1" class="slide level2">
+</section>
+<section id="bitvectors-supporting-rank-and-select-1" class="slide level2">
 <h2>Bitvectors supporting rank and select?</h2>
 <p><img src="images/support-rank-select.png" style="height: 8em;"></p>
 </section></section>
-<section><section id="how-it-works" class="title-slide slide level1"><h1>How it works</h1></section><section id="high-level" class="slide level2">
+<section>
+<section id="how-it-works" class="title-slide slide level1">
+<h1>How it works</h1>
+
+</section>
+<section id="high-level" class="slide level2">
 <h2>High level</h2>
 <ol type="1">
 <li>Repeat the following until we’ve reached max level or there are no more keys
@@ -180,11 +200,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol></li>
 <li>If there are leftovers, put them in a hashtable</li>
 </ol>
-</section><section id="turning-the-key-into-a-number" class="slide level2">
+</section>
+<section id="turning-the-key-into-a-number" class="slide level2">
 <h2>Turning the key into a number</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">-- gamma is a multiplier for the size of the bitvector</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>value <span class="ot">=</span> hashWithSalt currentLevel key <span class="ot">`mod`</span> (gamma <span class="op">*</span> currentLength)</span></code></pre></div>
-</section><section id="populating-the-bitvector" class="slide level2">
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- gamma is a multiplier for the size of the bitvector</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>value <span class="ot">=</span> hashWithSalt currentLevel key <span class="ot">`mod`</span> (gamma <span class="op">*</span> currentLength)</span></code></pre></div>
+</section>
+<section id="populating-the-bitvector" class="slide level2">
 <h2>Populating the bitvector</h2>
 <ol type="1">
 <li>Initialise two bitvectors <span class="math inline"><em>B</em></span> and <span class="math inline"><em>C</em></span> with <span class="math inline">0</span>s</li>
@@ -195,7 +217,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If the value in <span class="math inline"><em>B</em></span> is <span class="math inline">0</span> and <span class="math inline"><em>C</em></span> is <span class="math inline">1</span>, do nothing</li>
 </ol></li>
 </ol>
-</section><section id="lookup" class="slide level2">
+</section>
+<section id="lookup" class="slide level2">
 <h2>Lookup</h2>
 <ol type="1">
 <li>For each level:
@@ -207,7 +230,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Otherwise check the leftovers</li>
 </ol>
 </section></section>
-<section><section id="example" class="title-slide slide level1"><h1>Example</h1></section><section id="keys" class="slide level2">
+<section>
+<section id="example" class="title-slide slide level1">
+<h1>Example</h1>
+
+</section>
+<section id="keys" class="slide level2">
 <h2>Keys</h2>
 <ul>
 <li>Bras Basah</li>
@@ -217,7 +245,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>River Valley</li>
 <li>Tanjong Pagar</li>
 </ul>
-</section><section id="level-0" class="slide level2">
+</section>
+<section id="level-0" class="slide level2">
 <h2>Level 0</h2>
 <pre><code> 0 1 2 3 4 5
 ┌─┬─┬─┬─┬─┬─┐
@@ -226,7 +255,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┐
 │0│0│0│0│0│0│ C
 └─┴─┴─┴─┴─┴─┘</code></pre>
-</section><section id="level-0-1" class="slide level2">
+</section>
+<section id="level-0-1" class="slide level2">
 <h2>Level 0</h2>
 <pre><code> 0 1 2 3 4 5
 ┌─┬─┬─┬─┬─┬─┐
@@ -235,9 +265,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┐
 │0│0│0│0│0│0│ C
 └─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bras Basah&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="dv">3</span></span></code></pre></div>
-</section><section id="level-0-2" class="slide level2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bras Basah&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span></code></pre></div>
+</section>
+<section id="level-0-2" class="slide level2">
 <h2>Level 0</h2>
 <pre><code> 0 1 2 3 4 5
 ┌─┬─┬─┬─┬─┬─┐
@@ -246,9 +277,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┐
 │0│0│0│1│0│0│ C
 └─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb6-1"><a href="#cb6-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bugis&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="dv">3</span></span></code></pre></div>
-</section><section id="level-0-3" class="slide level2">
+<div class="sourceCode" id="cb6"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bugis&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span></code></pre></div>
+</section>
+<section id="level-0-3" class="slide level2">
 <h2>Level 0</h2>
 <pre><code> 0 1 2 3 4 5
 ┌─┬─┬─┬─┬─┬─┐
@@ -257,9 +289,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┐
 │0│0│0│1│0│0│ C
 └─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb8-1"><a href="#cb8-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Outram&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="dv">2</span></span></code></pre></div>
-</section><section id="level-0-4" class="slide level2">
+<div class="sourceCode" id="cb8"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Outram&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span></code></pre></div>
+</section>
+<section id="level-0-4" class="slide level2">
 <h2>Level 0</h2>
 <pre><code> 0 1 2 3 4 5
 ┌─┬─┬─┬─┬─┬─┐
@@ -268,9 +301,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┐
 │0│0│0│1│0│0│ C
 └─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb10-1"><a href="#cb10-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="dv">3</span></span></code></pre></div>
-</section><section id="level-0-5" class="slide level2">
+<div class="sourceCode" id="cb10"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span></code></pre></div>
+</section>
+<section id="level-0-5" class="slide level2">
 <h2>Level 0</h2>
 <pre><code> 0 1 2 3 4 5
 ┌─┬─┬─┬─┬─┬─┐
@@ -279,9 +313,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┐
 │0│0│0│1│0│0│ C
 └─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb12-1"><a href="#cb12-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;River Valley&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="dv">1</span></span></code></pre></div>
-</section><section id="level-0-6" class="slide level2">
+<div class="sourceCode" id="cb12"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;River Valley&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span></code></pre></div>
+</section>
+<section id="level-0-6" class="slide level2">
 <h2>Level 0</h2>
 <pre><code> 0 1 2 3 4 5
 ┌─┬─┬─┬─┬─┬─┐
@@ -290,9 +325,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┐
 │0│0│0│1│0│0│ C
 └─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb14-1"><a href="#cb14-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Tanjong Pagar&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="dv">5</span></span></code></pre></div>
-</section><section id="level-1" class="slide level2">
+<div class="sourceCode" id="cb14"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Tanjong Pagar&quot;</span> <span class="ot">`mod`</span> <span class="dv">6</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span></code></pre></div>
+</section>
+<section id="level-1" class="slide level2">
 <h2>Level 1</h2>
 <pre><code> 0 1 2
 ┌─┬─┬─┐
@@ -301,9 +337,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┐
 │0│0│0│ C
 └─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb16-1"><a href="#cb16-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bras Basah&quot;</span> <span class="ot">`mod`</span> <span class="dv">3</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="dv">0</span></span></code></pre></div>
-</section><section id="level-1-1" class="slide level2">
+<div class="sourceCode" id="cb16"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bras Basah&quot;</span> <span class="ot">`mod`</span> <span class="dv">3</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span></code></pre></div>
+</section>
+<section id="level-1-1" class="slide level2">
 <h2>Level 1</h2>
 <pre><code> 0 1 2
 ┌─┬─┬─┐
@@ -312,9 +349,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┐
 │0│0│0│ C
 └─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb18-1"><a href="#cb18-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bugis&quot;</span> <span class="ot">`mod`</span> <span class="dv">3</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="dv">2</span></span></code></pre></div>
-</section><section id="level-1-2" class="slide level2">
+<div class="sourceCode" id="cb18"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bugis&quot;</span> <span class="ot">`mod`</span> <span class="dv">3</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span></code></pre></div>
+</section>
+<section id="level-1-2" class="slide level2">
 <h2>Level 1</h2>
 <pre><code> 0 1 2
 ┌─┬─┬─┐
@@ -323,9 +361,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┐
 │1│0│0│ C
 └─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb20-1"><a href="#cb20-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">3</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="dv">0</span></span></code></pre></div>
-</section><section id="level-2" class="slide level2">
+<div class="sourceCode" id="cb20"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">3</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span></code></pre></div>
+</section>
+<section id="level-2" class="slide level2">
 <h2>Level 2</h2>
 <pre><code> 0 1
 ┌─┬─┐
@@ -334,9 +373,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┐
 │0│0│ C
 └─┴─┘</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb22-1"><a href="#cb22-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bras Basah&quot;</span> <span class="ot">`mod`</span> <span class="dv">2</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="dv">0</span></span></code></pre></div>
-</section><section id="level-2-1" class="slide level2">
+<div class="sourceCode" id="cb22"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bras Basah&quot;</span> <span class="ot">`mod`</span> <span class="dv">2</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span></code></pre></div>
+</section>
+<section id="level-2-1" class="slide level2">
 <h2>Level 2</h2>
 <pre><code> 0 1
 ┌─┬─┐
@@ -345,15 +385,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┐
 │1│0│ C
 └─┴─┘</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb24-1"><a href="#cb24-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">2</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="dv">0</span></span></code></pre></div>
-</section><section id="section" class="slide level2">
+<div class="sourceCode" id="cb24"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">2</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span></code></pre></div>
+</section>
+<section id="section" class="slide level2">
 <h2>…</h2>
 <ul>
 <li>I went ahead and ran this for 20 more levels and the keys kept colliding</li>
 <li>Let’s try with <code>gamma = 2</code></li>
 </ul>
-</section><section id="level-0-7" class="slide level2">
+</section>
+<section id="level-0-7" class="slide level2">
 <h2>Level 0</h2>
 <pre><code>                     1 1
  0 1 2 3 4 5 6 7 8 9 0 1
@@ -363,9 +405,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
 │0│0│0│0│0│0│0│0│0│0│0│0│ C
 └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb26-1"><a href="#cb26-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bras Basah&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="dv">9</span></span></code></pre></div>
-</section><section id="level-0-8" class="slide level2">
+<div class="sourceCode" id="cb26"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bras Basah&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span></span></code></pre></div>
+</section>
+<section id="level-0-8" class="slide level2">
 <h2>Level 0</h2>
 <pre><code>                     1 1
  0 1 2 3 4 5 6 7 8 9 0 1
@@ -375,9 +418,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
 │0│0│0│0│0│0│0│0│0│0│0│0│ C
 └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb28-1"><a href="#cb28-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bugis&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="dv">3</span></span></code></pre></div>
-</section><section id="level-0-9" class="slide level2">
+<div class="sourceCode" id="cb28"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Bugis&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span></code></pre></div>
+</section>
+<section id="level-0-9" class="slide level2">
 <h2>Level 0</h2>
 <pre><code>                     1 1
  0 1 2 3 4 5 6 7 8 9 0 1
@@ -387,9 +431,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
 │0│0│0│0│0│0│0│0│0│0│0│0│ C
 └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb30-1"><a href="#cb30-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Outram&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="dv">2</span></span></code></pre></div>
-</section><section id="level-0-10" class="slide level2">
+<div class="sourceCode" id="cb30"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Outram&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span></code></pre></div>
+</section>
+<section id="level-0-10" class="slide level2">
 <h2>Level 0</h2>
 <pre><code>                     1 1
  0 1 2 3 4 5 6 7 8 9 0 1
@@ -399,9 +444,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
 │0│0│0│1│0│0│0│0│0│0│0│0│ C
 └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb32-1"><a href="#cb32-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="dv">3</span></span></code></pre></div>
-</section><section id="level-0-11" class="slide level2">
+<div class="sourceCode" id="cb32"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span></code></pre></div>
+</section>
+<section id="level-0-11" class="slide level2">
 <h2>Level 0</h2>
 <pre><code>                     1 1
  0 1 2 3 4 5 6 7 8 9 0 1
@@ -411,9 +457,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
 │0│0│0│1│0│0│0│0│0│0│0│0│ C
 └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb34-1"><a href="#cb34-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;River Valley&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="dv">1</span></span></code></pre></div>
-</section><section id="level-0-12" class="slide level2">
+<div class="sourceCode" id="cb34"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;River Valley&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span></code></pre></div>
+</section>
+<section id="level-0-12" class="slide level2">
 <h2>Level 0</h2>
 <pre><code>                     1 1
  0 1 2 3 4 5 6 7 8 9 0 1
@@ -423,9 +470,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
 │0│0│0│1│0│0│0│0│0│0│0│0│ C
 └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb36-1"><a href="#cb36-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Tanjong Pagar&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a><span class="dv">5</span></span></code></pre></div>
-</section><section id="level-1-3" class="slide level2">
+<div class="sourceCode" id="cb36"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Tanjong Pagar&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span></code></pre></div>
+</section>
+<section id="level-1-3" class="slide level2">
 <h2>Level 1</h2>
 <pre><code> 0 1 2 3 
 ┌─┬─┬─┬─┐
@@ -434,9 +482,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┐
 │0│0│0│0│ C
 └─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb38-1"><a href="#cb38-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">1</span> <span class="st">&quot;Bugis&quot;</span> <span class="ot">`mod`</span> <span class="dv">4</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="dv">2</span></span></code></pre></div>
-</section><section id="level-1-4" class="slide level2">
+<div class="sourceCode" id="cb38"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">1</span> <span class="st">&quot;Bugis&quot;</span> <span class="ot">`mod`</span> <span class="dv">4</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span></code></pre></div>
+</section>
+<section id="level-1-4" class="slide level2">
 <h2>Level 1</h2>
 <pre><code> 0 1 2 3 
 ┌─┬─┬─┬─┐
@@ -445,50 +494,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ┌─┬─┬─┬─┐
 │0│0│0│0│ C
 └─┴─┴─┴─┘</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb40-1"><a href="#cb40-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">1</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">4</span></span>
-<span id="cb40-2"><a href="#cb40-2"></a><span class="dv">0</span></span></code></pre></div>
-</section><section id="lookup-1" class="slide level2">
+<div class="sourceCode" id="cb40"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">1</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">4</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span></code></pre></div>
+</section>
+<section id="lookup-1" class="slide level2">
 <h2>Lookup</h2>
-<div class="sourceCode" id="cb41"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb41-1"><a href="#cb41-1"></a>                     1 1</span>
-<span id="cb41-2"><a href="#cb41-2"></a> 0 1 2 3 4 5 6 7 8 9 0 1</span>
-<span id="cb41-3"><a href="#cb41-3"></a>┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐</span>
-<span id="cb41-4"><a href="#cb41-4"></a>│0│1│1│0│0│1│0│0│0│1│0│0│ b0</span>
-<span id="cb41-5"><a href="#cb41-5"></a>└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘</span>
-<span id="cb41-6"><a href="#cb41-6"></a>┌─┬─┬─┬─┐</span>
-<span id="cb41-7"><a href="#cb41-7"></a>│1│0│1│0│ b1</span>
-<span id="cb41-8"><a href="#cb41-8"></a>└─┴─┴─┴─┘</span></code></pre></div>
-<div class="sourceCode" id="cb42"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb42-1"><a href="#cb42-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a><span class="dv">3</span></span>
-<span id="cb42-3"><a href="#cb42-3"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">1</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">4</span></span>
-<span id="cb42-4"><a href="#cb42-4"></a><span class="dv">0</span></span>
-<span id="cb42-5"><a href="#cb42-5"></a><span class="op">&gt;</span> popCount b0 <span class="op">+</span> rank b1 <span class="dv">0</span></span>
-<span id="cb42-6"><a href="#cb42-6"></a><span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>                     1 1</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a> 0 1 2 3 4 5 6 7 8 9 0 1</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>│0│1│1│0│0│1│0│0│0│1│0│0│ b0</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>┌─┬─┬─┬─┐</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>│1│0│1│0│ b1</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>└─┴─┴─┴─┘</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">12</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">1</span> <span class="st">&quot;Paya Lebar&quot;</span> <span class="ot">`mod`</span> <span class="dv">4</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> popCount b0 <span class="op">+</span> rank b1 <span class="dv">0</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span></code></pre></div>
 </section></section>
-<section id="heres-some-code" class="title-slide slide level1"><h1>Here’s some code</h1></section>
-<section id="questions" class="title-slide slide level1"><h1>Questions?</h1></section>
-<section id="thank-you" class="title-slide slide level1"><h1>Thank You!</h1></section>
+<section id="heres-some-code" class="title-slide slide level1">
+<h1>Here’s some code</h1>
+
+</section>
+
+<section id="questions" class="title-slide slide level1">
+<h1>Questions?</h1>
+
+</section>
+
+<section id="thank-you" class="title-slide slide level1">
+<h1>Thank You!</h1>
+
+</section>
     </div>
   </div>
 
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
+      
         // Push each slide change to the browser history
         history: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>
     <script data-goatcounter="https://vaibhavsagar.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
+            async src="//gc.zgo.at/count.js"></script>
     </body>
 </html>

@@ -8,90 +8,81 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reset.css">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <style>
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
 </head>
 <body>
   <div class="reveal">
@@ -102,14 +93,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="author">Vaibhav Sagar</p>
 </section>
 
-<section><section id="what" class="title-slide slide level1"><h1>What</h1></section><section id="strict-stateful-computation-in-haskell" class="slide level2">
+<section>
+<section id="what" class="title-slide slide level1">
+<h1>What</h1>
+
+</section>
+<section id="strict-stateful-computation-in-haskell" class="slide level2">
 <h2>Strict stateful computation in Haskell</h2>
-</section><section id="why" class="slide level2">
+</section>
+<section id="why" class="slide level2">
 <h2>Why</h2>
 <figure>
-<img data-src="http://www.threewordphrase.com/pardonme.gif" alt="" /><figcaption>Source: Three Word Phrase</figcaption>
+<img data-src="http://www.threewordphrase.com/pardonme.gif" alt="Source: Three Word Phrase" /><figcaption aria-hidden="true">Source: Three Word Phrase</figcaption>
 </figure>
-</section><section id="but-seriously" class="slide level2">
+</section>
+<section id="but-seriously" class="slide level2">
 <h2>But seriously</h2>
 <ul>
 <li>Union find</li>
@@ -117,7 +115,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Performance</li>
 </ul>
 </section></section>
-<section><section id="overview" class="title-slide slide level1"><h1>Overview</h1></section><section id="state-transformers" class="slide level2">
+<section>
+<section id="overview" class="title-slide slide level1">
+<h1>Overview</h1>
+
+</section>
+<section id="state-transformers" class="slide level2">
 <h2>State Transformers</h2>
 <pre><code>                                        Result
                +---------------------+    ^
@@ -127,7 +130,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
                |                     |
       +-------&gt;+                     +--------&gt;
  State in      +---------------------+  State out</code></pre>
-</section><section id="multiple-inputsoutputs" class="slide level2">
+</section>
+<section id="multiple-inputsoutputs" class="slide level2">
 <h2>Multiple inputs/outputs</h2>
 <pre><code>Inputs                                   Results
  +   +       +---------------------+     ^   ^
@@ -137,220 +141,282 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
              |                     |
  +-----------+                     +---------&gt;
    State in  +---------------------+  State out</code></pre>
-</section><section id="returnst" class="slide level2">
+</section>
+<section id="returnst" class="slide level2">
 <h2>returnST</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">--                                     Result</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co">--   +        +---------------------+    ^</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="co">--   |        |                     |    |</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co">--   +-------&gt;---------------------------+</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="co">--            |                     |</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="co">--            |                     |</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co">--   +-------&gt;-------------------------------&gt;</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="co">--  State in  +---------------------+  State out</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="ot">returnST ::</span> a <span class="ot">-&gt;</span> <span class="dt">ST</span> s a</span></code></pre></div>
-</section><section id="thenst" class="slide level2">
+<div class="sourceCode" id="cb3"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">--                                     Result</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">--   +        +---------------------+    ^</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">--   |        |                     |    |</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">--   +-------&gt;---------------------------+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">--            |                     |</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">--            |                     |</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">--   +-------&gt;-------------------------------&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">--  State in  +---------------------+  State out</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ot">returnST ::</span> a <span class="ot">-&gt;</span> <span class="dt">ST</span> s a</span></code></pre></div>
+</section>
+<section id="thenst" class="slide level2">
 <h2>thenST</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">--             +----------------------------------------+  Result</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="co">--             |                                        |    ^</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">--             |  +-------------+     +-------------+   |    |</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co">--             |  |            ------&gt;+             +--------+</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">--             |  |     s1      |     |     s2      |   |</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">--  +------------&gt;+            ------&gt;+             +--------&gt;</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="co">--   State in  |  +-------------+     +-------------+   |   State out</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="co">--             |                                        |</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co">--             +----------------------------------------+</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="ot">thenST ::</span> <span class="dt">ST</span> s a <span class="ot">-&gt;</span> (a <span class="ot">-&gt;</span> <span class="dt">ST</span> s b) <span class="ot">-&gt;</span> <span class="dt">ST</span> s b</span></code></pre></div>
-</section><section id="a-pattern-emerges" class="slide level2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">--             +----------------------------------------+  Result</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">--             |                                        |    ^</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">--             |  +-------------+     +-------------+   |    |</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">--             |  |            ------&gt;+             +--------+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">--             |  |     s1      |     |     s2      |   |</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">--  +------------&gt;+            ------&gt;+             +--------&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">--   State in  |  +-------------+     +-------------+   |   State out</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">--             |                                        |</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">--             +----------------------------------------+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ot">thenST ::</span> <span class="dt">ST</span> s a <span class="ot">-&gt;</span> (a <span class="ot">-&gt;</span> <span class="dt">ST</span> s b) <span class="ot">-&gt;</span> <span class="dt">ST</span> s b</span></code></pre></div>
+</section>
+<section id="a-pattern-emerges" class="slide level2">
 <h2>A pattern emerges</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">class</span> <span class="dt">Monad</span> m <span class="kw">where</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="ot">    return ::</span>   a <span class="ot">-&gt;</span> m a</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="ot">    (&gt;&gt;=)  ::</span> m a <span class="ot">-&gt;</span> (a <span class="ot">-&gt;</span> m b) <span class="ot">-&gt;</span> m b</span></code></pre></div>
-</section><section id="thenst_" class="slide level2">
+<div class="sourceCode" id="cb5"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> <span class="dt">Monad</span> m <span class="kw">where</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ot">    return ::</span>   a <span class="ot">-&gt;</span> m a</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ot">    (&gt;&gt;=)  ::</span> m a <span class="ot">-&gt;</span> (a <span class="ot">-&gt;</span> m b) <span class="ot">-&gt;</span> m b</span></code></pre></div>
+</section>
+<section id="thenst_" class="slide level2">
 <h2>thenST_</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb6-1"><a href="#cb6-1"></a><span class="ot">thenST_ ::</span> <span class="dt">ST</span> s () <span class="ot">-&gt;</span> <span class="dt">ST</span> s b <span class="ot">-&gt;</span> <span class="dt">ST</span> s b</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="ot">(&gt;&gt;) ::</span> <span class="dt">Monad</span> m <span class="ot">=&gt;</span> m a <span class="ot">-&gt;</span> m b <span class="ot">-&gt;</span> m b</span>
-<span id="cb6-3"><a href="#cb6-3"></a>(<span class="op">&gt;&gt;</span>) a b <span class="ot">=</span> a <span class="op">&gt;&gt;=</span> (\_ <span class="ot">-&gt;</span> b)</span></code></pre></div>
-</section><section id="seqst" class="slide level2">
+<div class="sourceCode" id="cb6"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ot">thenST_ ::</span> <span class="dt">ST</span> s () <span class="ot">-&gt;</span> <span class="dt">ST</span> s b <span class="ot">-&gt;</span> <span class="dt">ST</span> s b</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ot">(&gt;&gt;) ::</span> <span class="dt">Monad</span> m <span class="ot">=&gt;</span> m a <span class="ot">-&gt;</span> m b <span class="ot">-&gt;</span> m b</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>(<span class="op">&gt;&gt;</span>) a b <span class="ot">=</span> a <span class="op">&gt;&gt;=</span> (\_ <span class="ot">-&gt;</span> b)</span></code></pre></div>
+</section>
+<section id="seqst" class="slide level2">
 <h2>seqST</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb7-1"><a href="#cb7-1"></a><span class="ot">seqST ::</span> [<span class="dt">ST</span> s ()] <span class="ot">-&gt;</span> <span class="dt">ST</span> s ()</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">sequence_</span><span class="ot"> ::</span> <span class="dt">Monad</span> m <span class="ot">=&gt;</span> [m a] <span class="ot">-&gt;</span> m ()</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ot">seqST ::</span> [<span class="dt">ST</span> s ()] <span class="ot">-&gt;</span> <span class="dt">ST</span> s ()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sequence_</span><span class="ot"> ::</span> <span class="dt">Monad</span> m <span class="ot">=&gt;</span> [m a] <span class="ot">-&gt;</span> m ()</span></code></pre></div>
 </section></section>
-<section><section id="references" class="title-slide slide level1"><h1>References</h1></section><section id="api" class="slide level2">
+<section>
+<section id="references" class="title-slide slide level1">
+<h1>References</h1>
+
+</section>
+<section id="api" class="slide level2">
 <h2>API</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb8-1"><a href="#cb8-1"></a><span class="ot">newVar   ::</span> a <span class="ot">-&gt;</span> <span class="dt">ST</span> s (<span class="dt">MutVar</span> s a)</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="ot">readVar  ::</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">ST</span> s a</span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="ot">writeVar ::</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> a <span class="ot">-&gt;</span> <span class="dt">ST</span> s ()</span></code></pre></div>
-</section><section id="example" class="slide level2">
+<div class="sourceCode" id="cb8"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ot">newVar   ::</span> a <span class="ot">-&gt;</span> <span class="dt">ST</span> s (<span class="dt">MutVar</span> s a)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ot">readVar  ::</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">ST</span> s a</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ot">writeVar ::</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> a <span class="ot">-&gt;</span> <span class="dt">ST</span> s ()</span></code></pre></div>
+</section>
+<section id="example" class="slide level2">
 <h2>Example</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb9-1"><a href="#cb9-1"></a><span class="ot">swap ::</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">ST</span> s ()</span>
-<span id="cb9-2"><a href="#cb9-2"></a>swap v w <span class="ot">=</span> <span class="kw">do</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>    a <span class="ot">&lt;-</span> readVar v</span>
-<span id="cb9-4"><a href="#cb9-4"></a>    b <span class="ot">&lt;-</span> readVar w</span>
-<span id="cb9-5"><a href="#cb9-5"></a>    writeVar v b</span>
-<span id="cb9-6"><a href="#cb9-6"></a>    writeVar w a</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ot">swap ::</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">ST</span> s ()</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>swap v w <span class="ot">=</span> <span class="kw">do</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    a <span class="ot">&lt;-</span> readVar v</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    b <span class="ot">&lt;-</span> readVar w</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    writeVar v b</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    writeVar w a</span></code></pre></div>
 </section></section>
-<section><section id="encapsulation" class="title-slide slide level1"><h1>Encapsulation</h1></section><section id="an-incorrect-implementation" class="slide level2">
+<section>
+<section id="encapsulation" class="title-slide slide level1">
+<h1>Encapsulation</h1>
+
+</section>
+<section id="an-incorrect-implementation" class="slide level2">
 <h2>An incorrect implementation</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb10-1"><a href="#cb10-1"></a><span class="ot">runST ::</span> <span class="dt">ST</span> s a <span class="ot">-&gt;</span> a</span></code></pre></div>
-</section><section id="a-broken-program" class="slide level2">
+<div class="sourceCode" id="cb10"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ot">runST ::</span> <span class="dt">ST</span> s a <span class="ot">-&gt;</span> a</span></code></pre></div>
+</section>
+<section id="a-broken-program" class="slide level2">
 <h2>A broken program</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">let</span> v <span class="ot">=</span> runST (newVar <span class="dt">True</span>)</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">in</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>runST (readVar v)</span></code></pre></div>
-</section><section id="a-correct-implementation" class="slide level2">
+<div class="sourceCode" id="cb11"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> v <span class="ot">=</span> runST (newVar <span class="dt">True</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">in</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>runST (readVar v)</span></code></pre></div>
+</section>
+<section id="a-correct-implementation" class="slide level2">
 <h2>A correct implementation</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb12-1"><a href="#cb12-1"></a><span class="ot">runST ::</span> <span class="ot">∀</span>a<span class="op">.</span> (<span class="ot">∀</span>s<span class="op">.</span> <span class="dt">ST</span> s a) <span class="ot">-&gt;</span> a</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ot">runST ::</span> ∀a<span class="op">.</span> (∀s<span class="op">.</span> <span class="dt">ST</span> s a) <span class="ot">-&gt;</span> a</span></code></pre></div>
 </section></section>
-<section><section id="array-references" class="title-slide slide level1"><h1>Array references</h1></section><section id="api-1" class="slide level2">
+<section>
+<section id="array-references" class="title-slide slide level1">
+<h1>Array references</h1>
+
+</section>
+<section id="api-1" class="slide level2">
 <h2>API</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb13-1"><a href="#cb13-1"></a><span class="ot">newArr    ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> (i, i) <span class="ot">-&gt;</span> elt <span class="ot">-&gt;</span> <span class="dt">ST</span> s (<span class="dt">MutArr</span> s i elt)</span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="ot">readArr   ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> <span class="dt">MutArr</span> s i elt <span class="ot">-&gt;</span> i <span class="ot">-&gt;</span> <span class="dt">ST</span> s elt</span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="ot">writeArr  ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> <span class="dt">MutArr</span> s i elt <span class="ot">-&gt;</span> i <span class="ot">-&gt;</span> elt <span class="ot">-&gt;</span> <span class="dt">ST</span> s ()</span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="ot">freezeArr ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> <span class="dt">MutArr</span> s i elt <span class="ot">-&gt;</span> <span class="dt">ST</span> s (<span class="dt">Array</span> i elt)</span></code></pre></div>
-</section><section id="example-1" class="slide level2">
+<div class="sourceCode" id="cb13"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ot">newArr    ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> (i, i) <span class="ot">-&gt;</span> elt <span class="ot">-&gt;</span> <span class="dt">ST</span> s (<span class="dt">MutArr</span> s i elt)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ot">readArr   ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> <span class="dt">MutArr</span> s i elt <span class="ot">-&gt;</span> i <span class="ot">-&gt;</span> <span class="dt">ST</span> s elt</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ot">writeArr  ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> <span class="dt">MutArr</span> s i elt <span class="ot">-&gt;</span> i <span class="ot">-&gt;</span> elt <span class="ot">-&gt;</span> <span class="dt">ST</span> s ()</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="ot">freezeArr ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> <span class="dt">MutArr</span> s i elt <span class="ot">-&gt;</span> <span class="dt">ST</span> s (<span class="dt">Array</span> i elt)</span></code></pre></div>
+</section>
+<section id="example-1" class="slide level2">
 <h2>Example</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb14-1"><a href="#cb14-1"></a><span class="ot">accumArray ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> (a <span class="ot">-&gt;</span> b <span class="ot">-&gt;</span> a) <span class="ot">-&gt;</span> a <span class="ot">-&gt;</span> (i, i) <span class="ot">-&gt;</span> [(i, b)] <span class="ot">-&gt;</span> <span class="dt">Array</span> i a</span>
-<span id="cb14-2"><a href="#cb14-2"></a>accumArray f z bnds ivs <span class="ot">=</span> runST <span class="op">$</span> <span class="kw">do</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>    a <span class="ot">&lt;-</span> newArr bnds z</span>
-<span id="cb14-4"><a href="#cb14-4"></a>    seqST (<span class="fu">map</span> (update a f) ivs)</span>
-<span id="cb14-5"><a href="#cb14-5"></a>    freezeArr s</span>
-<span id="cb14-6"><a href="#cb14-6"></a></span>
-<span id="cb14-7"><a href="#cb14-7"></a>update a f (i, v) <span class="ot">=</span> <span class="kw">do</span></span>
-<span id="cb14-8"><a href="#cb14-8"></a>    x <span class="ot">&lt;-</span> readArr a i</span>
-<span id="cb14-9"><a href="#cb14-9"></a>    writeArr a i (f x v)</span>
-<span id="cb14-10"><a href="#cb14-10"></a></span>
-<span id="cb14-11"><a href="#cb14-11"></a><span class="ot">hist ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> (i, i) <span class="ot">-&gt;</span> [i] <span class="ot">-&gt;</span> <span class="dt">Array</span> i <span class="dt">Int</span></span>
-<span id="cb14-12"><a href="#cb14-12"></a>hist bnds is <span class="ot">=</span> accumArray (<span class="op">+</span>) <span class="dv">0</span> bnds [(i, <span class="dv">1</span>) <span class="op">|</span> i <span class="ot">&lt;-</span> is, <span class="fu">inRange</span> bnds i]</span>
-<span id="cb14-13"><a href="#cb14-13"></a></span>
-<span id="cb14-14"><a href="#cb14-14"></a><span class="ot">binSort ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> (i,i) <span class="ot">-&gt;</span> (a <span class="ot">-&gt;</span> i) <span class="ot">-&gt;</span> [a] <span class="ot">-&gt;</span> <span class="dt">Array</span> i a</span>
-<span id="cb14-15"><a href="#cb14-15"></a>binSort bnds key vs <span class="ot">=</span> accumArray (<span class="fu">flip</span> (<span class="op">:</span>)) [] bnds [(key v, v) <span class="op">|</span> v <span class="ot">&lt;-</span> vs]</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ot">accumArray ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> (a <span class="ot">-&gt;</span> b <span class="ot">-&gt;</span> a) <span class="ot">-&gt;</span> a <span class="ot">-&gt;</span> (i, i) <span class="ot">-&gt;</span> [(i, b)] <span class="ot">-&gt;</span> <span class="dt">Array</span> i a</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>accumArray f z bnds ivs <span class="ot">=</span> runST <span class="op">$</span> <span class="kw">do</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    a <span class="ot">&lt;-</span> newArr bnds z</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    seqST (<span class="fu">map</span> (update a f) ivs)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    freezeArr s</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>update a f (i, v) <span class="ot">=</span> <span class="kw">do</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> readArr a i</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    writeArr a i (f x v)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="ot">hist ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> (i, i) <span class="ot">-&gt;</span> [i] <span class="ot">-&gt;</span> <span class="dt">Array</span> i <span class="dt">Int</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>hist bnds is <span class="ot">=</span> accumArray (<span class="op">+</span>) <span class="dv">0</span> bnds [(i, <span class="dv">1</span>) <span class="op">|</span> i <span class="ot">&lt;-</span> is, <span class="fu">inRange</span> bnds i]</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="ot">binSort ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> (i,i) <span class="ot">-&gt;</span> (a <span class="ot">-&gt;</span> i) <span class="ot">-&gt;</span> [a] <span class="ot">-&gt;</span> <span class="dt">Array</span> i a</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>binSort bnds key vs <span class="ot">=</span> accumArray (<span class="fu">flip</span> (<span class="op">:</span>)) [] bnds [(key v, v) <span class="op">|</span> v <span class="ot">&lt;-</span> vs]</span></code></pre></div>
 </section></section>
-<section><section id="inputoutput" class="title-slide slide level1"><h1>Input/output</h1></section><section id="api-2" class="slide level2">
+<section>
+<section id="inputoutput" class="title-slide slide level1">
+<h1>Input/output</h1>
+
+</section>
+<section id="api-2" class="slide level2">
 <h2>API</h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">type</span> <span class="dt">IO</span> a <span class="ot">=</span> <span class="dt">ST</span> <span class="dt">RealWorld</span> a</span></code></pre></div>
-</section><section id="example-2" class="slide level2">
+<div class="sourceCode" id="cb15"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">IO</span> a <span class="ot">=</span> <span class="dt">ST</span> <span class="dt">RealWorld</span> a</span></code></pre></div>
+</section>
+<section id="example-2" class="slide level2">
 <h2>Example</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">putChar</span><span class="ot"> ::</span> <span class="dt">Char</span> <span class="ot">-&gt;</span> <span class="dt">IO</span> ()</span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">getChar</span><span class="ot"> ::</span> <span class="dt">IO</span> <span class="dt">Char</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a></span>
-<span id="cb16-4"><a href="#cb16-4"></a>putString cs <span class="ot">=</span> seqST (<span class="fu">map</span> <span class="fu">putChar</span> cs)</span></code></pre></div>
-</section><section id="ccall" class="slide level2">
+<div class="sourceCode" id="cb16"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">putChar</span><span class="ot"> ::</span> <span class="dt">Char</span> <span class="ot">-&gt;</span> <span class="dt">IO</span> ()</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getChar</span><span class="ot"> ::</span> <span class="dt">IO</span> <span class="dt">Char</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>putString cs <span class="ot">=</span> seqST (<span class="fu">map</span> <span class="fu">putChar</span> cs)</span></code></pre></div>
+</section>
+<section id="ccall" class="slide level2">
 <h2>ccall</h2>
 <ul>
 <li>A builtin that allows the programmer to interface with C</li>
 </ul>
-</section><section id="ccall-1" class="slide level2">
+</section>
+<section id="ccall-1" class="slide level2">
 <h2>ccall</h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">putChar</span> c <span class="ot">=</span> <span class="kw">do</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>    ccall <span class="fu">putChar</span> c</span>
-<span id="cb17-3"><a href="#cb17-3"></a>    <span class="fu">return</span> ()</span>
-<span id="cb17-4"><a href="#cb17-4"></a><span class="fu">getChar</span> <span class="ot">=</span> ccall <span class="fu">getChar</span></span></code></pre></div>
-</section><section id="mainio" class="slide level2">
+<div class="sourceCode" id="cb17"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">putChar</span> c <span class="ot">=</span> <span class="kw">do</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    ccall <span class="fu">putChar</span> c</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> ()</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">getChar</span> <span class="ot">=</span> ccall <span class="fu">getChar</span></span></code></pre></div>
+</section>
+<section id="mainio" class="slide level2">
 <h2>mainIO</h2>
 <ul>
 <li>Plays the same role as <code>main()</code> in C</li>
 </ul>
 </section></section>
-<section><section id="implementation" class="title-slide slide level1"><h1>Implementation</h1></section><section id="update-in-place" class="slide level2">
+<section>
+<section id="implementation" class="title-slide slide level1">
+<h1>Implementation</h1>
+
+</section>
+<section id="update-in-place" class="slide level2">
 <h2>Update in place</h2>
 <ul>
 <li>State is single-threaded</li>
 <li>State is strict</li>
 <li>In-place updates are fine</li>
 </ul>
-</section><section id="efficiency" class="slide level2">
+</section>
+<section id="efficiency" class="slide level2">
 <h2>Efficiency</h2>
-<div class="sourceCode" id="cb18"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">type</span> <span class="dt">ST</span> s a <span class="ot">=</span> <span class="dt">State</span> s <span class="ot">-&gt;</span> (a, <span class="dt">State</span> s)</span>
-<span id="cb18-2"><a href="#cb18-2"></a></span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="kw">instance</span> <span class="dt">Monad</span> (<span class="dt">ST</span> s) <span class="kw">where</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a></span>
-<span id="cb18-5"><a href="#cb18-5"></a><span class="fu">return</span>  x s <span class="ot">=</span> (x, s)</span>
-<span id="cb18-6"><a href="#cb18-6"></a>m (<span class="op">&gt;&gt;=</span>) k s <span class="ot">=</span> k x s&#39; <span class="kw">where</span> (x, s&#39;) <span class="ot">=</span> m s</span>
-<span id="cb18-7"><a href="#cb18-7"></a></span>
-<span id="cb18-8"><a href="#cb18-8"></a>fixST k s <span class="ot">=</span> (r, s&#39;) <span class="kw">where</span> (r, s&#39;) <span class="ot">=</span> k r s</span>
-<span id="cb18-9"><a href="#cb18-9"></a>runST m <span class="ot">=</span> r <span class="kw">where</span> (r, s) <span class="ot">=</span> m currentState</span></code></pre></div>
-</section><section id="transformation" class="slide level2">
+<div class="sourceCode" id="cb18"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">ST</span> s a <span class="ot">=</span> <span class="dt">State</span> s <span class="ot">-&gt;</span> (a, <span class="dt">State</span> s)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Monad</span> (<span class="dt">ST</span> s) <span class="kw">where</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>  x s <span class="ot">=</span> (x, s)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>m (<span class="op">&gt;&gt;=</span>) k s <span class="ot">=</span> k x s&#39; <span class="kw">where</span> (x, s&#39;) <span class="ot">=</span> m s</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>fixST k s <span class="ot">=</span> (r, s&#39;) <span class="kw">where</span> (r, s&#39;) <span class="ot">=</span> k r s</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>runST m <span class="ot">=</span> r <span class="kw">where</span> (r, s) <span class="ot">=</span> m currentState</span></code></pre></div>
+</section>
+<section id="transformation" class="slide level2">
 <h2>Transformation</h2>
-<div class="sourceCode" id="cb19"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">do</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a>    v1 <span class="ot">&lt;-</span> m1</span>
-<span id="cb19-3"><a href="#cb19-3"></a>    v2 <span class="ot">&lt;-</span> m2</span>
-<span id="cb19-4"><a href="#cb19-4"></a>    <span class="fu">return</span> e</span></code></pre></div>
-</section><section id="transformation-1" class="slide level2">
+<div class="sourceCode" id="cb19"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">do</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    v1 <span class="ot">&lt;-</span> m1</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    v2 <span class="ot">&lt;-</span> m2</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> e</span></code></pre></div>
+</section>
+<section id="transformation-1" class="slide level2">
 <h2>Transformation</h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb20-1"><a href="#cb20-1"></a>\s <span class="ot">-&gt;</span> <span class="kw">let</span> (v1, s1) <span class="ot">=</span> m1 s</span>
-<span id="cb20-2"><a href="#cb20-2"></a>          (v2, s2) <span class="ot">=</span> m2 s1</span>
-<span id="cb20-3"><a href="#cb20-3"></a>      <span class="kw">in</span> (e, s3)</span></code></pre></div>
-</section><section id="transformation-2" class="slide level2">
+<div class="sourceCode" id="cb20"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>\s <span class="ot">-&gt;</span> <span class="kw">let</span> (v1, s1) <span class="ot">=</span> m1 s</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>          (v2, s2) <span class="ot">=</span> m2 s1</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">in</span> (e, s3)</span></code></pre></div>
+</section>
+<section id="transformation-2" class="slide level2">
 <h2>Transformation</h2>
-<div class="sourceCode" id="cb21"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb21-1"><a href="#cb21-1"></a>\s <span class="ot">-&gt;</span> <span class="kw">case</span> m1 s <span class="kw">of</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>        (v1, s1) <span class="ot">-&gt;</span> <span class="kw">case</span> m2 s1 <span class="kw">of</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a>                      (v2, s2) <span class="ot">-&gt;</span> (e, s2)</span></code></pre></div>
-</section><section id="passing-the-state-around" class="slide level2">
+<div class="sourceCode" id="cb21"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>\s <span class="ot">-&gt;</span> <span class="kw">case</span> m1 s <span class="kw">of</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>        (v1, s1) <span class="ot">-&gt;</span> <span class="kw">case</span> m2 s1 <span class="kw">of</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                      (v2, s2) <span class="ot">-&gt;</span> (e, s2)</span></code></pre></div>
+</section>
+<section id="passing-the-state-around" class="slide level2">
 <h2>Passing the state around</h2>
-<div class="sourceCode" id="cb22"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">data</span> <span class="dt">State</span> s <span class="ot">=</span> <span class="dt">MkState</span> (<span class="dt">State</span><span class="op">#</span> s)</span>
-<span id="cb22-2"><a href="#cb22-2"></a></span>
-<span id="cb22-3"><a href="#cb22-3"></a>newVar <span class="fu">init</span> (<span class="dt">MkState</span> s<span class="op">#</span>)</span>
-<span id="cb22-4"><a href="#cb22-4"></a>  <span class="ot">=</span> <span class="kw">case</span> newVar<span class="op">#</span> <span class="fu">init</span> s<span class="op">#</span> <span class="kw">of</span></span>
-<span id="cb22-5"><a href="#cb22-5"></a>        (v, t<span class="op">#</span>) <span class="ot">-&gt;</span> (v, <span class="dt">MkState</span> t<span class="op">#</span>)</span></code></pre></div>
-</section><section id="freezearray" class="slide level2">
+<div class="sourceCode" id="cb22"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">State</span> s <span class="ot">=</span> <span class="dt">MkState</span> (<span class="dt">State</span><span class="op">#</span> s)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>newVar <span class="fu">init</span> (<span class="dt">MkState</span> s<span class="op">#</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="ot">=</span> <span class="kw">case</span> newVar<span class="op">#</span> <span class="fu">init</span> s<span class="op">#</span> <span class="kw">of</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        (v, t<span class="op">#</span>) <span class="ot">-&gt;</span> (v, <span class="dt">MkState</span> t<span class="op">#</span>)</span></code></pre></div>
+</section>
+<section id="freezearray" class="slide level2">
 <h2>freezeArray</h2>
 <ul>
 <li>Can be optimised if we know no further mutations are performed</li>
 </ul>
-</section><section id="io" class="slide level2">
+</section>
+<section id="io" class="slide level2">
 <h2>IO</h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb23-1"><a href="#cb23-1"></a>m (<span class="op">&gt;&gt;=</span>) k s <span class="ot">=</span> <span class="kw">case</span> m s <span class="kw">of</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>                (r, s&#39;) <span class="ot">-&gt;</span> k r s&#39;</span></code></pre></div>
-</section><section id="equality" class="slide level2">
+<div class="sourceCode" id="cb23"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>m (<span class="op">&gt;&gt;=</span>) k s <span class="ot">=</span> <span class="kw">case</span> m s <span class="kw">of</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                (r, s&#39;) <span class="ot">-&gt;</span> k r s&#39;</span></code></pre></div>
+</section>
+<section id="equality" class="slide level2">
 <h2>Equality</h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb24-1"><a href="#cb24-1"></a><span class="ot">eqMutVar ::</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">Bool</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="ot">eqMutArr ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> <span class="dt">MutArr</span> s i a <span class="ot">-&gt;</span> <span class="dt">MutArr</span> s i a <span class="ot">-&gt;</span> <span class="dt">Bool</span></span></code></pre></div>
-</section><section id="interleaved-and-parallel-operations" class="slide level2">
+<div class="sourceCode" id="cb24"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ot">eqMutVar ::</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">MutVar</span> s a <span class="ot">-&gt;</span> <span class="dt">Bool</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ot">eqMutArr ::</span> <span class="dt">Ix</span> i <span class="ot">=&gt;</span> <span class="dt">MutArr</span> s i a <span class="ot">-&gt;</span> <span class="dt">MutArr</span> s i a <span class="ot">-&gt;</span> <span class="dt">Bool</span></span></code></pre></div>
+</section>
+<section id="interleaved-and-parallel-operations" class="slide level2">
 <h2>Interleaved and parallel operations</h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb25-1"><a href="#cb25-1"></a><span class="ot">interleaveST ::</span> <span class="dt">ST</span> s a <span class="ot">-&gt;</span> <span class="dt">ST</span> s a</span>
-<span id="cb25-2"><a href="#cb25-2"></a></span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="fu">readFile</span><span class="ot"> ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">IO</span> [<span class="dt">Char</span>]</span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="fu">readFile</span> filename <span class="ot">=</span> <span class="kw">do</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a>    f <span class="ot">&lt;-</span> openFile filename</span>
-<span id="cb25-6"><a href="#cb25-6"></a>    readCts f</span>
-<span id="cb25-7"><a href="#cb25-7"></a></span>
-<span id="cb25-8"><a href="#cb25-8"></a><span class="ot">readCts ::</span> <span class="dt">FileDescriptor</span> <span class="ot">-&gt;</span> <span class="dt">IO</span> [<span class="dt">Char</span>]</span>
-<span id="cb25-9"><a href="#cb25-9"></a>readCts f <span class="ot">=</span> interleaveST <span class="op">$</span> <span class="kw">do</span></span>
-<span id="cb25-10"><a href="#cb25-10"></a>    c <span class="ot">&lt;-</span> readCh f</span>
-<span id="cb25-11"><a href="#cb25-11"></a>    <span class="kw">if</span> c <span class="op">==</span> eofChar</span>
-<span id="cb25-12"><a href="#cb25-12"></a>        <span class="kw">then</span> <span class="fu">return</span> []</span>
-<span id="cb25-13"><a href="#cb25-13"></a>        <span class="kw">else</span> <span class="kw">do</span></span>
-<span id="cb25-14"><a href="#cb25-14"></a>            cs <span class="ot">&lt;-</span> readCts f</span>
-<span id="cb25-15"><a href="#cb25-15"></a>            <span class="fu">return</span> (c<span class="op">:</span>cs)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ot">interleaveST ::</span> <span class="dt">ST</span> s a <span class="ot">-&gt;</span> <span class="dt">ST</span> s a</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">readFile</span><span class="ot"> ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">IO</span> [<span class="dt">Char</span>]</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">readFile</span> filename <span class="ot">=</span> <span class="kw">do</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    f <span class="ot">&lt;-</span> openFile filename</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    readCts f</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="ot">readCts ::</span> <span class="dt">FileDescriptor</span> <span class="ot">-&gt;</span> <span class="dt">IO</span> [<span class="dt">Char</span>]</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>readCts f <span class="ot">=</span> interleaveST <span class="op">$</span> <span class="kw">do</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    c <span class="ot">&lt;-</span> readCh f</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> c <span class="op">==</span> eofChar</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">then</span> <span class="fu">return</span> []</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span> <span class="kw">do</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>            cs <span class="ot">&lt;-</span> readCts f</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>            <span class="fu">return</span> (c<span class="op">:</span>cs)</span></code></pre></div>
 </section></section>
-<section><section id="conclusion" class="title-slide slide level1"><h1>Conclusion</h1></section><section id="have-we-turned-haskell-into-c" class="slide level2">
+<section>
+<section id="conclusion" class="title-slide slide level1">
+<h1>Conclusion</h1>
+
+</section>
+<section id="have-we-turned-haskell-into-c" class="slide level2">
 <h2>Have we turned Haskell into C?</h2>
-</section><section id="eating-your-cake-and-having-it-too" class="slide level2">
+</section>
+<section id="eating-your-cake-and-having-it-too" class="slide level2">
 <h2>Eating your cake and having it too</h2>
 </section></section>
-<section id="questions" class="title-slide slide level1"><h1>Questions?</h1></section>
+<section id="questions" class="title-slide slide level1">
+<h1>Questions?</h1>
+
+</section>
     </div>
   </div>
 
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
+      
         // Push each slide change to the browser history
         history: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>
     <script data-goatcounter="https://vaibhavsagar.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
+            async src="//gc.zgo.at/count.js"></script>
     </body>
 </html>

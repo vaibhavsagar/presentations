@@ -8,90 +8,81 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reset.css">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <style>
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
 </head>
 <body>
   <div class="reveal">
@@ -103,14 +94,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="date">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
-<section><section id="whats-a-typed-hole" class="title-slide slide level1"><h1>What’s a typed hole?</h1></section><section id="typed-holes" class="slide level2">
+<section>
+<section id="whats-a-typed-hole" class="title-slide slide level1">
+<h1>What’s a typed hole?</h1>
+
+</section>
+<section id="typed-holes" class="slide level2">
 <h2>Typed holes</h2>
 <p>A placeholder for an expression with a known type and an unknown value.</p>
-</section><section id="why" class="slide level2">
+</section>
+<section id="why" class="slide level2">
 <h2>Why?</h2>
 <p>They allow the programming language to help us write programs!</p>
 </section></section>
-<section><section id="why-do-holes-need-to-be-typed" class="title-slide slide level1"><h1>Why do holes need to be typed?</h1></section><section id="lets-write-a-program-in-python" class="slide level2">
+<section>
+<section id="why-do-holes-need-to-be-typed" class="title-slide slide level1">
+<h1>Why do holes need to be typed?</h1>
+
+</section>
+<section id="lets-write-a-program-in-python" class="slide level2">
 <h2>Let’s write a program in Python</h2>
 <style>
 code.sourceCode.python {
@@ -118,63 +120,94 @@ code.sourceCode.python {
   line-height: 125%;
 }
 </style>
-</section><section id="is-this-program-correct" class="slide level2">
+</section>
+<section id="is-this-program-correct" class="slide level2">
 <h2>Is this program correct?</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls): <span class="cf">return</span> []</span></code></pre></div>
-</section><section id="what-about-this-one" class="slide level2">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls): <span class="cf">return</span> []</span></code></pre></div>
+</section>
+<section id="what-about-this-one" class="slide level2">
 <h2>What about this one?</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls): [f(e) <span class="cf">for</span> e <span class="kw">in</span> ls]</span>
-<span id="cb2-2"><a href="#cb2-2"></a>...</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="op">&gt;&gt;&gt;</span> plusOne <span class="op">=</span> <span class="kw">lambda</span> i: i <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="bu">map</span>(plusOne, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="va">None</span></span></code></pre></div>
-</section><section id="this-one" class="slide level2">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls): [f(e) <span class="cf">for</span> e <span class="kw">in</span> ls]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> plusOne <span class="op">=</span> <span class="kw">lambda</span> i: i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="bu">map</span>(plusOne, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="va">None</span></span></code></pre></div>
+</section>
+<section id="this-one" class="slide level2">
 <h2>This one?</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls): <span class="cf">return</span> (f(e) <span class="cf">for</span> e <span class="kw">in</span> ls)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>...</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="bu">map</span>(plusOne, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="op">&lt;</span>generator <span class="bu">object</span> <span class="bu">map</span>.<span class="op">&lt;</span><span class="bu">locals</span><span class="op">&gt;</span>.<span class="op">&lt;</span>genexpr<span class="op">&gt;</span> at <span class="bn">0x7ffb92103ca8</span><span class="op">&gt;</span></span></code></pre></div>
-</section><section id="how-do-i-write-programs-that-work" class="slide level2">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls): <span class="cf">return</span> (f(e) <span class="cf">for</span> e <span class="kw">in</span> ls)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="bu">map</span>(plusOne, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>generator <span class="bu">object</span> <span class="bu">map</span>.<span class="op">&lt;</span><span class="bu">locals</span><span class="op">&gt;</span>.<span class="op">&lt;</span>genexpr<span class="op">&gt;</span> at <span class="bn">0x7ffb92103ca8</span><span class="op">&gt;</span></span></code></pre></div>
+</section>
+<section id="how-do-i-write-programs-that-work" class="slide level2">
 <h2>How do I write programs that work?</h2>
-</section><section id="we-need-tests" class="slide level2">
+</section>
+<section id="we-need-tests" class="slide level2">
 <h2>We need tests!</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls):</span>
-<span id="cb4-2"><a href="#cb4-2"></a>...     <span class="bu">print</span>(<span class="st">&quot;Where are your tests now?&quot;</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a>...     <span class="cf">return</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb4-4"><a href="#cb4-4"></a>...</span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">map</span>(plusOne, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]) <span class="op">==</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb4-6"><a href="#cb4-6"></a>Where are your tests now?</span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="va">True</span></span></code></pre></div>
-</section><section id="tests-are-not-sufficient" class="slide level2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> <span class="bu">map</span>(f, ls):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>...     <span class="bu">print</span>(<span class="st">&quot;Where are your tests now?&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>...     <span class="cf">return</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">map</span>(plusOne, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]) <span class="op">==</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>Where are your tests now?</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="va">True</span></span></code></pre></div>
+</section>
+<section id="tests-are-not-sufficient" class="slide level2">
 <h2>Tests are not sufficient</h2>
-</section><section id="the-language-does-not-understand-tests" class="slide level2">
+</section>
+<section id="the-language-does-not-understand-tests" class="slide level2">
 <h2>The language does not understand tests</h2>
-</section><section id="the-language-can-understand-types" class="slide level2">
+</section>
+<section id="the-language-can-understand-types" class="slide level2">
 <h2>The language can understand types</h2>
 </section></section>
-<section><section id="haskell" class="title-slide slide level1"><h1>Haskell</h1></section><section id="statically-typed" class="slide level2">
+<section>
+<section id="haskell" class="title-slide slide level1">
+<h1>Haskell</h1>
+
+</section>
+<section id="statically-typed" class="slide level2">
 <h2>Statically typed!</h2>
-</section><section id="type-inference" class="slide level2">
+</section>
+<section id="type-inference" class="slide level2">
 <h2>Type inference!</h2>
-</section><section id="typed-holes-1" class="slide level2">
+</section>
+<section id="typed-holes-1" class="slide level2">
 <h2>Typed holes!</h2>
 </section></section>
-<section><section id="idris" class="title-slide slide level1"><h1>Idris</h1></section><section id="more-sophisticated-type-system" class="slide level2">
+<section>
+<section id="idris" class="title-slide slide level1">
+<h1>Idris</h1>
+
+</section>
+<section id="more-sophisticated-type-system" class="slide level2">
 <h2>More sophisticated type system!</h2>
-</section><section id="weaker-type-inference" class="slide level2">
+</section>
+<section id="weaker-type-inference" class="slide level2">
 <h2>Weaker type inference :(</h2>
-</section><section id="better-editor-integration" class="slide level2">
+</section>
+<section id="better-editor-integration" class="slide level2">
 <h2>Better editor integration!</h2>
-</section><section id="fancier-typed-holes" class="slide level2">
+</section>
+<section id="fancier-typed-holes" class="slide level2">
 <h2>Fancier typed holes!</h2>
 </section></section>
-<section><section id="we-did-it" class="title-slide slide level1"><h1>We did it!</h1></section><section id="typed-holes-exist" class="slide level2">
+<section>
+<section id="we-did-it" class="title-slide slide level1">
+<h1>We did it!</h1>
+
+</section>
+<section id="typed-holes-exist" class="slide level2">
 <h2>Typed holes exist!!!</h2>
-</section><section id="types-are-friends-not-food" class="slide level2">
+</section>
+<section id="types-are-friends-not-food" class="slide level2">
 <h2>Types are friends, not food!</h2>
-</section><section id="programming-can-be-fun-and-interesting" class="slide level2">
+</section>
+<section id="programming-can-be-fun-and-interesting" class="slide level2">
 <h2>Programming can be fun and interesting!</h2>
-</section><section id="resources" class="slide level2">
+</section>
+<section id="resources" class="slide level2">
 <h2>Resources</h2>
 <ul>
 <li><a href="https://www.shimweasel.com/2015/02/17/typed-holes-for-beginners">Typed Holes for beginners</a></li>
@@ -182,20 +215,35 @@ code.sourceCode.python {
 <li><a href="https://skillsmatter.com/skillscasts/8893-is-a-type-a-lifebuoy-or-a-lamp">Conor McBride - Is a type a lifebuoy or a lamp?</a></li>
 </ul>
 </section></section>
-<section id="thank-you" class="title-slide slide level1"><h1>Thank You</h1></section>
-<section><section id="untyped-holes-program-sketching" class="title-slide slide level1"><h1>Untyped Holes: Program Sketching!</h1></section><section id="write-a-program-with-gaps-a-sketch" class="slide level2">
+<section id="thank-you" class="title-slide slide level1">
+<h1>Thank You</h1>
+
+</section>
+
+<section>
+<section id="untyped-holes-program-sketching" class="title-slide slide level1">
+<h1>Untyped Holes: Program Sketching!</h1>
+
+</section>
+<section id="write-a-program-with-gaps-a-sketch" class="slide level2">
 <h2>1. Write a program with gaps (a ‘sketch’)</h2>
-</section><section id="write-some-test-cases" class="slide level2">
+</section>
+<section id="write-some-test-cases" class="slide level2">
 <h2>2. Write some test cases</h2>
-</section><section id="give-a-satsmt-solver-your-sketch-and-test-cases" class="slide level2">
+</section>
+<section id="give-a-satsmt-solver-your-sketch-and-test-cases" class="slide level2">
 <h2>3. Give a SAT/SMT solver your sketch and test cases</h2>
-</section><section id="section" class="slide level2">
+</section>
+<section id="section" class="slide level2">
 <h2>4. ???</h2>
-</section><section id="profit" class="slide level2">
+</section>
+<section id="profit" class="slide level2">
 <h2>5. Profit!</h2>
-</section><section id="still-a-research-topic-for-now" class="slide level2">
+</section>
+<section id="still-a-research-topic-for-now" class="slide level2">
 <h2>Still a research topic for now :’(</h2>
-</section><section id="resources-1" class="slide level2">
+</section>
+<section id="resources-1" class="slide level2">
 <h2>Resources</h2>
 <ul>
 <li><a href="https://people.csail.mit.edu/asolar/papers/thesis.pdf">Armando Solar-Lezama - Program Synthesis by Sketching</a></li>
@@ -206,25 +254,31 @@ code.sourceCode.python {
     </div>
   </div>
 
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
+      
         // Push each slide change to the browser history
         history: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>
     <script data-goatcounter="https://vaibhavsagar.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
+            async src="//gc.zgo.at/count.js"></script>
     </body>
 </html>

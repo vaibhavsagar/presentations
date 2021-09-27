@@ -8,90 +8,81 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reset.css">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <style>
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
 </head>
 <body>
   <div class="reveal">
@@ -102,20 +93,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
-<section><section id="problem" class="title-slide slide level1"><h1>Problem</h1></section><section id="vim" class="slide level2">
+<section>
+<section id="problem" class="title-slide slide level1">
+<h1>Problem</h1>
+
+</section>
+<section id="vim" class="slide level2">
 <h2>Vim</h2>
 <ul>
 <li>I have a <code>.vimrc</code></li>
 <li>Vim could be faster</li>
 <li>Extra functionality that I don’t need</li>
 </ul>
-</section><section id="vim-1" class="slide level2">
+</section>
+<section id="vim-1" class="slide level2">
 <h2>Vim</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>tab_width <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># ...</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(tab_width):</span>
-<span id="cb1-4"><a href="#cb1-4"></a>    insert_space()</span></code></pre></div>
-</section><section id="my-special-vim" class="slide level2">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tab_width <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(tab_width):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    insert_space()</span></code></pre></div>
+</section>
+<section id="my-special-vim" class="slide level2">
 <h2>My Special Vim</h2>
 <ul>
 <li>Inline my <code>.vimrc</code> into the Vim source code</li>
@@ -123,7 +121,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Smaller and faster!</li>
 </ul>
 </section></section>
-<section><section id="partial-evaluation" class="title-slide slide level1"><h1>Partial Evaluation</h1></section><section id="programs-take-static-and-dynamic-input" class="slide level2">
+<section>
+<section id="partial-evaluation" class="title-slide slide level1">
+<h1>Partial Evaluation</h1>
+
+</section>
+<section id="programs-take-static-and-dynamic-input" class="slide level2">
 <h2>Programs take static and dynamic input</h2>
 <pre><code>+--------+   +---------+
 |        |   |         |
@@ -138,43 +141,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       | Program +-------&gt;+ Output |
       |         |        |        |
       +---------+        +--------+</code></pre>
-</section><section id="programs-take-static-and-dynamic-input-1" class="slide level2">
+</section>
+<section id="programs-take-static-and-dynamic-input-1" class="slide level2">
 <h2>Programs take static and dynamic input</h2>
 <ul>
 <li>e.g. anything that has a configuration file</li>
 </ul>
-</section><section id="can-we-pre-compute-with-static-input" class="slide level2">
+</section>
+<section id="can-we-pre-compute-with-static-input" class="slide level2">
 <h2>Can we pre-compute with static input?</h2>
 <ul>
 <li>Feed the program and the static input into a program</li>
 <li>Simple transformations like inlining constants and unrolling loops</li>
 </ul>
-</section><section id="inlining" class="slide level2">
+</section>
+<section id="inlining" class="slide level2">
 <h2>Inlining</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>tab_width <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># ...</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(tab_width):</span>
-<span id="cb3-4"><a href="#cb3-4"></a>    insert_space()</span></code></pre></div>
-</section><section id="inlining-1" class="slide level2">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tab_width <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(tab_width):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    insert_space()</span></code></pre></div>
+</section>
+<section id="inlining-1" class="slide level2">
 <h2>Inlining</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
-<span id="cb4-2"><a href="#cb4-2"></a>    insert_space()</span></code></pre></div>
-</section><section id="unrolling" class="slide level2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    insert_space()</span></code></pre></div>
+</section>
+<section id="unrolling" class="slide level2">
 <h2>Unrolling</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
-<span id="cb5-2"><a href="#cb5-2"></a>    insert_space()</span></code></pre></div>
-</section><section id="unrolling-1" class="slide level2">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    insert_space()</span></code></pre></div>
+</section>
+<section id="unrolling-1" class="slide level2">
 <h2>Unrolling</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>insert_space()</span>
-<span id="cb6-2"><a href="#cb6-2"></a>insert_space()</span>
-<span id="cb6-3"><a href="#cb6-3"></a>insert_space()</span>
-<span id="cb6-4"><a href="#cb6-4"></a>insert_space()</span></code></pre></div>
-</section><section id="residual-program" class="slide level2">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>insert_space()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>insert_space()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>insert_space()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>insert_space()</span></code></pre></div>
+</section>
+<section id="residual-program" class="slide level2">
 <h2>“Residual” program</h2>
 <ul>
 <li>Behaves the same as the original program but is faster</li>
 </ul>
-</section><section id="specialisers" class="slide level2">
+</section>
+<section id="specialisers" class="slide level2">
 <h2>Specialisers</h2>
 <pre><code>+---------+    +--------+  +---------+
 |         |    |        |  |         |
@@ -189,13 +200,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       | Specialiser +-----&gt;+ Residual +--&gt;+ Output |
       |             |      |          |   |        |
       +-------------+      +----------+   +--------+</code></pre>
-</section><section id="specialisers-1" class="slide level2">
+</section>
+<section id="specialisers-1" class="slide level2">
 <h2>Specialisers</h2>
 <ul>
 <li>Specialise a program P “with respect to” input I</li>
 </ul>
 </section></section>
-<section><section id="interpreters-vs.-compilers" class="title-slide slide level1"><h1>Interpreters vs. Compilers</h1></section><section id="interpreters" class="slide level2">
+<section>
+<section id="interpreters-vs.-compilers" class="title-slide slide level1">
+<h1>Interpreters vs. Compilers</h1>
+
+</section>
+<section id="interpreters" class="slide level2">
 <h2>Interpreters</h2>
 <ul>
 <li>E.g. Python</li>
@@ -203,7 +220,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Simpler to write</li>
 <li>Slow</li>
 </ul>
-</section><section id="compilers" class="slide level2">
+</section>
+<section id="compilers" class="slide level2">
 <h2>Compilers</h2>
 <ul>
 <li>E.g. C</li>
@@ -211,14 +229,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Harder to write</li>
 <li>Fast</li>
 </ul>
-</section><section id="can-we-have-both" class="slide level2">
+</section>
+<section id="can-we-have-both" class="slide level2">
 <h2>Can we have both?</h2>
 <ul>
 <li>Simple to write</li>
 <li>Fast enough</li>
 </ul>
 </section></section>
-<section><section id="futamura-projections" class="title-slide slide level1"><h1>Futamura projections</h1></section><section id="interpreter-with-source-program" class="slide level2">
+<section>
+<section id="futamura-projections" class="title-slide slide level1">
+<h1>Futamura projections</h1>
+
+</section>
+<section id="interpreter-with-source-program" class="slide level2">
 <h2>Interpreter with source program</h2>
 <pre><code>+-------------+  +--------+  +-------+
 |             |  |        |  |       |
@@ -233,7 +257,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         | Specialiser +-----&gt;+    ?    +---&gt;+ Output |
         |             |      |         |    |        |
         +-------------+      +---------+    +--------+</code></pre>
-</section><section id="interpreter-with-source-program-1" class="slide level2">
+</section>
+<section id="interpreter-with-source-program-1" class="slide level2">
 <h2>Interpreter with source program</h2>
 <ul>
 <li>Outputs a standalone program</li>
@@ -241,7 +266,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We “compiled” it!</li>
 <li>E.g. Python interpreter + Python source program =&gt; “compiled” program</li>
 </ul>
-</section><section id="specialiser-with-interpreter" class="slide level2">
+</section>
+<section id="specialiser-with-interpreter" class="slide level2">
 <h2>Specialiser with interpreter</h2>
 <pre><code>+-------------+  +-------------+  +--------+
 |             |  |             |  |        |
@@ -256,14 +282,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         | Specialiser +-----&gt;+    ?    +---&gt;+ Executable |
         |             |      |         |    |            |
         +-------------+      +---------+    +------------+</code></pre>
-</section><section id="specialiser-with-interpreter-1" class="slide level2">
+</section>
+<section id="specialiser-with-interpreter-1" class="slide level2">
 <h2>Specialiser with interpreter</h2>
 <ul>
 <li>Outputs a program that can then take a source program and output a standalone executable (like in step 1)</li>
 <li>We made a “compiler”!</li>
 <li>E.g. a C specialiser + Python interpreter (in C) =&gt; Python “compiler”!</li>
 </ul>
-</section><section id="specialiser-with-specialiser" class="slide level2">
+</section>
+<section id="specialiser-with-specialiser" class="slide level2">
 <h2>Specialiser with specialiser</h2>
 <pre><code>+-------------+  +-------------+  +-------------+
 |             |  |             |  |             |
@@ -278,48 +306,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         | Specialiser +-----&gt;+    ?    +---&gt;+ Compiler |
         |             |      |         |    |          |
         +-------------+      +---------+    +----------+</code></pre>
-</section><section id="specialiser-with-specialiser-1" class="slide level2">
+</section>
+<section id="specialiser-with-specialiser-1" class="slide level2">
 <h2>Specialiser with specialiser</h2>
 <ul>
 <li>Outputs a program that can then take an interpreter and output a compiler (like in step 2)</li>
 <li>We made a “compiler compiler”!</li>
 </ul>
 </section></section>
-<section><section id="why" class="title-slide slide level1"><h1>Why?</h1></section><section id="interpreter---compiler" class="slide level2">
+<section>
+<section id="why" class="title-slide slide level1">
+<h1>Why?</h1>
+
+</section>
+<section id="interpreter---compiler" class="slide level2">
 <h2>Interpreter &lt;-&gt; Compiler?</h2>
 <ul>
 <li>A specialiser sits somewhere between an interpreter and a compiler</li>
 <li>Small, simpler programs are easier to write and work with</li>
 </ul>
-</section><section id="correctness" class="slide level2">
+</section>
+<section id="correctness" class="slide level2">
 <h2>Correctness</h2>
 <ul>
 <li>Easier to determine that a compiler is equivalent to an interpreter</li>
 <li>Less time debugging</li>
 </ul>
-</section><section id="optimisations" class="slide level2">
+</section>
+<section id="optimisations" class="slide level2">
 <h2>Optimisations</h2>
 <ul>
 <li>Was what we did optimisation?</li>
 <li>Static Analysis, Loop Unrolling, Constant Inlining…</li>
 </ul>
-</section><section id="pypy-trufflegraal-llvm" class="slide level2">
+</section>
+<section id="pypy-trufflegraal-llvm" class="slide level2">
 <h2>PyPy, Truffle/Graal, LLVM</h2>
 <ul>
 <li>Write your language a certain way and get a JIT (just-in-time compiler) for free!</li>
 </ul>
-</section><section id="jit" class="slide level2">
+</section>
+<section id="jit" class="slide level2">
 <h2>JIT</h2>
 <ul>
 <li>Roughly the same as the second Futamura projection!</li>
 </ul>
-</section><section id="faster-programs" class="slide level2">
+</section>
+<section id="faster-programs" class="slide level2">
 <h2>Faster programs</h2>
 <ul>
 <li>i.e. the specialised Vim of my dreams!</li>
 </ul>
 </section></section>
-<section><section id="thanks" class="title-slide slide level1"><h1>Thanks!</h1></section><section id="resources" class="slide level2">
+<section>
+<section id="thanks" class="title-slide slide level1">
+<h1>Thanks!</h1>
+
+</section>
+<section id="resources" class="slide level2">
 <h2>Resources</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Partial_evaluation">The Wikipedia page</a></li>
@@ -329,20 +373,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="http://wry.me/~darius/writings/peval/">Darius Bacon’s <em>A Hacker’s Intro to Partial Evaluation</em></a></li>
 <li><a href="https://www.gwern.net/docs/cs/2009-gluck.pdf"><em>Is There a Fourth Futamura Projection?</em></a></li>
 </ul>
-</section><section id="futamura" class="slide level2">
+</section>
+<section id="futamura" class="slide level2">
 <h2>Futamura!</h2>
 <p><img src=images/futamura-tweet.png></p>
-</section><section id="futamura-1" class="slide level2">
+</section>
+<section id="futamura-1" class="slide level2">
 <h2>Futamura!</h2>
 <p><img src=images/futurama-reply-tweet.png></p>
-</section><section id="futamura-2" class="slide level2">
+</section>
+<section id="futamura-2" class="slide level2">
 <h2>Futamura!</h2>
 <p><img src=images/futamura-logo.png></p>
-</section><section id="slides" class="slide level2">
+</section>
+<section id="slides" class="slide level2">
 <h2>Slides</h2>
 <p><a href="https://vaibhavsagar.com/presentations/partial-evaluation">https://vaibhavsagar.com/presentations/partial-evaluation</a></p>
 </section></section>
-<section><section id="bonus-the-fourth-futamura-projection" class="title-slide slide level1"><h1>Bonus: The Fourth Futamura Projection</h1></section><section id="fixed-point" class="slide level2">
+<section>
+<section id="bonus-the-fourth-futamura-projection" class="title-slide slide level1">
+<h1>Bonus: The Fourth Futamura Projection</h1>
+
+</section>
+<section id="fixed-point" class="slide level2">
 <h2>Fixed point</h2>
 <pre><code>+-------------+  +-------------+  +-------------+
 |             |  |             |  |             |
@@ -364,25 +417,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
+      
         // Push each slide change to the browser history
         history: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>
     <script data-goatcounter="https://vaibhavsagar.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
+            async src="//gc.zgo.at/count.js"></script>
     </body>
 </html>
