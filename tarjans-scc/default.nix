@@ -5,7 +5,6 @@ let
   command = src: pkgs: ''
     mkdir -p $out
     pandoc --standalone -t revealjs -V theme:simple ${src + "/presentation.md"} -A ${../tracking.html} -o $out/index.html
-    cp -R ${pkgs.revealjs} $out/reveal.js
     ln -s ${images} $out/images
   '';
 in
