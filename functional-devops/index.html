@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -91,7 +94,8 @@
 <section id="title-slide">
   <h1 class="title">Functional DevOps</h1>
   <p class="author">(in a dysfunctional world)</p>
-  <p class="date">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
+  <p class="date">Vaibhav Sagar (<span class="citation"
+data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
 <section>
@@ -105,7 +109,8 @@
 <section id="works-on-my-machine-1" class="slide level2">
 <h2><del>Works on my machine</del></h2>
 </section>
-<section id="what-happens-after-you-write-the-last-line-of-code" class="slide level2">
+<section id="what-happens-after-you-write-the-last-line-of-code"
+class="slide level2">
 <h2>What happens after you write the last line of code?</h2>
 </section></section>
 <section>
@@ -135,7 +140,8 @@
 </section>
 <section id="blank-me-up" class="slide level2">
 <h2>Blank Me Up</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></span>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="dt">Web.Scotty</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -164,7 +170,8 @@ executable blank-me-up
 </section>
 <section id="nix" class="slide level2">
 <h2>Nix</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir nix</span>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir nix</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd nix/</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cabal2nix <span class="at">--shell</span> ../app/ <span class="op">&gt;</span> default.nix</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nix-build</span>
@@ -174,106 +181,106 @@ executable blank-me-up
 </section>
 <section id="service" class="slide level2">
 <h2>Service</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span> <span class="ex">config,</span> lib, pkgs, ... }:</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">let</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="er">in</span> <span class="kw">{</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">options</span>                             =                                 <span class="kw">;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">config</span> =                      </span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                                                   </span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                                    </span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                                  </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                                   </span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                                         </span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>                       </span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                                                     </span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>   <span class="kw">;</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div>
+<pre class="nix"><code>{ config, lib, pkgs, ... }:
+
+let
+
+in {
+  options                             =                                 ;
+
+  config =                      
+                                                   
+
+                                    
+                                  
+                                   
+                                         
+                       
+                                                     
+                           
+                             
+        
+      
+   ;
+}</code></pre>
 <p><em>nix/service.nix</em></p>
 </section>
 <section id="service-1" class="slide level2">
 <h2>Service</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span> <span class="ex">config,</span> lib, pkgs, ... }:</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">let</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> <span class="kw">};</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="er">in</span> <span class="kw">{</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">options</span>                             =                                 <span class="kw">;</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">config</span> =</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>   <span class="kw">;</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div>
+<pre class="nix"><code>{ config, lib, pkgs, ... }:
+
+let
+  blank-me-up = pkgs.callPackage ./default.nix { nixpkgs = pkgs; };
+in {
+  options                             =                                 ;
+
+  config =
+
+
+
+
+
+
+
+
+
+
+
+
+   ;
+}</code></pre>
 <p><em>nix/service.nix</em></p>
 </section>
 <section id="service-2" class="slide level2">
 <h2>Service</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span> <span class="ex">config,</span> lib, pkgs, ... }:</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">let</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> <span class="kw">};</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="er">in</span> <span class="kw">{</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">config</span> = lib.mkIf config.services.blank-me-up.enable {</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="kw">};</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code></pre></div>
+<pre class="nix"><code>{ config, lib, pkgs, ... }:
+
+let
+  blank-me-up = pkgs.callPackage ./default.nix { nixpkgs = pkgs; };
+in {
+  options.services.blank-me-up.enable = lib.mkEnableOption &quot;Blank Me Up&quot;;
+
+  config = lib.mkIf config.services.blank-me-up.enable {
+
+
+
+
+
+
+
+
+
+
+
+
+  };
+}</code></pre>
 <p><em>nix/service.nix</em></p>
 </section>
 <section id="service-3" class="slide level2">
 <h2>Service</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span> <span class="ex">config,</span> lib, pkgs, ... }:</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">let</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">blank-me-up</span> = pkgs.callPackage ./default.nix { nixpkgs = pkgs<span class="kw">;</span> <span class="kw">};</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="er">in</span> <span class="kw">{</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">config</span> = lib.mkIf config.services.blank-me-up.enable {</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">networking.firewall.allowedTCPPorts</span> = [ 3000 ]<span class="kw">;</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">systemd.services.blank-me-up</span> = {</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      <span class="ex">description</span> = <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="ex">after</span> = [ <span class="st">&quot;network.target&quot;</span> ]<span class="kw">;</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>      <span class="ex">wantedBy</span> = [ <span class="st">&quot;multi-user.target&quot;</span> ]<span class="kw">;</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>      <span class="ex">serviceConfig</span> = {</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ExecStart</span> = <span class="st">&quot;</span><span class="va">${blank</span><span class="er">-me-up</span><span class="va">}</span><span class="st">/bin/blank-me-up&quot;</span><span class="kw">;</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="ex">Restart</span> = <span class="st">&quot;always&quot;</span><span class="kw">;</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="ex">KillMode</span> = <span class="st">&quot;process&quot;</span><span class="kw">;</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>      <span class="kw">};</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span><span class="kw">;</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="er">}</span><span class="kw">;</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code></pre></div>
+<pre class="nix"><code>{ config, lib, pkgs, ... }:
+
+let
+  blank-me-up = pkgs.callPackage ./default.nix { nixpkgs = pkgs; };
+in {
+  options.services.blank-me-up.enable = lib.mkEnableOption &quot;Blank Me Up&quot;;
+
+  config = lib.mkIf config.services.blank-me-up.enable {
+    networking.firewall.allowedTCPPorts = [ 3000 ];
+
+    systemd.services.blank-me-up = {
+      description = &quot;Blank Me Up&quot;;
+      after = [ &quot;network.target&quot; ];
+      wantedBy = [ &quot;multi-user.target&quot; ];
+      serviceConfig = {
+        ExecStart = &quot;${blank-me-up}/bin/blank-me-up&quot;;
+        Restart = &quot;always&quot;;
+        KillMode = &quot;process&quot;;
+      };
+    };
+  };
+}</code></pre>
 <p><em>nix/service.nix</em></p>
 </section>
 <section id="functional" class="slide level2">
@@ -286,15 +293,16 @@ executable blank-me-up
 </section>
 <section id="webserver" class="slide level2">
 <h2>Webserver</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span> <span class="ex">...</span> }: {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">imports</span> = [ ../nix/service.nix ]<span class="kw">;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">services.blank-me-up.enable</span> = true<span class="kw">;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div>
+<pre class="nix"><code>{ ... }: {
+  imports = [ ../nix/service.nix ];
+  services.blank-me-up.enable = true;
+}</code></pre>
 <p><em>ops/webserver.nix</em></p>
 </section>
 <section id="webserver-1" class="slide level2">
 <h2>Webserver</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ops/</span>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ops/</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nix-instantiate <span class="at">--eval</span> <span class="at">-E</span> <span class="st">&#39;(import &lt;nixpkgs/nixos/lib/eval-config.nix&gt; { modules = [./webserver.nix]; }).config.systemd.units.&quot;blank-me-up.service&quot;.unit.text&#39;</span> <span class="kw">|</span> <span class="ex">jq</span> <span class="at">-r</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[Unit]</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="va">After</span><span class="op">=</span>network.target</span>
@@ -313,31 +321,32 @@ executable blank-me-up
 </section>
 <section id="deployment" class="slide level2">
 <h2>Deployment</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">network.description</span> = <span class="st">&quot;Web server&quot;</span><span class="kw">;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">network.enableRollback</span> = true<span class="kw">;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">webserver</span> = import ./webserver.nix<span class="kw">;</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div>
+<pre class="nix"><code>{
+  network.description = &quot;Web server&quot;;
+  network.enableRollback = true;
+
+  webserver = import ./webserver.nix;
+}</code></pre>
 <p><em>ops/trivial.nix</em></p>
 </section>
 <section id="deployment-1" class="slide level2">
 <h2>Deployment</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">webserver</span> =</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">{</span> <span class="ex">config,</span> pkgs, ... }:</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">{</span> <span class="ex">deployment.targetEnv</span> = <span class="st">&quot;virtualbox&quot;</span><span class="kw">;</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>      <span class="ex">deployment.virtualbox.headless</span> = true<span class="kw">;</span> <span class="co"># don&#39;t show a display</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>      <span class="ex">deployment.virtualbox.memorySize</span> = 1024<span class="kw">;</span> <span class="co"># megabytes</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>      <span class="ex">deployment.virtualbox.vcpu</span> = 2<span class="kw">;</span> <span class="co"># number of cpus</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>      <span class="ex">nixpkgs.system</span> = <span class="st">&quot;x86_64-linux&quot;</span><span class="kw">;</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">};</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div>
+<pre class="nix"><code>{
+  webserver =
+    { config, pkgs, ... }:
+    { deployment.targetEnv = &quot;virtualbox&quot;;
+      deployment.virtualbox.headless = true; # don&#39;t show a display
+      deployment.virtualbox.memorySize = 1024; # megabytes
+      deployment.virtualbox.vcpu = 2; # number of cpus
+      nixpkgs.system = &quot;x86_64-linux&quot;;
+    };
+}</code></pre>
 <p><em>ops/trivial-vbox.nix</em></p>
 </section>
 <section id="deployment-2" class="slide level2">
 <h2>Deployment</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ops</span>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ops</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nixops create trivial.nix trivial-vbox.nix <span class="at">-d</span> trivial</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nixops deploy <span class="at">-d</span> trivial</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>tons <span class="ex">of</span> output...<span class="op">&gt;</span></span>
@@ -354,79 +363,81 @@ executable blank-me-up
 </section>
 <section id="patched" class="slide level2">
 <h2>Patched</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">args@{</span> nixpkgs <span class="pp">?</span> import <span class="op">&lt;</span>nixpkgs<span class="op">&gt;</span> {}, compiler <span class="pp">?</span> <span class="st">&quot;default&quot;</span> }:</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">import</span> ./default.nix args<span class="kw">)</span><span class="ex">.overrideAttrs</span> <span class="er">(</span><span class="ex">old:</span> {</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">postPatch</span> = let</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">oldImport</span> = <span class="st">&#39;&#39;</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>      <span class="ex">import</span> Web.Scotty</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;&#39;</span><span class="kw">;</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">newImport</span> = <span class="st">&#39;&#39;</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>      <span class="ex">import</span> Web.Scotty</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>      <span class="ex">import</span> System.Environment <span class="er">(</span><span class="ex">getArgs</span><span class="kw">)</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;&#39;</span><span class="kw">;</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">oldMain</span> = <span class="st">&#39;&#39;</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>      <span class="ex">main</span> = scotty 3000 $ do</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;&#39;</span><span class="kw">;</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">newMain</span> = <span class="st">&#39;&#39;</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>      <span class="ex">main</span> = getArgs <span class="op">&gt;&gt;</span>= <span class="dt">\(</span>port:_<span class="kw">)</span> <span class="ex">-</span><span class="op">&gt;</span> scotty <span class="er">(</span><span class="bu">read</span> <span class="va">port</span><span class="kw">)</span> <span class="ex">$</span> do</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;&#39;</span><span class="kw">;</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="er">in</span> <span class="st">&#39;&#39;</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">substituteInPlace</span> Main.hs <span class="at">--replace</span> <span class="st">&#39;${oldImport}&#39;</span> <span class="st">&#39;${newImport}&#39;</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">substituteInPlace</span> Main.hs <span class="at">--replace</span> <span class="st">&#39;${oldMain}&#39;</span>   <span class="st">&#39;${newMain}&#39;</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> Main.hs</span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;&#39;</span><span class="kw">;</span></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="er">})</span></span></code></pre></div>
+<pre class="nix"><code>args@{ nixpkgs ? import &lt;nixpkgs&gt; {}, compiler ? &quot;default&quot; }:
+
+(import ./default.nix args).overrideAttrs (old: {
+  postPatch = let
+    oldImport = &#39;&#39;
+      import Web.Scotty
+    &#39;&#39;;
+    newImport = &#39;&#39;
+      import Web.Scotty
+      import System.Environment (getArgs)
+    &#39;&#39;;
+    oldMain = &#39;&#39;
+      main = scotty 3000 $ do
+    &#39;&#39;;
+    newMain = &#39;&#39;
+      main = getArgs &gt;&gt;= \(port:_) -&gt; scotty (read port) $ do
+    &#39;&#39;;
+  in &#39;&#39;
+    substituteInPlace Main.hs --replace &#39;${oldImport}&#39; &#39;${newImport}&#39;
+    substituteInPlace Main.hs --replace &#39;${oldMain}&#39;   &#39;${newMain}&#39;
+    cat Main.hs
+  &#39;&#39;;
+})</code></pre>
 <p><em>nix/patched.nix</em></p>
 </section>
 <section id="service-4" class="slide level2">
 <h2>Service</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span> <span class="ex">config,</span> lib, pkgs, ... }:</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">let</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">blank-me-up</span> = pkgs.callPackage ./patched.nix { nixpkgs = pkgs<span class="kw">;</span> <span class="kw">};</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">cfg</span> = config.services.blank-me-up<span class="kw">;</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="er">in</span> <span class="kw">{</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">options.services.blank-me-up.enable</span> = lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">options.services.blank-me-up.port</span> = lib.mkOption {</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">default</span> = 3000<span class="kw">;</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span> = lib.types.int<span class="kw">;</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">};</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="ex">config</span> = lib.mkIf cfg.enable {</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">networking.firewall.allowedTCPPorts</span> = [ cfg.port ]<span class="kw">;</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">systemd.services.blank-me-up</span> = {</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>      <span class="ex">description</span> = <span class="st">&quot;Blank Me Up&quot;</span><span class="kw">;</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>      <span class="ex">after</span> = [ <span class="st">&quot;network.target&quot;</span> ]<span class="kw">;</span></span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>      <span class="ex">wantedBy</span> = [ <span class="st">&quot;multi-user.target&quot;</span> ]<span class="kw">;</span></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>      <span class="ex">serviceConfig</span> = {</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ExecStart</span> = <span class="st">&quot;</span><span class="va">${blank</span><span class="er">-me-up</span><span class="va">}</span><span class="st">/bin/blank-me-up </span><span class="va">${toString</span><span class="er"> cfg.port</span><span class="va">}</span><span class="st">&quot;</span><span class="kw">;</span></span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>        <span class="ex">Restart</span> = <span class="st">&quot;always&quot;</span><span class="kw">;</span></span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>        <span class="ex">KillMode</span> = <span class="st">&quot;process&quot;</span><span class="kw">;</span></span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>      <span class="er">}</span><span class="kw">;</span></span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    <span class="er">}</span><span class="kw">;</span></span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  <span class="er">}</span><span class="kw">;</span></span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code></pre></div>
+<pre class="nix"><code>{ config, lib, pkgs, ... }:
+
+let
+  blank-me-up = pkgs.callPackage ./patched.nix { nixpkgs = pkgs; };
+  cfg = config.services.blank-me-up;
+in {
+  options.services.blank-me-up.enable = lib.mkEnableOption &quot;Blank Me Up&quot;;
+  options.services.blank-me-up.port = lib.mkOption {
+    default = 3000;
+    type = lib.types.int;
+  };
+
+  config = lib.mkIf cfg.enable {
+    networking.firewall.allowedTCPPorts = [ cfg.port ];
+
+    systemd.services.blank-me-up = {
+      description = &quot;Blank Me Up&quot;;
+      after = [ &quot;network.target&quot; ];
+      wantedBy = [ &quot;multi-user.target&quot; ];
+      serviceConfig = {
+        ExecStart = &quot;${blank-me-up}/bin/blank-me-up ${toString cfg.port}&quot;;
+        Restart = &quot;always&quot;;
+        KillMode = &quot;process&quot;;
+      };
+    };
+  };
+}</code></pre>
 <p><em>nix/service-patched.nix</em></p>
 </section>
 <section id="webserver-2" class="slide level2">
 <h2>Webserver</h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span> <span class="ex">...</span> }: {</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">imports</span> = [ ../nix/service-patched.nix ]<span class="kw">;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">services.blank-me-up.enable</span> = true<span class="kw">;</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">services.blank-me-up.port</span> = 3001<span class="kw">;</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div>
+<pre class="nix"><code>{ ... }: {
+  imports = [ ../nix/service-patched.nix ];
+  services.blank-me-up.enable = true;
+  services.blank-me-up.port = 3001;
+}</code></pre>
 <p><em>nix/webserver.nix</em></p>
 </section>
 <section id="deploy" class="slide level2">
 <h2>Deploy</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nixops deploy <span class="at">-d</span> trivial</span>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nixops deploy <span class="at">-d</span> trivial</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> curl <span class="op">&lt;</span>ip<span class="op">&gt;</span>:3001/pull</span></code></pre></div>
 </section>
 <section id="rollback" class="slide level2">
 <h2>Rollback</h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nixops rollback <span class="at">-d</span> trivial 1</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nixops rollback <span class="at">-d</span> trivial 1</span></code></pre></div>
 </section></section>
 <section>
 <section id="summary" class="title-slide slide level1">
@@ -523,7 +534,7 @@ executable blank-me-up
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

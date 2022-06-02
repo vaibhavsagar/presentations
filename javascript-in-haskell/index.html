@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -27,7 +30,8 @@
 
 <section id="title-slide">
   <h1 class="title">Writing Javascript in Haskell!</h1>
-  <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
+  <p class="author">Vaibhav Sagar (<span class="citation"
+data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
 <section>
@@ -40,13 +44,15 @@
 
 </section>
 
-<section id="people-write-code-in-it-sometimes" class="title-slide slide level2">
+<section id="people-write-code-in-it-sometimes"
+class="title-slide slide level2">
 <h2>People write code in it sometimes</h2>
 
 </section>
 </section>
 <section>
-<section id="why-javascript-in-haskell" class="title-slide slide level1">
+<section id="why-javascript-in-haskell"
+class="title-slide slide level1">
 <h1>Why JavaScript in Haskell?</h1>
 
 </section>
@@ -66,7 +72,8 @@
 </section>
 </section>
 <section>
-<section id="write-your-own-haskell-like-language" class="title-slide slide level1">
+<section id="write-your-own-haskell-like-language"
+class="title-slide slide level1">
 <h1>1. Write your own Haskell-like language!</h1>
 
 </section>
@@ -96,7 +103,8 @@
 </section>
 </section>
 <section>
-<section id="compile-a-subset-of-haskell-to-js" class="title-slide slide level1">
+<section id="compile-a-subset-of-haskell-to-js"
+class="title-slide slide level1">
 <h1>2. Compile a subset of Haskell to JS!</h1>
 
 </section>
@@ -120,17 +128,20 @@
 <h1>3. Boil the ocean</h1>
 
 </section>
-<section id="implement-the-haskell-rts-in-javascript" class="title-slide slide level2">
+<section id="implement-the-haskell-rts-in-javascript"
+class="title-slide slide level2">
 <h2>1. Implement the Haskell RTS in JavaScript</h2>
 
 </section>
 
-<section id="implement-javascript-shims-for-c-dependencies" class="title-slide slide level2">
+<section id="implement-javascript-shims-for-c-dependencies"
+class="title-slide slide level2">
 <h2>2. Implement JavaScript shims for C dependencies</h2>
 
 </section>
 
-<section id="get-all-the-tooling-to-support-your-implementation" class="title-slide slide level2">
+<section id="get-all-the-tooling-to-support-your-implementation"
+class="title-slide slide level2">
 <h2>3. Get all the tooling to support your implementation</h2>
 
 </section>
@@ -145,7 +156,8 @@
 
 </section>
 
-<section id="this-is-what-we-use-at-work" class="title-slide slide level2">
+<section id="this-is-what-we-use-at-work"
+class="title-slide slide level2">
 <h2>This is what we use at work</h2>
 
 </section>
@@ -209,7 +221,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

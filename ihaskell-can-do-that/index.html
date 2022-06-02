@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -27,7 +30,8 @@
 
 <section id="title-slide">
   <h1 class="title">Yes, IHaskell Can Do That!</h1>
-  <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
+  <p class="author">Vaibhav Sagar (<span class="citation"
+data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
 <section>
@@ -115,7 +119,8 @@
 <h1>What’s next?</h1>
 
 </section>
-<section id="boiling-the-ocean-vs.-piggybacking" class="title-slide slide level2">
+<section id="boiling-the-ocean-vs.-piggybacking"
+class="title-slide slide level2">
 <h2>Boiling the ocean vs. Piggybacking</h2>
 
 </section>
@@ -200,7 +205,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

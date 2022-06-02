@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -28,37 +31,57 @@
 <section id="title-slide">
   <h1 class="title">Space-efficient Static Trees and Graphs</h1>
   <p class="author">Guy Jacobson</p>
-  <p class="date">(presented by Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>))</p>
+  <p class="date">(presented by Vaibhav Sagar (<span class="citation"
+data-cites="vbhvsgr">@vbhvsgr</span>))</p>
 </section>
 
 <section>
-<section id="data-structures-take-up-too-much-space" class="title-slide slide level1">
+<section id="data-structures-take-up-too-much-space"
+class="title-slide slide level1">
 <h1>Data structures take up too much space!</h1>
 
 </section>
-<section id="a-pointer-to-n-possible-locations-needs-log_2-n-bits" class="slide level2">
-<h2>A pointer to <span class="math inline"><em>n</em></span> possible locations needs <span class="math inline">log<sub>2</sub><em>n</em></span> bits</h2>
+<section id="a-pointer-to-n-possible-locations-needs-log_2-n-bits"
+class="slide level2">
+<h2>A pointer to <span class="math inline"><em>n</em></span> possible
+locations needs <span
+class="math inline">log<sub>2</sub><em>n</em></span> bits</h2>
 </section>
-<section id="data-structures-with-n-items-need-onlog_2-n-space-for-pointers" class="slide level2">
-<h2>Data structures with <span class="math inline"><em>n</em></span> items need <span class="math inline"><em>O</em>(<em>n</em>log<sub>2</sub><em>n</em>)</span> space for pointers!</h2>
+<section
+id="data-structures-with-n-items-need-onlog_2-n-space-for-pointers"
+class="slide level2">
+<h2>Data structures with <span class="math inline"><em>n</em></span>
+items need <span
+class="math inline"><em>O</em>(<em>n</em>log<sub>2</sub><em>n</em>)</span>
+space for pointers!</h2>
 </section>
 <section id="the-rent-is-too-damn-high" class="slide level2">
 <h2>The rent is too damn high!</h2>
 <figure>
-<img data-src="https://cdn.theatlantic.com/assets/media/img/upload/wire/2014/08/26/AP101018137899/lead_720_405.jpg" alt="Source: The Atlantic" /><figcaption aria-hidden="true">Source: The Atlantic</figcaption>
+<img
+data-src="https://cdn.theatlantic.com/assets/media/img/upload/wire/2014/08/26/AP101018137899/lead_720_405.jpg"
+alt="Source: The Atlantic" />
+<figcaption aria-hidden="true">Source: The Atlantic</figcaption>
 </figure>
 </section>
-<section id="unlabeled-binary-trees-only-need-2n-on-bits" class="slide level2">
-<h2>Unlabeled binary trees only need <span class="math inline">2<em>n</em> + <em>o</em>(<em>n</em>)</span> bits</h2>
+<section id="unlabeled-binary-trees-only-need-2n-on-bits"
+class="slide level2">
+<h2>Unlabeled binary trees only need <span
+class="math inline">2<em>n</em> + <em>o</em>(<em>n</em>)</span>
+bits</h2>
 </section>
 <section id="one-approach-balanced-parentheses" class="slide level2">
 <h2>One approach: balanced parentheses?</h2>
 </section>
-<section id="better-space-usage-but-inefficient-to-use" class="slide level2">
+<section id="better-space-usage-but-inefficient-to-use"
+class="slide level2">
 <h2>Better space usage, but inefficient to use</h2>
 </section>
-<section id="how-do-we-get-efficient-space-usage-and-efficient-operations" class="slide level2">
-<h2>How do we get efficient space usage <em>and</em> efficient operations?</h2>
+<section
+id="how-do-we-get-efficient-space-usage-and-efficient-operations"
+class="slide level2">
+<h2>How do we get efficient space usage <em>and</em> efficient
+operations?</h2>
 </section>
 <section id="metrics-for-space-and-time" class="slide level2">
 <h2>Metrics for space and time</h2>
@@ -74,30 +97,46 @@
 </section>
 <section id="rank" class="slide level2">
 <h2>Rank</h2>
-<p><span class="math inline"><em>r</em><em>a</em><em>n</em><em>k</em><sub><em>e</em></sub>(<em>S</em>,<em>i</em>)</span>: The number of <span class="math inline"><em>e</em></span>s at or before index <span class="math inline"><em>i</em></span></p>
+<p><span
+class="math inline"><em>r</em><em>a</em><em>n</em><em>k</em><sub><em>e</em></sub>(<em>S</em>,<em>i</em>)</span>:
+The number of <span class="math inline"><em>e</em></span>s at or before
+index <span class="math inline"><em>i</em></span></p>
 </section>
 <section id="select" class="slide level2">
 <h2>Select</h2>
-<p><span class="math inline"><em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em><sub><em>e</em></sub>(<em>S</em>,<em>i</em>)</span>: The index of the <span class="math inline"><em>i</em></span>th <span class="math inline"><em>e</em></span></p>
+<p><span
+class="math inline"><em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em><sub><em>e</em></sub>(<em>S</em>,<em>i</em>)</span>:
+The index of the <span class="math inline"><em>i</em></span>th <span
+class="math inline"><em>e</em></span></p>
 </section>
 <section id="time-complexity" class="slide level2">
 <h2>Time complexity</h2>
 <ul>
-<li><span class="math inline"><em>O</em>(log<sub>2</sub><em>n</em>)</span> at the time of writing, <span class="math inline"><em>O</em>(1)</span> now!</li>
+<li><span
+class="math inline"><em>O</em>(log<sub>2</sub><em>n</em>)</span> at the
+time of writing, <span class="math inline"><em>O</em>(1)</span>
+now!</li>
 </ul>
 </section>
 <section id="more-resources" class="slide level2">
 <h2>More resources</h2>
 <ul>
-<li><a href="https://dl.acm.org/citation.cfm?id=545411">Succinct indexable dictionaries with applications to encoding k-ary trees and multisets</a></li>
-<li><a href="https://users.dcc.uchile.cl/~gnavarro/ps/sea12.1.pdf">Fast, Small, Simple Rank/Select on Bitmaps</a></li>
-<li><a href="http://www.cs.cmu.edu/~dga/papers/zhou-sea2013.pdf">Space-Efficient, High-Performance Rank &amp; Select Structures on Uncompressed Bit Sequences</a></li>
+<li><a href="https://dl.acm.org/citation.cfm?id=545411">Succinct
+indexable dictionaries with applications to encoding k-ary trees and
+multisets</a></li>
+<li><a href="https://users.dcc.uchile.cl/~gnavarro/ps/sea12.1.pdf">Fast,
+Small, Simple Rank/Select on Bitmaps</a></li>
+<li><a
+href="http://www.cs.cmu.edu/~dga/papers/zhou-sea2013.pdf">Space-Efficient,
+High-Performance Rank &amp; Select Structures on Uncompressed Bit
+Sequences</a></li>
 </ul>
 </section>
 <section id="rankselect-beyond-bitmaps" class="slide level2">
 <h2>Rank/Select beyond bitmaps</h2>
 <ul>
-<li><a href="https://users.dcc.uchile.cl/~gnavarro/ps/cpm12.pdf">Wavelet Trees for All</a></li>
+<li><a href="https://users.dcc.uchile.cl/~gnavarro/ps/cpm12.pdf">Wavelet
+Trees for All</a></li>
 </ul>
 </section></section>
 <section>
@@ -116,9 +155,12 @@
 <section id="level-order-binary-marked-1" class="slide level2">
 <h2>Level-order binary marked</h2>
 <ul>
-<li><span class="math inline"><em>l</em><em>e</em><em>f</em><em>t</em>-<em>c</em><em>h</em><em>i</em><em>l</em><em>d</em>(<em>m</em>) = 2 ⋅ <em>r</em><em>a</em><em>n</em><em>k</em>(<em>m</em>)</span></li>
-<li><span class="math inline"><em>r</em><em>i</em><em>g</em><em>h</em><em>t</em>-<em>c</em><em>h</em><em>i</em><em>l</em><em>d</em>(<em>m</em>) = 2 ⋅ <em>r</em><em>a</em><em>n</em><em>k</em>(<em>m</em>) + 1</span></li>
-<li><span class="math inline"><em>p</em><em>a</em><em>r</em><em>e</em><em>n</em><em>t</em>(<em>m</em>) = <em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em>(⌊<em>m</em>/2⌋)</span></li>
+<li><span
+class="math inline"><em>l</em><em>e</em><em>f</em><em>t</em>-<em>c</em><em>h</em><em>i</em><em>l</em><em>d</em>(<em>m</em>) = 2 ⋅ <em>r</em><em>a</em><em>n</em><em>k</em>(<em>m</em>)</span></li>
+<li><span
+class="math inline"><em>r</em><em>i</em><em>g</em><em>h</em><em>t</em>-<em>c</em><em>h</em><em>i</em><em>l</em><em>d</em>(<em>m</em>) = 2 ⋅ <em>r</em><em>a</em><em>n</em><em>k</em>(<em>m</em>) + 1</span></li>
+<li><span
+class="math inline"><em>p</em><em>a</em><em>r</em><em>e</em><em>n</em><em>t</em>(<em>m</em>) = <em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em>(⌊<em>m</em>/2⌋)</span></li>
 </ul>
 </section>
 <section id="level-order-unary-degree-sequence" class="slide level2">
@@ -128,9 +170,12 @@
 <section id="level-order-unary-degree-sequence-1" class="slide level2">
 <h2>Level-order unary degree sequence</h2>
 <ul>
-<li><span class="math inline"><em>f</em><em>i</em><em>r</em><em>s</em><em>t</em>-<em>c</em><em>h</em><em>i</em><em>l</em><em>d</em> = <em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em><sub>0</sub>(<em>r</em><em>a</em><em>n</em><em>k</em>(<em>m</em>)) + 1</span></li>
-<li><span class="math inline"><em>n</em><em>e</em><em>x</em><em>t</em>-<em>s</em><em>i</em><em>b</em><em>l</em><em>i</em><em>n</em><em>g</em> = <em>m</em> + 1</span></li>
-<li><span class="math inline"><em>p</em><em>a</em><em>r</em><em>e</em><em>n</em><em>t</em>(<em>m</em>) = <em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em>(<em>r</em><em>a</em><em>n</em><em>k</em><sub>0</sub>(<em>m</em>))</span></li>
+<li><span
+class="math inline"><em>f</em><em>i</em><em>r</em><em>s</em><em>t</em>-<em>c</em><em>h</em><em>i</em><em>l</em><em>d</em> = <em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em><sub>0</sub>(<em>r</em><em>a</em><em>n</em><em>k</em>(<em>m</em>)) + 1</span></li>
+<li><span
+class="math inline"><em>n</em><em>e</em><em>x</em><em>t</em>-<em>s</em><em>i</em><em>b</em><em>l</em><em>i</em><em>n</em><em>g</em> = <em>m</em> + 1</span></li>
+<li><span
+class="math inline"><em>p</em><em>a</em><em>r</em><em>e</em><em>n</em><em>t</em>(<em>m</em>) = <em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em>(<em>r</em><em>a</em><em>n</em><em>k</em><sub>0</sub>(<em>m</em>))</span></li>
 </ul>
 </section></section>
 <section>
@@ -149,12 +194,15 @@
 <section id="bounded-pagenumber-graphs-1" class="slide level2">
 <h2>Bounded pagenumber graphs</h2>
 <ul>
-<li><span class="math inline"><em>n</em><em>o</em><em>d</em><em>e</em>-<em>t</em><em>o</em>-<em>e</em><em>d</em><em>g</em><em>e</em>(<em>m</em>) = <em>r</em><em>a</em><em>n</em><em>k</em><sub>0</sub>(<em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em>(<em>m</em>)+1)</span></li>
-<li><span class="math inline"><em>e</em><em>d</em><em>g</em><em>e</em>-<em>t</em><em>o</em>-<em>n</em><em>o</em><em>d</em><em>e</em>(<em>e</em>) = <em>r</em><em>a</em><em>n</em><em>k</em>(<em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em><sub>0</sub>(<em>e</em>))</span></li>
+<li><span
+class="math inline"><em>n</em><em>o</em><em>d</em><em>e</em>-<em>t</em><em>o</em>-<em>e</em><em>d</em><em>g</em><em>e</em>(<em>m</em>) = <em>r</em><em>a</em><em>n</em><em>k</em><sub>0</sub>(<em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em>(<em>m</em>)+1)</span></li>
+<li><span
+class="math inline"><em>e</em><em>d</em><em>g</em><em>e</em>-<em>t</em><em>o</em>-<em>n</em><em>o</em><em>d</em><em>e</em>(<em>e</em>) = <em>r</em><em>a</em><em>n</em><em>k</em>(<em>s</em><em>e</em><em>l</em><em>e</em><em>c</em><em>t</em><sub>0</sub>(<em>e</em>))</span></li>
 </ul>
 </section></section>
 <section>
-<section id="succinct-data-structures-today" class="title-slide slide level1">
+<section id="succinct-data-structures-today"
+class="title-slide slide level1">
 <h1>Succinct data structures today</h1>
 
 </section>
@@ -173,7 +221,8 @@
 </section>
 <section id="this-presentation" class="slide level2">
 <h2>This presentation</h2>
-<p>These slides are at <a href="https://vaibhavsagar.com/presentations/space-efficient-static-trees-graphs">https://vaibhavsagar.com/presentations/space-efficient-static-trees-graphs</a></p>
+<p>These slides are at <a
+href="https://vaibhavsagar.com/presentations/space-efficient-static-trees-graphs">https://vaibhavsagar.com/presentations/space-efficient-static-trees-graphs</a></p>
 </section></section>
 <section id="questions" class="title-slide slide level1">
 <h1>Questions?</h1>
@@ -219,7 +268,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -26,8 +29,10 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">You Won’t Believe This One Weird CPU Instruction!</h1>
-  <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
+  <h1 class="title">You Won’t Believe This One Weird CPU
+Instruction!</h1>
+  <p class="author">Vaibhav Sagar (<span class="citation"
+data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
 <section>
@@ -37,11 +42,13 @@
 </section>
 <section id="population-count" class="slide level2">
 <h2>Population Count</h2>
-<p>Counts the number of bits set to <code>1</code> in a machine word.</p>
+<p>Counts the number of bits set to <code>1</code> in a machine
+word.</p>
 </section>
 <section id="popcount-1" class="slide level2">
 <h2><code>popcount</code></h2>
-<p><code>popcount(00100110) == 3</code> <code>popcount(01100000) == 2</code></p>
+<p><code>popcount(00100110) == 3</code>
+<code>popcount(01100000) == 2</code></p>
 </section>
 <section id="thats-it-thats-all-it-does." class="slide level2">
 <h2>That’s it, that’s all it does.</h2>
@@ -72,18 +79,22 @@
 <section id="the-nsa-instruction" class="slide level2">
 <h2>The NSA Instruction</h2>
 <p><img src="images/the-nsa-instruction.png" style="height: 11em;"></p>
-<p><a href="https://groups.google.com/forum/#!msg/comp.arch/UXEi7G6WHuU/Z2z7fC7Xhr8J">source</a></p>
+<p><a
+href="https://groups.google.com/forum/#!msg/comp.arch/UXEi7G6WHuU/Z2z7fC7Xhr8J">source</a></p>
 </section>
 <section id="the-nsa-instruction-1" class="slide level2">
 <h2>The NSA Instruction</h2>
 <blockquote>
-<p>It was almost a tradition that one of the first of any new faster CDC machine was delivered to a “good customer” - picked up at the factory by an anonymous truck, and never heard from again.</p>
+<p>It was almost a tradition that one of the first of any new faster CDC
+machine was delivered to a “good customer” - picked up at the factory by
+an anonymous truck, and never heard from again.</p>
 </blockquote>
 <p><a href="http://cryptome.org/jya/sadd.htm">source</a></p>
 </section>
 <section id="hamming-weight" class="slide level2">
 <h2>Hamming weight</h2>
-<p>The number of symbols that are different from the zero-symbol of the alphabet.</p>
+<p>The number of symbols that are different from the zero-symbol of the
+alphabet.</p>
 </section>
 <section id="cryptanalysis" class="slide level2">
 <h2>Cryptanalysis</h2>
@@ -95,9 +106,11 @@
 <li>???</li>
 <li>Profit!</li>
 </ol>
-<p><a href="http://www.talkchess.com/forum3/viewtopic.php?t=38521">source</a></p>
+<p><a
+href="http://www.talkchess.com/forum3/viewtopic.php?t=38521">source</a></p>
 </section>
-<section id="popcount-disappears-from-cpus-a-conspiracy" class="slide level2">
+<section id="popcount-disappears-from-cpus-a-conspiracy"
+class="slide level2">
 <h2><code>popcount</code> disappears from CPUs: a conspiracy???</h2>
 </section></section>
 <section>
@@ -107,7 +120,8 @@
 </section>
 <section id="hamming-distance" class="slide level2">
 <h2>Hamming distance</h2>
-<p>The number of differing positions between two strings of identical length.</p>
+<p>The number of differing positions between two strings of identical
+length.</p>
 </section>
 <section id="hamming-distance-1" class="slide level2">
 <h2>Hamming distance</h2>
@@ -121,20 +135,24 @@ popcount(01000110) = 3</code></pre>
 </section>
 <section id="signal-distance" class="slide level2">
 <h2>Signal distance</h2>
-<p>Send some data over the wire and compare it at both ends to get an estimate of the error rate.</p>
+<p>Send some data over the wire and compare it at both ends to get an
+estimate of the error rate.</p>
 </section>
 <section id="error-correcting-codes" class="slide level2">
 <h2>Error Correcting Codes</h2>
-<p>Based on your error correction requirements, choose sufficiently distant symbols to assemble your message out of!</p>
+<p>Based on your error correction requirements, choose sufficiently
+distant symbols to assemble your message out of!</p>
 </section></section>
 <section>
-<section id="binary-convolutional-neural-networks" class="title-slide slide level1">
+<section id="binary-convolutional-neural-networks"
+class="title-slide slide level1">
 <h1>Binary convolutional neural networks</h1>
 
 </section>
 <section id="binary" class="slide level2">
 <h2>Binary</h2>
-<p>Uses +1 and -1 (coded as 0) instead of 32-bit floating point numbers.</p>
+<p>Uses +1 and -1 (coded as 0) instead of 32-bit floating point
+numbers.</p>
 </section>
 <section id="convolutional" class="slide level2">
 <h2>Convolutional</h2>
@@ -146,15 +164,25 @@ popcount(01000110) = 3</code></pre>
 </section>
 <section id="why" class="slide level2">
 <h2>Why?</h2>
-<p>Simpler and smaller, suitable for less powerful devices like mobile phones</p>
+<p>Simpler and smaller, suitable for less powerful devices like mobile
+phones</p>
 </section>
 <section id="matrix-multiplication" class="slide level2">
 <h2>Matrix multiplication</h2>
-<p><span class="math display"><em>a</em> = <em>x</em><em>n</em><em>o</em><em>r</em>(<em>x</em>,<em>y</em>)</span> <span class="math display"><em>b</em> = <em>p</em><em>o</em><em>p</em><em>c</em><em>o</em><em>u</em><em>n</em><em>t</em>(<em>a</em>)</span> <span class="math display"><em>c</em> = <em>l</em><em>e</em><em>n</em>(<em>a</em>)</span> <span class="math display"><em>d</em><em>o</em><em>t</em>(<em>x</em>,<em>y</em>) = 2 × <em>b</em> − <em>c</em></span></p>
-<p><a href="https://sushscience.wordpress.com/2017/10/01/understanding-binary-neural-networks/">source</a></p>
+<p><span
+class="math display"><em>a</em> = <em>x</em><em>n</em><em>o</em><em>r</em>(<em>x</em>,<em>y</em>)</span>
+<span
+class="math display"><em>b</em> = <em>p</em><em>o</em><em>p</em><em>c</em><em>o</em><em>u</em><em>n</em><em>t</em>(<em>a</em>)</span>
+<span
+class="math display"><em>c</em> = <em>l</em><em>e</em><em>n</em>(<em>a</em>)</span>
+<span
+class="math display"><em>d</em><em>o</em><em>t</em>(<em>x</em>,<em>y</em>) = 2 × <em>b</em> − <em>c</em></span></p>
+<p><a
+href="https://sushscience.wordpress.com/2017/10/01/understanding-binary-neural-networks/">source</a></p>
 </section></section>
 <section>
-<section id="other-fun-uses-of-popcount" class="title-slide slide level1">
+<section id="other-fun-uses-of-popcount"
+class="title-slide slide level1">
 <h1>Other fun uses of <code>popcount</code></h1>
 
 </section>
@@ -172,7 +200,8 @@ popcount(01000110) = 3</code></pre>
 </section>
 <section id="compiler-optimisations" class="slide level2">
 <h2>Compiler optimisations</h2>
-<p><a href="https://godbolt.org/z/JUzmD8">GCC</a>, <a href="https://godbolt.org/z/AVqMGl">Clang</a></p>
+<p><a href="https://godbolt.org/z/JUzmD8">GCC</a>, <a
+href="https://godbolt.org/z/AVqMGl">Clang</a></p>
 </section></section>
 <section>
 <section id="thanks" class="title-slide slide level1">
@@ -181,7 +210,8 @@ popcount(01000110) = 3</code></pre>
 </section>
 <section id="slides" class="slide level2">
 <h2>Slides</h2>
-<p><a href="https://vaibhavsagar.com/presentations/popcount">https://vaibhavsagar.com/presentations/popcount</a></p>
+<p><a
+href="https://vaibhavsagar.com/presentations/popcount">https://vaibhavsagar.com/presentations/popcount</a></p>
 </section></section>
     </div>
   </div>
@@ -223,7 +253,7 @@ popcount(01000110) = 3</code></pre>
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

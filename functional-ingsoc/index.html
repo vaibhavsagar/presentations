@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -27,7 +30,8 @@
 
 <section id="title-slide">
   <h1 class="title">Functional Ingsoc</h1>
-  <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
+  <p class="author">Vaibhav Sagar (<span class="citation"
+data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
 <section>
@@ -38,15 +42,20 @@
 <section id="non-functional-programming" class="slide level2">
 <h2>Non-functional programming</h2>
 <ul>
-<li><p>It’s great to be able to write ‘intuitive’ code without interference from the language!</p></li>
-<li><p>Convenient when you’re writing your program, not so much when you have to run it.</p></li>
+<li><p>It’s great to be able to write ‘intuitive’ code without
+interference from the language!</p></li>
+<li><p>Convenient when you’re writing your program, not so much when you
+have to run it.</p></li>
 </ul>
 </section>
 <section id="functional-programming" class="slide level2">
 <h2>Functional programming</h2>
 <ul>
-<li><p>If there’s any way for my mistake to be caught at compile time, I will find it and use it.</p></li>
-<li><p>The compiler will declare all-out war on your program but when the dust settles, you have the peace of mind that it will do what you expect.</p></li>
+<li><p>If there’s any way for my mistake to be caught at compile time, I
+will find it and use it.</p></li>
+<li><p>The compiler will declare all-out war on your program but when
+the dust settles, you have the peace of mind that it will do what you
+expect.</p></li>
 </ul>
 </section></section>
 <section>
@@ -57,15 +66,19 @@
 <section id="non-functional-programming-1" class="slide level2">
 <h2>Non-functional programming</h2>
 <ul>
-<li><p>It’s so great that your functions are unrestricted in what they can do and you can just focus on writing your code!</p></li>
-<li><p>Easy to write the first time, nearly impossible to change afterwards because you are bound by past decisions.</p></li>
+<li><p>It’s so great that your functions are unrestricted in what they
+can do and you can just focus on writing your code!</p></li>
+<li><p>Easy to write the first time, nearly impossible to change
+afterwards because you are bound by past decisions.</p></li>
 </ul>
 </section>
 <section id="functional-programming-1" class="slide level2">
 <h2>Functional programming</h2>
 <ul>
-<li><p>Let’s limit the scope of what each function can do so that we can easily make changes later, as we inevitably will.</p></li>
-<li><p>Not as easy to write the first time, but much easier to change afterwards</p></li>
+<li><p>Let’s limit the scope of what each function can do so that we can
+easily make changes later, as we inevitably will.</p></li>
+<li><p>Not as easy to write the first time, but much easier to change
+afterwards</p></li>
 </ul>
 </section></section>
 <section>
@@ -76,15 +89,18 @@
 <section id="non-functional-programming-2" class="slide level2">
 <h2>Non-functional programming</h2>
 <ul>
-<li><p>How good is not having to worry about purity and compositionality?</p></li>
+<li><p>How good is not having to worry about purity and
+compositionality?</p></li>
 <li><p>Slow, hard to analyze, full of bugs</p></li>
 </ul>
 </section>
 <section id="functional-programming-2" class="slide level2">
 <h2>Functional programming</h2>
 <ul>
-<li><p>How good is polymorphism (parametric, arbitrary-rank, levity, linearity, etc.)?</p></li>
-<li><p>Constraints liberate and liberties constrain (thanks Rúnar)</p></li>
+<li><p>How good is polymorphism (parametric, arbitrary-rank, levity,
+linearity, etc.)?</p></li>
+<li><p>Constraints liberate and liberties constrain (thanks
+Rúnar)</p></li>
 </ul>
 </section></section>
 <section>
@@ -95,8 +111,10 @@
 <section id="what" class="slide level2">
 <h2>What!?</h2>
 <ul>
-<li><p>the acceptance of contrary opinions or beliefs at the same time, especially as a result of political indoctrination.</p></li>
-<li><p>I’d describe myself as extremely enthusiastic about FP, but not so long ago…</p></li>
+<li><p>the acceptance of contrary opinions or beliefs at the same time,
+especially as a result of political indoctrination.</p></li>
+<li><p>I’d describe myself as extremely enthusiastic about FP, but not
+so long ago…</p></li>
 </ul>
 </section></section>
 <section>
@@ -107,17 +125,24 @@
 <section id="radicalisation" class="slide level2">
 <h2>Radicalisation</h2>
 <ul>
-<li><p>My dynamically-typed programs failed over and over and over and over again</p></li>
-<li><p>There was a supportive, friendly FP community in the city I was living in</p></li>
-<li><p>The code I wrote was immediately better and more robust, even before tests</p></li>
-<li><p>It was still painful, and I wonder if there is an easier way.</p></li>
+<li><p>My dynamically-typed programs failed over and over and over and
+over again</p></li>
+<li><p>There was a supportive, friendly FP community in the city I was
+living in</p></li>
+<li><p>The code I wrote was immediately better and more robust, even
+before tests</p></li>
+<li><p>It was still painful, and I wonder if there is an easier
+way.</p></li>
 </ul>
 </section>
 <section id="empathy" class="slide level2">
 <h2>Empathy</h2>
 <ul>
-<li><p>There’s definitely a period of adjustment when learning to ‘think functionally’ and it does us no harm to be nicer to those who are trying</p></li>
-<li><p>Maybe there are more palatable ways to sell Haskell, rather than the justifications we use now</p></li>
+<li><p>There’s definitely a period of adjustment when learning to ‘think
+functionally’ and it does us no harm to be nicer to those who are
+trying</p></li>
+<li><p>Maybe there are more palatable ways to sell Haskell, rather than
+the justifications we use now</p></li>
 </ul>
 </section>
 <section id="thanks" class="slide level2">
@@ -163,7 +188,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

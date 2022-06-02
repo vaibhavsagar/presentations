@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -91,7 +94,8 @@
 <section id="title-slide">
   <h1 class="title">Now You’re Cooking with DAGs!</h1>
   <p class="author">Vaibhav Sagar</p>
-  <p class="date"><span class="citation" data-cites="vbhvsgr">@vbhvsgr</span></p>
+  <p class="date"><span class="citation"
+data-cites="vbhvsgr">@vbhvsgr</span></p>
 </section>
 
 <section id="drawing-a-git-repository" class="title-slide slide level1">
@@ -100,7 +104,8 @@
 </section>
 
 <section>
-<section id="all-git-commit-graphs-are-dags" class="title-slide slide level1">
+<section id="all-git-commit-graphs-are-dags"
+class="title-slide slide level1">
 <h1>All Git commit graphs are DAGs</h1>
 
 </section>
@@ -134,31 +139,37 @@
 <section id="stackoverflow-search" class="slide level2">
 <h2>StackOverflow search</h2>
 <p><img src=images/question.png></p>
-<p><em>Source: https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic</em></p>
+<p><em>Source:
+https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic</em></p>
 </section>
 <section id="topological-sort" class="slide level2">
 <h2>Topological sort</h2>
 <p><img src=images/toposort.png></p>
-<p><em>Source: https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic</em></p>
+<p><em>Source:
+https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic</em></p>
 </section>
 <section id="topological-sort-1" class="slide level2">
 <h2>Topological sort</h2>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Topological_Ordering.svg" style="height: 9em;"></p>
-<p><em>Source: https://upload.wikimedia.org/wikipedia/commons/c/c6/Topological_Ordering.svg</em></p>
+<p><em>Source:
+https://upload.wikimedia.org/wikipedia/commons/c/c6/Topological_Ordering.svg</em></p>
 </section>
 <section id="sccs" class="slide level2">
 <h2>SCCs</h2>
 <p><img src=images/tarjansccalgo.png></p>
-<p><em>Source: https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic</em></p>
+<p><em>Source:
+https://stackoverflow.com/questions/583876/how-do-i-check-if-a-directed-graph-is-acyclic</em></p>
 </section>
 <section id="sccs-1" class="slide level2">
 <h2>SCCs</h2>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png"></p>
-<p><em>Source: https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png</em></p>
+<p><em>Source:
+https://upload.wikimedia.org/wikipedia/commons/5/5c/Scc.png</em></p>
 </section>
 <section id="tarjans-algorithm" class="slide level2">
 <h2>Tarjan’s Algorithm</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> algorithm tarjan is</span>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> algorithm tarjan is</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  input: graph G = (V, E)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  output: set of strongly connected components (sets of vertices)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -504,7 +515,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

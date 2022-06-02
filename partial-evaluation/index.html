@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -90,7 +93,8 @@
 
 <section id="title-slide">
   <h1 class="title">Compilers for nothing, executables for free!</h1>
-  <p class="author">Vaibhav Sagar (<span class="citation" data-cites="vbhvsgr">@vbhvsgr</span>)</p>
+  <p class="author">Vaibhav Sagar (<span class="citation"
+data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 
 <section>
@@ -108,7 +112,8 @@
 </section>
 <section id="vim-1" class="slide level2">
 <h2>Vim</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tab_width <span class="op">=</span> <span class="dv">4</span></span>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tab_width <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(tab_width):</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    insert_space()</span></code></pre></div>
@@ -126,7 +131,8 @@
 <h1>Partial Evaluation</h1>
 
 </section>
-<section id="programs-take-static-and-dynamic-input" class="slide level2">
+<section id="programs-take-static-and-dynamic-input"
+class="slide level2">
 <h2>Programs take static and dynamic input</h2>
 <pre><code>+--------+   +---------+
 |        |   |         |
@@ -142,7 +148,8 @@
       |         |        |        |
       +---------+        +--------+</code></pre>
 </section>
-<section id="programs-take-static-and-dynamic-input-1" class="slide level2">
+<section id="programs-take-static-and-dynamic-input-1"
+class="slide level2">
 <h2>Programs take static and dynamic input</h2>
 <ul>
 <li>e.g. anything that has a configuration file</li>
@@ -152,29 +159,34 @@
 <h2>Can we pre-compute with static input?</h2>
 <ul>
 <li>Feed the program and the static input into a program</li>
-<li>Simple transformations like inlining constants and unrolling loops</li>
+<li>Simple transformations like inlining constants and unrolling
+loops</li>
 </ul>
 </section>
 <section id="inlining" class="slide level2">
 <h2>Inlining</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tab_width <span class="op">=</span> <span class="dv">4</span></span>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tab_width <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(tab_width):</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    insert_space()</span></code></pre></div>
 </section>
 <section id="inlining-1" class="slide level2">
 <h2>Inlining</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    insert_space()</span></code></pre></div>
 </section>
 <section id="unrolling" class="slide level2">
 <h2>Unrolling</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    insert_space()</span></code></pre></div>
 </section>
 <section id="unrolling-1" class="slide level2">
 <h2>Unrolling</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>insert_space()</span>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>insert_space()</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>insert_space()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>insert_space()</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>insert_space()</span></code></pre></div>
@@ -208,7 +220,8 @@
 </ul>
 </section></section>
 <section>
-<section id="interpreters-vs.-compilers" class="title-slide slide level1">
+<section id="interpreters-vs.-compilers"
+class="title-slide slide level1">
 <h1>Interpreters vs. Compilers</h1>
 
 </section>
@@ -264,7 +277,8 @@
 <li>Outputs a standalone program</li>
 <li>Faster than interpreter + source program</li>
 <li>We “compiled” it!</li>
-<li>E.g. Python interpreter + Python source program =&gt; “compiled” program</li>
+<li>E.g. Python interpreter + Python source program =&gt; “compiled”
+program</li>
 </ul>
 </section>
 <section id="specialiser-with-interpreter" class="slide level2">
@@ -286,9 +300,11 @@
 <section id="specialiser-with-interpreter-1" class="slide level2">
 <h2>Specialiser with interpreter</h2>
 <ul>
-<li>Outputs a program that can then take a source program and output a standalone executable (like in step 1)</li>
+<li>Outputs a program that can then take a source program and output a
+standalone executable (like in step 1)</li>
 <li>We made a “compiler”!</li>
-<li>E.g. a C specialiser + Python interpreter (in C) =&gt; Python “compiler”!</li>
+<li>E.g. a C specialiser + Python interpreter (in C) =&gt; Python
+“compiler”!</li>
 </ul>
 </section>
 <section id="specialiser-with-specialiser" class="slide level2">
@@ -310,7 +326,8 @@
 <section id="specialiser-with-specialiser-1" class="slide level2">
 <h2>Specialiser with specialiser</h2>
 <ul>
-<li>Outputs a program that can then take an interpreter and output a compiler (like in step 2)</li>
+<li>Outputs a program that can then take an interpreter and output a
+compiler (like in step 2)</li>
 <li>We made a “compiler compiler”!</li>
 </ul>
 </section></section>
@@ -322,14 +339,16 @@
 <section id="interpreter---compiler" class="slide level2">
 <h2>Interpreter &lt;-&gt; Compiler?</h2>
 <ul>
-<li>A specialiser sits somewhere between an interpreter and a compiler</li>
+<li>A specialiser sits somewhere between an interpreter and a
+compiler</li>
 <li>Small, simpler programs are easier to write and work with</li>
 </ul>
 </section>
 <section id="correctness" class="slide level2">
 <h2>Correctness</h2>
 <ul>
-<li>Easier to determine that a compiler is equivalent to an interpreter</li>
+<li>Easier to determine that a compiler is equivalent to an
+interpreter</li>
 <li>Less time debugging</li>
 </ul>
 </section>
@@ -343,7 +362,8 @@
 <section id="pypy-trufflegraal-llvm" class="slide level2">
 <h2>PyPy, Truffle/Graal, LLVM</h2>
 <ul>
-<li>Write your language a certain way and get a JIT (just-in-time compiler) for free!</li>
+<li>Write your language a certain way and get a JIT (just-in-time
+compiler) for free!</li>
 </ul>
 </section>
 <section id="jit" class="slide level2">
@@ -366,12 +386,19 @@
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Partial_evaluation">The Wikipedia page</a></li>
-<li><a href="https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/103401">Yoshihiko Futamura’s seminal <em>Partial Computation of Programs</em></a></li>
-<li><a href="https://codon.com/compilers-for-free">Tom Stuart’s <em>Compilers for Free</em></a></li>
-<li><a href="https://www.itu.dk/people/sestoft/pebook/">A free online textbook</a></li>
-<li><a href="http://wry.me/~darius/writings/peval/">Darius Bacon’s <em>A Hacker’s Intro to Partial Evaluation</em></a></li>
-<li><a href="https://www.gwern.net/docs/cs/2009-gluck.pdf"><em>Is There a Fourth Futamura Projection?</em></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Partial_evaluation">The
+Wikipedia page</a></li>
+<li><a
+href="https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/103401">Yoshihiko
+Futamura’s seminal <em>Partial Computation of Programs</em></a></li>
+<li><a href="https://codon.com/compilers-for-free">Tom Stuart’s
+<em>Compilers for Free</em></a></li>
+<li><a href="https://www.itu.dk/people/sestoft/pebook/">A free online
+textbook</a></li>
+<li><a href="http://wry.me/~darius/writings/peval/">Darius Bacon’s <em>A
+Hacker’s Intro to Partial Evaluation</em></a></li>
+<li><a href="https://www.gwern.net/docs/cs/2009-gluck.pdf"><em>Is There
+a Fourth Futamura Projection?</em></a></li>
 </ul>
 </section>
 <section id="futamura" class="slide level2">
@@ -388,10 +415,12 @@
 </section>
 <section id="slides" class="slide level2">
 <h2>Slides</h2>
-<p><a href="https://vaibhavsagar.com/presentations/partial-evaluation">https://vaibhavsagar.com/presentations/partial-evaluation</a></p>
+<p><a
+href="https://vaibhavsagar.com/presentations/partial-evaluation">https://vaibhavsagar.com/presentations/partial-evaluation</a></p>
 </section></section>
 <section>
-<section id="bonus-the-fourth-futamura-projection" class="title-slide slide level1">
+<section id="bonus-the-fourth-futamura-projection"
+class="title-slide slide level1">
 <h1>Bonus: The Fourth Futamura Projection</h1>
 
 </section>
@@ -454,7 +483,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
