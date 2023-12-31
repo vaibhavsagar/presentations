@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: cachix/install-nix-action@v24
-    - uses: DeterminateSystems/magic-nix-cache-action@v0.1.2
+    - uses: DeterminateSystems/magic-nix-cache-action@v2
     - run: nix-build
     - run: ./.github/workflows/update_pages.sh
       env:
