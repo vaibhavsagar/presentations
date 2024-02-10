@@ -1,4 +1,4 @@
-% Minimal Perfect Hashing
+% The Real Hash Was the Friends We Made along the Way
 % Vaibhav Sagar (@vbhvsgr)
 
 # Minimal Perfect Hashing
@@ -15,17 +15,33 @@
 
 ## Hashing
 
-- function that takes a key to a fixed size value (often an integer)
+function that takes a key to a fixed size value (often an integer)
 
 ## Perfect Hashing
 
-- hashing without collisions (injective)
+hashing without collisions (injective)
 
-## Minimal Perfect Hashing
 
+## *Minimal* Perfect Hashing
+
+- all possible keys are known in advance
 - perfect hashing without gaps
 - bijective mapping from $n$ keys to $1..n$
-- downsides: static, produces nonsense results for absent keys
+
+## Pros
+
+- usually more space-efficient than most other approaches
+- (especially if you are using this to create a hashtable)
+
+## Cons
+
+- upfront construction cost
+- static
+- produces nonsense results for absent keys
+
+## tl;dr
+
+- if you're not sure you need this, you probably don't
 
 # Approaches
 
@@ -33,6 +49,12 @@
 
 - Hash, Displace, and Compress (CHD)
 - Hypergraph peeling?
+
+## Also Not Discussed Today
+
+```haskell
+minimalPerfectHash keys = Map.fromList $ zip keys [0..]
+```
 
 ## Discussed Today
 
@@ -54,12 +76,13 @@
 ## Family of hash functions?
 
 - My understanding is that hash functions that take a salt should work
+- Suspiciously similar to Bloom filters
 
 ## Bitvectors supporting rank and select?
 
-- Rank(i) is the number of $1$s at or prior to index $i$ (1-indexed)
-- Select(i) is the index $n$ where the $i$th 1 is located (1-indexed)
-- Fun phrase to google: "succinct data structures"
+- $rank(i)$ is the number of $1$s at or prior to index $i$ (1-indexed)
+- $select(i)$ is the index $n$ where the $i$th 1 is located (1-indexed)
+- Look up "succinct data structures" for more fun with these
 
 ## Bitvectors supporting rank and select?
 
@@ -69,11 +92,14 @@
 
 ## High level
 
-1. Repeat the following until we've reached max level or there are no more keys
-    1. Turn the key into a number $0..n-1$ where $n$ is the length of the bitvector
-    1. Set the $i$th bit of the bitvector if unset, otherwise unset it and never set it again this iteration
-    1. Remove the keys whose corresponding bits were set
-1. If there are leftovers, put them in a hashtable
+1. Until we've reached max level or there are no more keys:
+    1. Turn the key into a number $i ∈ [0..n)$
+    1. Inspect $bitvector[i]$:
+        1. if $0$ and no collision: $bitvector[i] = 1$
+        1. if $1$: $bitvector[i] = 0$ and record collision
+        1. if $0$ and collision: do nothing
+    1. Remove non-colliding keys
+1. If there are leftover keys, put them in a hashtable
 
 ## Turning the key into a number
 
@@ -85,400 +111,203 @@ value = hashWithSalt currentLevel key `mod` (gamma * currentLength)
 ## Populating the bitvector
 
 1. Initialise two bitvectors $B$ and $C$ with $0$s
-1. When setting an index:
-    1. If the value in $C$ is $0$, set it in $B$ to $1$
-    1. If the value in $B$ is $1$ and $C$ is $0$, set the value at $B$ to $0$ and $C$ to $1$
-    1. If the value in $B$ is $0$ and $C$ is $1$, do nothing
+1. When setting an index $i$:
+    1. If $B[i] \equiv 0$ and $C[i] \equiv 0$ then $B[i] = 1$
+    1. If $B[i] \equiv 1$ then $B[i] = 0$ and $C[i] = 1$
+    1. If $B[i] \equiv 0$ and $C[i] \equiv 1$ then do nothing
 
 ## Lookup
 
 1. For each level:
     1. Hash the key and check if the corresponding index is set
     1. If so, find the rank
-    1. If not, increment the level count
+    1. If not, increment the level count and repeat
 1. Otherwise check the leftovers
 
 # Example
 
 ## Keys
 
-- Bras Basah
-- Bugis
-- Outram
-- Paya Lebar
-- River Valley
-- Tanjong Pagar
+- Bondi
+- Tamarama
+- Bronte
+- Clovelly
+- Gordons Bay
+- Coogee
 
 ## Level 0
 
 ```
- 0 1 2 3 4 5
-┌─┬─┬─┬─┬─┬─┐
-│0│0│0│0│0│0│ B
-└─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┐
-│0│0│0│0│0│0│ C
-└─┴─┴─┴─┴─┴─┘
-```
-
-## Level 0
-
-```
- 0 1 2 3 4 5
-┌─┬─┬─┬─┬─┬─┐
-│0│0│0│1│0│0│ B
-└─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┐
-│0│0│0│0│0│0│ C
-└─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Bras Basah" `mod` 6
-3
-```
-
-## Level 0
-
-```
- 0 1 2 3 4 5
-┌─┬─┬─┬─┬─┬─┐
-│0│0│0│0│0│0│ B
-└─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┐
-│0│0│0│1│0│0│ C
-└─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Bugis" `mod` 6
-3
-```
-
-## Level 0
-
-```
- 0 1 2 3 4 5
-┌─┬─┬─┬─┬─┬─┐
-│0│0│1│0│0│0│ B
-└─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┐
-│0│0│0│1│0│0│ C
-└─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Outram" `mod` 6
-2
-```
-
-## Level 0
-
-```
- 0 1 2 3 4 5
-┌─┬─┬─┬─┬─┬─┐
-│0│0│1│0│0│0│ B
-└─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┐
-│0│0│0│1│0│0│ C
-└─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Paya Lebar" `mod` 6
-3
-```
-
-## Level 0
-
-```
- 0 1 2 3 4 5
-┌─┬─┬─┬─┬─┬─┐
-│0│1│1│0│0│0│ B
-└─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┐
-│0│0│0│1│0│0│ C
-└─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "River Valley" `mod` 6
-1
-```
-
-## Level 0
-
-```
- 0 1 2 3 4 5
-┌─┬─┬─┬─┬─┬─┐
-│0│1│1│0│0│1│ B
-└─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┐
-│0│0│0│1│0│0│ C
-└─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Tanjong Pagar" `mod` 6
-5
+┌─┐
+│0│ <- ["Clovelly","Bronte"]
+├─┤
+│1│ <- ["Gordons Bay"]
+├─┤
+│0│
+├─┤
+│0│
+├─┤
+│0│ <- ["Coogee","Tamarama"]
+├─┤
+│1│ <- ["Bondi"]
+└─┘
 ```
 
 ## Level 1
 
 ```
- 0 1 2
-┌─┬─┬─┐
-│1│0│0│ B
-└─┴─┴─┘
-┌─┬─┬─┐
-│0│0│0│ C
-└─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Bras Basah" `mod` 3
-0
-```
-
-## Level 1
-
-```
- 0 1 2
-┌─┬─┬─┐
-│1│0│1│ B
-└─┴─┴─┘
-┌─┬─┬─┐
-│0│0│0│ C
-└─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Bugis" `mod` 3
-2
-```
-
-## Level 1
-
-```
- 0 1 2
-┌─┬─┬─┐
-│0│0│1│ B
-└─┴─┴─┘
-┌─┬─┬─┐
-│1│0│0│ C
-└─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Paya Lebar" `mod` 3
-0
+┌─┐
+│0│
+├─┤
+│0│
+├─┤
+│0│
+├─┤
+│0│ <- ["Coogee","Clovelly","Bronte","Tamarama"]
+└─┘
 ```
 
 ## Level 2
 
 ```
- 0 1
-┌─┬─┐
-│1│0│ B
-└─┴─┘
-┌─┬─┐
-│0│0│ C
-└─┴─┘
+┌─┐
+│0│ <- ["Coogee","Clovelly","Bronte","Tamarama"]
+├─┤
+│0│
+├─┤
+│0│
+├─┤
+│0│
+└─┘
 ```
 
-```haskell
-> hashWithSalt 0 "Bras Basah" `mod` 2
-0
-```
-
-## Level 2
+## Level 3
 
 ```
- 0 1
-┌─┬─┐
-│0│0│ B
-└─┴─┘
-┌─┬─┐
-│1│0│ C
-└─┴─┘
+┌─┐
+│0│
+├─┤
+│0│ <- ["Coogee","Clovelly","Bronte","Tamarama"]
+├─┤
+│0│
+├─┤
+│0│
+└─┘
 ```
 
-```haskell
-> hashWithSalt 0 "Paya Lebar" `mod` 2
-0
+## Level 4
+
+```
+┌─┐
+│0│
+├─┤
+│0│
+├─┤
+│0│ <- ["Coogee","Clovelly","Bronte","Tamarama"]
+├─┤
+│0│
+└─┘
 ```
 
 ## ...
 
 - I went ahead and ran this for 20 more levels and the keys kept colliding
-- Let's try with `gamma = 2`
+- No slack in our bitvectors
+- Let's try with `gamma = 1.5`
 
 ## Level 0
 
 ```
-                     1 1
- 0 1 2 3 4 5 6 7 8 9 0 1
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│0│0│0│0│0│0│0│0│1│0│0│ B
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│0│0│0│0│0│0│0│0│0│0│0│ C
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Bras Basah" `mod` 12
-9
-```
-
-## Level 0
-
-```
-                     1 1
- 0 1 2 3 4 5 6 7 8 9 0 1
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│0│0│1│0│0│0│0│0│1│0│0│ B
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│0│0│0│0│0│0│0│0│0│0│0│ C
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Bugis" `mod` 12
-3
-```
-
-## Level 0
-
-```
-                     1 1
- 0 1 2 3 4 5 6 7 8 9 0 1
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│0│1│1│0│0│0│0│0│1│0│0│ B
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│0│0│0│0│0│0│0│0│0│0│0│ C
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Outram" `mod` 12
-2
-```
-
-## Level 0
-
-```
-                     1 1
- 0 1 2 3 4 5 6 7 8 9 0 1
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│0│1│0│0│0│0│0│0│1│0│0│ B
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│0│0│1│0│0│0│0│0│0│0│0│ C
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Paya Lebar" `mod` 12
-3
-```
-
-## Level 0
-
-```
-                     1 1
- 0 1 2 3 4 5 6 7 8 9 0 1
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│1│1│0│0│0│0│0│0│1│0│0│ B
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│0│0│1│0│0│0│0│0│0│0│0│ C
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "River Valley" `mod` 12
-1
-```
-
-## Level 0
-
-```
-                     1 1
- 0 1 2 3 4 5 6 7 8 9 0 1
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│1│1│0│0│1│0│0│0│1│0│0│ B
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│0│0│1│0│0│0│0│0│0│0│0│ C
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 0 "Tanjong Pagar" `mod` 12
-5
+┌─┐
+│1│ <- ["Bronte"]
+├─┤
+│1│ <- ["Gordons Bay"]
+├─┤
+│0│
+├─┤
+│0│
+├─┤
+│0│ <- ["Coogee","Tamarama"]
+├─┤
+│0│
+├─┤
+│1│ <- ["Clovelly"]
+├─┤
+│0│
+├─┤
+│1│ <- ["Bondi"]
+└─┘
 ```
 
 ## Level 1
 
 ```
- 0 1 2 3 
-┌─┬─┬─┬─┐
-│0│0│1│0│ B
-└─┴─┴─┴─┘
-┌─┬─┬─┬─┐
-│0│0│0│0│ C
-└─┴─┴─┴─┘
+┌─┐
+│0│ <- ["Coogee","Tamarama"]
+├─┤
+│0│
+├─┤
+│0│
+└─┘
 ```
 
-```haskell
-> hashWithSalt 1 "Bugis" `mod` 4
-2
-```
 
-## Level 1
+## Level 2
 
 ```
- 0 1 2 3 
-┌─┬─┬─┬─┐
-│1│0│1│0│ B
-└─┴─┴─┴─┘
-┌─┬─┬─┬─┐
-│0│0│0│0│ C
-└─┴─┴─┴─┘
-```
-
-```haskell
-> hashWithSalt 1 "Paya Lebar" `mod` 4
-0
+┌─┐
+│1│ <- ["Tamarama"]
+├─┤
+│1│ <- ["Coogee"]
+├─┤
+│0│
+└─┘
 ```
 
 ## Lookup
 
 ```default
-                     1 1
- 0 1 2 3 4 5 6 7 8 9 0 1
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│0│1│1│0│0│1│0│0│0│1│0│0│ b0
-└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
-┌─┬─┬─┬─┐
-│1│0│1│0│ b1
-└─┴─┴─┴─┘
+ 0 1 2 3 4 5 6 7 8
+┌─┬─┬─┬─┬─┬─┬─┬─┬─┐
+│1│1│0│0│0│0│1│0│1│ b0
+└─┴─┴─┴─┴─┴─┴─┴─┴─┘
+┌─┬─┬─┐
+│0│0│0│ b1
+└─┴─┴─┘
+┌─┬─┬─┐
+│1│1│0│ b2
+└─┴─┴─┘
 ```
 
 ```haskell
-> hashWithSalt 0 "Paya Lebar" `mod` 12
-3
-> hashWithSalt 1 "Paya Lebar" `mod` 4
+> hashWithSalt 0 "Coogee" `mod` 9
+4
+> hashWithSalt 1 "Coogee" `mod` 3
 0
-> popCount b0 + rank b1 0
-5
+> hashWithSalt 2 "Coogee" `mod` 3
+1
+> popCount b0 + popCount b1 + rank b2 1
+6
 ```
 
+## Minimal Perfect Hash Table
+
+1. Create a $values$ vector
+2. $values[hash(key)] = value$
+3. ???
+4. PROFIT!!!
+
 # Here's some code
+
+## Further reading
+
+- [Throw away the keys: Easy, Minimal Perfect Hashing](http://stevehanov.ca/blog/?id=119)
+- [Compress, Hash and Displace: CHD Algorithm](https://cmph.sourceforge.net/chd.html)
 
 # Questions?
 
 # Thank You!
+
+## These slides
+
+[https://vaibhavsagar.com/presentations/minimal-perfect-hashing/](https://vaibhavsagar.com/presentations/minimal-perfect-hashing/)
