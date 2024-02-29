@@ -37,7 +37,7 @@ hashing without collisions (injective)
 
 - upfront construction cost
 - static
-- produces nonsense results for absent keys
+- ⚠️ produces nonsense results for absent keys ⚠️
 
 ## tl;dr
 
@@ -63,6 +63,18 @@ minimalPerfectHash keys = Map.fromList $ zip keys [0..]
 
 # How does it work?
 
+
+## Cascading Collisionless Bitarrays
+
+<img src="images/cascading-collisionless-arrays_A0.svg" style="height: 11em;">
+
+## Cascading Collisionless Bitarrays
+
+<img src="images/cascading-collisionless-arrays_A1.svg" style="height: 11em;">
+
+## Cascading Collisionless Bitarrays
+
+<img src="images/cascading-collisionless-arrays_A2.svg" style="height: 11em;">
 
 ## Cascading Collisionless Bitarrays
 
@@ -266,18 +278,23 @@ value = hashWithSalt currentLevel key `mod` (gamma * currentLength)
 
 ## Lookup
 
-```default
+```
  0 1 2 3 4 5 6 7 8
 ┌─┬─┬─┬─┬─┬─┬─┬─┬─┐
 │1│1│0│0│0│0│1│0│1│ b0
 └─┴─┴─┴─┴─┴─┴─┴─┴─┘
+         └──────────── hashWithSalt 0 "Coogee" `mod` 9
 ┌─┬─┬─┐
 │0│0│0│ b1
 └─┴─┴─┘
+ └──────────────────── hashWithSalt 1 "Coogee" `mod` 3
 ┌─┬─┬─┐
 │1│1│0│ b2
 └─┴─┴─┘
+   └────────────────── hashWithSalt 2 "Coogee" `mod` 3
 ```
+
+## Lookup
 
 ```haskell
 > hashWithSalt 0 "Coogee" `mod` 9
@@ -288,6 +305,31 @@ value = hashWithSalt currentLevel key `mod` (gamma * currentLength)
 1
 > popCount b0 + popCount b1 + rank b2 1
 6
+```
+
+## False Positive
+
+```
+ 0 1 2 3 4 5 6 7 8
+┌─┬─┬─┬─┬─┬─┬─┬─┬─┐
+│1│1│0│0│0│0│1│0│1│ b0
+└─┴─┴─┴─┴─┴─┴─┴─┴─┘
+   └────────────────── hashWithSalt 0 "Shelly" `mod` 9
+┌─┬─┬─┐
+│0│0│0│ b1
+└─┴─┴─┘
+┌─┬─┬─┐
+│1│1│0│ b2
+└─┴─┴─┘
+```
+
+## False Positive
+
+```haskell
+> hashWithSalt 0 "Shelly" `mod` 9
+1
+> rank b0 1
+2
 ```
 
 ## Minimal Perfect Hash Table
