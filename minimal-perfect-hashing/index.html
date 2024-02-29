@@ -155,7 +155,7 @@ keys to <span class="math inline">1..<em>n</em></span></li>
 <ul>
 <li>upfront construction cost</li>
 <li>static</li>
-<li>produces nonsense results for absent keys</li>
+<li>⚠️ produces nonsense results for absent keys ⚠️</li>
 </ul>
 </section>
 <section id="tldr" class="slide level2">
@@ -195,6 +195,18 @@ href="https://arxiv.org/abs/1702.03154">https://arxiv.org/abs/1702.03154</a></li
 
 </section>
 <section id="cascading-collisionless-bitarrays" class="slide level2">
+<h2>Cascading Collisionless Bitarrays</h2>
+<p><img src="images/cascading-collisionless-arrays_A0.svg" style="height: 11em;"></p>
+</section>
+<section id="cascading-collisionless-bitarrays-1" class="slide level2">
+<h2>Cascading Collisionless Bitarrays</h2>
+<p><img src="images/cascading-collisionless-arrays_A1.svg" style="height: 11em;"></p>
+</section>
+<section id="cascading-collisionless-bitarrays-2" class="slide level2">
+<h2>Cascading Collisionless Bitarrays</h2>
+<p><img src="images/cascading-collisionless-arrays_A2.svg" style="height: 11em;"></p>
+</section>
+<section id="cascading-collisionless-bitarrays-3" class="slide level2">
 <h2>Cascading Collisionless Bitarrays</h2>
 <p><img src="images/cascading-collisionless-arrays.svg" style="height: 11em;"></p>
 </section>
@@ -432,17 +444,22 @@ colliding</li>
 </section>
 <section id="lookup-1" class="slide level2">
 <h2>Lookup</h2>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a> 0 1 2 3 4 5 6 7 8</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>┌─┬─┬─┬─┬─┬─┬─┬─┬─┐</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>│1│1│0│0│0│0│1│0│1│ b0</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>└─┴─┴─┴─┴─┴─┴─┴─┴─┘</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>┌─┬─┬─┐</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>│0│0│0│ b1</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>└─┴─┴─┘</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>┌─┬─┬─┐</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>│1│1│0│ b2</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>└─┴─┴─┘</span></code></pre></div>
+<pre><code> 0 1 2 3 4 5 6 7 8
+┌─┬─┬─┬─┬─┬─┬─┬─┬─┐
+│1│1│0│0│0│0│1│0│1│ b0
+└─┴─┴─┴─┴─┴─┴─┴─┴─┘
+         └──────────── hashWithSalt 0 &quot;Coogee&quot; `mod` 9
+┌─┬─┬─┐
+│0│0│0│ b1
+└─┴─┴─┘
+ └──────────────────── hashWithSalt 1 &quot;Coogee&quot; `mod` 3
+┌─┬─┬─┐
+│1│1│0│ b2
+└─┴─┴─┘
+   └────────────────── hashWithSalt 2 &quot;Coogee&quot; `mod` 3</code></pre>
+</section>
+<section id="lookup-2" class="slide level2">
+<h2>Lookup</h2>
 <div class="sourceCode" id="cb12"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Coogee&quot;</span> <span class="ot">`mod`</span> <span class="dv">9</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span></span>
@@ -452,6 +469,28 @@ class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb12-1"><a
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> popCount b0 <span class="op">+</span> popCount b1 <span class="op">+</span> rank b2 <span class="dv">1</span></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span></span></code></pre></div>
+</section>
+<section id="false-positive" class="slide level2">
+<h2>False Positive</h2>
+<pre><code> 0 1 2 3 4 5 6 7 8
+┌─┬─┬─┬─┬─┬─┬─┬─┬─┐
+│1│1│0│0│0│0│1│0│1│ b0
+└─┴─┴─┴─┴─┴─┴─┴─┴─┘
+   └────────────────── hashWithSalt 0 &quot;Shelly&quot; `mod` 9
+┌─┬─┬─┐
+│0│0│0│ b1
+└─┴─┴─┘
+┌─┬─┬─┐
+│1│1│0│ b2
+└─┴─┴─┘</code></pre>
+</section>
+<section id="false-positive-1" class="slide level2">
+<h2>False Positive</h2>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> hashWithSalt <span class="dv">0</span> <span class="st">&quot;Shelly&quot;</span> <span class="ot">`mod`</span> <span class="dv">9</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> rank b0 <span class="dv">1</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span></code></pre></div>
 </section>
 <section id="minimal-perfect-hash-table" class="slide level2">
 <h2>Minimal Perfect Hash Table</h2>
