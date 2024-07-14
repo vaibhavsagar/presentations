@@ -14,6 +14,7 @@ in nixpkgs.linkFarm "presentations" (presentations [
   "minimal-perfect-hashing"
   "partial-evaluation"
   "popcount"
+  "sat-solvers"
   "space-efficient-static-trees-graphs"
   "tarjans-scc"
   "typed-holes"
