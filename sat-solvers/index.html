@@ -264,22 +264,98 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb8-1"><a 
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y: True</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
 </section>
-<section id="dpll-1" class="slide level2">
-<h2>DPLL</h2>
+<section id="davis-putnam-logemann-loveland" class="slide level2">
+<h2>Davis-Putnam-Logemann-Loveland</h2>
 <ul>
 <li>Backtracking search</li>
 <li>Unit propagation</li>
 <li>Pure literal elimination</li>
 </ul>
 </section>
+<section id="downsides" class="slide level2">
+<h2>Downsides</h2>
+<ul>
+<li>Potentially finds the same conflict multiple times</li>
+<li>Backtracks one level at a time (chronologically)</li>
+<li>No memory of past conflicts</li>
+</ul>
+</section>
 <section id="can-we-do-better" class="slide level2">
 <h2>Can we do better?</h2>
 </section></section>
+<section>
 <section id="cdcl" class="title-slide slide level1">
 <h1>CDCL</h1>
 
 </section>
+<section id="cdcl-1" class="slide level2">
+<h2>CDCL</h2>
+<ul>
+<li>Distinguishes between decisions and consequences</li>
+<li>Keeps track of the implication graph</li>
+</ul>
+</section>
+<section id="example-4" class="slide level2">
+<h2>Example</h2>
+</section>
+<section id="conflict-driven-clause-learning" class="slide level2">
+<h2>Conflict-driven Clause Learning</h2>
+<ul>
+<li>Non-chronological backtracking!</li>
+<li>Basis of most modern SAT solvers</li>
+</ul>
+</section>
+<section id="okay-now-lets-do-a-silly-one" class="slide level2">
+<h2>Okay Now Let’s Do A Silly One</h2>
+</section></section>
+<section>
+<section id="sls" class="title-slide slide level1">
+<h1>SLS</h1>
 
+</section>
+<section id="what-if-we-just-guessed" class="slide level2">
+<h2>What if we just guessed?</h2>
+<ol type="1">
+<li>Generate a random assignment</li>
+<li>Pick a random clause</li>
+<li>Probabilistically flip a variable in the clause</li>
+<li>Repeat until you solve it or get tired!</li>
+</ol>
+</section>
+<section id="stochastic-local-search" class="slide level2">
+<h2>Stochastic Local Search</h2>
+<ul>
+<li>Surprisingly effective!</li>
+<li>WalkSAT</li>
+<li>Reminds me of simulated annealing in some ways</li>
+</ul>
+</section></section>
+<section>
+<section id="smt" class="title-slide slide level1">
+<h1>SMT</h1>
+
+</section>
+<section id="problem" class="slide level2">
+<h2>Problem</h2>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode default"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>  SEND</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>+ MORE</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>------</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a> MONEY</span></code></pre></div>
+</section>
+<section id="how" class="slide level2">
+<h2>How?</h2>
+<ul>
+<li>We’d have to teach the SAT solver arithmetic!</li>
+</ul>
+</section>
+<section id="satisfiability-modulo-theories" class="slide level2">
+<h2>Satisfiability Modulo Theories</h2>
+<ul>
+<li>SAT solvers extended</li>
+<li>Z3, CVC, Yices, Boolector</li>
+</ul>
+</section></section>
 <section>
 <section id="recap" class="title-slide slide level1">
 <h1>Recap</h1>
@@ -291,7 +367,7 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb8-1"><a 
 <li>NP-complete problems expressed as CNF Boolean formulas</li>
 </ul>
 </section>
-<section id="dpll-2" class="slide level2">
+<section id="dpll-1" class="slide level2">
 <h2>DPLL</h2>
 <ul>
 <li>Backtracking search</li>
@@ -299,7 +375,7 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb8-1"><a 
 <li>Pure literal elimination</li>
 </ul>
 </section>
-<section id="cdcl-1" class="slide level2">
+<section id="cdcl-2" class="slide level2">
 <h2>CDCL</h2>
 <ul>
 <li>DPLL</li>
@@ -307,7 +383,7 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb8-1"><a 
 <li>Non-chronological backtracking</li>
 </ul>
 </section>
-<section id="sls" class="slide level2">
+<section id="sls-1" class="slide level2">
 <h2>SLS</h2>
 <ul>
 <li>Random guess</li>
