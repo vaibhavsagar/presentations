@@ -142,15 +142,70 @@ y: True
 z: False
 ```
 
-## DPLL
+## Davis-Putnam-Logemann-Loveland
 
 - Backtracking search
 - Unit propagation
 - Pure literal elimination
 
+## Downsides
+
+- Potentially finds the same conflict multiple times
+- Backtracks one level at a time (chronologically)
+- No memory of past conflicts
+
 ## Can we do better?
 
 # CDCL
+
+## CDCL
+
+- Distinguishes between decisions and consequences
+- Keeps track of the implication graph
+
+## Example
+
+## Conflict-driven Clause Learning
+
+- Non-chronological backtracking!
+- Basis of most modern SAT solvers
+
+## Okay Now Let's Do A Silly One
+
+# SLS
+
+## What if we just guessed?
+
+1. Generate a random assignment
+2. Pick a random clause
+3. Probabilistically flip a variable in the clause
+4. Repeat until you solve it or get tired!
+
+## Stochastic Local Search
+
+- Surprisingly effective!
+- WalkSAT
+- Reminds me of simulated annealing in some ways
+
+# SMT
+
+## Problem
+
+```default
+  SEND
++ MORE
+------
+ MONEY
+```
+
+## How?
+
+- We'd have to teach the SAT solver arithmetic!
+
+## Satisfiability Modulo Theories
+
+- SAT solvers extended
+- Z3, CVC, Yices, Boolector
 
 # Recap
 
