@@ -111,6 +111,24 @@ data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 <h1>SAT Solvers?</h1>
 
 </section>
+<section id="np-complete-problems" class="slide level2">
+<h2>NP-complete problems</h2>
+<ul>
+<li>Decision (yes/no) problems whose solutions can be verified in
+polynomial time</li>
+<li>All equivalent!</li>
+</ul>
+</section>
+<section id="np-complete-problems-1" class="slide level2">
+<h2>NP-complete problems</h2>
+<ul>
+<li>Knapsack problem</li>
+<li>Travelling salesman problem</li>
+<li>Subset sum problem</li>
+<li>Graph coloring problem</li>
+<li>Sudoku</li>
+</ul>
+</section>
 <section id="boolean-satisfiability-problem" class="slide level2">
 <h2>Boolean Satisfiability Problem</h2>
 <ul>
@@ -121,15 +139,9 @@ class="math inline">(<em>x</em> ∨ <em>y</em> ∨ <em>z</em>) ∧ (
 <li>Can express any other NP-complete problem!</li>
 </ul>
 </section>
-<section id="np-complete-problems" class="slide level2">
-<h2>NP-complete problems</h2>
-<ul>
-<li>Knapsack problem</li>
-<li>Travelling salesman problem</li>
-<li>Subset sum problem</li>
-<li>Graph coloring problem</li>
-<li>Sudoku (!)</li>
-</ul>
+<section id="sat-solvers-1" class="slide level2">
+<h2>SAT Solvers</h2>
+<p>Programs that can solve boolean satisfiability problems!</p>
 </section></section>
 <section>
 <section id="sudoku" class="title-slide slide level1">
@@ -159,26 +171,30 @@ class="math inline"><em>x</em><sub><em>r</em>, <em>c</em>, 9</sub></span></l
 </section>
 <section id="each-cell-has-at-least-one-value" class="slide level2">
 <h2>Each cell has at least one value</h2>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>):</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    add_clause(<span class="kw">or</span>(x[r][c][n] <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>)))</span></code></pre></div>
+<p><span
+class="math display">(<em>x</em><sub>1, 1, 1</sub> ∨ <em>x</em><sub>1, 1, 2</sub> ∨ … ∨ <em>x</em><sub>1, 1, 9</sub>)∧</span>
+<span
+class="math display">(<em>x</em><sub>1, 2, 1</sub> ∨ <em>x</em><sub>1, 2, 2</sub> ∨ … ∨ <em>x</em><sub>1, 2, 9</sub>)∧</span>
+<span class="math display">…</span> <span
+class="math display">(<em>x</em><sub>9, 9, 1</sub> ∨ <em>x</em><sub>9, 9, 2</sub> ∨ … ∨ <em>x</em><sub>9, 9, 9</sub>)</span></p>
 </section>
 <section id="each-row-has-all-values" class="slide level2">
 <h2>Each row has all values</h2>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>):</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        add_clause(<span class="kw">or</span>(x[r][c][n] <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>)))</span></code></pre></div>
+<p><span
+class="math display">(<em>x</em><sub>1, 1, 1</sub> ∨ <em>x</em><sub>1, 2, 1</sub> ∨ … ∨ <em>x</em><sub>1, 9, 1</sub>)∧</span>
+<span
+class="math display">(<em>x</em><sub>1, 1, 2</sub> ∨ <em>x</em><sub>1, 2, 2</sub> ∨ … ∨ <em>x</em><sub>1, 9, 9</sub>)∧</span>
+<span class="math display">…</span> <span
+class="math display">(<em>x</em><sub>9, 1, 9</sub> ∨ <em>x</em><sub>9, 2, 9</sub> ∨ … ∨ <em>x</em><sub>9, 9, 9</sub>)</span></p>
 </section>
 <section id="each-cell-has-at-most-one-value" class="slide level2">
 <h2>Each cell has at most one value</h2>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>):</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>):</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i,<span class="dv">10</span>):</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                add_clause(<span class="kw">or</span>([<span class="kw">not</span>(x[r][c][i]), <span class="kw">not</span>(x[r][c][j])]))</span></code></pre></div>
+<p><span
+class="math display">(¬<em>x</em><sub>1, 1, 1</sub> ∨ ¬<em>x</em><sub>1, 1, 2</sub>)∧</span>
+<span
+class="math display">(¬<em>x</em><sub>1, 1, 1</sub> ∨ ¬<em>x</em><sub>1, 1, 3</sub>)∧</span>
+<span class="math display">…</span> <span
+class="math display">(¬<em>x</em><sub>9, 9, 8</sub> ∨ ¬<em>x</em><sub>9, 9, 9</sub>)</span></p>
 </section></section>
 <section>
 <section id="dpll" class="title-slide slide level1">
@@ -189,10 +205,10 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a hr
 <h2>Example</h2>
 <p><span
 class="math display">(<em>x</em> ∨ <em>y</em> ∨ <em>z</em>) ∧ (<em>x</em> ∨ ¬<em>y</em>) ∧ (¬<em>y</em> ∨ ¬<em>x</em>) ∧ (¬<em>z</em>)</span></p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y: ¯\_(ツ)_/¯</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>z: ¯\_(ツ)_/¯</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y: ¯\_(ツ)_/¯</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>z: ¯\_(ツ)_/¯</span></code></pre></div>
 </section>
 <section id="pick-a-variable" class="slide level2">
 <h2>Pick a variable</h2>
@@ -213,10 +229,10 @@ class="math display">(<em>x</em> ∨ <em>y</em> ∨ <em>z</em>) ∧ 
 <p>becomes</p>
 <p><span
 class="math display">(<em>x</em> ∨ <em>y</em>) ∧ (<em>x</em> ∨ ¬<em>y</em>) ∧ (¬<em>y</em> ∨ ¬<em>x</em>)</span></p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y: ¯\_(ツ)_/¯</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode default"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y: ¯\_(ツ)_/¯</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
 </section>
 <section id="pick-a-variable-1" class="slide level2">
 <h2>Pick a variable</h2>
@@ -228,10 +244,10 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb5-1"><a 
 class="math display">(<em>x</em> ∨ <em>y</em>) ∧ (<em>x</em> ∨ ¬<em>y</em>) ∧ (¬<em>y</em> ∨ ¬<em>x</em>)</span></p>
 <p>becomes</p>
 <p><span class="math display">(<em>x</em>) ∧ (¬<em>x</em>)</span></p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y: True</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode default"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y: True</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
 </section>
 <section id="conflict" class="slide level2">
 <h2>Conflict!</h2>
@@ -245,10 +261,10 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb6-1"><a 
 <p><span
 class="math display">(<em>x</em> ∨ <em>y</em>) ∧ (<em>x</em> ∨ ¬<em>y</em>) ∧ (¬<em>y</em> ∨ ¬<em>x</em>)</span>
 becomes <span class="math display">(<em>x</em>)</span></p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>y: True</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode default"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y: True</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
 </section>
 <section id="pure-literal-elimination" class="slide level2">
 <h2>Pure literal elimination</h2>
@@ -259,10 +275,10 @@ class="math inline"><em>x</em></span></li>
 </section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x: True</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y: True</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode default"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x: True</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y: True</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
 </section>
 <section id="davis-putnam-logemann-loveland" class="slide level2">
 <h2>Davis-Putnam-Logemann-Loveland</h2>
@@ -337,11 +353,11 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb8-1"><a 
 </section>
 <section id="problem" class="slide level2">
 <h2>Problem</h2>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>  SEND</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>+ MORE</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>------</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a> MONEY</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode default"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>  SEND</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>+ MORE</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>------</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a> MONEY</span></code></pre></div>
 </section>
 <section id="how" class="slide level2">
 <h2>How?</h2>
@@ -353,6 +369,7 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb9-1"><a 
 <h2>Satisfiability Modulo Theories</h2>
 <ul>
 <li>SAT solvers extended</li>
+<li>Not limited to decision problems</li>
 <li>Z3, CVC, Yices, Boolector</li>
 </ul>
 </section></section>
@@ -361,7 +378,7 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb9-1"><a 
 <h1>Recap</h1>
 
 </section>
-<section id="sat-solvers-1" class="slide level2">
+<section id="sat-solvers-2" class="slide level2">
 <h2>SAT solvers</h2>
 <ul>
 <li>NP-complete problems expressed as CNF Boolean formulas</li>
