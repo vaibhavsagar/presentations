@@ -3,11 +3,10 @@
 
 # SAT Solvers?
 
-## Boolean Satisfiability Problem
+## NP-complete problems
 
-- Problems of the form $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg z)$ (CNF)
-- NP-complete (!)
-- Can express any other NP-complete problem!
+- Decision (yes/no) problems whose solutions can be verified in polynomial time
+- All equivalent!
 
 ## NP-complete problems
 
@@ -15,7 +14,17 @@
 - Travelling salesman problem
 - Subset sum problem
 - Graph coloring problem
-- Sudoku (!)
+- Sudoku
+
+## Boolean Satisfiability Problem
+
+- Problems of the form $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg z)$ (CNF)
+- NP-complete (!)
+- Can express any other NP-complete problem!
+
+## SAT Solvers
+
+Programs that can solve boolean satisfiability problems!
 
 # Sudoku
 
@@ -34,29 +43,24 @@
 
 ## Each cell has at least one value
 
-```python
-for r in range(1,10):
-    for c in range(1, 10):
-	add_clause(or(x[r][c][n] for n in range(1,10)))
-```
+$$(x_{1,1,1} \vee x_{1,1,2} \vee \dots \vee x_{1,1,9}) \wedge$$
+$$(x_{1,2,1} \vee x_{1,2,2} \vee \dots \vee x_{1,2,9}) \wedge$$
+$$ \dots $$
+$$(x_{9,9,1} \vee x_{9,9,2} \vee \dots \vee x_{9,9,9})$$
 
 ## Each row has all values
 
-```python
-for r in range(1,10):
-    for n in range(1,10):
-        add_clause(or(x[r][c][n] for c in range(1,10)))
-```
+$$(x_{1,1,1} \vee x_{1,2,1} \vee \dots \vee x_{1,9,1}) \wedge$$
+$$(x_{1,1,2} \vee x_{1,2,2} \vee \dots \vee x_{1,9,9}) \wedge$$
+$$ \dots $$
+$$(x_{9,1,9} \vee x_{9,2,9} \vee \dots \vee x_{9,9,9})$$
 
 ## Each cell has at most one value
 
-```python
-for r in range(1,10):
-    for c in range(1,10):
-        for i in range(1,10):
-            for j in range(i,10):
-                add_clause(or([not(x[r][c][i]), not(x[r][c][j])]))
-```
+$$(\neg x_{1,1,1} \vee \neg x_{1,1,2}) \wedge$$
+$$(\neg x_{1,1,1} \vee \neg x_{1,1,3}) \wedge$$
+$$ \dots $$
+$$(\neg x_{9,9,8} \vee \neg x_{9,9,9})$$
 
 # DPLL
 
@@ -205,6 +209,7 @@ z: False
 ## Satisfiability Modulo Theories
 
 - SAT solvers extended
+- Not limited to decision problems
 - Z3, CVC, Yices, Boolector
 
 # Recap
