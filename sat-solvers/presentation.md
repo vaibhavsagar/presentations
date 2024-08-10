@@ -20,7 +20,8 @@
 
 ## Boolean Satisfiability Problem
 
-- propositional logic formulas that look like $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg z)$ (CNF)
+- Propositional logic formulas
+- Commonly expressed like $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg z)$ (CNF)
 - NP-complete (!)
 - Can express any other NP-complete problem!
 
@@ -244,7 +245,7 @@ $$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
 
 ## CDCL
 
-- DPLL+
+- DPLL++
 - Learned clauses
 - Non-chronological backtracking
 
