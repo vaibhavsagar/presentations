@@ -1,0 +1,24 @@
+digraph {
+    x₁t [style="invisible"]
+    x₃f [style="invisible"]
+    x₂t [style="invisible"]
+    x₁  [xlabel="1"]
+    x₃  [xlabel="2"]
+    x₂  [xlabel="3"]
+    x₇  [xlabel="4"]
+    c   [shape="box",label="",color="red",style="filled"]
+    x₇f [label="label",style="invisible"]
+    x₁ -> x₁t [color="green",style="dashed"]
+    x₁ -> x₃  [color="red",label="¬x₁,x₄"]
+    x₃ -> x₂  [color="green",label="x₃,¬x₈,x₁₂"]
+    x₃ -> x₃f [color="red",style="dashed"]
+    x₂ -> x₃f [style="invisible",arrowhead=none]
+    x₂ -> x₇  [color="red",label="¬x₂,x₁₁"]
+    x₂ -> x₂t [color="green",style="dashed"]
+    x₇ -> c   [color="green",label="x₇,x₉"]
+    x₇ -> x₇f [color="red",style="dashed"]
+    {rank=same; x₃f x₂}
+    overlap=false
+    splines=true
+    bgcolor=transparent
+}

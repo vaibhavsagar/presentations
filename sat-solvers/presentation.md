@@ -5,20 +5,22 @@
 
 ## NP-complete problems
 
-- Decision (yes/no) problems whose solutions can be verified in polynomial time
+- Decision (yes/no) problems
+- Can be verified in polynomial time
 - All equivalent!
 
-## NP-complete problems
+## Examples
 
-- Knapsack problem
-- Travelling salesman problem
-- Subset sum problem
-- Graph coloring problem
+- Knapsack
+- Travelling salesman
+- Subset sum
+- Graph coloring
 - Sudoku
+- Boolean satisfiability
 
 ## Boolean Satisfiability Problem
 
-- Problems of the form $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg z)$ (CNF)
+- propositional logic formulas that look like $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg z)$ (CNF)
 - NP-complete (!)
 - Can express any other NP-complete problem!
 
@@ -31,14 +33,14 @@ Programs that can solve boolean satisfiability problems!
 ## Rules
 
 - one number per cell
-- each number once per row
-- each number once per column
+- each number once per row/column
 - each number once per 3x3 sub-grid
 - must respect existing values
 
 ## Insight
 
 - 9 boolean variables for each cell!
+- only 1/9 is true, rest are false
 - $x_{r,c,1}$, $x_{r,c,2}$,...,$x_{r,c,9}$
 
 ## Each cell has at least one value
@@ -68,11 +70,9 @@ $$(\neg x_{9,9,8} \vee \neg x_{9,9,9})$$
 
 $$(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \wedge (\neg z)$$
 
-```default
-x: ¯\_(ツ)_/¯
-y: ¯\_(ツ)_/¯
-z: ¯\_(ツ)_/¯
-```
+x: `¯\_(ツ)_/¯`<br>
+y: `¯\_(ツ)_/¯`<br>
+z: `¯\_(ツ)_/¯`<br>
 
 ## Pick a variable
 
@@ -86,17 +86,11 @@ Let's set $z$ to False
 
 ## Example
 
-$$(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \wedge (\neg z)$$
+$$(x \vee y \xcancel{\vee z}) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \xcancel{\wedge (\neg z)}$$
 
-becomes
-
-$$(x \vee y) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x)$$
-
-```default
-x: ¯\_(ツ)_/¯
-y: ¯\_(ツ)_/¯
-z: False
-```
+x: `¯\_(ツ)_/¯`<br>
+y: `¯\_(ツ)_/¯`<br>
+z: `False`<br>
 
 ## Pick a variable
 
@@ -104,17 +98,11 @@ Let's set $y$ to True
 
 ## Example
 
-$$(x \vee y) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x)$$
+$$\xcancel{(x \vee y \vee z) \wedge} (x \xcancel{\vee \neg y}) \wedge (\xcancel{\neg y \vee} \neg x) \xcancel{\wedge (\neg z)}$$
 
-becomes
-
-$$(x) \wedge (\neg x)$$
-
-```default
-x: ¯\_(ツ)_/¯
-y: True
-z: False
-```
+x: `¯\_(ツ)_/¯`<br>
+y: `True`<br>
+z: `False`<br>
 
 ## Conflict!
 
@@ -124,27 +112,22 @@ Let's set $y$ to False
 
 ## Example
 
-$$(x \vee y) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x)$$
-becomes
-$$(x)$$
+$$(x \xcancel{\vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \wedge (\neg z)}$$
 
-```default
-x: ¯\_(ツ)_/¯
-y: True
-z: False
-```
+x: `¯\_(ツ)_/¯`<br>
+y: `False`<br>
+z: `False`<br>
 
 ## Pure literal elimination
 
-- There is only one possible value for $x$
+There is only one possible value for $x$
 
 ## Solution
 
-```default
-x: True
-y: True
-z: False
-```
+x: `True`<br>
+y: `False`<br>
+z: `False`<br>
+
 
 ## Davis-Putnam-Logemann-Loveland
 
@@ -164,13 +147,45 @@ z: False
 
 ## CDCL
 
-- Distinguishes between decisions and consequences
+- Distinguishes between decisions (assignments) and consequences (unit
+  propagation, literal elimination)
 - Keeps track of the implication graph
 
 ## Example
 
+$$\displaylines{(x_{1} \vee x_{4}) \wedge \\
+(x_{1} \vee \neg x_{3} \vee \neg x_{8}) \wedge \\
+(x_{1} \vee x_{8} \vee x_{12}) \wedge \\
+(x_{2} \vee x_{11}) \wedge \\
+(\neg x_{7} \vee \neg x_{3} \vee x_{9}) \wedge \\
+(\neg x_{7} \vee x_{8} \vee \neg x_{9}) \wedge \\
+(x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
+(x_{7} \vee x_{10} \vee \neg x_{12})}$$
+
+## Decision Levels
+
+<img src="images/tree1.svg" style="height: 10em;">
+
+## Implication Graph
+
+<img src="images/graph1.svg" style="height: 11em;">
+
+## Unique Implication Point
+
+<img src="images/graph2.svg" style="height: 11em;">
+
+## Learned Clause
+
+$$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
+
+## Backjumping
+
+<img src="images/tree2.svg" style="height: 10em;">
+
+
 ## Conflict-driven Clause Learning
 
+- Learned clauses!
 - Non-chronological backtracking!
 - Basis of most modern SAT solvers
 
@@ -189,6 +204,9 @@ z: False
 
 - Surprisingly effective!
 - WalkSAT
+- Can be done in parallel
+- Can use a form of CDCL
+- Can't prove unsatisfiability(!)
 - Reminds me of simulated annealing in some ways
 
 # SMT
@@ -216,7 +234,7 @@ z: False
 
 ## SAT solvers
 
-- NP-complete problems expressed as CNF Boolean formulas
+- Solve NP-complete problems expressed as CNF Boolean formulas
 
 ## DPLL
 
@@ -226,7 +244,7 @@ z: False
 
 ## CDCL
 
-- DPLL
+- DPLL+
 - Learned clauses
 - Non-chronological backtracking
 
