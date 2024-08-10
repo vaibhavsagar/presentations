@@ -120,7 +120,8 @@ data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 <h2>NP-complete problems</h2>
 <ul>
 <li>Decision (yes/no) problems</li>
-<li>Can be verified in polynomial time</li>
+<li>Can be verified quickly (in polynomial time)</li>
+<li>Currently unknown how to solve quickly (P versus NP problem)</li>
 <li>All equivalent!</li>
 </ul>
 </section>
@@ -138,7 +139,8 @@ data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 <section id="boolean-satisfiability-problem" class="slide level2">
 <h2>Boolean Satisfiability Problem</h2>
 <ul>
-<li>Propositional logic formulas</li>
+<li>Assigning truth values to Boolean variables in propositional logic
+formulas</li>
 <li>Commonly expressed like <span class="math inline">\((x \vee y \vee
 z) \wedge (x \vee \neg y) \wedge (\neg z)\)</span> (CNF)</li>
 <li>NP-complete (!)</li>
@@ -364,7 +366,7 @@ x_{7}\]</span></p>
 <li>WalkSAT</li>
 <li>Can be done in parallel</li>
 <li>Can use a form of CDCL</li>
-<li>Can’t prove unsatisfiability(!)</li>
+<li>Can’t conclusively determine unsatisfiability(!)</li>
 <li>Reminds me of simulated annealing in some ways</li>
 </ul>
 </section></section>
@@ -435,10 +437,33 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a 
 <li>SAT extended with theories</li>
 </ul>
 </section></section>
+<section>
 <section id="thank-you" class="title-slide slide level1">
 <h1>Thank you!!</h1>
 
 </section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=6K6HFl7UhQk">Lindsey Kuper
+- Reasoning Under Uncertainty in SMT Solving, Research, and
+Life</a></li>
+<li><a
+href="https://cacm.acm.org/research/the-science-of-brute-force/">The
+Science of Brute Force</a></li>
+<li><a
+href="https://www.iospress.com/catalog/books/handbook-of-satisfiability-2">Handbook
+of Satisfiability</a></li>
+<li><a
+href="https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/overview.html">CS-E3220:
+Propositional satisfiability and SAT solvers</a></li>
+</ul>
+</section>
+<section id="slides" class="slide level2">
+<h2>Slides</h2>
+<p><a
+href="https://vaibhavsagar.com/presentations/sat-solvers">https://vaibhavsagar.com/presentations/sat-solvers</a></p>
+</section></section>
     </div>
   </div>
 
