@@ -207,7 +207,7 @@ $$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
 - WalkSAT
 - Can be done in parallel
 - Can use a form of CDCL
-- Can't prove unsatisfiability(!)
+- Can't conclusively determine unsatisfiability(!)
 - Reminds me of simulated annealing in some ways
 
 # SMT
@@ -259,3 +259,18 @@ $$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
 - SAT extended with theories
 
 # Thank you!!
+
+## Resources
+
+- [Lindsey Kuper - Reasoning Under Uncertainty in SMT Solving, Research, and
+  Life](https://www.youtube.com/watch?v=6K6HFl7UhQk)
+- [The Science of Brute
+  Force](https://cacm.acm.org/research/the-science-of-brute-force/)
+- [Handbook of
+  Satisfiability](https://www.iospress.com/catalog/books/handbook-of-satisfiability-2)
+- [CS-E3220: Propositional satisfiability and SAT
+  solvers](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/overview.html)
+
+## Slides
+
+[https://vaibhavsagar.com/presentations/sat-solvers](https://vaibhavsagar.com/presentations/sat-solvers)
