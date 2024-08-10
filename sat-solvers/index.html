@@ -28,7 +28,6 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { line-height: 1.25; }
@@ -95,6 +94,12 @@
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
+  <script>
+  window.MathJax = {
+    loader: {load: ['[tex]/color', '[tex]/cancel']},
+    tex: {packages: {'[+]': ['color', 'cancel']}}
+  };
+  </script>
 </head>
 <body>
   <div class="reveal">
@@ -114,27 +119,28 @@ data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 <section id="np-complete-problems" class="slide level2">
 <h2>NP-complete problems</h2>
 <ul>
-<li>Decision (yes/no) problems whose solutions can be verified in
-polynomial time</li>
+<li>Decision (yes/no) problems</li>
+<li>Can be verified in polynomial time</li>
 <li>All equivalent!</li>
 </ul>
 </section>
-<section id="np-complete-problems-1" class="slide level2">
-<h2>NP-complete problems</h2>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
 <ul>
-<li>Knapsack problem</li>
-<li>Travelling salesman problem</li>
-<li>Subset sum problem</li>
-<li>Graph coloring problem</li>
+<li>Knapsack</li>
+<li>Travelling salesman</li>
+<li>Subset sum</li>
+<li>Graph coloring</li>
 <li>Sudoku</li>
+<li>Boolean satisfiability</li>
 </ul>
 </section>
 <section id="boolean-satisfiability-problem" class="slide level2">
 <h2>Boolean Satisfiability Problem</h2>
 <ul>
-<li>Problems of the form <span
-class="math inline">(<em>x</em> ∨ <em>y</em> ∨ <em>z</em>) ∧ (<em>x</em> ∨ ¬<em>y</em>) ∧ (¬<em>z</em>)</span>
-(CNF)</li>
+<li>propositional logic formulas that look like <span
+class="math inline">\((x \vee y \vee z) \wedge (x \vee \neg y) \wedge
+(\neg z)\)</span> (CNF)</li>
 <li>NP-complete (!)</li>
 <li>Can express any other NP-complete problem!</li>
 </ul>
@@ -152,8 +158,7 @@ class="math inline">(<em>x</em> ∨ <em>y</em> ∨ <em>z</em>) ∧ (
 <h2>Rules</h2>
 <ul>
 <li>one number per cell</li>
-<li>each number once per row</li>
-<li>each number once per column</li>
+<li>each number once per row/column</li>
 <li>each number once per 3x3 sub-grid</li>
 <li>must respect existing values</li>
 </ul>
@@ -162,39 +167,37 @@ class="math inline">(<em>x</em> ∨ <em>y</em> ∨ <em>z</em>) ∧ (
 <h2>Insight</h2>
 <ul>
 <li>9 boolean variables for each cell!</li>
-<li><span
-class="math inline"><em>x</em><sub><em>r</em>, <em>c</em>, 1</sub></span>,
-<span
-class="math inline"><em>x</em><sub><em>r</em>, <em>c</em>, 2</sub></span>,…,<span
-class="math inline"><em>x</em><sub><em>r</em>, <em>c</em>, 9</sub></span></li>
+<li>only 1/9 is true, rest are false</li>
+<li><span class="math inline">\(x_{r,c,1}\)</span>, <span
+class="math inline">\(x_{r,c,2}\)</span>,…,<span
+class="math inline">\(x_{r,c,9}\)</span></li>
 </ul>
 </section>
 <section id="each-cell-has-at-least-one-value" class="slide level2">
 <h2>Each cell has at least one value</h2>
-<p><span
-class="math display">(<em>x</em><sub>1, 1, 1</sub> ∨ <em>x</em><sub>1, 1, 2</sub> ∨ … ∨ <em>x</em><sub>1, 1, 9</sub>)∧</span>
-<span
-class="math display">(<em>x</em><sub>1, 2, 1</sub> ∨ <em>x</em><sub>1, 2, 2</sub> ∨ … ∨ <em>x</em><sub>1, 2, 9</sub>)∧</span>
-<span class="math display">…</span> <span
-class="math display">(<em>x</em><sub>9, 9, 1</sub> ∨ <em>x</em><sub>9, 9, 2</sub> ∨ … ∨ <em>x</em><sub>9, 9, 9</sub>)</span></p>
+<p><span class="math display">\[(x_{1,1,1} \vee x_{1,1,2} \vee \dots
+\vee x_{1,1,9}) \wedge\]</span> <span class="math display">\[(x_{1,2,1}
+\vee x_{1,2,2} \vee \dots \vee x_{1,2,9}) \wedge\]</span> <span
+class="math display">\[ \dots \]</span> <span
+class="math display">\[(x_{9,9,1} \vee x_{9,9,2} \vee \dots \vee
+x_{9,9,9})\]</span></p>
 </section>
 <section id="each-row-has-all-values" class="slide level2">
 <h2>Each row has all values</h2>
-<p><span
-class="math display">(<em>x</em><sub>1, 1, 1</sub> ∨ <em>x</em><sub>1, 2, 1</sub> ∨ … ∨ <em>x</em><sub>1, 9, 1</sub>)∧</span>
-<span
-class="math display">(<em>x</em><sub>1, 1, 2</sub> ∨ <em>x</em><sub>1, 2, 2</sub> ∨ … ∨ <em>x</em><sub>1, 9, 9</sub>)∧</span>
-<span class="math display">…</span> <span
-class="math display">(<em>x</em><sub>9, 1, 9</sub> ∨ <em>x</em><sub>9, 2, 9</sub> ∨ … ∨ <em>x</em><sub>9, 9, 9</sub>)</span></p>
+<p><span class="math display">\[(x_{1,1,1} \vee x_{1,2,1} \vee \dots
+\vee x_{1,9,1}) \wedge\]</span> <span class="math display">\[(x_{1,1,2}
+\vee x_{1,2,2} \vee \dots \vee x_{1,9,9}) \wedge\]</span> <span
+class="math display">\[ \dots \]</span> <span
+class="math display">\[(x_{9,1,9} \vee x_{9,2,9} \vee \dots \vee
+x_{9,9,9})\]</span></p>
 </section>
 <section id="each-cell-has-at-most-one-value" class="slide level2">
 <h2>Each cell has at most one value</h2>
-<p><span
-class="math display">(¬<em>x</em><sub>1, 1, 1</sub> ∨ ¬<em>x</em><sub>1, 1, 2</sub>)∧</span>
-<span
-class="math display">(¬<em>x</em><sub>1, 1, 1</sub> ∨ ¬<em>x</em><sub>1, 1, 3</sub>)∧</span>
-<span class="math display">…</span> <span
-class="math display">(¬<em>x</em><sub>9, 9, 8</sub> ∨ ¬<em>x</em><sub>9, 9, 9</sub>)</span></p>
+<p><span class="math display">\[(\neg x_{1,1,1} \vee \neg x_{1,1,2})
+\wedge\]</span> <span class="math display">\[(\neg x_{1,1,1} \vee \neg
+x_{1,1,3}) \wedge\]</span> <span class="math display">\[ \dots \]</span>
+<span class="math display">\[(\neg x_{9,9,8} \vee \neg
+x_{9,9,9})\]</span></p>
 </section></section>
 <section>
 <section id="dpll" class="title-slide slide level1">
@@ -203,16 +206,14 @@ class="math display">(¬<em>x</em><sub>9, 9, 8</sub> ∨ ¬<em>x</em><su
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<p><span
-class="math display">(<em>x</em> ∨ <em>y</em> ∨ <em>z</em>) ∧ (<em>x</em> ∨ ¬<em>y</em>) ∧ (¬<em>y</em> ∨ ¬<em>x</em>) ∧ (¬<em>z</em>)</span></p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y: ¯\_(ツ)_/¯</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>z: ¯\_(ツ)_/¯</span></code></pre></div>
+<p><span class="math display">\[(x \vee y \vee z) \wedge (x \vee \neg y)
+\wedge (\neg y \vee \neg x) \wedge (\neg z)\]</span></p>
+<p>x: <code>¯\_(ツ)_/¯</code><br> y: <code>¯\_(ツ)_/¯</code><br> z:
+<code>¯\_(ツ)_/¯</code><br></p>
 </section>
 <section id="pick-a-variable" class="slide level2">
 <h2>Pick a variable</h2>
-<p>Let’s set <span class="math inline"><em>z</em></span> to False</p>
+<p>Let’s set <span class="math inline">\(z\)</span> to False</p>
 </section>
 <section id="unit-propagation" class="slide level2">
 <h2>Unit propagation</h2>
@@ -224,61 +225,47 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a 
 </section>
 <section id="example-1" class="slide level2">
 <h2>Example</h2>
-<p><span
-class="math display">(<em>x</em> ∨ <em>y</em> ∨ <em>z</em>) ∧ (<em>x</em> ∨ ¬<em>y</em>) ∧ (¬<em>y</em> ∨ ¬<em>x</em>) ∧ (¬<em>z</em>)</span></p>
-<p>becomes</p>
-<p><span
-class="math display">(<em>x</em> ∨ <em>y</em>) ∧ (<em>x</em> ∨ ¬<em>y</em>) ∧ (¬<em>y</em> ∨ ¬<em>x</em>)</span></p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y: ¯\_(ツ)_/¯</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
+<p><span class="math display">\[(x \vee y \xcancel{\vee z}) \wedge (x
+\vee \neg y) \wedge (\neg y \vee \neg x) \xcancel{\wedge (\neg
+z)}\]</span></p>
+<p>x: <code>¯\_(ツ)_/¯</code><br> y: <code>¯\_(ツ)_/¯</code><br> z:
+<code>False</code><br></p>
 </section>
 <section id="pick-a-variable-1" class="slide level2">
 <h2>Pick a variable</h2>
-<p>Let’s set <span class="math inline"><em>y</em></span> to True</p>
+<p>Let’s set <span class="math inline">\(y\)</span> to True</p>
 </section>
 <section id="example-2" class="slide level2">
 <h2>Example</h2>
-<p><span
-class="math display">(<em>x</em> ∨ <em>y</em>) ∧ (<em>x</em> ∨ ¬<em>y</em>) ∧ (¬<em>y</em> ∨ ¬<em>x</em>)</span></p>
-<p>becomes</p>
-<p><span class="math display">(<em>x</em>) ∧ (¬<em>x</em>)</span></p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y: True</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
+<p><span class="math display">\[\xcancel{(x \vee y \vee z) \wedge} (x
+\xcancel{\vee \neg y}) \wedge (\xcancel{\neg y \vee} \neg x)
+\xcancel{\wedge (\neg z)}\]</span></p>
+<p>x: <code>¯\_(ツ)_/¯</code><br> y: <code>True</code><br> z:
+<code>False</code><br></p>
 </section>
 <section id="conflict" class="slide level2">
 <h2>Conflict!</h2>
 </section>
 <section id="backtrack" class="slide level2">
 <h2>Backtrack</h2>
-<p>Let’s set <span class="math inline"><em>y</em></span> to False</p>
+<p>Let’s set <span class="math inline">\(y\)</span> to False</p>
 </section>
 <section id="example-3" class="slide level2">
 <h2>Example</h2>
-<p><span
-class="math display">(<em>x</em> ∨ <em>y</em>) ∧ (<em>x</em> ∨ ¬<em>y</em>) ∧ (¬<em>y</em> ∨ ¬<em>x</em>)</span>
-becomes <span class="math display">(<em>x</em>)</span></p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x: ¯\_(ツ)_/¯</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y: True</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
+<p><span class="math display">\[(x \xcancel{\vee y \vee z) \wedge (x
+\vee \neg y) \wedge (\neg y \vee \neg x) \wedge (\neg z)}\]</span></p>
+<p>x: <code>¯\_(ツ)_/¯</code><br> y: <code>False</code><br> z:
+<code>False</code><br></p>
 </section>
 <section id="pure-literal-elimination" class="slide level2">
 <h2>Pure literal elimination</h2>
-<ul>
-<li>There is only one possible value for <span
-class="math inline"><em>x</em></span></li>
-</ul>
+<p>There is only one possible value for <span
+class="math inline">\(x\)</span></p>
 </section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x: True</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y: True</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>z: False</span></code></pre></div>
+<p>x: <code>True</code><br> y: <code>False</code><br> z:
+<code>False</code><br></p>
 </section>
 <section id="davis-putnam-logemann-loveland" class="slide level2">
 <h2>Davis-Putnam-Logemann-Loveland</h2>
@@ -307,16 +294,48 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb5-1"><a 
 <section id="cdcl-1" class="slide level2">
 <h2>CDCL</h2>
 <ul>
-<li>Distinguishes between decisions and consequences</li>
+<li>Distinguishes between decisions (assignments) and consequences (unit
+propagation, literal elimination)</li>
 <li>Keeps track of the implication graph</li>
 </ul>
 </section>
 <section id="example-4" class="slide level2">
 <h2>Example</h2>
+<p><span class="math display">\[\displaylines{(x_{1} \vee x_{4}) \wedge
+\\
+(x_{1} \vee \neg x_{3} \vee \neg x_{8}) \wedge \\
+(x_{1} \vee x_{8} \vee x_{12}) \wedge \\
+(x_{2} \vee x_{11}) \wedge \\
+(\neg x_{7} \vee \neg x_{3} \vee x_{9}) \wedge \\
+(\neg x_{7} \vee x_{8} \vee \neg x_{9}) \wedge \\
+(x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
+(x_{7} \vee x_{10} \vee \neg x_{12})}\]</span></p>
+</section>
+<section id="decision-levels" class="slide level2">
+<h2>Decision Levels</h2>
+<p><img src="images/tree1.svg" style="height: 10em;"></p>
+</section>
+<section id="implication-graph" class="slide level2">
+<h2>Implication Graph</h2>
+<p><img src="images/graph1.svg" style="height: 11em;"></p>
+</section>
+<section id="unique-implication-point" class="slide level2">
+<h2>Unique Implication Point</h2>
+<p><img src="images/graph2.svg" style="height: 11em;"></p>
+</section>
+<section id="learned-clause" class="slide level2">
+<h2>Learned Clause</h2>
+<p><span class="math display">\[x_{8} \vee \neg x_{3} \vee \neg
+x_{7}\]</span></p>
+</section>
+<section id="backjumping" class="slide level2">
+<h2>Backjumping</h2>
+<p><img src="images/tree2.svg" style="height: 10em;"></p>
 </section>
 <section id="conflict-driven-clause-learning" class="slide level2">
 <h2>Conflict-driven Clause Learning</h2>
 <ul>
+<li>Learned clauses!</li>
 <li>Non-chronological backtracking!</li>
 <li>Basis of most modern SAT solvers</li>
 </ul>
@@ -343,6 +362,9 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb5-1"><a 
 <ul>
 <li>Surprisingly effective!</li>
 <li>WalkSAT</li>
+<li>Can be done in parallel</li>
+<li>Can use a form of CDCL</li>
+<li>Can’t prove unsatisfiability(!)</li>
 <li>Reminds me of simulated annealing in some ways</li>
 </ul>
 </section></section>
@@ -353,11 +375,11 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb5-1"><a 
 </section>
 <section id="problem" class="slide level2">
 <h2>Problem</h2>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode default"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>  SEND</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>+ MORE</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>------</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a> MONEY</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  SEND</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>+ MORE</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>------</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> MONEY</span></code></pre></div>
 </section>
 <section id="how" class="slide level2">
 <h2>How?</h2>
@@ -381,7 +403,7 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb6-1"><a 
 <section id="sat-solvers-2" class="slide level2">
 <h2>SAT solvers</h2>
 <ul>
-<li>NP-complete problems expressed as CNF Boolean formulas</li>
+<li>Solve NP-complete problems expressed as CNF Boolean formulas</li>
 </ul>
 </section>
 <section id="dpll-1" class="slide level2">
@@ -395,7 +417,7 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb6-1"><a 
 <section id="cdcl-2" class="slide level2">
 <h2>CDCL</h2>
 <ul>
-<li>DPLL</li>
+<li>DPLL+</li>
 <li>Learned clauses</li>
 <li>Non-chronological backtracking</li>
 </ul>
@@ -426,6 +448,7 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb6-1"><a 
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
 
   <script>
 
@@ -572,8 +595,26 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb6-1"><a 
         // viewDistance in order to save resources.
         mobileViewDistance: 2,
 
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
         // reveal.js plugins
         plugins: [
+          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom
