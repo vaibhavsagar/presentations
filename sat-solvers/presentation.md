@@ -6,7 +6,8 @@
 ## NP-complete problems
 
 - Decision (yes/no) problems
-- Can be verified in polynomial time
+- Can be verified quickly (in polynomial time)
+- Currently unknown how to solve quickly (P versus NP problem)
 - All equivalent!
 
 ## Examples
@@ -20,7 +21,7 @@
 
 ## Boolean Satisfiability Problem
 
-- Propositional logic formulas
+- Assigning truth values to Boolean variables in propositional logic formulas
 - Commonly expressed like $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg z)$ (CNF)
 - NP-complete (!)
 - Can express any other NP-complete problem!
