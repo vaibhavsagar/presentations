@@ -21,7 +21,10 @@
 
 ## Boolean Satisfiability Problem
 
-- Assigning truth values to Boolean variables in propositional logic formulas
+Can we assign truth values to Boolean variables in propositional logic formulas
+to satisfy the formula?
+
+## Boolean Satisfiability Problem
 - Commonly expressed like $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg z)$ (CNF)
 - NP-complete (!)
 - Can express any other NP-complete problem!
@@ -65,6 +68,13 @@ $$(\neg x_{1,1,1} \vee \neg x_{1,1,2}) \wedge$$
 $$(\neg x_{1,1,1} \vee \neg x_{1,1,3}) \wedge$$
 $$ \dots $$
 $$(\neg x_{9,9,8} \vee \neg x_{9,9,9})$$
+
+## Solving
+
+1. Express your problem as a propositional logic formula in CNF
+2. Feed it to a SAT solver
+3. ???
+4. PROFIT!!!
 
 # DPLL
 
@@ -122,7 +132,7 @@ z: `False`<br>
 
 ## Pure literal elimination
 
-There is only one possible value for $x$
+There is only one possible value for $x$, so assign it
 
 ## Solution
 
@@ -139,7 +149,7 @@ z: `False`<br>
 
 ## Downsides
 
-- Potentially finds the same conflict multiple times
+- Often finds the same conflict multiple times
 - Backtracks one level at a time (chronologically)
 - No memory of past conflicts
 
@@ -149,7 +159,7 @@ z: `False`<br>
 
 ## CDCL
 
-- Distinguishes between decisions (assignments) and consequences (unit
+- Distinguishes between decisions (assignments) and implications (unit
   propagation, literal elimination)
 - Keeps track of the implication graph
 
@@ -183,7 +193,6 @@ $$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
 ## Backjumping
 
 <img src="images/tree2.svg" style="height: 10em;">
-
 
 ## Conflict-driven Clause Learning
 
@@ -224,7 +233,7 @@ $$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
 
 ## How?
 
-- We'd have to teach the SAT solver arithmetic!
+We'd have to teach the SAT solver arithmetic!
 
 ## Satisfiability Modulo Theories
 
@@ -236,7 +245,7 @@ $$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
 
 ## SAT solvers
 
-- Solve NP-complete problems expressed as CNF Boolean formulas
+Solve NP-complete problems expressed as CNF Boolean formulas
 
 ## DPLL
 
@@ -252,12 +261,12 @@ $$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
 
 ## SLS
 
-- Random guess
+- Random guessing
 - Probabilistic variable flipping
 
 ## SMT solvers
 
-- SAT extended with theories
+SAT extended with theories
 
 # Thank you!!
 
