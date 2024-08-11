@@ -138,9 +138,12 @@ data-cites="vbhvsgr">@vbhvsgr</span>)</p>
 </section>
 <section id="boolean-satisfiability-problem" class="slide level2">
 <h2>Boolean Satisfiability Problem</h2>
+<p>Can we assign truth values to Boolean variables in propositional
+logic formulas to satisfy the formula?</p>
+</section>
+<section id="boolean-satisfiability-problem-1" class="slide level2">
+<h2>Boolean Satisfiability Problem</h2>
 <ul>
-<li>Assigning truth values to Boolean variables in propositional logic
-formulas</li>
 <li>Commonly expressed like <span class="math inline">\((x \vee y \vee
 z) \wedge (x \vee \neg y) \wedge (\neg z)\)</span> (CNF)</li>
 <li>NP-complete (!)</li>
@@ -200,6 +203,15 @@ x_{9,9,9})\]</span></p>
 x_{1,1,3}) \wedge\]</span> <span class="math display">\[ \dots \]</span>
 <span class="math display">\[(\neg x_{9,9,8} \vee \neg
 x_{9,9,9})\]</span></p>
+</section>
+<section id="solving" class="slide level2">
+<h2>Solving</h2>
+<ol type="1">
+<li>Express your problem as a propositional logic formula in CNF</li>
+<li>Feed it to a SAT solver</li>
+<li>???</li>
+<li>PROFIT!!!</li>
+</ol>
 </section></section>
 <section>
 <section id="dpll" class="title-slide slide level1">
@@ -262,7 +274,7 @@ z)}\]</span></p>
 <section id="pure-literal-elimination" class="slide level2">
 <h2>Pure literal elimination</h2>
 <p>There is only one possible value for <span
-class="math inline">\(x\)</span></p>
+class="math inline">\(x\)</span>, so assign it</p>
 </section>
 <section id="solution" class="slide level2">
 <h2>Solution</h2>
@@ -280,7 +292,7 @@ class="math inline">\(x\)</span></p>
 <section id="downsides" class="slide level2">
 <h2>Downsides</h2>
 <ul>
-<li>Potentially finds the same conflict multiple times</li>
+<li>Often finds the same conflict multiple times</li>
 <li>Backtracks one level at a time (chronologically)</li>
 <li>No memory of past conflicts</li>
 </ul>
@@ -296,7 +308,7 @@ class="math inline">\(x\)</span></p>
 <section id="cdcl-1" class="slide level2">
 <h2>CDCL</h2>
 <ul>
-<li>Distinguishes between decisions (assignments) and consequences (unit
+<li>Distinguishes between decisions (assignments) and implications (unit
 propagation, literal elimination)</li>
 <li>Keeps track of the implication graph</li>
 </ul>
@@ -385,9 +397,7 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a 
 </section>
 <section id="how" class="slide level2">
 <h2>How?</h2>
-<ul>
-<li>We’d have to teach the SAT solver arithmetic!</li>
-</ul>
+<p>We’d have to teach the SAT solver arithmetic!</p>
 </section>
 <section id="satisfiability-modulo-theories" class="slide level2">
 <h2>Satisfiability Modulo Theories</h2>
@@ -404,9 +414,7 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a 
 </section>
 <section id="sat-solvers-2" class="slide level2">
 <h2>SAT solvers</h2>
-<ul>
-<li>Solve NP-complete problems expressed as CNF Boolean formulas</li>
-</ul>
+<p>Solve NP-complete problems expressed as CNF Boolean formulas</p>
 </section>
 <section id="dpll-1" class="slide level2">
 <h2>DPLL</h2>
@@ -427,15 +435,13 @@ class="sourceCode default"><code class="sourceCode default"><span id="cb1-1"><a 
 <section id="sls-1" class="slide level2">
 <h2>SLS</h2>
 <ul>
-<li>Random guess</li>
+<li>Random guessing</li>
 <li>Probabilistic variable flipping</li>
 </ul>
 </section>
 <section id="smt-solvers" class="slide level2">
 <h2>SMT solvers</h2>
-<ul>
-<li>SAT extended with theories</li>
-</ul>
+<p>SAT extended with theories</p>
 </section></section>
 <section>
 <section id="thank-you" class="title-slide slide level1">
