@@ -73,7 +73,7 @@ $$(\neg x_{9,9,8} \vee \neg x_{9,9,9})$$
 
 1. Express your problem as a propositional logic formula in CNF
 2. Feed it to a SAT solver
-3. ???
+3. ????
 4. PROFIT!!!
 
 # DPLL
