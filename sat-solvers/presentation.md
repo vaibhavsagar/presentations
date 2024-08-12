@@ -31,7 +31,8 @@ to satisfy the formula?
 
 ## SAT Solvers
 
-Programs that can solve boolean satisfiability problems!
+- Solve boolean satisfiability problems!
+- Tell you satisfying assignments!!
 
 # Sudoku
 
