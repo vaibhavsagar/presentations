@@ -239,7 +239,7 @@ We'd have to teach the SAT solver arithmetic!
 ## Satisfiability Modulo Theories
 
 - SAT solvers extended
-- Not limited to decision problems
+- bitvectors, arrays, algebraic datatypes, etc.
 - Z3, CVC, Yices, Boolector
 
 # Recap
