@@ -1,0 +1,10 @@
+digraph {
+    x₁ [label="¬x₁"]
+    x₄ [style="filled"]
+    x₁ -> x₄
+    rankdir="LR"
+    {rank=same; x₁}
+    overlap=false
+    splines=true
+    bgcolor=transparent
+}

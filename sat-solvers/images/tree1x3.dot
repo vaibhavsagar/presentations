@@ -1,0 +1,17 @@
+digraph {
+    x₁t [style="invisible"]
+    x₃f [style="invisible",width=1]
+    x₂t [style="invisible"]
+    x₁  [xlabel="1"]
+    x₃  [xlabel="2"]
+    x₂  [style="invisible"]
+    x₁ -> x₁t [color="green",style="dashed"]
+    x₁ -> x₃  [color="red",label="¬x₁,x₄"]
+    x₃ -> x₂  [color="green",label="x₃,¬x₈,x₁₂",weight=2]
+    x₃ -> x₃f [color="red",style="dashed"]
+    x₂ -> x₃f [style="invisible",arrowhead=none]
+    {rank=same; x₃f x₂}
+    overlap=false
+    splines=true
+    bgcolor=transparent
+}

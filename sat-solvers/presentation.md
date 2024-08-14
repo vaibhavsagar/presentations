@@ -36,6 +36,12 @@ to satisfy the formula?
 
 # Sudoku
 
+## Example
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg" style="height: 10em" />
+
+_Tim Stellmach, CC0, via Wikimedia Commons_
+
 ## Rules
 
 - one number per cell
@@ -175,13 +181,33 @@ $$\displaylines{(x_{1} \vee x_{4}) \wedge \\
 (x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
 (x_{7} \vee x_{10} \vee \neg x_{12})}$$
 
-## Decision Levels
+## $x_{1}$
 
-<img src="images/tree1.svg" style="height: 10em;">
+<div style="display: flex">
+<div style="flex: 50%"><img src="images/tree1x1.svg" style="height: 10em"></div>
+<div style="flex: 50%"><img src="images/graph1x1.svg" style="height: 10em"></div>
+</div>
 
-## Implication Graph
+## $x_{3}$
 
-<img src="images/graph1.svg" style="height: 11em;">
+<div style="display: flex">
+<div style="flex: 50%"><img src="images/tree1x3.svg" style="height: 10em"></div>
+<div style="flex: 50%"><img src="images/graph1x3.svg" style="height: 10em"></div>
+</div>
+
+## $x_{2}$
+
+<div style="display: flex">
+<div style="flex: 50%"><img src="images/tree1x2.svg" style="height: 10em"></div>
+<div style="flex: 50%"><img src="images/graph1x2.svg" style="height: 10em"></div>
+</div>
+
+## $x_{7}$
+
+<div style="display: flex">
+<div style="flex: 50%"><img src="images/tree1.svg" style="height: 10em"></div>
+<div style="flex: 50%"><img src="images/graph1.svg" style="height: 10em"></div>
+</div>
 
 ## Unique Implication Point
 
@@ -279,6 +305,8 @@ SAT extended with theories
   Force](https://cacm.acm.org/research/the-science-of-brute-force/)
 - [Handbook of
   Satisfiability](https://www.iospress.com/catalog/books/handbook-of-satisfiability-2)
+- [GRASP - A New Search Algorithm for Satisfiability (1996)](https://www.cs.cmu.edu/~emc/15-820A/reading/grasp_iccad96.pdf)
+- [An Extensible SAT-solver (2003)](http://minisat.se/downloads/MiniSat.pdf)
 - [CS-E3220: Propositional satisfiability and SAT
   solvers](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/overview.html)
 

@@ -1,0 +1,11 @@
+digraph {
+    x₁t [style="invisible"]
+    x₁  [xlabel="1"]
+    x₃  [style="invisible"]
+    x₇f [label="label",style="invisible"]
+    x₁ -> x₁t [color="green",style="dashed"]
+    x₁ -> x₃  [color="red",label="¬x₁,x₄"]
+    overlap=false
+    splines=true
+    bgcolor=transparent
+}

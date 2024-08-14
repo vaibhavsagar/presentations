@@ -1,0 +1,16 @@
+digraph {
+    x₁ [label="¬x₁"]
+    x₄ [style="filled"]
+    x₈ [label="¬x₈", style="filled"]
+    x₁₂ [style="filled"]
+    x₁ -> x₄
+    x₃ -> x₈
+    x₁ -> x₈
+    x₁ -> x₁₂
+    x₈ -> x₁₂
+    rankdir="LR"
+    {rank=same; x₁ x₃}
+    overlap=false
+    splines=true
+    bgcolor=transparent
+}
