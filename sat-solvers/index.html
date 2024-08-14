@@ -162,6 +162,11 @@ z) \wedge (x \vee \neg y) \wedge (\neg z)\)</span> (CNF)</li>
 <h1>Sudoku</h1>
 
 </section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg" style="height: 10em" /></p>
+<p><em>Tim Stellmach, CC0, via Wikimedia Commons</em></p>
+</section>
 <section id="rules" class="slide level2">
 <h2>Rules</h2>
 <ul>
@@ -221,7 +226,7 @@ x_{9,9,9})\]</span></p>
 <h1>DPLL</h1>
 
 </section>
-<section id="example" class="slide level2">
+<section id="example-1" class="slide level2">
 <h2>Example</h2>
 <p><span class="math display">\[(x \vee y \vee z) \wedge (x \vee \neg y)
 \wedge (\neg y \vee \neg x) \wedge (\neg z)\]</span></p>
@@ -240,7 +245,7 @@ x_{9,9,9})\]</span></p>
 <li>Remove the literal where it is False</li>
 </ul>
 </section>
-<section id="example-1" class="slide level2">
+<section id="example-2" class="slide level2">
 <h2>Example</h2>
 <p><span class="math display">\[(x \vee y \xcancel{\vee z}) \wedge (x
 \vee \neg y) \wedge (\neg y \vee \neg x) \xcancel{\wedge (\neg
@@ -252,7 +257,7 @@ z)}\]</span></p>
 <h2>Pick a variable</h2>
 <p>Let’s set <span class="math inline">\(y\)</span> to True</p>
 </section>
-<section id="example-2" class="slide level2">
+<section id="example-3" class="slide level2">
 <h2>Example</h2>
 <p><span class="math display">\[\xcancel{(x \vee y \vee z) \wedge} (x
 \xcancel{\vee \neg y}) \wedge (\xcancel{\neg y \vee} \neg x)
@@ -267,7 +272,7 @@ z)}\]</span></p>
 <h2>Backtrack</h2>
 <p>Let’s set <span class="math inline">\(y\)</span> to False</p>
 </section>
-<section id="example-3" class="slide level2">
+<section id="example-4" class="slide level2">
 <h2>Example</h2>
 <p><span class="math display">\[(x \xcancel{\vee y \vee z) \wedge (x
 \vee \neg y) \wedge (\neg y \vee \neg x) \wedge (\neg z)}\]</span></p>
@@ -316,7 +321,7 @@ propagation, literal elimination)</li>
 <li>Keeps track of the implication graph</li>
 </ul>
 </section>
-<section id="example-4" class="slide level2">
+<section id="example-5" class="slide level2">
 <h2>Example</h2>
 <p><span class="math display">\[\displaylines{(x_{1} \vee x_{4}) \wedge
 \\
@@ -328,13 +333,49 @@ propagation, literal elimination)</li>
 (x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
 (x_{7} \vee x_{10} \vee \neg x_{12})}\]</span></p>
 </section>
-<section id="decision-levels" class="slide level2">
-<h2>Decision Levels</h2>
-<p><img src="images/tree1.svg" style="height: 10em;"></p>
+<section id="x_1" class="slide level2">
+<h2><span class="math inline">\(x_{1}\)</span></h2>
+<div style="display: flex">
+<div style="flex: 50%">
+<img src="images/tree1x1.svg" style="height: 10em">
+</div>
+<div style="flex: 50%">
+<img src="images/graph1x1.svg" style="height: 10em">
+</div>
+</div>
 </section>
-<section id="implication-graph" class="slide level2">
-<h2>Implication Graph</h2>
-<p><img src="images/graph1.svg" style="height: 11em;"></p>
+<section id="x_3" class="slide level2">
+<h2><span class="math inline">\(x_{3}\)</span></h2>
+<div style="display: flex">
+<div style="flex: 50%">
+<img src="images/tree1x3.svg" style="height: 10em">
+</div>
+<div style="flex: 50%">
+<img src="images/graph1x3.svg" style="height: 10em">
+</div>
+</div>
+</section>
+<section id="x_2" class="slide level2">
+<h2><span class="math inline">\(x_{2}\)</span></h2>
+<div style="display: flex">
+<div style="flex: 50%">
+<img src="images/tree1x2.svg" style="height: 10em">
+</div>
+<div style="flex: 50%">
+<img src="images/graph1x2.svg" style="height: 10em">
+</div>
+</div>
+</section>
+<section id="x_7" class="slide level2">
+<h2><span class="math inline">\(x_{7}\)</span></h2>
+<div style="display: flex">
+<div style="flex: 50%">
+<img src="images/tree1.svg" style="height: 10em">
+</div>
+<div style="flex: 50%">
+<img src="images/graph1.svg" style="height: 10em">
+</div>
+</div>
 </section>
 <section id="unique-implication-point" class="slide level2">
 <h2>Unique Implication Point</h2>
@@ -463,6 +504,11 @@ Science of Brute Force</a></li>
 <li><a
 href="https://www.iospress.com/catalog/books/handbook-of-satisfiability-2">Handbook
 of Satisfiability</a></li>
+<li><a
+href="https://www.cs.cmu.edu/~emc/15-820A/reading/grasp_iccad96.pdf">GRASP
+- A New Search Algorithm for Satisfiability (1996)</a></li>
+<li><a href="http://minisat.se/downloads/MiniSat.pdf">An Extensible
+SAT-solver (2003)</a></li>
 <li><a
 href="https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/overview.html">CS-E3220:
 Propositional satisfiability and SAT solvers</a></li>
