@@ -25,14 +25,14 @@ Can we assign truth values to Boolean variables in propositional logic formulas
 to satisfy the formula?
 
 ## Boolean Satisfiability Problem
-- Commonly expressed like $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg z)$ (CNF)
+- Commonly expressed like $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg z)$ (Conjunctive Normal Form)
 - NP-complete (!)
 - Can express any other NP-complete problem!
 
 ## SAT Solvers
 
-- Solve boolean satisfiability problems!
-- Tell you satisfying assignments!!
+Programs that solve boolean satisfiability problems and tell you satisfying
+assignments!!
 
 # Sudoku
 
@@ -44,10 +44,10 @@ _Tim Stellmach, CC0, via Wikimedia Commons_
 
 ## Rules
 
-- one number per cell
-- each number once per row/column
-- each number once per 3x3 sub-grid
-- must respect existing values
+- one digit per cell
+- each digit once per row/column
+- each digit once per 3x3 sub-grid
+- must respect provided values
 
 ## Insight
 
@@ -89,9 +89,9 @@ $$(\neg x_{9,9,8} \vee \neg x_{9,9,9})$$
 
 $$(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \wedge (\neg z)$$
 
-x: `¯\_(ツ)_/¯`<br>
-y: `¯\_(ツ)_/¯`<br>
-z: `¯\_(ツ)_/¯`<br>
+$x$: 🤷<br>
+$y$: 🤷<br>
+$z$: 🤷<br>
 
 ## Pick a variable
 
@@ -105,11 +105,11 @@ Let's set $z$ to False
 
 ## Example
 
-$$(x \vee y \xcancel{\vee z}) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \xcancel{\wedge (\neg z)}$$
+$$(x \vee y \xcancel{\vee {\color{red} z}}) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \xcancel{\wedge {\color{green} (\neg z)}}$$
 
-x: `¯\_(ツ)_/¯`<br>
-y: `¯\_(ツ)_/¯`<br>
-z: `False`<br>
+$x$: 🤷<br>
+$y$: 🤷<br>
+$z$: `False`<br>
 
 ## Pick a variable
 
@@ -117,11 +117,11 @@ Let's set $y$ to True
 
 ## Example
 
-$$\xcancel{(x \vee y \vee z) \wedge} (x \xcancel{\vee \neg y}) \wedge (\xcancel{\neg y \vee} \neg x) \xcancel{\wedge (\neg z)}$$
+$$\xcancel{{\color{green}(x \vee y \vee z)} \wedge} (x \xcancel{\vee {\color{red} \neg y}}) \wedge (\xcancel{{\color{red} \neg y} \vee} \neg x) \xcancel{\wedge {\color{green }(\neg z)}}$$
 
-x: `¯\_(ツ)_/¯`<br>
-y: `True`<br>
-z: `False`<br>
+$x$: 🤷<br>
+$y$: `True`<br>
+$z$: `False`<br>
 
 ## Conflict!
 
@@ -131,11 +131,11 @@ Let's set $y$ to False
 
 ## Example
 
-$$(x \xcancel{\vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \wedge (\neg z)}$$
+$$(x \xcancel{\vee {\color{red} y} \vee {\color{red} z}) \wedge {\color{green}(x \vee \neg y)} \wedge {\color{green} (\neg y \vee \neg x)} \wedge {\color{green} (\neg z)}}$$
 
-x: `¯\_(ツ)_/¯`<br>
-y: `False`<br>
-z: `False`<br>
+$x$: 🤷<br>
+$y$: `False`<br>
+$z$: `False`<br>
 
 ## Pure literal elimination
 
@@ -143,9 +143,9 @@ There is only one possible value for $x$, so assign it
 
 ## Solution
 
-x: `True`<br>
-y: `False`<br>
-z: `False`<br>
+$x$: `True`<br>
+$y$: `False`<br>
+$z$: `False`<br>
 
 
 ## Davis-Putnam-Logemann-Loveland
@@ -160,7 +160,7 @@ z: `False`<br>
 - Backtracks one level at a time (chronologically)
 - No memory of past conflicts
 
-## Can we do better?
+## Can we learn from our mistakes?
 
 # CDCL
 
@@ -217,6 +217,18 @@ $$\displaylines{(x_{1} \vee x_{4}) \wedge \\
 
 $$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
 
+## Learned Clause
+
+$$\displaylines{(x_{1} \vee x_{4}) \wedge \\
+(x_{1} \vee \neg x_{3} \vee \neg x_{8}) \wedge \\
+(x_{1} \vee x_{8} \vee x_{12}) \wedge \\
+(x_{2} \vee x_{11}) \wedge \\
+(\neg x_{7} \vee \neg x_{3} \vee x_{9}) \wedge \\
+(\neg x_{7} \vee x_{8} \vee \neg x_{9}) \wedge \\
+(x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
+(x_{7} \vee x_{10} \vee \neg x_{12}) \wedge \\
+{\color{green}(x_{8} \vee \neg x_{3} \vee \neg x_{7})}}$$
+
 ## Backjumping
 
 <img src="images/tree2.svg" style="height: 10em;">
@@ -251,12 +263,14 @@ $$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
 
 ## Problem
 
-```default
-  SEND
-+ MORE
-------
- MONEY
-```
+$$
+\begin{align}
+  SEND &\\
++ MORE &\\
+\hline
+MONEY
+\end{align}
+$$
 
 ## How?
 

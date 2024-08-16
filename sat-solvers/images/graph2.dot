@@ -1,8 +1,10 @@
 digraph {
     x₁ [label="¬x₁"]
     x₂ [label="¬x₂"]
+    x₃ [style="bold"]
     x₄ [style="filled"]
-    x₈ [label="¬x₈", style="filled"]
+    x₇ [style="bold"]
+    x₈ [label="¬x₈", style="filled,bold"]
     x₉t [label="x₉", style="filled"]
     x₉f [label="¬x₉", style="filled"]
     x₁₁ [style="filled"]
