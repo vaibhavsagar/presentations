@@ -100,7 +100,7 @@
 <!-- c -->
 <g id="node8" class="node">
 <title>c</title>
-<polygon fill="red" stroke="red" points="144,-36 90,-36 90,0 144,0 144,-36"/>
+<polygon fill="blue" stroke="blue" points="144,-36 90,-36 90,0 144,0 144,-36"/>
 </g>
 <!-- x₇&#45;&gt;c -->
 <g id="edge9" class="edge">
