@@ -47,12 +47,12 @@ _Tim Stellmach, CC0, via Wikimedia Commons_
 - one digit per cell
 - each digit once per row/column
 - each digit once per 3x3 sub-grid
-- must respect provided values
+- must use filled-in cells
 
 ## Insight
 
 - 9 boolean variables for each cell!
-- only 1/9 is true, rest are false
+- only 1 is true, other 8 are false
 - $x_{r,c,1}$, $x_{r,c,2}$,...,$x_{r,c,9}$
 
 ## Each cell has at least one value
