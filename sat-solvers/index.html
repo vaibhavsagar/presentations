@@ -108,14 +108,14 @@ satisfying assignments!!</p>
 <li>one digit per cell</li>
 <li>each digit once per row/column</li>
 <li>each digit once per 3x3 sub-grid</li>
-<li>must respect provided values</li>
+<li>must use filled-in cells</li>
 </ul>
 </section>
 <section id="insight" class="slide level2">
 <h2>Insight</h2>
 <ul>
 <li>9 boolean variables for each cell!</li>
-<li>only 1/9 is true, rest are false</li>
+<li>only 1 is true, other 8 are false</li>
 <li><span class="math inline">\(x_{r,c,1}\)</span>, <span
 class="math inline">\(x_{r,c,2}\)</span>,…,<span
 class="math inline">\(x_{r,c,9}\)</span></li>
