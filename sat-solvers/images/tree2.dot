@@ -6,7 +6,7 @@ digraph {
     x₃  [xlabel="2"]
     x₂  [xlabel="3"]
     x₇  [xlabel="4"]
-    c   [shape="box",label="",color="red",style="filled"]
+    c   [shape="box",label="",color="blue",style="filled"]
     x₇f [label="label",style="invisible"]
     x₁ -> x₁t [color="green",style="dashed"]
     x₁ -> x₃  [color="red",label="¬x₁,x₄"]
