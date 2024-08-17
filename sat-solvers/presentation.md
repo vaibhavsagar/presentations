@@ -172,46 +172,103 @@ $z$: `False`<br>
 
 ## Example
 
-$$\displaylines{(x_{1} \vee x_{4}) \wedge \\
-(x_{1} \vee \neg x_{3} \vee \neg x_{8}) \wedge \\
-(x_{1} \vee x_{8} \vee x_{12}) \wedge \\
-(x_{2} \vee x_{11}) \wedge \\
-(\neg x_{7} \vee \neg x_{3} \vee x_{9}) \wedge \\
-(\neg x_{7} \vee x_{8} \vee \neg x_{9}) \wedge \\
-(x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
-(x_{7} \vee x_{10} \vee \neg x_{12})}$$
+$$\begin{align}
+& (x_{1} \vee x_{4}) \wedge \\
+& (x_{1} \vee \neg x_{3} \vee \neg x_{8}) \wedge \\
+& (x_{1} \vee x_{8} \vee x_{12}) \wedge \\
+& (x_{2} \vee x_{11}) \wedge \\
+& (\neg x_{7} \vee \neg x_{3} \vee x_{9}) \wedge \\
+& (\neg x_{7} \vee x_{8} \vee \neg x_{9}) \wedge \\
+& (x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
+& (x_{7} \vee x_{10} \vee \neg x_{12})
+\end{align}$$
 
 ## $x_{1}$
 
 <div style="display: flex">
-<div style="flex: 50%"><img src="images/tree1x1.svg" style="height: 10em"></div>
-<div style="flex: 50%"><img src="images/graph1x1.svg" style="height: 10em"></div>
+<div style="flex: 33%"><img src="images/tree1x1.svg" style="height: 10em"></div>
+<div style="flex: 33%"><img src="images/graph1x1.svg" style="height: 10em"></div>
+<div style="flex: 33%">
+$$\begin{align}
+& {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
+& {\color{red} x_{1}} \vee \neg x_{3} \vee \neg x_{8} \\
+& {\color{red} x_{1}} \vee x_{8} \vee x_{12} \\
+& x_{2} \vee x_{11} \\
+& \neg x_{7} \vee \neg x_{3} \vee x_{9} \\
+& \neg x_{7} \vee x_{8} \vee \neg x_{9} \\
+& x_{7} \vee x_{8} \vee \neg x_{10} \\
+& x_{7} \vee x_{10} \vee \neg x_{12}
+\end{align}$$
+</div>
 </div>
 
 ## $x_{3}$
 
 <div style="display: flex">
-<div style="flex: 50%"><img src="images/tree1x3.svg" style="height: 10em"></div>
-<div style="flex: 50%"><img src="images/graph1x3.svg" style="height: 10em"></div>
+<div style="flex: 33%"><img src="images/tree1x3.svg" style=""></div>
+<div style="flex: 33%"><img src="images/graph1x3.svg" style=""></div>
+<div style="flex: 33%">
+$$\begin{align}
+& {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
+& {\color{red} x_{1}} \vee {\color{red}\neg x_{3}} \vee {\color{green} \neg x_{8}} \\
+& {\color{red} x_{1}} \vee {\color{red} x_{8}} \vee {\color{green} x_{12}} \\
+& x_{2} \vee x_{11} \\
+& \neg x_{7} \vee {\color{red}\neg x_{3}} \vee x_{9} \\
+& \neg x_{7} \vee {\color{red} x_{8}} \vee \neg x_{9} \\
+& x_{7} \vee {\color{red} x_{8}} \vee \neg x_{10} \\
+& x_{7} \vee x_{10} \vee {\color{red}\neg x_{12}}
+\end{align}$$
+</div>
 </div>
 
 ## $x_{2}$
 
 <div style="display: flex">
-<div style="flex: 50%"><img src="images/tree1x2.svg" style="height: 10em"></div>
-<div style="flex: 50%"><img src="images/graph1x2.svg" style="height: 10em"></div>
+<div style="flex: 33%"><img src="images/tree1x2.svg" style=""></div>
+<div style="flex: 33%"><img src="images/graph1x2.svg" style=""></div>
+<div style="flex: 33%">
+$$\begin{align}
+& {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
+& {\color{red} x_{1}} \vee {\color{red}\neg x_{3}} \vee {\color{green} \neg x_{8}} \\
+& {\color{red} x_{1}} \vee {\color{red} x_{8}} \vee {\color{green} x_{12}} \\
+& {\color{red} x_{2}} \vee {\color{green} x_{11}} \\
+& \neg x_{7} \vee {\color{red}\neg x_{3}} \vee x_{9} \\
+& \neg x_{7} \vee {\color{red} x_{8}} \vee \neg x_{9} \\
+& x_{7} \vee {\color{red} x_{8}} \vee \neg x_{10} \\
+& x_{7} \vee x_{10} \vee {\color{red}\neg x_{12}}
+\end{align}$$
+</div>
 </div>
 
 ## $x_{7}$
 
 <div style="display: flex">
-<div style="flex: 50%"><img src="images/tree1.svg" style="height: 10em"></div>
-<div style="flex: 50%"><img src="images/graph1.svg" style="height: 10em"></div>
+<div style="flex: 33%"><img src="images/tree1.svg" style=""></div>
+<div style="flex: 33%"><img src="images/graph1.svg" style=""></div>
+<div style="flex: 33%">
+$$\begin{align}
+& {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
+& {\color{red} x_{1}} \vee {\color{red}\neg x_{3}} \vee {\color{green} \neg x_{8}} \\
+& {\color{red} x_{1}} \vee {\color{red} x_{8}} \vee {\color{green} x_{12}} \\
+& {\color{red} x_{2}} \vee {\color{green} x_{11}} \\
+& {\color{red}\neg x_{7}} \vee {\color{red}\neg x_{3}} \vee {\color{blue} x_{9}} \\
+& {\color{red}\neg x_{7}} \vee {\color{red} x_{8}} \vee {\color{blue}\neg x_{9}} \\
+& {\color{green} x_{7}} \vee {\color{red} x_{8}} \vee \neg x_{10} \\
+& {\color{green} x_{7}} \vee x_{10} \vee {\color{red}\neg x_{12}}
+\end{align}$$
+</div>
 </div>
 
 ## Unique Implication Point
 
-<img src="images/graph2.svg" style="height: 11em;">
+<div style="display: flex">
+<div style="flex: 50%"><img src="images/graph2.svg" style=""></div>
+<div style="flex: 50%">
+$$\displaylines{\neg (\neg x_{8} \wedge x_{3} \wedge x_{7}) \\
+\iff \\
+(x_{8} \vee \neg x_{3} \vee \neg x_{7})}$$
+</div>
+</div>
 
 ## Learned Clause
 
@@ -219,15 +276,17 @@ $$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
 
 ## Learned Clause
 
-$$\displaylines{(x_{1} \vee x_{4}) \wedge \\
-(x_{1} \vee \neg x_{3} \vee \neg x_{8}) \wedge \\
-(x_{1} \vee x_{8} \vee x_{12}) \wedge \\
-(x_{2} \vee x_{11}) \wedge \\
-(\neg x_{7} \vee \neg x_{3} \vee x_{9}) \wedge \\
-(\neg x_{7} \vee x_{8} \vee \neg x_{9}) \wedge \\
-(x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
-(x_{7} \vee x_{10} \vee \neg x_{12}) \wedge \\
-{\color{green}(x_{8} \vee \neg x_{3} \vee \neg x_{7})}}$$
+$$\begin{align}
+& (x_{1} \vee x_{4}) \wedge \\
+& (x_{1} \vee \neg x_{3} \vee \neg x_{8}) \wedge \\
+& (x_{1} \vee x_{8} \vee x_{12}) \wedge \\
+& (x_{2} \vee x_{11}) \wedge \\
+& (\neg x_{7} \vee \neg x_{3} \vee x_{9}) \wedge \\
+& (\neg x_{7} \vee x_{8} \vee \neg x_{9}) \wedge \\
+& (x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
+& (x_{7} \vee x_{10} \vee \neg x_{12}) \wedge \\\
+& {\color{green}(x_{8} \vee \neg x_{3} \vee \neg x_{7})}
+\end{align}$$
 
 ## Backjumping
 
