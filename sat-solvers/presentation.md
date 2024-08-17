@@ -1,7 +1,7 @@
 % SATisfying Solutions to Difficult Problems!!
 % Vaibhav Sagar (@vbhvsgr)
 
-# SAT Solvers?
+# SAT Solvers??
 
 ## NP-complete problems
 
@@ -314,7 +314,7 @@ $$\begin{align}
 - Surprisingly effective!
 - WalkSAT
 - Can be done in parallel
-- Can use a form of CDCL
+- Can use a form of clause learning
 - Can't conclusively determine unsatisfiability(!)
 - Reminds me of simulated annealing in some ways
 
