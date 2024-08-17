@@ -186,8 +186,8 @@ $$\begin{align}
 ## $x_{1}$
 
 <div style="display: flex">
-<div style="flex: 33%"><img src="images/tree1x1.svg" style="height: 10em"></div>
-<div style="flex: 33%"><img src="images/graph1x1.svg" style="height: 10em"></div>
+<div style="flex: 33%"><img src="images/tree1x1.svg"></div>
+<div style="flex: 33%"><img src="images/graph1x1.svg"></div>
 <div style="flex: 33%">
 $$\begin{align}
 & {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
@@ -205,8 +205,8 @@ $$\begin{align}
 ## $x_{3}$
 
 <div style="display: flex">
-<div style="flex: 33%"><img src="images/tree1x3.svg" style=""></div>
-<div style="flex: 33%"><img src="images/graph1x3.svg" style=""></div>
+<div style="flex: 33%"><img src="images/tree1x3.svg"></div>
+<div style="flex: 33%"><img src="images/graph1x3.svg"></div>
 <div style="flex: 33%">
 $$\begin{align}
 & {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
@@ -224,8 +224,8 @@ $$\begin{align}
 ## $x_{2}$
 
 <div style="display: flex">
-<div style="flex: 33%"><img src="images/tree1x2.svg" style=""></div>
-<div style="flex: 33%"><img src="images/graph1x2.svg" style=""></div>
+<div style="flex: 33%"><img src="images/tree1x2.svg"></div>
+<div style="flex: 33%"><img src="images/graph1x2.svg"></div>
 <div style="flex: 33%">
 $$\begin{align}
 & {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
@@ -243,8 +243,8 @@ $$\begin{align}
 ## $x_{7}$
 
 <div style="display: flex">
-<div style="flex: 33%"><img src="images/tree1.svg" style=""></div>
-<div style="flex: 33%"><img src="images/graph1.svg" style=""></div>
+<div style="flex: 33%"><img src="images/tree1.svg" style="max-height: 12em"></div>
+<div style="flex: 33%"><img src="images/graph1.svg"></div>
 <div style="flex: 33%">
 $$\begin{align}
 & {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
@@ -262,7 +262,7 @@ $$\begin{align}
 ## Unique Implication Point
 
 <div style="display: flex">
-<div style="flex: 50%"><img src="images/graph2.svg" style=""></div>
+<div style="flex: 50%"><img src="images/graph2.svg"></div>
 <div style="flex: 50%">
 $$\displaylines{\neg (\neg x_{8} \wedge x_{3} \wedge x_{7}) \\
 \iff \\
