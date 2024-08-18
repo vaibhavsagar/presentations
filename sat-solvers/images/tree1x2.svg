@@ -7,85 +7,85 @@
 <svg width="188pt" height="329pt"
  viewBox="0.00 0.00 188.00 329.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 325)">
-<!-- x₁t -->
+<!-- at -->
 <g id="node1" class="node">
-<title>x₁t</title>
+<title>at</title>
 </g>
-<!-- x₃f -->
+<!-- cf -->
 <g id="node2" class="node">
-<title>x₃f</title>
+<title>cf</title>
 </g>
-<!-- x₂t -->
+<!-- bt -->
 <g id="node3" class="node">
-<title>x₂t</title>
+<title>bt</title>
 </g>
-<!-- x₁ -->
+<!-- a -->
 <g id="node4" class="node">
-<title>x₁</title>
-<ellipse fill="none" stroke="black" cx="53" cy="-285.75" rx="27" ry="18"/>
-<text text-anchor="middle" x="53" y="-281.07" font-family="Times,serif" font-size="14.00">x₁</text>
-<text text-anchor="middle" x="21.5" y="-307.7" font-family="Times,serif" font-size="14.00">1</text>
+<title>a</title>
+<ellipse fill="none" stroke="black" cx="56" cy="-285.75" rx="27" ry="18"/>
+<text text-anchor="middle" x="56" y="-281.07" font-family="Times,serif" font-size="14.00">a</text>
+<text text-anchor="middle" x="24.5" y="-307.7" font-family="Times,serif" font-size="14.00">1</text>
 </g>
-<!-- x₁&#45;&gt;x₁t -->
+<!-- a&#45;&gt;at -->
 <g id="edge1" class="edge">
-<title>x₁&#45;&gt;x₁t</title>
-<path fill="none" stroke="green" stroke-dasharray="5,2" d="M49.84,-267.51C47.67,-255.68 44.74,-239.7 42.23,-226"/>
-<polygon fill="green" stroke="green" points="45.67,-225.4 40.43,-216.19 38.79,-226.66 45.67,-225.4"/>
+<title>a&#45;&gt;at</title>
+<path fill="none" stroke="green" stroke-dasharray="5,2" d="M52.84,-267.51C50.67,-255.68 47.74,-239.7 45.23,-226"/>
+<polygon fill="green" stroke="green" points="48.67,-225.4 43.43,-216.19 41.79,-226.66 48.67,-225.4"/>
 </g>
-<!-- x₃ -->
+<!-- c -->
 <g id="node5" class="node">
-<title>x₃</title>
-<ellipse fill="none" stroke="black" cx="109" cy="-196.5" rx="27" ry="18"/>
-<text text-anchor="middle" x="109" y="-191.82" font-family="Times,serif" font-size="14.00">x₃</text>
-<text text-anchor="middle" x="77.5" y="-218.45" font-family="Times,serif" font-size="14.00">2</text>
+<title>c</title>
+<ellipse fill="none" stroke="black" cx="112" cy="-196.5" rx="27" ry="18"/>
+<text text-anchor="middle" x="112" y="-191.82" font-family="Times,serif" font-size="14.00">c</text>
+<text text-anchor="middle" x="80.5" y="-218.45" font-family="Times,serif" font-size="14.00">2</text>
 </g>
-<!-- x₁&#45;&gt;x₃ -->
+<!-- a&#45;&gt;c -->
 <g id="edge2" class="edge">
-<title>x₁&#45;&gt;x₃</title>
-<path fill="none" stroke="red" d="M63.27,-268.75C71.48,-255.96 83.14,-237.78 92.64,-222.99"/>
-<polygon fill="red" stroke="red" points="95.52,-224.98 97.98,-214.68 89.63,-221.2 95.52,-224.98"/>
-<text text-anchor="middle" x="108.75" y="-236.45" font-family="Times,serif" font-size="14.00">¬x₁,x₄</text>
+<title>a&#45;&gt;c</title>
+<path fill="none" stroke="red" d="M66.27,-268.75C74.48,-255.96 86.14,-237.78 95.64,-222.99"/>
+<polygon fill="red" stroke="red" points="98.52,-224.98 100.98,-214.68 92.63,-221.2 98.52,-224.98"/>
+<text text-anchor="middle" x="106.88" y="-236.45" font-family="Times,serif" font-size="14.00">¬a,d</text>
 </g>
-<!-- x₃&#45;&gt;x₃f -->
+<!-- c&#45;&gt;cf -->
 <g id="edge4" class="edge">
-<title>x₃&#45;&gt;x₃f</title>
-<path fill="none" stroke="red" stroke-dasharray="5,2" d="M122.89,-180.7C127.89,-174.77 133.22,-167.66 137,-160.5 140.98,-152.97 144.13,-144.31 146.55,-136.22"/>
-<polygon fill="red" stroke="red" points="149.86,-137.39 149.1,-126.82 143.1,-135.56 149.86,-137.39"/>
+<title>c&#45;&gt;cf</title>
+<path fill="none" stroke="red" stroke-dasharray="5,2" d="M119.71,-179.09C125.52,-166.74 133.6,-149.54 140.34,-135.18"/>
+<polygon fill="red" stroke="red" points="143.45,-136.79 144.54,-126.25 137.12,-133.82 143.45,-136.79"/>
 </g>
-<!-- x₂ -->
+<!-- b -->
 <g id="node6" class="node">
-<title>x₂</title>
+<title>b</title>
 <ellipse fill="none" stroke="black" cx="63" cy="-107.25" rx="27" ry="18"/>
-<text text-anchor="middle" x="63" y="-102.58" font-family="Times,serif" font-size="14.00">x₂</text>
+<text text-anchor="middle" x="63" y="-102.58" font-family="Times,serif" font-size="14.00">b</text>
 <text text-anchor="middle" x="31.5" y="-129.2" font-family="Times,serif" font-size="14.00">3</text>
 </g>
-<!-- x₃&#45;&gt;x₂ -->
+<!-- c&#45;&gt;b -->
 <g id="edge3" class="edge">
-<title>x₃&#45;&gt;x₂</title>
-<path fill="none" stroke="green" d="M88.73,-184.12C80.26,-178.24 71.24,-170.23 66.25,-160.5 62.62,-153.41 61.09,-145.05 60.66,-137.12"/>
-<polygon fill="green" stroke="green" points="64.16,-137.16 60.69,-127.15 57.16,-137.14 64.16,-137.16"/>
-<text text-anchor="middle" x="100.38" y="-147.2" font-family="Times,serif" font-size="14.00">x₃,¬x₈,x₁₂</text>
+<title>c&#45;&gt;b</title>
+<path fill="none" stroke="green" d="M99.86,-180.29C95.37,-174.31 90.43,-167.26 86.5,-160.5 81.97,-152.69 77.69,-143.86 74.07,-135.7"/>
+<polygon fill="green" stroke="green" points="77.3,-134.37 70.15,-126.55 70.87,-137.12 77.3,-134.37"/>
+<text text-anchor="middle" x="105.75" y="-147.2" font-family="Times,serif" font-size="14.00">c,¬f,j</text>
 </g>
-<!-- x₂&#45;&gt;x₃f -->
+<!-- b&#45;&gt;cf -->
 <g id="edge5" class="edge">
-<title>x₂&#45;&gt;x₃f</title>
+<title>b&#45;&gt;cf</title>
 </g>
-<!-- x₂&#45;&gt;x₂t -->
+<!-- b&#45;&gt;bt -->
 <g id="edge7" class="edge">
-<title>x₂&#45;&gt;x₂t</title>
+<title>b&#45;&gt;bt</title>
 <path fill="none" stroke="green" stroke-dasharray="5,2" d="M56.06,-89.43C51.03,-77.24 44.12,-60.49 38.3,-46.38"/>
 <polygon fill="green" stroke="green" points="41.55,-45.08 34.5,-37.17 35.08,-47.75 41.55,-45.08"/>
 </g>
-<!-- x₇ -->
+<!-- e -->
 <g id="node7" class="node">
-<title>x₇</title>
+<title>e</title>
 </g>
-<!-- x₂&#45;&gt;x₇ -->
+<!-- b&#45;&gt;e -->
 <g id="edge6" class="edge">
-<title>x₂&#45;&gt;x₇</title>
+<title>b&#45;&gt;e</title>
 <path fill="none" stroke="red" d="M69.94,-89.43C74.97,-77.24 81.88,-60.49 87.7,-46.38"/>
 <polygon fill="red" stroke="red" points="90.92,-47.75 91.5,-37.17 84.45,-45.08 90.92,-47.75"/>
-<text text-anchor="middle" x="109.38" y="-57.95" font-family="Times,serif" font-size="14.00">¬x₂,x₁₁</text>
+<text text-anchor="middle" x="100" y="-57.95" font-family="Times,serif" font-size="14.00">¬b,i</text>
 </g>
 </g>
 </svg>

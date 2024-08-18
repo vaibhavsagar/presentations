@@ -1,26 +1,26 @@
 digraph {
-    x₁ [label="¬x₁"]
-    x₂ [label="¬x₂"]
-    x₄ [style="filled"]
-    x₈ [label="¬x₈", style="filled"]
-    x₉t [label="x₉", style="filled"]
-    x₉f [label="¬x₉", style="filled"]
-    x₁₁ [style="filled"]
-    x₁₂ [style="filled"]
-    x₁ -> x₄
-    x₃ -> x₈
-    x₁ -> x₈
-    x₁ -> x₁₂
-    x₈ -> x₁₂
-    x₂ -> x₁₁
-    x₇ -> x₉t
-    x₇ -> x₉f
-    x₈ -> x₉f
-    x₃ -> x₉t
-    x₉t -> x₉f [color="red",dir="both",style="dashed",minlen=3]
+    a [label="¬a"]
+    b [label="¬b"]
+    d [style="filled"]
+    f [label="¬f", style="filled"]
+    gt [label="g", style="filled"]
+    gf [label="¬g", style="filled"]
+    i [style="filled"]
+    j [style="filled"]
+    a -> d
+    c -> f
+    a -> f
+    a -> j
+    f -> j
+    b -> i
+    e -> gt
+    e -> gf
+    f -> gf
+    c -> gt
+    gt -> gf [color="red",dir="both",style="dashed",minlen=3]
     rankdir="LR"
-    {rank=same; x₉t x₉f}
-    {rank=same; x₁ x₂ x₃ x₇}
+    {rank=same; gt gf}
+    {rank=same; a b c e}
     overlap=false
     splines=true
     bgcolor=transparent

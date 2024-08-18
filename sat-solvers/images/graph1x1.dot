@@ -1,9 +1,9 @@
 digraph {
-    x₁ [label="¬x₁"]
-    x₄ [style="filled"]
-    x₁ -> x₄
+    a [label="¬a"]
+    d [style="filled"]
+    a -> d
     rankdir="LR"
-    {rank=same; x₁}
+    {rank=same; a}
     overlap=false
     splines=true
     bgcolor=transparent

@@ -1,10 +1,10 @@
 digraph {
-    x₁t [style="invisible"]
-    x₁  [xlabel="1"]
-    x₃  [style="invisible"]
-    x₇f [label="label",style="invisible"]
-    x₁ -> x₁t [color="green",style="dashed"]
-    x₁ -> x₃  [color="red",label="¬x₁,x₄"]
+    at [style="invisible"]
+    a  [xlabel="1"]
+    c  [style="invisible"]
+    ef [label="label",style="invisible"]
+    a -> at [color="green",style="dashed"]
+    a -> c  [color="red",label="¬a,d"]
     overlap=false
     splines=true
     bgcolor=transparent

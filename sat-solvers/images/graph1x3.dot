@@ -1,15 +1,15 @@
 digraph {
-    x₁ [label="¬x₁"]
-    x₄ [style="filled"]
-    x₈ [label="¬x₈", style="filled"]
-    x₁₂ [style="filled"]
-    x₁ -> x₄
-    x₃ -> x₈
-    x₁ -> x₈
-    x₁ -> x₁₂
-    x₈ -> x₁₂
+    a [label="¬a"]
+    d [style="filled"]
+    f [label="¬f", style="filled"]
+    j [style="filled"]
+    a -> d
+    c -> f
+    a -> f
+    a -> j
+    f -> j
     rankdir="LR"
-    {rank=same; x₁ x₃}
+    {rank=same; a c}
     overlap=false
     splines=true
     bgcolor=transparent

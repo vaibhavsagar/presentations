@@ -1,29 +1,29 @@
 digraph {
-    x₁ [label="¬x₁"]
-    x₂ [label="¬x₂"]
-    x₃ [style="bold"]
-    x₄ [style="filled"]
-    x₇ [style="bold"]
-    x₈ [label="¬x₈", style="filled,bold"]
-    x₉t [label="x₉", style="filled"]
-    x₉f [label="¬x₉", style="filled"]
-    x₁₁ [style="filled"]
-    x₁₂ [style="filled"]
-    x₁ -> x₄
-    x₃ -> x₈
-    x₁ -> x₈
-    x₁ -> x₁₂
-    x₈ -> x₁₂
-    x₂ -> x₁₁
-    x₇ -> x₉t [style="dashed",color="blue"]
-    x₇ -> x₉f [style="dashed",color="blue"]
-    x₈ -> x₉f [style="dashed",color="blue"]
-    x₃ -> x₉t [style="dashed",color="blue"]
-    x₉t -> x₉f [color="red",dir="both",style="dashed",minlen=3]
+    a [label="¬a"]
+    b [label="¬b"]
+    c [style="bold"]
+    d [style="filled"]
+    e [style="bold"]
+    f [label="¬f", style="filled,bold"]
+    gt [label="g", style="filled"]
+    gf [label="¬g", style="filled"]
+    i [style="filled"]
+    j [style="filled"]
+    a -> d
+    c -> f
+    a -> f
+    a -> j
+    f -> j
+    b -> i
+    e -> gt [style="dashed",color="blue"]
+    e -> gf [style="dashed",color="blue"]
+    f -> gf [style="dashed",color="blue"]
+    c -> gt [style="dashed",color="blue"]
+    gt -> gf [color="red",dir="both",style="dashed",minlen=3]
     rankdir="LR"
-    {rank=same; x₉t x₉f}
-    {rank=same; x₁ x₂ x₃ x₇}
-    {rank=same; x₈}
+    {rank=same; gt gf}
+    {rank=same; a b c e}
+    {rank=same; f}
     overlap=false
     splines=true
     bgcolor=transparent

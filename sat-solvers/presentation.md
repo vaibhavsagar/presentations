@@ -173,88 +173,88 @@ $z$: `False`<br>
 ## Example
 
 $$\begin{align}
-& (x_{1} \vee x_{4}) \wedge \\
-& (x_{1} \vee \neg x_{3} \vee \neg x_{8}) \wedge \\
-& (x_{1} \vee x_{8} \vee x_{12}) \wedge \\
-& (x_{2} \vee x_{11}) \wedge \\
-& (\neg x_{7} \vee \neg x_{3} \vee x_{9}) \wedge \\
-& (\neg x_{7} \vee x_{8} \vee \neg x_{9}) \wedge \\
-& (x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
-& (x_{7} \vee x_{10} \vee \neg x_{12})
+& (a \vee d) \wedge \\
+& (a \vee \neg c \vee \neg f) \wedge \\
+& (a \vee f \vee j) \wedge \\
+& (b \vee i) \wedge \\
+& (\neg e \vee \neg c \vee g) \wedge \\
+& (\neg e \vee f \vee \neg g) \wedge \\
+& (e \vee f \vee \neg h) \wedge \\
+& (e \vee h \vee \neg j)
 \end{align}$$
 
-## $x_{1}$
+## $a$
 
 <div style="display: flex">
 <div style="flex: 33%"><img src="images/tree1x1.svg"></div>
 <div style="flex: 33%"><img src="images/graph1x1.svg"></div>
 <div style="flex: 33%">
 $$\begin{align}
-& {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
-& {\color{red} x_{1}} \vee \neg x_{3} \vee \neg x_{8} \\
-& {\color{red} x_{1}} \vee x_{8} \vee x_{12} \\
-& x_{2} \vee x_{11} \\
-& \neg x_{7} \vee \neg x_{3} \vee x_{9} \\
-& \neg x_{7} \vee x_{8} \vee \neg x_{9} \\
-& x_{7} \vee x_{8} \vee \neg x_{10} \\
-& x_{7} \vee x_{10} \vee \neg x_{12}
+& {\color{red} a} \vee {\color{green} d} \\
+& {\color{red} a} \vee \neg c \vee \neg f \\
+& {\color{red} a} \vee f \vee j \\
+& b \vee i \\
+& \neg e \vee \neg c \vee g \\
+& \neg e \vee f \vee \neg g \\
+& e \vee f \vee \neg h \\
+& e \vee h \vee \neg j
 \end{align}$$
 </div>
 </div>
 
-## $x_{3}$
+## $c$
 
 <div style="display: flex">
 <div style="flex: 33%"><img src="images/tree1x3.svg"></div>
 <div style="flex: 33%"><img src="images/graph1x3.svg"></div>
 <div style="flex: 33%">
 $$\begin{align}
-& {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
-& {\color{red} x_{1}} \vee {\color{red}\neg x_{3}} \vee {\color{green} \neg x_{8}} \\
-& {\color{red} x_{1}} \vee {\color{red} x_{8}} \vee {\color{green} x_{12}} \\
-& x_{2} \vee x_{11} \\
-& \neg x_{7} \vee {\color{red}\neg x_{3}} \vee x_{9} \\
-& \neg x_{7} \vee {\color{red} x_{8}} \vee \neg x_{9} \\
-& x_{7} \vee {\color{red} x_{8}} \vee \neg x_{10} \\
-& x_{7} \vee x_{10} \vee {\color{red}\neg x_{12}}
+& {\color{red} a} \vee {\color{green} d} \\
+& {\color{red} a} \vee {\color{red}\neg c} \vee {\color{green} \neg f} \\
+& {\color{red} a} \vee {\color{red} f} \vee {\color{green} j} \\
+& b \vee i \\
+& \neg e \vee {\color{red}\neg c} \vee g \\
+& \neg e \vee {\color{red} f} \vee \neg g \\
+& e \vee {\color{red} f} \vee \neg h \\
+& e \vee h \vee {\color{red}\neg j}
 \end{align}$$
 </div>
 </div>
 
-## $x_{2}$
+## $b$
 
 <div style="display: flex">
 <div style="flex: 33%"><img src="images/tree1x2.svg"></div>
 <div style="flex: 33%"><img src="images/graph1x2.svg"></div>
 <div style="flex: 33%">
 $$\begin{align}
-& {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
-& {\color{red} x_{1}} \vee {\color{red}\neg x_{3}} \vee {\color{green} \neg x_{8}} \\
-& {\color{red} x_{1}} \vee {\color{red} x_{8}} \vee {\color{green} x_{12}} \\
-& {\color{red} x_{2}} \vee {\color{green} x_{11}} \\
-& \neg x_{7} \vee {\color{red}\neg x_{3}} \vee x_{9} \\
-& \neg x_{7} \vee {\color{red} x_{8}} \vee \neg x_{9} \\
-& x_{7} \vee {\color{red} x_{8}} \vee \neg x_{10} \\
-& x_{7} \vee x_{10} \vee {\color{red}\neg x_{12}}
+& {\color{red} a} \vee {\color{green} d} \\
+& {\color{red} a} \vee {\color{red}\neg c} \vee {\color{green} \neg f} \\
+& {\color{red} a} \vee {\color{red} f} \vee {\color{green} j} \\
+& {\color{red} b} \vee {\color{green} i} \\
+& \neg e \vee {\color{red}\neg c} \vee g \\
+& \neg e \vee {\color{red} f} \vee \neg g \\
+& e \vee {\color{red} f} \vee \neg h \\
+& e \vee h \vee {\color{red}\neg j}
 \end{align}$$
 </div>
 </div>
 
-## $x_{7}$
+## $e$
 
 <div style="display: flex">
 <div style="flex: 33%"><img src="images/tree1.svg" style="max-height: 12em"></div>
 <div style="flex: 33%"><img src="images/graph1.svg"></div>
 <div style="flex: 33%">
 $$\begin{align}
-& {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
-& {\color{red} x_{1}} \vee {\color{red}\neg x_{3}} \vee {\color{green} \neg x_{8}} \\
-& {\color{red} x_{1}} \vee {\color{red} x_{8}} \vee {\color{green} x_{12}} \\
-& {\color{red} x_{2}} \vee {\color{green} x_{11}} \\
-& {\color{red}\neg x_{7}} \vee {\color{red}\neg x_{3}} \vee {\color{blue} x_{9}} \\
-& {\color{red}\neg x_{7}} \vee {\color{red} x_{8}} \vee {\color{blue}\neg x_{9}} \\
-& {\color{green} x_{7}} \vee {\color{red} x_{8}} \vee \neg x_{10} \\
-& {\color{green} x_{7}} \vee x_{10} \vee {\color{red}\neg x_{12}}
+& {\color{red} a} \vee {\color{green} d} \\
+& {\color{red} a} \vee {\color{red}\neg c} \vee {\color{green} \neg f} \\
+& {\color{red} a} \vee {\color{red} f} \vee {\color{green} j} \\
+& {\color{red} b} \vee {\color{green} i} \\
+& {\color{red}\neg e} \vee {\color{red}\neg c} \vee {\color{blue} g} \\
+& {\color{red}\neg e} \vee {\color{red} f} \vee {\color{blue}\neg g} \\
+& {\color{green} e} \vee {\color{red} f} \vee \neg h \\
+& {\color{green} e} \vee h \vee {\color{red}\neg j}
 \end{align}$$
 </div>
 </div>
@@ -264,33 +264,33 @@ $$\begin{align}
 <div style="display: flex">
 <div style="flex: 50%"><img src="images/graph2.svg"></div>
 <div style="flex: 50%">
-$$\displaylines{\neg (\neg x_{8} \wedge x_{3} \wedge x_{7}) \\
+$$\displaylines{\neg (\neg f \wedge c \wedge e) \\
 \iff \\
-(x_{8} \vee \neg x_{3} \vee \neg x_{7})}$$
+(f \vee \neg c \vee \neg e)}$$
 </div>
 </div>
 
 ## Learned Clause
 
-$$x_{8} \vee \neg x_{3} \vee \neg x_{7}$$
+$$f \vee \neg c \vee \neg e$$
 
 ## Learned Clause
 
 $$\begin{align}
-& (x_{1} \vee x_{4}) \wedge \\
-& (x_{1} \vee \neg x_{3} \vee \neg x_{8}) \wedge \\
-& (x_{1} \vee x_{8} \vee x_{12}) \wedge \\
-& (x_{2} \vee x_{11}) \wedge \\
-& (\neg x_{7} \vee \neg x_{3} \vee x_{9}) \wedge \\
-& (\neg x_{7} \vee x_{8} \vee \neg x_{9}) \wedge \\
-& (x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
-& (x_{7} \vee x_{10} \vee \neg x_{12}) \wedge \\\
-& {\color{green}(x_{8} \vee \neg x_{3} \vee \neg x_{7})}
+& (a \vee d) \wedge \\
+& (a \vee \neg c \vee \neg f) \wedge \\
+& (a \vee f \vee j) \wedge \\
+& (b \vee i) \wedge \\
+& (\neg e \vee \neg c \vee g) \wedge \\
+& (\neg e \vee f \vee \neg g) \wedge \\
+& (e \vee f \vee \neg h) \wedge \\
+& (e \vee h \vee \neg j) \wedge \\\
+& {\color{green}(f \vee \neg c \vee \neg e)}
 \end{align}$$
 
 ## Backjumping
 
-<img src="images/tree2.svg" style="height: 10em;">
+<img src="images/tree2.svg" style="max-height: 14em;">
 
 ## Conflict-driven Clause Learning
 
@@ -368,7 +368,7 @@ Solve NP-complete problems expressed as CNF Boolean formulas
 
 SAT extended with theories
 
-# Thank you!!
+# That's all!
 
 ## Resources
 
@@ -386,3 +386,5 @@ SAT extended with theories
 ## Slides
 
 [https://vaibhavsagar.com/presentations/sat-solvers](https://vaibhavsagar.com/presentations/sat-solvers)
+
+# Thank you!!

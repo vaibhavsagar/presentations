@@ -7,37 +7,37 @@
 <svg width="186pt" height="151pt"
  viewBox="0.00 0.00 186.42 150.50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146.5)">
-<!-- x₁t -->
+<!-- at -->
 <g id="node1" class="node">
-<title>x₁t</title>
+<title>at</title>
 </g>
-<!-- x₁ -->
+<!-- a -->
 <g id="node2" class="node">
-<title>x₁</title>
+<title>a</title>
 <ellipse fill="none" stroke="black" cx="63" cy="-107.25" rx="27" ry="18"/>
-<text text-anchor="middle" x="63" y="-102.58" font-family="Times,serif" font-size="14.00">x₁</text>
+<text text-anchor="middle" x="63" y="-102.58" font-family="Times,serif" font-size="14.00">a</text>
 <text text-anchor="middle" x="31.5" y="-129.2" font-family="Times,serif" font-size="14.00">1</text>
 </g>
-<!-- x₁&#45;&gt;x₁t -->
+<!-- a&#45;&gt;at -->
 <g id="edge1" class="edge">
-<title>x₁&#45;&gt;x₁t</title>
+<title>a&#45;&gt;at</title>
 <path fill="none" stroke="green" stroke-dasharray="5,2" d="M56.06,-89.43C51.03,-77.24 44.12,-60.49 38.3,-46.38"/>
 <polygon fill="green" stroke="green" points="41.55,-45.08 34.5,-37.17 35.08,-47.75 41.55,-45.08"/>
 </g>
-<!-- x₃ -->
+<!-- c -->
 <g id="node3" class="node">
-<title>x₃</title>
+<title>c</title>
 </g>
-<!-- x₁&#45;&gt;x₃ -->
+<!-- a&#45;&gt;c -->
 <g id="edge2" class="edge">
-<title>x₁&#45;&gt;x₃</title>
+<title>a&#45;&gt;c</title>
 <path fill="none" stroke="red" d="M69.94,-89.43C74.97,-77.24 81.88,-60.49 87.7,-46.38"/>
 <polygon fill="red" stroke="red" points="90.92,-47.75 91.5,-37.17 84.45,-45.08 90.92,-47.75"/>
-<text text-anchor="middle" x="105.75" y="-57.95" font-family="Times,serif" font-size="14.00">¬x₁,x₄</text>
+<text text-anchor="middle" x="100.88" y="-57.95" font-family="Times,serif" font-size="14.00">¬a,d</text>
 </g>
-<!-- x₇f -->
+<!-- ef -->
 <g id="node4" class="node">
-<title>x₇f</title>
+<title>ef</title>
 </g>
 </g>
 </svg>
