@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
   <script>
   window.MathJax = {
-    loader: {load: ['[tex]/color', '[tex]/cancel']},
+    loader: {load: ['[tex]/color', '[tex]/cancel', 'output/svg']},
     tex: {packages: {'[+]': ['color', 'cancel']}}
   };
   </script>
@@ -267,18 +267,18 @@ propagation, literal elimination)</li>
 <section id="example-5" class="slide level2">
 <h2>Example</h2>
 <p><span class="math display">\[\begin{align}
-&amp; (x_{1} \vee x_{4}) \wedge \\
-&amp; (x_{1} \vee \neg x_{3} \vee \neg x_{8}) \wedge \\
-&amp; (x_{1} \vee x_{8} \vee x_{12}) \wedge \\
-&amp; (x_{2} \vee x_{11}) \wedge \\
-&amp; (\neg x_{7} \vee \neg x_{3} \vee x_{9}) \wedge \\
-&amp; (\neg x_{7} \vee x_{8} \vee \neg x_{9}) \wedge \\
-&amp; (x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
-&amp; (x_{7} \vee x_{10} \vee \neg x_{12})
+&amp; (a \vee d) \wedge \\
+&amp; (a \vee \neg c \vee \neg f) \wedge \\
+&amp; (a \vee f \vee j) \wedge \\
+&amp; (b \vee i) \wedge \\
+&amp; (\neg e \vee \neg c \vee g) \wedge \\
+&amp; (\neg e \vee f \vee \neg g) \wedge \\
+&amp; (e \vee f \vee \neg h) \wedge \\
+&amp; (e \vee h \vee \neg j)
 \end{align}\]</span></p>
 </section>
-<section id="x_1" class="slide level2">
-<h2><span class="math inline">\(x_{1}\)</span></h2>
+<section id="a" class="slide level2">
+<h2><span class="math inline">\(a\)</span></h2>
 <div style="display: flex">
 <div style="flex: 33%">
 <img src="images/tree1x1.svg">
@@ -288,20 +288,20 @@ propagation, literal elimination)</li>
 </div>
 <div style="flex: 33%">
 <p><span class="math display">\[\begin{align}
-&amp; {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
-&amp; {\color{red} x_{1}} \vee \neg x_{3} \vee \neg x_{8} \\
-&amp; {\color{red} x_{1}} \vee x_{8} \vee x_{12} \\
-&amp; x_{2} \vee x_{11} \\
-&amp; \neg x_{7} \vee \neg x_{3} \vee x_{9} \\
-&amp; \neg x_{7} \vee x_{8} \vee \neg x_{9} \\
-&amp; x_{7} \vee x_{8} \vee \neg x_{10} \\
-&amp; x_{7} \vee x_{10} \vee \neg x_{12}
+&amp; {\color{red} a} \vee {\color{green} d} \\
+&amp; {\color{red} a} \vee \neg c \vee \neg f \\
+&amp; {\color{red} a} \vee f \vee j \\
+&amp; b \vee i \\
+&amp; \neg e \vee \neg c \vee g \\
+&amp; \neg e \vee f \vee \neg g \\
+&amp; e \vee f \vee \neg h \\
+&amp; e \vee h \vee \neg j
 \end{align}\]</span></p>
 </div>
 </div>
 </section>
-<section id="x_3" class="slide level2">
-<h2><span class="math inline">\(x_{3}\)</span></h2>
+<section id="c" class="slide level2">
+<h2><span class="math inline">\(c\)</span></h2>
 <div style="display: flex">
 <div style="flex: 33%">
 <img src="images/tree1x3.svg">
@@ -311,22 +311,21 @@ propagation, literal elimination)</li>
 </div>
 <div style="flex: 33%">
 <p><span class="math display">\[\begin{align}
-&amp; {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
-&amp; {\color{red} x_{1}} \vee {\color{red}\neg x_{3}} \vee
-{\color{green} \neg x_{8}} \\
-&amp; {\color{red} x_{1}} \vee {\color{red} x_{8}} \vee {\color{green}
-x_{12}} \\
-&amp; x_{2} \vee x_{11} \\
-&amp; \neg x_{7} \vee {\color{red}\neg x_{3}} \vee x_{9} \\
-&amp; \neg x_{7} \vee {\color{red} x_{8}} \vee \neg x_{9} \\
-&amp; x_{7} \vee {\color{red} x_{8}} \vee \neg x_{10} \\
-&amp; x_{7} \vee x_{10} \vee {\color{red}\neg x_{12}}
+&amp; {\color{red} a} \vee {\color{green} d} \\
+&amp; {\color{red} a} \vee {\color{red}\neg c} \vee {\color{green} \neg
+f} \\
+&amp; {\color{red} a} \vee {\color{red} f} \vee {\color{green} j} \\
+&amp; b \vee i \\
+&amp; \neg e \vee {\color{red}\neg c} \vee g \\
+&amp; \neg e \vee {\color{red} f} \vee \neg g \\
+&amp; e \vee {\color{red} f} \vee \neg h \\
+&amp; e \vee h \vee {\color{red}\neg j}
 \end{align}\]</span></p>
 </div>
 </div>
 </section>
-<section id="x_2" class="slide level2">
-<h2><span class="math inline">\(x_{2}\)</span></h2>
+<section id="b" class="slide level2">
+<h2><span class="math inline">\(b\)</span></h2>
 <div style="display: flex">
 <div style="flex: 33%">
 <img src="images/tree1x2.svg">
@@ -336,22 +335,21 @@ x_{12}} \\
 </div>
 <div style="flex: 33%">
 <p><span class="math display">\[\begin{align}
-&amp; {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
-&amp; {\color{red} x_{1}} \vee {\color{red}\neg x_{3}} \vee
-{\color{green} \neg x_{8}} \\
-&amp; {\color{red} x_{1}} \vee {\color{red} x_{8}} \vee {\color{green}
-x_{12}} \\
-&amp; {\color{red} x_{2}} \vee {\color{green} x_{11}} \\
-&amp; \neg x_{7} \vee {\color{red}\neg x_{3}} \vee x_{9} \\
-&amp; \neg x_{7} \vee {\color{red} x_{8}} \vee \neg x_{9} \\
-&amp; x_{7} \vee {\color{red} x_{8}} \vee \neg x_{10} \\
-&amp; x_{7} \vee x_{10} \vee {\color{red}\neg x_{12}}
+&amp; {\color{red} a} \vee {\color{green} d} \\
+&amp; {\color{red} a} \vee {\color{red}\neg c} \vee {\color{green} \neg
+f} \\
+&amp; {\color{red} a} \vee {\color{red} f} \vee {\color{green} j} \\
+&amp; {\color{red} b} \vee {\color{green} i} \\
+&amp; \neg e \vee {\color{red}\neg c} \vee g \\
+&amp; \neg e \vee {\color{red} f} \vee \neg g \\
+&amp; e \vee {\color{red} f} \vee \neg h \\
+&amp; e \vee h \vee {\color{red}\neg j}
 \end{align}\]</span></p>
 </div>
 </div>
 </section>
-<section id="x_7" class="slide level2">
-<h2><span class="math inline">\(x_{7}\)</span></h2>
+<section id="e" class="slide level2">
+<h2><span class="math inline">\(e\)</span></h2>
 <div style="display: flex">
 <div style="flex: 33%">
 <img src="images/tree1.svg" style="max-height: 12em">
@@ -361,18 +359,17 @@ x_{12}} \\
 </div>
 <div style="flex: 33%">
 <p><span class="math display">\[\begin{align}
-&amp; {\color{red} x_{1}} \vee {\color{green} x_{4}} \\
-&amp; {\color{red} x_{1}} \vee {\color{red}\neg x_{3}} \vee
-{\color{green} \neg x_{8}} \\
-&amp; {\color{red} x_{1}} \vee {\color{red} x_{8}} \vee {\color{green}
-x_{12}} \\
-&amp; {\color{red} x_{2}} \vee {\color{green} x_{11}} \\
-&amp; {\color{red}\neg x_{7}} \vee {\color{red}\neg x_{3}} \vee
-{\color{blue} x_{9}} \\
-&amp; {\color{red}\neg x_{7}} \vee {\color{red} x_{8}} \vee
-{\color{blue}\neg x_{9}} \\
-&amp; {\color{green} x_{7}} \vee {\color{red} x_{8}} \vee \neg x_{10} \\
-&amp; {\color{green} x_{7}} \vee x_{10} \vee {\color{red}\neg x_{12}}
+&amp; {\color{red} a} \vee {\color{green} d} \\
+&amp; {\color{red} a} \vee {\color{red}\neg c} \vee {\color{green} \neg
+f} \\
+&amp; {\color{red} a} \vee {\color{red} f} \vee {\color{green} j} \\
+&amp; {\color{red} b} \vee {\color{green} i} \\
+&amp; {\color{red}\neg e} \vee {\color{red}\neg c} \vee {\color{blue} g}
+\\
+&amp; {\color{red}\neg e} \vee {\color{red} f} \vee {\color{blue}\neg g}
+\\
+&amp; {\color{green} e} \vee {\color{red} f} \vee \neg h \\
+&amp; {\color{green} e} \vee h \vee {\color{red}\neg j}
 \end{align}\]</span></p>
 </div>
 </div>
@@ -384,35 +381,34 @@ x_{12}} \\
 <img src="images/graph2.svg">
 </div>
 <div style="flex: 50%">
-<p><span class="math display">\[\displaylines{\neg (\neg x_{8} \wedge
-x_{3} \wedge x_{7}) \\
+<p><span class="math display">\[\displaylines{\neg (\neg f \wedge c
+\wedge e) \\
 \iff \\
-(x_{8} \vee \neg x_{3} \vee \neg x_{7})}\]</span></p>
+(f \vee \neg c \vee \neg e)}\]</span></p>
 </div>
 </div>
 </section>
 <section id="learned-clause" class="slide level2">
 <h2>Learned Clause</h2>
-<p><span class="math display">\[x_{8} \vee \neg x_{3} \vee \neg
-x_{7}\]</span></p>
+<p><span class="math display">\[f \vee \neg c \vee \neg e\]</span></p>
 </section>
 <section id="learned-clause-1" class="slide level2">
 <h2>Learned Clause</h2>
 <p><span class="math display">\[\begin{align}
-&amp; (x_{1} \vee x_{4}) \wedge \\
-&amp; (x_{1} \vee \neg x_{3} \vee \neg x_{8}) \wedge \\
-&amp; (x_{1} \vee x_{8} \vee x_{12}) \wedge \\
-&amp; (x_{2} \vee x_{11}) \wedge \\
-&amp; (\neg x_{7} \vee \neg x_{3} \vee x_{9}) \wedge \\
-&amp; (\neg x_{7} \vee x_{8} \vee \neg x_{9}) \wedge \\
-&amp; (x_{7} \vee x_{8} \vee \neg x_{10}) \wedge \\
-&amp; (x_{7} \vee x_{10} \vee \neg x_{12}) \wedge \\\
-&amp; {\color{green}(x_{8} \vee \neg x_{3} \vee \neg x_{7})}
+&amp; (a \vee d) \wedge \\
+&amp; (a \vee \neg c \vee \neg f) \wedge \\
+&amp; (a \vee f \vee j) \wedge \\
+&amp; (b \vee i) \wedge \\
+&amp; (\neg e \vee \neg c \vee g) \wedge \\
+&amp; (\neg e \vee f \vee \neg g) \wedge \\
+&amp; (e \vee f \vee \neg h) \wedge \\
+&amp; (e \vee h \vee \neg j) \wedge \\\
+&amp; {\color{green}(f \vee \neg c \vee \neg e)}
 \end{align}\]</span></p>
 </section>
 <section id="backjumping" class="slide level2">
 <h2>Backjumping</h2>
-<p><img src="images/tree2.svg" style="height: 10em;"></p>
+<p><img src="images/tree2.svg" style="max-height: 14em;"></p>
 </section>
 <section id="conflict-driven-clause-learning" class="slide level2">
 <h2>Conflict-driven Clause Learning</h2>
@@ -515,8 +511,8 @@ MONEY
 <p>SAT extended with theories</p>
 </section></section>
 <section>
-<section id="thank-you" class="title-slide slide level1">
-<h1>Thank you!!</h1>
+<section id="thats-all" class="title-slide slide level1">
+<h1>That’s all!</h1>
 
 </section>
 <section id="resources" class="slide level2">
@@ -546,6 +542,10 @@ Propositional satisfiability and SAT solvers</a></li>
 <p><a
 href="https://vaibhavsagar.com/presentations/sat-solvers">https://vaibhavsagar.com/presentations/sat-solvers</a></p>
 </section></section>
+<section id="thank-you" class="title-slide slide level1">
+<h1>Thank you!!</h1>
+
+</section>
     </div>
   </div>
 
