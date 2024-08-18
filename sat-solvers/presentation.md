@@ -57,24 +57,37 @@ _Tim Stellmach, CC0, via Wikimedia Commons_
 
 ## Each cell has at least one value
 
-$$(x_{1,1,1} \vee x_{1,1,2} \vee \dots \vee x_{1,1,9}) \wedge$$
-$$(x_{1,2,1} \vee x_{1,2,2} \vee \dots \vee x_{1,2,9}) \wedge$$
-$$ \dots $$
-$$(x_{9,9,1} \vee x_{9,9,2} \vee \dots \vee x_{9,9,9})$$
+$$\displaylines{
+\text{\tiny{row 1, column 1 is one of 1,2,...9}} \\
+(x_{1,1,1} \vee x_{1,1,2} \vee \dots \vee x_{1,1,9}) \wedge \\
+\text{\tiny{row 1, column 2 is one of 1,2,...9}} \\
+(x_{1,2,1} \vee x_{1,2,2} \vee \dots \vee x_{1,2,9}) \wedge \\
+\dots \\
+\text{\tiny{row 9, column 9 is one of 1,2,...9}} \\
+(x_{9,9,1} \vee x_{9,9,2} \vee \dots \vee x_{9,9,9})
+}$$
 
 ## Each row has all values
 
-$$(x_{1,1,1} \vee x_{1,2,1} \vee \dots \vee x_{1,9,1}) \wedge$$
-$$(x_{1,1,2} \vee x_{1,2,2} \vee \dots \vee x_{1,9,9}) \wedge$$
-$$ \dots $$
-$$(x_{9,1,9} \vee x_{9,2,9} \vee \dots \vee x_{9,9,9})$$
+$$\displaylines{
+\text{\tiny{1 occurs in row 1}} \\
+(x_{1,1,1} \vee x_{1,2,1} \vee \dots \vee x_{1,9,1}) \wedge \\
+\text{\tiny{2 occurs in row 1}} \\
+(x_{1,1,2} \vee x_{1,2,2} \vee \dots \vee x_{1,9,9}) \wedge \\
+\dots \\
+\text{\tiny{9 occurs in row 9}} \\
+(x_{9,1,9} \vee x_{9,2,9} \vee \dots \vee x_{9,9,9})}$$
 
 ## Each cell has at most one value
 
-$$(\neg x_{1,1,1} \vee \neg x_{1,1,2}) \wedge$$
-$$(\neg x_{1,1,1} \vee \neg x_{1,1,3}) \wedge$$
-$$ \dots $$
-$$(\neg x_{9,9,8} \vee \neg x_{9,9,9})$$
+$$\displaylines{
+\text{\tiny{row 1, column 1 cannot be both 1 and 2}} \\
+(\neg x_{1,1,1} \vee \neg x_{1,1,2}) \wedge \\
+\text{\tiny{row 1, column 1 cannot be both 1 and 3}} \\
+(\neg x_{1,1,1} \vee \neg x_{1,1,3}) \wedge \\
+ \dots \\
+\text{\tiny{row 9, column 9 cannot be both 8 and 9}} \\
+(\neg x_{9,9,8} \vee \neg x_{9,9,9})}$$
 
 ## Solving
 
