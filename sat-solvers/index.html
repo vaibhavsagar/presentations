@@ -35,6 +35,7 @@
     loader: {load: ['[tex]/color', '[tex]/cancel']},
     tex: {packages: {'[+]': ['color', 'cancel']}}
   };
+  localStorage.setItem("MathJax-Menu-Settings", '{"renderer": "SVG"}')
   </script>
 </head>
 <body>
@@ -81,11 +82,17 @@ logic formulas to satisfy the formula?</p>
 <h2>Boolean Satisfiability Problem</h2>
 <ul>
 <li>Commonly expressed like <span class="math inline">\((x \vee y \vee
-z) \wedge (x \vee \neg y) \wedge (\neg z)\)</span> (Conjunctive Normal
-Form)</li>
+z) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \wedge (\neg
+z)\)</span> (Conjunctive Normal Form)</li>
 <li>NP-complete (!)</li>
 <li>Can express any other NP-complete problem!</li>
 </ul>
+</section>
+<section
+id="any-np-complete-problem-can-be-expressed-as-a-boolean-satisfiability-problem"
+class="slide level2">
+<h2>Any NP-complete problem can be expressed as a Boolean Satisfiability
+Problem!</h2>
 </section>
 <section id="sat-solvers-1" class="slide level2">
 <h2>SAT Solvers</h2>
@@ -728,12 +735,12 @@ href="https://vaibhavsagar.com/presentations/sat-solvers">https://vaibhavsagar.c
         ]
       });
     </script>
-    <script data-goatcounter="https://vaibhavsagar.goatcounter.com/count"
-            async src="//gc.zgo.at/count.js"></script>
     <script>
     Reveal.configure({
       transition: "none"
     })
     </script>
+    <script data-goatcounter="https://vaibhavsagar.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
     </body>
 </html>
