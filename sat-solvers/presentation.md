@@ -29,8 +29,6 @@ to satisfy the formula?
 - NP-complete (!)
 - Can express any other NP-complete problem!
 
-## Any NP-complete problem can be expressed as a Boolean Satisfiability Problem!
-
 ## SAT Solvers
 
 Programs that solve boolean satisfiability problems and tell you satisfying
