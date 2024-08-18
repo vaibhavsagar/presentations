@@ -10,9 +10,9 @@ let
       -t revealjs \
       -V theme:solarized \
       ${src + "/presentation.md"} \
-      -H ${src + "/header.html"} \
-      -A ${../tracking.html} \
+      -H ${src + "/mathjax-configuration.html"} \
       -A ${src + "/reveal-configuration.html"} \
+      -A ${../tracking.html} \
       -o $out/index.html
     ln -s ${images} $out/images
   '';

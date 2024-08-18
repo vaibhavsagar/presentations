@@ -25,9 +25,11 @@ Can we assign truth values to Boolean variables in propositional logic formulas
 to satisfy the formula?
 
 ## Boolean Satisfiability Problem
-- Commonly expressed like $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg z)$ (Conjunctive Normal Form)
+- Commonly expressed like $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \wedge (\neg z)$ (Conjunctive Normal Form)
 - NP-complete (!)
 - Can express any other NP-complete problem!
+
+## Any NP-complete problem can be expressed as a Boolean Satisfiability Problem!
 
 ## SAT Solvers
 
