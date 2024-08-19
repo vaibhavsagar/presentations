@@ -70,12 +70,12 @@ $$\displaylines{
 ## Each row has all values
 
 $$\displaylines{
-\text{\tiny{1 occurs in row 1}} \\
+\text{\tiny{row 1 has a 1}} \\
 (x_{1,1,1} \vee x_{1,2,1} \vee \dots \vee x_{1,9,1}) \wedge \\
-\text{\tiny{2 occurs in row 1}} \\
+\text{\tiny{row 1 has a 2}} \\
 (x_{1,1,2} \vee x_{1,2,2} \vee \dots \vee x_{1,9,9}) \wedge \\
 \dots \\
-\text{\tiny{9 occurs in row 9}} \\
+\text{\tiny{row 9 has a 9}} \\
 (x_{9,1,9} \vee x_{9,2,9} \vee \dots \vee x_{9,9,9})}$$
 
 ## Each cell has at most one value
@@ -118,7 +118,7 @@ Let's set $z$ to False
 
 ## Example
 
-$$(x \vee y \xcancel{\vee {\color{red} z}}) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \xcancel{\wedge {\color{green} (\neg z)}}$$
+$$(x \vee y \vee \cancel{{\color{red} z}}) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \wedge \cancel{{\color{green} (\neg z)}}$$
 
 $x$: 🤷<br>
 $y$: 🤷<br>
@@ -130,7 +130,7 @@ Let's set $y$ to True
 
 ## Example
 
-$$\xcancel{{\color{green}(x \vee y \vee z)} \wedge} (x \xcancel{\vee {\color{red} \neg y}}) \wedge (\xcancel{{\color{red} \neg y} \vee} \neg x) \xcancel{\wedge {\color{green }(\neg z)}}$$
+$$\cancel{{\color{green}(x \vee y \vee z)}} \wedge (x \vee \cancel{{\color{red} \neg y}}) \wedge (\cancel{{\color{red} \neg y}} \vee \neg x) \wedge \cancel{{\color{green}(\neg z)}}$$
 
 $x$: 🤷<br>
 $y$: `True`<br>
@@ -144,7 +144,7 @@ Let's set $y$ to False
 
 ## Example
 
-$$(x \xcancel{\vee {\color{red} y} \vee {\color{red} z}) \wedge {\color{green}(x \vee \neg y)} \wedge {\color{green} (\neg y \vee \neg x)} \wedge {\color{green} (\neg z)}}$$
+$$(x \vee \cancel{{\color{red} y}} \vee \cancel{{\color{red} z}}) \wedge \cancel{{\color{green}(x \vee \neg y)}} \wedge \cancel{{\color{green} (\neg y \vee \neg x)}} \wedge \cancel{{\color{green} (\neg z)}}$$
 
 $x$: 🤷<br>
 $y$: `False`<br>
