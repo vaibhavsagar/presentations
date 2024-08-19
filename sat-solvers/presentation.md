@@ -58,35 +58,38 @@ _Tim Stellmach, CC0, via Wikimedia Commons_
 ## Each cell has at least one value
 
 $$\displaylines{
-\textit{\tiny{row 1, column 1 is one of 1,2,...9}} \\
+\definecolor{comment}{RGB}{131,148,150}
+{\color{comment}\textit{\tiny{row 1, column 1 is one of 1,2,...9}}} \\
 (x_{1,1,1} \vee x_{1,1,2} \vee \dots \vee x_{1,1,9}) \wedge \\
-\textit{\tiny{row 1, column 2 is one of 1,2,...9}} \\
+{\color{comment}\textit{\tiny{row 1, column 2 is one of 1,2,...9}}} \\
 (x_{1,2,1} \vee x_{1,2,2} \vee \dots \vee x_{1,2,9}) \wedge \\
 \dots \\
-\textit{\tiny{row 9, column 9 is one of 1,2,...9}} \\
+{\color{comment}\textit{\tiny{row 9, column 9 is one of 1,2,...9}}} \\
 (x_{9,9,1} \vee x_{9,9,2} \vee \dots \vee x_{9,9,9})
 }$$
 
 ## Each row has all values
 
 $$\displaylines{
-\textit{\tiny{row 1 has a 1}} \\
+\definecolor{comment}{RGB}{131,148,150}
+{\color{comment}\textit{\tiny{row 1 has a 1}}} \\
 (x_{1,1,1} \vee x_{1,2,1} \vee \dots \vee x_{1,9,1}) \wedge \\
-\textit{\tiny{row 1 has a 2}} \\
+{\color{comment}\textit{\tiny{row 1 has a 2}}} \\
 (x_{1,1,2} \vee x_{1,2,2} \vee \dots \vee x_{1,9,9}) \wedge \\
 \dots \\
-\textit{\tiny{row 9 has a 9}} \\
+{\color{comment}\textit{\tiny{row 9 has a 9}}} \\
 (x_{9,1,9} \vee x_{9,2,9} \vee \dots \vee x_{9,9,9})}$$
 
 ## Each cell has at most one value
 
 $$\displaylines{
-\textit{\tiny{row 1, column 1 is not 1 or not 2}} \\
+\definecolor{comment}{RGB}{131,148,150}
+{\color{comment}\textit{\tiny{row 1, column 1 is not 1 or not 2}}} \\
 (\neg x_{1,1,1} \vee \neg x_{1,1,2}) \wedge \\
-\textit{\tiny{row 1, column 1 is not 1 or not 3}} \\
+{\color{comment}\textit{\tiny{row 1, column 1 is not 1 or not 3}}} \\
 (\neg x_{1,1,1} \vee \neg x_{1,1,3}) \wedge \\
  \dots \\
-\textit{\tiny{row 9, column 9 is not 8 or not 9}} \\
+{\color{comment}\textit{\tiny{row 9, column 9 is not 8 or not 9}}} \\
 (\neg x_{9,9,8} \vee \neg x_{9,9,9})}$$
 
 ## Solving
