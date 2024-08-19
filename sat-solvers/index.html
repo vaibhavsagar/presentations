@@ -137,12 +137,12 @@ class="math inline">\(x_{r,c,9}\)</span></li>
 <section id="each-row-has-all-values" class="slide level2">
 <h2>Each row has all values</h2>
 <p><span class="math display">\[\displaylines{
-\text{\tiny{1 occurs in row 1}} \\
+\text{\tiny{row 1 has a 1}} \\
 (x_{1,1,1} \vee x_{1,2,1} \vee \dots \vee x_{1,9,1}) \wedge \\
-\text{\tiny{2 occurs in row 1}} \\
+\text{\tiny{row 1 has a 2}} \\
 (x_{1,1,2} \vee x_{1,2,2} \vee \dots \vee x_{1,9,9}) \wedge \\
 \dots \\
-\text{\tiny{9 occurs in row 9}} \\
+\text{\tiny{row 9 has a 9}} \\
 (x_{9,1,9} \vee x_{9,2,9} \vee \dots \vee x_{9,9,9})}\]</span></p>
 </section>
 <section id="each-cell-has-at-most-one-value" class="slide level2">
@@ -192,9 +192,9 @@ class="math inline">\(z\)</span>: 🤷<br></p>
 </section>
 <section id="example-2" class="slide level2">
 <h2>Example</h2>
-<p><span class="math display">\[(x \vee y \xcancel{\vee {\color{red}
-z}}) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \xcancel{\wedge
-{\color{green} (\neg z)}}\]</span></p>
+<p><span class="math display">\[(x \vee y \vee \cancel{{\color{red} z}})
+\wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \wedge
+\cancel{{\color{green} (\neg z)}}\]</span></p>
 <p><span class="math inline">\(x\)</span>: 🤷<br> <span
 class="math inline">\(y\)</span>: 🤷<br> <span
 class="math inline">\(z\)</span>: <code>False</code><br></p>
@@ -205,10 +205,10 @@ class="math inline">\(z\)</span>: <code>False</code><br></p>
 </section>
 <section id="example-3" class="slide level2">
 <h2>Example</h2>
-<p><span class="math display">\[\xcancel{{\color{green}(x \vee y \vee
-z)} \wedge} (x \xcancel{\vee {\color{red} \neg y}}) \wedge
-(\xcancel{{\color{red} \neg y} \vee} \neg x) \xcancel{\wedge
-{\color{green }(\neg z)}}\]</span></p>
+<p><span class="math display">\[\cancel{{\color{green}(x \vee y \vee
+z)}} \wedge (x \vee \cancel{{\color{red} \neg y}}) \wedge
+(\cancel{{\color{red} \neg y}} \vee \neg x) \wedge
+\cancel{{\color{green}(\neg z)}}\]</span></p>
 <p><span class="math inline">\(x\)</span>: 🤷<br> <span
 class="math inline">\(y\)</span>: <code>True</code><br> <span
 class="math inline">\(z\)</span>: <code>False</code><br></p>
@@ -222,10 +222,10 @@ class="math inline">\(z\)</span>: <code>False</code><br></p>
 </section>
 <section id="example-4" class="slide level2">
 <h2>Example</h2>
-<p><span class="math display">\[(x \xcancel{\vee {\color{red} y} \vee
-{\color{red} z}) \wedge {\color{green}(x \vee \neg y)} \wedge
-{\color{green} (\neg y \vee \neg x)} \wedge {\color{green} (\neg
-z)}}\]</span></p>
+<p><span class="math display">\[(x \vee \cancel{{\color{red} y}} \vee
+\cancel{{\color{red} z}}) \wedge \cancel{{\color{green}(x \vee \neg y)}}
+\wedge \cancel{{\color{green} (\neg y \vee \neg x)}} \wedge
+\cancel{{\color{green} (\neg z)}}\]</span></p>
 <p><span class="math inline">\(x\)</span>: 🤷<br> <span
 class="math inline">\(y\)</span>: <code>False</code><br> <span
 class="math inline">\(z\)</span>: <code>False</code><br></p>
