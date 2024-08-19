@@ -1,10 +1,23 @@
 digraph {
     at [style="invisible"]
+    cf [style="invisible"]
+    bt [style="invisible"]
     a  [xlabel="1"]
-    c  [style="invisible"]
+    c  [xlabel="2",style="invisible"]
+    b  [xlabel="3",style="invisible"]
+    e  [xlabel="4",style="invisible"]
+    x   [shape="box",label="",color="blue",style="invisible"]
     ef [label="label",style="invisible"]
     a -> at [color="green",style="dashed"]
     a -> c  [color="red",label="¬a,d"]
+    c -> b  [color="green",label="c,¬f,j",style="invisible",arrowhead="none"]
+    c -> cf [color="red",style="dashed",style="invisible",arrowhead="none"]
+    b -> cf [style="invisible",arrowhead="none"]
+    b -> e  [color="red",label="¬b,i",style="invisible",arrowhead="none"]
+    b -> bt [color="green",style="dashed",style="invisible",arrowhead="none"]
+    e -> x   [color="green",label="e,g",style="invisible",arrowhead="none"]
+    e -> ef [color="red",style="dashed",style="invisible",arrowhead="none"]
+    {rank=same; cf b}
     overlap=false
     splines=true
     bgcolor=transparent

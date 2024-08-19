@@ -1,8 +1,12 @@
 digraph {
     a [label="¬a"]
     b [label="¬b"]
+    c
     d [style="filled"]
+    e [style="invisible"]
     f [label="¬f", style="filled"]
+    gt [label="g", style="filled,invisible"]
+    gf [label="¬g", style="filled,invisible"]
     i [style="filled"]
     j [style="filled"]
     a -> d
@@ -11,8 +15,14 @@ digraph {
     a -> j
     f -> j
     b -> i
+    e -> gt [style="invisible",arrowhead="none"]
+    e -> gf [style="invisible",arrowhead="none"]
+    f -> gf [style="invisible",arrowhead="none"]
+    c -> gt [style="invisible",arrowhead="none"]
+    gt -> gf [color="red",dir="both",style="dashed,invisible",arrowhead="none",arrowtail="none",minlen=3]
     rankdir="LR"
-    {rank=same; a b c}
+    {rank=same; gt gf}
+    {rank=same; a b c e}
     overlap=false
     splines=true
     bgcolor=transparent

@@ -1,9 +1,28 @@
 digraph {
     a [label="¬a"]
+    b [label="¬b",style="invisible"]
+    c [style="invisible"]
     d [style="filled"]
+    e [style="invisible"]
+    f [label="¬f", style="filled,invisible"]
+    gt [label="g", style="filled,invisible"]
+    gf [label="¬g", style="filled,invisible"]
+    i [style="filled,invisible"]
+    j [style="filled,invisible"]
     a -> d
+    c -> f [style="invisible",arrowhead="none"]
+    a -> f [style="invisible",arrowhead="none"]
+    a -> j [style="invisible",arrowhead="none"]
+    f -> j [style="invisible",arrowhead="none"]
+    b -> i [style="invisible",arrowhead="none"]
+    e -> gt [style="invisible",arrowhead="none"]
+    e -> gf [style="invisible",arrowhead="none"]
+    f -> gf [style="invisible",arrowhead="none"]
+    c -> gt [style="invisible",arrowhead="none"]
+    gt -> gf [color="red",dir="both",style="dashed,invisible",arrowhead="none",arrowtail="none",minlen=3]
     rankdir="LR"
-    {rank=same; a}
+    {rank=same; gt gf}
+    {rank=same; a b c e}
     overlap=false
     splines=true
     bgcolor=transparent

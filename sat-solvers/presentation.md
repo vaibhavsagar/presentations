@@ -258,7 +258,7 @@ $$\begin{align}
 ## $e$
 
 <div style="display: flex">
-<div style="flex: 33%"><img src="images/tree1.svg" style="max-height: 12em"></div>
+<div style="flex: 33%"><img src="images/tree1.svg"></div>
 <div style="flex: 33%"><img src="images/graph1.svg"></div>
 <div style="flex: 33%">
 $$\begin{align}

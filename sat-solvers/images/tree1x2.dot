@@ -5,14 +5,18 @@ digraph {
     a  [xlabel="1"]
     c  [xlabel="2"]
     b  [xlabel="3"]
-    e  [style="invisible"]
+    e  [xlabel="4",style="invisible"]
+    x   [shape="box",label="",color="blue",style="invisible"]
+    ef [label="label",style="invisible"]
     a -> at [color="green",style="dashed"]
     a -> c  [color="red",label="¬a,d"]
     c -> b  [color="green",label="c,¬f,j"]
     c -> cf [color="red",style="dashed"]
-    b -> cf [style="invisible",arrowhead=none]
+    b -> cf [style="invisible",arrowhead="none"]
     b -> e  [color="red",label="¬b,i"]
     b -> bt [color="green",style="dashed"]
+    e -> x   [color="green",label="e,g",style="invisible",arrowhead="none"]
+    e -> ef [color="red",style="dashed",style="invisible",arrowhead="none"]
     {rank=same; cf b}
     overlap=false
     splines=true
