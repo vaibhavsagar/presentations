@@ -156,6 +156,8 @@ There is only one possible value for $x$, so assign it
 
 ## Solution
 
+$$\cancel{{\color{green}(x \vee y \vee z)}} \wedge \cancel{{\color{green}(x \vee \neg y)}} \wedge \cancel{{\color{green} (\neg y \vee \neg x)}} \wedge \cancel{{\color{green} (\neg z)}}$$
+
 $x$: `True`<br>
 $y$: `False`<br>
 $z$: `False`<br>
