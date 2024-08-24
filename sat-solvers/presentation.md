@@ -58,7 +58,7 @@ _Tim Stellmach, CC0, via Wikimedia Commons_
 ## Each cell has at least one value
 
 $$\displaylines{
-\definecolor{comment}{RGB}{131,148,150}
+\definecolor{comment}{RGB}{161,161,180}
 {\color{comment}\textit{\tiny{row 1, column 1 is one of 1,2,...9}}} \\
 (x_{1,1,1} \vee x_{1,1,2} \vee \dots \vee x_{1,1,9}) \wedge \\
 {\color{comment}\textit{\tiny{row 1, column 2 is one of 1,2,...9}}} \\
@@ -71,7 +71,7 @@ $$\displaylines{
 ## Each row has all values
 
 $$\displaylines{
-\definecolor{comment}{RGB}{131,148,150}
+\definecolor{comment}{RGB}{161,161,180}
 {\color{comment}\textit{\tiny{row 1 has a 1}}} \\
 (x_{1,1,1} \vee x_{1,2,1} \vee \dots \vee x_{1,9,1}) \wedge \\
 {\color{comment}\textit{\tiny{row 1 has a 2}}} \\
@@ -83,7 +83,7 @@ $$\displaylines{
 ## Each cell has at most one value
 
 $$\displaylines{
-\definecolor{comment}{RGB}{131,148,150}
+\definecolor{comment}{RGB}{161,161,180}
 {\color{comment}\textit{\tiny{row 1, column 1 is not both 1 and 2}}} \\
 (\neg x_{1,1,1} \vee \neg x_{1,1,2}) \wedge \\
 {\color{comment}\textit{\tiny{row 1, column 1 is not both 1 and 3}}} \\
@@ -290,20 +290,22 @@ $$\displaylines{\neg (\neg f \wedge c \wedge e) \\
 
 ## Learned clause
 
-$$f \vee \neg c \vee \neg e$$
+$$(f \vee \neg c \vee \neg e)$$
 
 ## Learned clause
 
 $$\begin{align}
-& (a \vee d) \wedge \\
-& (a \vee \neg c \vee \neg f) \wedge \\
-& (a \vee f \vee j) \wedge \\
-& (b \vee i) \wedge \\
-& (\neg e \vee \neg c \vee g) \wedge \\
-& (\neg e \vee f \vee \neg g) \wedge \\
-& (e \vee f \vee \neg h) \wedge \\
-& (e \vee h \vee \neg j) \wedge \\\
-& {\color{green}(f \vee \neg c \vee \neg e)}
+\definecolor{comment}{RGB}{161,161,180}
+\definecolor{emphasis}{RGB}{88,110,117}
+& {\color{comment}(a \vee d) \wedge} \\
+& {\color{comment}(a \vee \neg c \vee \neg f) \wedge} \\
+& {\color{comment}(a \vee f \vee j) \wedge} \\
+& {\color{comment}(b \vee i) \wedge} \\
+& {\color{comment}(\neg e \vee \neg c \vee g) \wedge} \\
+& {\color{comment}(\neg e \vee f \vee \neg g) \wedge} \\
+& {\color{comment}(e \vee f \vee \neg h) \wedge} \\
+& {\color{comment}(e \vee h \vee \neg j) \wedge} \\\
+& (f \vee \neg c \vee \neg e)
 \end{align}$$
 
 ## Backjumping
