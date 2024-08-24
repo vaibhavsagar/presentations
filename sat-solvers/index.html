@@ -223,6 +223,13 @@ class="math inline">\(z\)</span>: <code>False</code><br></p>
 </section>
 <section id="conflict" class="slide level2">
 <h2>Conflict!</h2>
+<p><span class="math display">\[\cancel{{\color{green}(x \vee y \vee
+z)}} \wedge ({\color{blue} x} \vee \cancel{{\color{red} \neg y}}) \wedge
+(\cancel{{\color{red} \neg y}} \vee {\color{blue}\neg x}) \wedge
+\cancel{{\color{green}(\neg z)}}\]</span></p>
+<p><span class="math inline">\(x\)</span>: 🤷<br> <span
+class="math inline">\(y\)</span>: <code>True</code><br> <span
+class="math inline">\(z\)</span>: <code>False</code><br></p>
 </section>
 <section id="backtrack" class="slide level2">
 <h2>Backtrack</h2>
@@ -281,7 +288,7 @@ class="math inline">\(z\)</span>: <code>False</code><br></p>
 <h2>CDCL</h2>
 <ul>
 <li>Distinguishes between decisions (assignments) and implications (unit
-propagation, literal elimination)</li>
+propagation, pure literal elimination)</li>
 <li>Keeps track of the implication graph</li>
 </ul>
 </section>
