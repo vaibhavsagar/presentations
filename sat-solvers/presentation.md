@@ -1,7 +1,7 @@
 % SATisfying Solutions to Difficult Problems!!
 % Vaibhav Sagar (@vbhvsgr)
 
-# SAT Solvers??
+# SAT solvers??
 
 ## NP-complete problems
 
@@ -19,17 +19,17 @@
 - Sudoku
 - Boolean satisfiability
 
-## Boolean Satisfiability Problem
+## Boolean satisfiability problem
 
 Can we assign truth values to Boolean variables in propositional logic formulas
 to satisfy the formula?
 
-## Boolean Satisfiability Problem
+## Boolean satisfiability problem
 - Commonly expressed like $(x \vee y \vee z) \wedge (x \vee \neg y) \wedge (\neg y \vee \neg x) \wedge (\neg z)$ (Conjunctive Normal Form)
 - NP-complete (!)
 - Can express any other NP-complete problem!
 
-## SAT Solvers
+## SAT solvers
 
 Programs that solve boolean satisfiability problems and tell you satisfying
 assignments!!
@@ -84,12 +84,12 @@ $$\displaylines{
 
 $$\displaylines{
 \definecolor{comment}{RGB}{131,148,150}
-{\color{comment}\textit{\tiny{row 1, column 1 is not 1 or not 2}}} \\
+{\color{comment}\textit{\tiny{row 1, column 1 is not both 1 and 2}}} \\
 (\neg x_{1,1,1} \vee \neg x_{1,1,2}) \wedge \\
-{\color{comment}\textit{\tiny{row 1, column 1 is not 1 or not 3}}} \\
+{\color{comment}\textit{\tiny{row 1, column 1 is not both 1 and 3}}} \\
 (\neg x_{1,1,1} \vee \neg x_{1,1,3}) \wedge \\
  \dots \\
-{\color{comment}\textit{\tiny{row 9, column 9 is not 8 or not 9}}} \\
+{\color{comment}\textit{\tiny{row 9, column 9 is not both 8 and 9}}} \\
 (\neg x_{9,9,8} \vee \neg x_{9,9,9})}$$
 
 ## Solving
@@ -288,11 +288,11 @@ $$\displaylines{\neg (\neg f \wedge c \wedge e) \\
 </div>
 </div>
 
-## Learned Clause
+## Learned clause
 
 $$f \vee \neg c \vee \neg e$$
 
-## Learned Clause
+## Learned clause
 
 $$\begin{align}
 & (a \vee d) \wedge \\
@@ -316,7 +316,7 @@ $$\begin{align}
 - Non-chronological backtracking!
 - Basis of most modern SAT solvers
 
-## Okay Now Let's Do A Silly One
+## Okay now let's do a silly one
 
 # SLS
 
