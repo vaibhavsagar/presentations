@@ -10,6 +10,7 @@ let
       -t revealjs \
       -V theme:solarized \
       ${src + "/presentation.md"} \
+      -H ${src + "/revealjs-override.html"} \
       -H ${src + "/mathjax-configuration.html"} \
       -A ${src + "/reveal-configuration.html"} \
       -A ${../tracking.html} \
