@@ -130,7 +130,7 @@ class="math inline">\(x_{r,c,9}\)</span></li>
 <section id="each-cell-has-at-least-one-value" class="slide level2">
 <h2>Each cell has at least one value</h2>
 <p><span class="math display">\[\displaylines{
-\definecolor{comment}{RGB}{131,148,150}
+\definecolor{comment}{RGB}{161,161,180}
 {\color{comment}\textit{\tiny{row 1, column 1 is one of 1,2,...9}}} \\
 (x_{1,1,1} \vee x_{1,1,2} \vee \dots \vee x_{1,1,9}) \wedge \\
 {\color{comment}\textit{\tiny{row 1, column 2 is one of 1,2,...9}}} \\
@@ -143,7 +143,7 @@ class="math inline">\(x_{r,c,9}\)</span></li>
 <section id="each-row-has-all-values" class="slide level2">
 <h2>Each row has all values</h2>
 <p><span class="math display">\[\displaylines{
-\definecolor{comment}{RGB}{131,148,150}
+\definecolor{comment}{RGB}{161,161,180}
 {\color{comment}\textit{\tiny{row 1 has a 1}}} \\
 (x_{1,1,1} \vee x_{1,2,1} \vee \dots \vee x_{1,9,1}) \wedge \\
 {\color{comment}\textit{\tiny{row 1 has a 2}}} \\
@@ -155,7 +155,7 @@ class="math inline">\(x_{r,c,9}\)</span></li>
 <section id="each-cell-has-at-most-one-value" class="slide level2">
 <h2>Each cell has at most one value</h2>
 <p><span class="math display">\[\displaylines{
-\definecolor{comment}{RGB}{131,148,150}
+\definecolor{comment}{RGB}{161,161,180}
 {\color{comment}\textit{\tiny{row 1, column 1 is not both 1 and 2}}} \\
 (\neg x_{1,1,1} \vee \neg x_{1,1,2}) \wedge \\
 {\color{comment}\textit{\tiny{row 1, column 1 is not both 1 and 3}}} \\
@@ -411,20 +411,22 @@ f} \\
 </section>
 <section id="learned-clause" class="slide level2">
 <h2>Learned clause</h2>
-<p><span class="math display">\[f \vee \neg c \vee \neg e\]</span></p>
+<p><span class="math display">\[(f \vee \neg c \vee \neg e)\]</span></p>
 </section>
 <section id="learned-clause-1" class="slide level2">
 <h2>Learned clause</h2>
 <p><span class="math display">\[\begin{align}
-&amp; (a \vee d) \wedge \\
-&amp; (a \vee \neg c \vee \neg f) \wedge \\
-&amp; (a \vee f \vee j) \wedge \\
-&amp; (b \vee i) \wedge \\
-&amp; (\neg e \vee \neg c \vee g) \wedge \\
-&amp; (\neg e \vee f \vee \neg g) \wedge \\
-&amp; (e \vee f \vee \neg h) \wedge \\
-&amp; (e \vee h \vee \neg j) \wedge \\\
-&amp; {\color{green}(f \vee \neg c \vee \neg e)}
+\definecolor{comment}{RGB}{161,161,180}
+\definecolor{emphasis}{RGB}{88,110,117}
+&amp; {\color{comment}(a \vee d) \wedge} \\
+&amp; {\color{comment}(a \vee \neg c \vee \neg f) \wedge} \\
+&amp; {\color{comment}(a \vee f \vee j) \wedge} \\
+&amp; {\color{comment}(b \vee i) \wedge} \\
+&amp; {\color{comment}(\neg e \vee \neg c \vee g) \wedge} \\
+&amp; {\color{comment}(\neg e \vee f \vee \neg g) \wedge} \\
+&amp; {\color{comment}(e \vee f \vee \neg h) \wedge} \\
+&amp; {\color{comment}(e \vee h \vee \neg j) \wedge} \\\
+&amp; (f \vee \neg c \vee \neg e)
 \end{align}\]</span></p>
 </section>
 <section id="backjumping" class="slide level2">
