@@ -141,6 +141,12 @@ $z$: `False`<br>
 
 ## Conflict!
 
+$$\cancel{{\color{green}(x \vee y \vee z)}} \wedge ({\color{blue} x} \vee \cancel{{\color{red} \neg y}}) \wedge (\cancel{{\color{red} \neg y}} \vee {\color{blue}\neg x}) \wedge \cancel{{\color{green}(\neg z)}}$$
+
+$x$: 🤷<br>
+$y$: `True`<br>
+$z$: `False`<br>
+
 ## Backtrack
 
 Let's set $y$ to False
@@ -185,7 +191,7 @@ $z$: `False`<br>
 ## CDCL
 
 - Distinguishes between decisions (assignments) and implications (unit
-  propagation, literal elimination)
+  propagation, pure literal elimination)
 - Keeps track of the implication graph
 
 ## Example
