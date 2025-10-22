@@ -30,8 +30,9 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +43,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -221,7 +222,7 @@ class="sourceCode nix"><code class="sourceCode nix"><span id="cb4-1"><a href="#c
 class="sourceCode nix"><code class="sourceCode nix"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> <span class="va">config</span><span class="op">,</span> <span class="va">lib</span><span class="op">,</span> <span class="va">pkgs</span><span class="op">,</span> <span class="op">...</span> <span class="op">}</span>:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">blank-me-up</span> <span class="op">=</span> pkgs.callPackage <span class="ss">./default.nix</span> <span class="op">{</span> <span class="va">nixpkgs</span> <span class="op">=</span> pkgs<span class="op">;</span> <span class="op">};</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">blank-me-up</span> <span class="op">=</span> pkgs<span class="op">.</span>callPackage <span class="ss">./default.nix</span> <span class="op">{</span> <span class="va">nixpkgs</span> <span class="op">=</span> pkgs<span class="op">;</span> <span class="op">};</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">in</span> <span class="op">{</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="va">options</span>                             <span class="op">=</span>                                 <span class="op">;</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
@@ -248,11 +249,11 @@ class="sourceCode nix"><code class="sourceCode nix"><span id="cb5-1"><a href="#c
 class="sourceCode nix"><code class="sourceCode nix"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> <span class="va">config</span><span class="op">,</span> <span class="va">lib</span><span class="op">,</span> <span class="va">pkgs</span><span class="op">,</span> <span class="op">...</span> <span class="op">}</span>:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">blank-me-up</span> <span class="op">=</span> pkgs.callPackage <span class="ss">./default.nix</span> <span class="op">{</span> <span class="va">nixpkgs</span> <span class="op">=</span> pkgs<span class="op">;</span> <span class="op">};</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">blank-me-up</span> <span class="op">=</span> pkgs<span class="op">.</span>callPackage <span class="ss">./default.nix</span> <span class="op">{</span> <span class="va">nixpkgs</span> <span class="op">=</span> pkgs<span class="op">;</span> <span class="op">};</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">in</span> <span class="op">{</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="va">options</span>.<span class="va">services</span>.<span class="va">blank-me-up</span>.<span class="va">enable</span> <span class="op">=</span> lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="va">options</span>.<span class="va">services</span>.<span class="va">blank-me-up</span>.<span class="va">enable</span> <span class="op">=</span> lib<span class="op">.</span>mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="op">;</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="va">config</span> <span class="op">=</span> lib.mkIf config.services.blank<span class="op">-</span>me<span class="op">-</span>up.enable <span class="op">{</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="va">config</span> <span class="op">=</span> lib<span class="op">.</span>mkIf config<span class="op">.</span>services<span class="op">.</span>blank<span class="op">-</span>me<span class="op">-</span>up<span class="op">.</span>enable <span class="op">{</span></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
@@ -275,11 +276,11 @@ class="sourceCode nix"><code class="sourceCode nix"><span id="cb6-1"><a href="#c
 class="sourceCode nix"><code class="sourceCode nix"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> <span class="va">config</span><span class="op">,</span> <span class="va">lib</span><span class="op">,</span> <span class="va">pkgs</span><span class="op">,</span> <span class="op">...</span> <span class="op">}</span>:</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">blank-me-up</span> <span class="op">=</span> pkgs.callPackage <span class="ss">./default.nix</span> <span class="op">{</span> <span class="va">nixpkgs</span> <span class="op">=</span> pkgs<span class="op">;</span> <span class="op">};</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">blank-me-up</span> <span class="op">=</span> pkgs<span class="op">.</span>callPackage <span class="ss">./default.nix</span> <span class="op">{</span> <span class="va">nixpkgs</span> <span class="op">=</span> pkgs<span class="op">;</span> <span class="op">};</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">in</span> <span class="op">{</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="va">options</span>.<span class="va">services</span>.<span class="va">blank-me-up</span>.<span class="va">enable</span> <span class="op">=</span> lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="va">options</span>.<span class="va">services</span>.<span class="va">blank-me-up</span>.<span class="va">enable</span> <span class="op">=</span> lib<span class="op">.</span>mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="op">;</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="va">config</span> <span class="op">=</span> lib.mkIf config.services.blank<span class="op">-</span>me<span class="op">-</span>up.enable <span class="op">{</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="va">config</span> <span class="op">=</span> lib<span class="op">.</span>mkIf config<span class="op">.</span>services<span class="op">.</span>blank<span class="op">-</span>me<span class="op">-</span>up<span class="op">.</span>enable <span class="op">{</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">networking</span>.<span class="va">firewall</span>.<span class="va">allowedTCPPorts</span> <span class="op">=</span> <span class="op">[</span> <span class="dv">3000</span> <span class="op">];</span></span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="va">systemd</span>.<span class="va">services</span>.<span class="va">blank-me-up</span> <span class="op">=</span> <span class="op">{</span></span>
@@ -382,7 +383,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href=
 <div class="sourceCode" id="cb13"><pre
 class="sourceCode nix"><code class="sourceCode nix"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>args@<span class="op">{</span> <span class="va">nixpkgs</span> <span class="op">?</span> <span class="bu">import</span> &lt;nixpkgs&gt; <span class="op">{},</span> <span class="va">compiler</span> <span class="op">?</span> <span class="st">&quot;default&quot;</span> <span class="op">}</span>:</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="bu">import</span> <span class="ss">./default.nix</span> args<span class="op">)</span>.overrideAttrs <span class="op">(</span><span class="va">old</span><span class="op">:</span> <span class="op">{</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="bu">import</span> <span class="ss">./default.nix</span> args<span class="op">).</span>overrideAttrs <span class="op">(</span><span class="va">old</span><span class="op">:</span> <span class="op">{</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">postPatch</span> <span class="op">=</span> <span class="kw">let</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">oldImport</span> <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="st">      import Web.Scotty</span></span>
@@ -411,24 +412,24 @@ class="sourceCode nix"><code class="sourceCode nix"><span id="cb13-1"><a href="#
 class="sourceCode nix"><code class="sourceCode nix"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> <span class="va">config</span><span class="op">,</span> <span class="va">lib</span><span class="op">,</span> <span class="va">pkgs</span><span class="op">,</span> <span class="op">...</span> <span class="op">}</span>:</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">blank-me-up</span> <span class="op">=</span> pkgs.callPackage <span class="ss">./patched.nix</span> <span class="op">{</span> <span class="va">nixpkgs</span> <span class="op">=</span> pkgs<span class="op">;</span> <span class="op">};</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="va">cfg</span> <span class="op">=</span> config.services.blank<span class="op">-</span>me<span class="op">-</span>up<span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">blank-me-up</span> <span class="op">=</span> pkgs<span class="op">.</span>callPackage <span class="ss">./patched.nix</span> <span class="op">{</span> <span class="va">nixpkgs</span> <span class="op">=</span> pkgs<span class="op">;</span> <span class="op">};</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="va">cfg</span> <span class="op">=</span> config<span class="op">.</span>services<span class="op">.</span>blank<span class="op">-</span>me<span class="op">-</span>up<span class="op">;</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="kw">in</span> <span class="op">{</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="va">options</span>.<span class="va">services</span>.<span class="va">blank-me-up</span>.<span class="va">enable</span> <span class="op">=</span> lib.mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="op">;</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="va">options</span>.<span class="va">services</span>.<span class="va">blank-me-up</span>.<span class="va">port</span> <span class="op">=</span> lib.mkOption <span class="op">{</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="va">options</span>.<span class="va">services</span>.<span class="va">blank-me-up</span>.<span class="va">enable</span> <span class="op">=</span> lib<span class="op">.</span>mkEnableOption <span class="st">&quot;Blank Me Up&quot;</span><span class="op">;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="va">options</span>.<span class="va">services</span>.<span class="va">blank-me-up</span>.<span class="va">port</span> <span class="op">=</span> lib<span class="op">.</span>mkOption <span class="op">{</span></span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">default</span> <span class="op">=</span> <span class="dv">3000</span><span class="op">;</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">type</span> <span class="op">=</span> lib.types.int<span class="op">;</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">type</span> <span class="op">=</span> lib<span class="op">.</span>types<span class="op">.</span>int<span class="op">;</span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">};</span></span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="va">config</span> <span class="op">=</span> lib.mkIf cfg.enable <span class="op">{</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="va">networking</span>.<span class="va">firewall</span>.<span class="va">allowedTCPPorts</span> <span class="op">=</span> <span class="op">[</span> cfg.port <span class="op">];</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="va">config</span> <span class="op">=</span> lib<span class="op">.</span>mkIf cfg<span class="op">.</span>enable <span class="op">{</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="va">networking</span>.<span class="va">firewall</span>.<span class="va">allowedTCPPorts</span> <span class="op">=</span> <span class="op">[</span> cfg<span class="op">.</span>port <span class="op">];</span></span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="va">systemd</span>.<span class="va">services</span>.<span class="va">blank-me-up</span> <span class="op">=</span> <span class="op">{</span></span>
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>      <span class="va">description</span> <span class="op">=</span> <span class="st">&quot;Blank Me Up&quot;</span><span class="op">;</span></span>
 <span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>      <span class="va">after</span> <span class="op">=</span> <span class="op">[</span> <span class="st">&quot;network.target&quot;</span> <span class="op">];</span></span>
 <span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>      <span class="va">wantedBy</span> <span class="op">=</span> <span class="op">[</span> <span class="st">&quot;multi-user.target&quot;</span> <span class="op">];</span></span>
 <span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>      <span class="va">serviceConfig</span> <span class="op">=</span> <span class="op">{</span></span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>        <span class="va">ExecStart</span> <span class="op">=</span> <span class="st">&quot;</span><span class="sc">${</span>blank<span class="op">-</span>me<span class="op">-</span>up<span class="sc">}</span><span class="st">/bin/blank-me-up </span><span class="sc">${</span><span class="bu">toString</span> cfg.port<span class="sc">}</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>        <span class="va">ExecStart</span> <span class="op">=</span> <span class="st">&quot;</span><span class="sc">${</span>blank<span class="op">-</span>me<span class="op">-</span>up<span class="sc">}</span><span class="st">/bin/blank-me-up </span><span class="sc">${</span><span class="bu">toString</span> cfg<span class="op">.</span>port<span class="sc">}</span><span class="st">&quot;</span><span class="op">;</span></span>
 <span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">Restart</span> <span class="op">=</span> <span class="st">&quot;always&quot;</span><span class="op">;</span></span>
 <span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>        <span class="va">KillMode</span> <span class="op">=</span> <span class="st">&quot;process&quot;</span><span class="op">;</span></span>
 <span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>      <span class="op">};</span></span>
