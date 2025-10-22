@@ -9,6 +9,7 @@ let
       --mathjax \
       -t revealjs \
       -V theme:solarized \
+      -V revealjs-url="https://unpkg.com/reveal.js@^4" \
       ${src + "/presentation.md"} \
       -H ${src + "/revealjs-override.html"} \
       -H ${src + "/mathjax-configuration.html"} \
