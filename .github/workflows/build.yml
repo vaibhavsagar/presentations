@@ -6,8 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v24
-    - uses: DeterminateSystems/magic-nix-cache-action@v2
+    - uses: nixbuild/nix-quick-install-action@v34
+    - uses: nix-community/cache-nix-action@v6
+      with:
+        primary-key: nix-${{ runner.os }}
     - run: nix-build
     - run: ./.github/workflows/update_pages.sh
       env:
