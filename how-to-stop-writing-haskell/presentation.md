@@ -9,7 +9,7 @@
 - Companies seem to stop writing Haskell all the time
 - Why does this keep happening?
 
-## Why talk about this?
+## Let's talk about it!
 
 - Heard some stories over the years
 - Something I've wondered about
@@ -23,7 +23,7 @@
 - Nobody Ever Got Fired for Picking Java
 - If your Haskell project fails, it's Haskell's fault
 
-## Haskell is not trendy anymore
+## Haskell is not trendy (anymore)
 
 - Other, newer, languages: Rust, Lean, TypeScript, etc.
 - Stuck in a weird place
@@ -40,7 +40,13 @@
 
 ## Most companies seek to maximise short-term profit
 
+- Sometimes at the expense of long-term profit
+- "The market can remain irrational longer than you can remain solvent" - Keynes
+
 ## Companies undervalue maintenance
+
+- Constant pressure to "do more with less"
+- Nobody ever gets credit for fixing problems that never happened
 
 # Why start using Haskell?
 
@@ -48,27 +54,98 @@
 - Believing that Haskell is a good fit for your problem
 - Trying to hire skilled programmers
 - Trying to retain a key employee
+- Getting people to work on something they otherwise wouldn't
 
 # The Second System
 
+## The situation
+
+## The problem
+
+## Suggestions
+
 # The Second System Pt. II
+
+## The situation
+
+## The problem
+
+## Suggestions
 
 # The Experiment
 
+## The situation
+
+## The problem
+
+## Suggestions
+
 # The Vanity Project
+
+## The situation
+
+## The problem
+
+## Suggestions
 
 # The Giant Client
 
+## The situation
+
+## The problem
+
+## Suggestions
+
 # The Acquisition
+
+## The situation
+
+## The problem
+
+## Suggestions
 
 # The Insolvency
 
+## The situation
+
+## The problem
+
+## Suggestions
+
 # The Ousting
+
+## The situation
+
+## The problem
+
+## Suggestions
 
 # The Magpie
 
+## The situation
+
+## The problem
+
+## Suggestions
+
 # The Rocket Explosion
+
+## The situation
+
+## The problem
+
+## Suggestions
 
 # The Outgrowing
 
+## The situation
+
+## The problem
+
+## Suggestions
+
 # What to do?
+
+# Thank you!
+
+# Questions
