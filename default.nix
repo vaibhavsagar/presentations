@@ -8,6 +8,7 @@ let
 in nixpkgs.linkFarm "presentations" (presentations [
   "functional-devops"
   "functional-ingsoc"
+  "how-to-stop-writing-haskell"
   "ihaskell-can-do-that"
   "javascript-in-haskell"
   "lazy-functional-state-threads"
