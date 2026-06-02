@@ -9,6 +9,14 @@
 - Companies seem to stop writing Haskell all the time
 - Why does this keep happening?
 
+## A little bit about me
+
+- Started looking for my first Haskell job nearly a decade ago
+- Failed, but got an ops job at an e-commerce company after many months
+- Famously the birthplace of a popular Haskell API framework
+- Last Haskell dev left a month before my start date
+- What??
+
 ## Let's talk about it!
 
 - Heard some stories over the years
@@ -60,7 +68,14 @@
 
 ## The situation
 
+- Company decides to rewrite a non-Haskell codebase in Haskell
+- Implied (or explicit) outcome is that the existing team will lose their jobs
+
 ## The problem
+
+- Adversarial relationship with current team
+- Toxic work environment
+- Second-system effect
 
 ## Suggestions
 
