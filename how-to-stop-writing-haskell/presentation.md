@@ -6,22 +6,24 @@
 ## Great question!
 
 - Haskell is pretty great!
-- Companies seem to stop writing Haskell all the time
+- Companies seem to stop writing Haskell surprisingly often!
 - Why does this keep happening?
 
 ## A personal experience
 
 - Started looking for my first Haskell job nearly a decade ago
-- Failed initially, but got an ops job at an e-commerce company after many months
-- Famously the birthplace of a popular Haskell API framework
+- Failed initially, but got an ops job at an e-commerce company after many
+  months
+- Famously the birthplace of a popular Haskell HTTP API DSL
 - Last Haskell dev left a month before my start date
-- What??
+- Why would you want to stop writing Haskell??
 
 ## About this talk
 
 - I will do my best to avoid naming names
 - About Haskell-the-ecosystem rather than Haskell-the-language
-- Observing the absurdity of the tech ecosystem
+- My perspective on the absurdity of the tech industry
+- An especially strange time
 
 # Some facts about Haskell
 
@@ -30,6 +32,10 @@
 - Few domains where Haskell is the "safe" choice
 - Nobody Ever Got Fired for Picking Java
 - If your Haskell project fails, it's Haskell's fault
+
+## Haskell is not mainstream
+
+<img src="images/how-could-haskell-do-this.jpg" style="height: 12em;">
 
 ## Haskell is not trendy (anymore)
 
@@ -40,7 +46,7 @@
 
 - Very sensitive to any one entity exercising undue influence
 - Hard to imagine an equivalent to e.g. Jane Street for OCaml
-- Competing tools/philosophies, exemplified by Cabal vs. Stack
+- Competing tools/philosophies, e.g. `lens` vs. `optics`
 
 # Some facts about companies
 
@@ -62,13 +68,34 @@
 - Nobody ever gets credit for fixing problems that never happened
 - Firefighting is more visible and more likely to be rewarded
 
+## Companies undervalue maintenance
+
+<img src="images/drowning-high-five.webp" style="height: 12em;">
+
 # Why start using Haskell?
 
 ## Political influence + desire to write Haskell = $$$
 - Believing that Haskell is a good fit for your problem
 - Trying to hire skilled programmers
 - Trying to retain a key employee
-- Getting people to work on something they otherwise wouldn't
+- Getting people to work on something boring
+
+# Taxonomy
+
+## A non-exhaustive list
+- The Second System
+- The Second System Pt. II
+- The Experiment
+- The Vanity Project
+- The Giant Client
+- The Acquisition
+- The Insolvency
+- The Ousting
+- The Magpie
+- The Rocket Explosion
+- The Outgrowing
+
+# Let's begin!
 
 # The Second System
 
@@ -81,15 +108,20 @@
 
 - Adversarial relationship with current team
 - Toxic work environment
+- Existing codebase provides business value so you have to work on it
 - Second-system effect
+
+## Second-system effect
+<img src="images/secondsystem.png" style="height: 12em;">
 
 ## Suggestions
 
-- Be extremely wary of wholesale rewrites
+- Ask yourself why a rewrite is happening
 - Many successful Haskell adoptions look like sidecars
 - Threatening someone's livelihood is not a good way to get them on your side
+- They probably don't want to learn a new language
 - If you suspect you're being set up to fail, you know what to do
-- Explore your options!
+- Explore your options! (This will come up a lot)
 
 # The Second System Pt. II
 
@@ -170,6 +202,10 @@
 
 ## The situation
 
+<img src="images/stonks.png" style="height: 12em;">
+
+## The situation
+
 - Company is acquired by another, larger, company
 - Often an acqui-hire rather than a product acquisition
 
@@ -188,8 +224,6 @@
 ## The situation
 
 - Company runs out of money
-- Aside: in both cases company ceases to exist but one is a success and the
-  other is a failure. Curious!
 
 ## The problem
 
@@ -269,13 +303,42 @@
 - Most large non-Haskell companies have teams dedicated to developer tooling
   for other languages, why not us?
 
+# Recap
+
+## A non-exhaustive list (again)
+- The Second System
+- The Second System Pt. II
+- The Experiment
+- The Vanity Project
+- The Giant Client
+- The Acquisition
+- The Insolvency
+- The Ousting
+- The Magpie
+- The Rocket Explosion
+- The Outgrowing
+
+## Rarely Haskell-specific!
+
+<img src="images/how-could-haskell-do-this.jpg" style="height: 12em;">
+
 # What to do?
 
 ## Take care of yourself first
 
+- Your greatest leverage as an individual is your ability to walk away
+- Emergency fund
+- Your reputation outlives any job you will have
+
 ## Collective action is pretty great
 
-## Be honest with yourself
+<img src="images/monkey-stronger-together.png" style="height: 12em;">
+
+## Failure is not the end
+
+- That API DSL is very much alive and in use
+- Personal and professional development
+- Hope springs eternal
 
 # Thank you!
 
