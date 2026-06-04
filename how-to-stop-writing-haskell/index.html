@@ -31,6 +31,11 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^5/dist/theme/solarized.css" id="theme">
+  <style>
+  :root {
+    --r-heading-text-transform: none;
+  }
+  </style>
 </head>
 <body>
   <div class="reveal">
@@ -52,7 +57,7 @@ class="title-slide slide level1">
 <h2>Great question!</h2>
 <ul>
 <li>Haskell is pretty great!</li>
-<li>Companies seem to stop writing Haskell all the time</li>
+<li>Companies seem to stop writing Haskell surprisingly often!</li>
 <li>Why does this keep happening?</li>
 </ul>
 </section>
@@ -62,9 +67,9 @@ class="title-slide slide level1">
 <li>Started looking for my first Haskell job nearly a decade ago</li>
 <li>Failed initially, but got an ops job at an e-commerce company after
 many months</li>
-<li>Famously the birthplace of a popular Haskell API framework</li>
+<li>Famously the birthplace of a popular Haskell HTTP API DSL</li>
 <li>Last Haskell dev left a month before my start date</li>
-<li>What??</li>
+<li>Why would you want to stop writing Haskell??</li>
 </ul>
 </section>
 <section id="about-this-talk" class="slide level2">
@@ -72,7 +77,8 @@ many months</li>
 <ul>
 <li>I will do my best to avoid naming names</li>
 <li>About Haskell-the-ecosystem rather than Haskell-the-language</li>
-<li>Observing the absurdity of the tech ecosystem</li>
+<li>My perspective on the absurdity of the tech industry</li>
+<li>An especially strange time</li>
 </ul>
 </section></section>
 <section>
@@ -88,6 +94,10 @@ many months</li>
 <li>If your Haskell project fails, it’s Haskell’s fault</li>
 </ul>
 </section>
+<section id="haskell-is-not-mainstream-1" class="slide level2">
+<h2>Haskell is not mainstream</h2>
+<p><img src="images/how-could-haskell-do-this.jpg" style="height: 12em;"></p>
+</section>
 <section id="haskell-is-not-trendy-anymore" class="slide level2">
 <h2>Haskell is not trendy (anymore)</h2>
 <ul>
@@ -100,7 +110,8 @@ many months</li>
 <ul>
 <li>Very sensitive to any one entity exercising undue influence</li>
 <li>Hard to imagine an equivalent to e.g. Jane Street for OCaml</li>
-<li>Competing tools/philosophies, exemplified by Cabal vs. Stack</li>
+<li>Competing tools/philosophies, e.g. <code>lens</code>
+vs. <code>optics</code></li>
 </ul>
 </section></section>
 <section>
@@ -134,6 +145,10 @@ solvent” - Keynes</li>
 <li>Nobody ever gets credit for fixing problems that never happened</li>
 <li>Firefighting is more visible and more likely to be rewarded</li>
 </ul>
+</section>
+<section id="companies-undervalue-maintenance-1" class="slide level2">
+<h2>Companies undervalue maintenance</h2>
+<p><img src="images/drowning-high-five.webp" style="height: 12em;"></p>
 </section></section>
 <section>
 <section id="why-start-using-haskell" class="title-slide slide level1">
@@ -147,9 +162,35 @@ class="slide level2">
 <li>Believing that Haskell is a good fit for your problem</li>
 <li>Trying to hire skilled programmers</li>
 <li>Trying to retain a key employee</li>
-<li>Getting people to work on something they otherwise wouldn’t</li>
+<li>Getting people to work on something boring</li>
 </ul>
 </section></section>
+<section>
+<section id="taxonomy" class="title-slide slide level1">
+<h1>Taxonomy</h1>
+
+</section>
+<section id="a-non-exhaustive-list" class="slide level2">
+<h2>A non-exhaustive list</h2>
+<ul>
+<li>The Second System</li>
+<li>The Second System Pt. II</li>
+<li>The Experiment</li>
+<li>The Vanity Project</li>
+<li>The Giant Client</li>
+<li>The Acquisition</li>
+<li>The Insolvency</li>
+<li>The Ousting</li>
+<li>The Magpie</li>
+<li>The Rocket Explosion</li>
+<li>The Outgrowing</li>
+</ul>
+</section></section>
+<section id="lets-begin" class="title-slide slide level1">
+<h1>Let’s begin!</h1>
+
+</section>
+
 <section>
 <section id="the-second-system" class="title-slide slide level1">
 <h1>The Second System</h1>
@@ -168,18 +209,25 @@ their jobs</li>
 <ul>
 <li>Adversarial relationship with current team</li>
 <li>Toxic work environment</li>
+<li>Existing codebase provides business value so you have to work on
+it</li>
 <li>Second-system effect</li>
 </ul>
+</section>
+<section id="second-system-effect" class="slide level2">
+<h2>Second-system effect</h2>
+<p><img src="images/secondsystem.png" style="height: 12em;"></p>
 </section>
 <section id="suggestions" class="slide level2">
 <h2>Suggestions</h2>
 <ul>
-<li>Be extremely wary of wholesale rewrites</li>
+<li>Ask yourself why a rewrite is happening</li>
 <li>Many successful Haskell adoptions look like sidecars</li>
 <li>Threatening someone’s livelihood is not a good way to get them on
 your side</li>
+<li>They probably don’t want to learn a new language</li>
 <li>If you suspect you’re being set up to fail, you know what to do</li>
-<li>Explore your options!</li>
+<li>Explore your options! (This will come up a lot)</li>
 </ul>
 </section></section>
 <section>
@@ -303,6 +351,10 @@ personal brand</li>
 </section>
 <section id="the-situation-5" class="slide level2">
 <h2>The situation</h2>
+<p><img src="images/stonks.png" style="height: 12em;"></p>
+</section>
+<section id="the-situation-6" class="slide level2">
+<h2>The situation</h2>
 <ul>
 <li>Company is acquired by another, larger, company</li>
 <li>Often an acqui-hire rather than a product acquisition</li>
@@ -327,12 +379,10 @@ personal brand</li>
 <h1>The Insolvency</h1>
 
 </section>
-<section id="the-situation-6" class="slide level2">
+<section id="the-situation-7" class="slide level2">
 <h2>The situation</h2>
 <ul>
 <li>Company runs out of money</li>
-<li>Aside: in both cases company ceases to exist but one is a success
-and the other is a failure. Curious!</li>
 </ul>
 </section>
 <section id="the-problem-6" class="slide level2">
@@ -353,7 +403,7 @@ and the other is a failure. Curious!</li>
 <h1>The Ousting</h1>
 
 </section>
-<section id="the-situation-7" class="slide level2">
+<section id="the-situation-8" class="slide level2">
 <h2>The situation</h2>
 <ul>
 <li>Influential person leaves the company</li>
@@ -380,7 +430,7 @@ getting rid of Haskell</li>
 <h1>The Magpie</h1>
 
 </section>
-<section id="the-situation-8" class="slide level2">
+<section id="the-situation-9" class="slide level2">
 <h2>The situation</h2>
 <ul>
 <li>Company picked Haskell because it was trendy at the time but has
@@ -407,7 +457,7 @@ made</li>
 <h1>The Rocket Explosion</h1>
 
 </section>
-<section id="the-situation-9" class="slide level2">
+<section id="the-situation-10" class="slide level2">
 <h2>The situation</h2>
 <ul>
 <li>Haskell codebase is too complicated</li>
@@ -432,7 +482,7 @@ made</li>
 <h1>The Outgrowing</h1>
 
 </section>
-<section id="the-situation-10" class="slide level2">
+<section id="the-situation-11" class="slide level2">
 <h2>The situation</h2>
 <ul>
 <li>Company grows large enough that they have extremely specific
@@ -457,18 +507,55 @@ tooling for other languages, why not us?</li>
 </ul>
 </section></section>
 <section>
+<section id="recap" class="title-slide slide level1">
+<h1>Recap</h1>
+
+</section>
+<section id="a-non-exhaustive-list-again" class="slide level2">
+<h2>A non-exhaustive list (again)</h2>
+<ul>
+<li>The Second System</li>
+<li>The Second System Pt. II</li>
+<li>The Experiment</li>
+<li>The Vanity Project</li>
+<li>The Giant Client</li>
+<li>The Acquisition</li>
+<li>The Insolvency</li>
+<li>The Ousting</li>
+<li>The Magpie</li>
+<li>The Rocket Explosion</li>
+<li>The Outgrowing</li>
+</ul>
+</section>
+<section id="rarely-haskell-specific" class="slide level2">
+<h2>Rarely Haskell-specific!</h2>
+<p><img src="images/how-could-haskell-do-this.jpg" style="height: 12em;"></p>
+</section></section>
+<section>
 <section id="what-to-do" class="title-slide slide level1">
 <h1>What to do?</h1>
 
 </section>
 <section id="take-care-of-yourself-first" class="slide level2">
 <h2>Take care of yourself first</h2>
+<ul>
+<li>Your greatest leverage as an individual is your ability to walk
+away</li>
+<li>Emergency fund</li>
+<li>Your reputation outlives any job you will have</li>
+</ul>
 </section>
 <section id="collective-action-is-pretty-great" class="slide level2">
 <h2>Collective action is pretty great</h2>
+<p><img src="images/monkey-stronger-together.png" style="height: 12em;"></p>
 </section>
-<section id="be-honest-with-yourself" class="slide level2">
-<h2>Be honest with yourself</h2>
+<section id="failure-is-not-the-end" class="slide level2">
+<h2>Failure is not the end</h2>
+<ul>
+<li>That API DSL is very much alive and in use</li>
+<li>Personal and professional development</li>
+<li>Hope springs eternal</li>
+</ul>
 </section></section>
 <section id="thank-you" class="title-slide slide level1">
 <h1>Thank you!</h1>
