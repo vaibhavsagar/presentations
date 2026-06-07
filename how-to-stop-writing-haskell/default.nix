@@ -1,7 +1,7 @@
 let
   pkgs    = import ../.nix/pkgs.nix;
   nixpkgs = import pkgs.nixpkgs {};
-  images  = nixpkgs.lib.sourceByRegex ./images [ ".*\.svg$" ".*\.png$" ".*\.jpg$" ".*\.webp$" ];
+  images  = nixpkgs.lib.sourceByRegex ./images [ ".*\.svg$" ".*\.png$" ".*\.jpg$" ".*\.webp$" "^personal$" ];
   command = src: pkgs: ''
     mkdir -p $out
     pandoc \

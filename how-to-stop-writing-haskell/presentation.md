@@ -1,4 +1,5 @@
 % How to stop writing Haskell
+% (and how to start again)
 % Vaibhav Sagar (@vbhvsgr)
 
 # Why would you want to stop writing Haskell?
@@ -7,30 +8,29 @@
 
 - Haskell is pretty great!
 - Companies seem to stop writing Haskell surprisingly often!
-- Why does this keep happening?
+- Why does this happen?
 
-## A personal experience
-
-- Started looking for my first Haskell job nearly a decade ago
-- Failed initially, but got an ops job at an e-commerce company after many
-  months
-- Famously the birthplace of a popular Haskell HTTP API DSL
-- Last Haskell dev left a month before my start date
-- Why would you want to stop writing Haskell??
+## An anecdote
 
 ## About this talk
 
-- I will do my best to avoid naming names
+- Names don't matter
 - About Haskell-the-ecosystem rather than Haskell-the-language
-- My perspective on the absurdity of the tech industry
-- An especially strange time
+- "All happy families are alike; each unhappy family is unhappy in its own way"
+- In dialogue with Evan Czaplicki's talk on Saturday
+- My perspective on the absurdity of the tech industry during an especially
+  absurd time
+
+## Suffering from success
+
+<img src="images/suffering-from-success.jpg" style="height: 12em;">
 
 # Some facts about Haskell
 
 ## Haskell is not mainstream
 
 - Few domains where Haskell is the "safe" choice
-- Nobody Ever Got Fired for Picking Java
+- [Nobody Ever Got Fired for Picking Java](https://speakerdeck.com/al3x/nobody-ever-got-fired-for-picking-java)
 - If your Haskell project fails, it's Haskell's fault
 
 ## Haskell is not mainstream
@@ -40,7 +40,7 @@
 ## Haskell is not trendy (anymore)
 
 - Other, newer, languages: Rust, Lean, TypeScript, etc.
-- Stuck in a weird place
+- Neither trendy enough nor niche enough
 
 ## Haskell avoids "success at all costs"
 
@@ -53,19 +53,23 @@
 ## Companies seek to maximise profit
 
 - Specifically shareholder value
-- Often incompatible with personal/professional development, highest quality
-  product, and other desirable outcomes
-- Worse is better
+- Often incompatible with highest quality product, personal development, and
+  other desirable outcomes
+- [Worse Is Better](https://dreamsongs.com/WorseIsBetter.html)
 
 ## Most companies seek to maximise short-term profit
 
 - Sometimes at the expense of long-term profit
-- "The market can remain irrational longer than you can remain solvent" - Keynes
+- "The market can remain irrational longer than you can remain solvent" -
+  Keynes
+- Objectively bad decisions, e.g. doing a round of layoffs just before an
+  earnings announcement to artificially boost the stock price
 
 ## Companies undervalue maintenance
 
 - Constant pressure to "do more with less"
-- Nobody ever gets credit for fixing problems that never happened
+- [Nobody Ever Gets Credit for Fixing Problems that Never
+  Happened](https://web.mit.edu/nelsonr/www/Repenning=Sterman_CMR_su01_.pdf)
 - Firefighting is more visible and more likely to be rewarded
 
 ## Companies undervalue maintenance
@@ -74,7 +78,13 @@
 
 # Why start using Haskell?
 
-## Political influence + desire to write Haskell = $$$
+## Getting paid to write Haskell
+1. Want to write Haskell
+2. Convince someone with money to give you/your team that money
+3. ????
+4. PROFIT!!!
+
+## Some reasons you might use
 - Believing that Haskell is a good fit for your problem
 - Trying to hire skilled programmers
 - Trying to retain a key employee
@@ -84,7 +94,6 @@
 
 ## A non-exhaustive list
 - The Second System
-- The Second System Pt. II
 - The Experiment
 - The Vanity Project
 - The Giant Client
@@ -107,12 +116,16 @@
 ## The problem
 
 - Adversarial relationship with current team
-- Toxic work environment
 - Existing codebase provides business value so you have to work on it
-- Second-system effect
+- [Second-system effect](https://en.wikipedia.org/wiki/Second-system_effect)
 
 ## Second-system effect
 <img src="images/secondsystem.png" style="height: 12em;">
+
+## Hofstadter's Law
+
+_It always takes longer than you expect, even when you take into account
+Hofstadter's law._
 
 ## Suggestions
 
@@ -120,7 +133,6 @@
 - Many successful Haskell adoptions look like sidecars
 - Threatening someone's livelihood is not a good way to get them on your side
 - They probably don't want to learn a new language
-- If you suspect you're being set up to fail, you know what to do
 - Explore your options! (This will come up a lot)
 
 # The Second System Pt. II
@@ -132,6 +144,11 @@
   their jobs
 - Some might leave after the decision anyway
 
+
+## The situation
+
+<img src="images/our-blessed-homeland.jpg" style="height: 12em;">
+
 ## The problem
 
 - All the problems I mentioned before
@@ -141,9 +158,7 @@
 ## Suggestions
 
 - Don't panic!
-- These projects usually take longer than expected, even if you take this into
-  account
-- Explore your options!
+- Hofstadter's Law
 
 # The Experiment
 
@@ -167,12 +182,15 @@
 # The Vanity Project
 
 ## The situation
+<img src="images/slipperiest-butt.jpg" style="height: 12em;">
+
+## The situation
 
 - Somebody starts a Haskell project as a way of enriching their personal brand
 
 ## The problem
 
-- Questionable commitment to Haskell itself or the project
+- Questionable attachment to Haskell or the project itself
 - Increasingly bizarre requests for features
 
 ## Suggestions
@@ -211,7 +229,7 @@
 
 ## The problem
 
-- Acquiring company has no commitment to Haskell
+- Acquiring company has no attachment to Haskell
 - One less Haskell company
 
 ## Suggestions
@@ -231,14 +249,13 @@
 
 ## Suggestions
 
-- That's rough, buddy (this happened to me recently)
 - You tell me?
 
 # The Ousting
 
 ## The situation
 
-- Influential person leaves the company
+- Influential person leaves the company or moves to a different role
 - Their political capital was enabling the use of Haskell
 
 ## The problem
@@ -250,9 +267,14 @@
 ## Suggestions
 
 - This rarely happens immediately
+- Could try to push back, but it might not work
 - Exit plan!
 
 # The Magpie
+
+## The situation
+
+<img src="images/friendship-ended-with-haskell.jpg" style="height: 12em;">
 
 ## The situation
 
@@ -262,13 +284,16 @@
 ## The problem
 
 - Second System Pt. II
-- No commitment to Haskell but also no commitment to the replacement language
+- No attachment to Haskell but also no attachment to the replacement language
 
 ## Suggestions
 
 - Ask the difficult questions about why technology choices are made
 
 # The Rocket Explosion
+
+## The rocket explosion
+<img src="images/profunctor-optics.webp" style="height: 12em;">
 
 ## The situation
 
@@ -277,12 +302,11 @@
 ## The problem
 
 - Abstraction ceiling in Haskell is enormously high
-- Still delivering business value though
 - Second System effect means the replacement could be worse!
 
 ## Suggestions
 
-- Collectively agree on which subset of Haskell you are using
+- Collectively agree and enforce which subset of Haskell you are using
 
 # The Outgrowing
 
@@ -296,10 +320,13 @@
 - Companies are reluctant to fund this development work or do it themselves
 - "Avoid success at all costs" means the ecosystem isn't going to do what you
   want just because you want it
+- Eventually the codebase bitrots and a heroic effort to rewrite in another
+  language starts
 
 ## Suggestions
 
-- Put your money where your mouth is
+- Put your money where your mouth is (nobody ever gets credit for fixing
+  problems that never happened)
 - Most large non-Haskell companies have teams dedicated to developer tooling
   for other languages, why not us?
 
@@ -307,7 +334,6 @@
 
 ## A non-exhaustive list (again)
 - The Second System
-- The Second System Pt. II
 - The Experiment
 - The Vanity Project
 - The Giant Client
@@ -327,18 +353,59 @@
 ## Take care of yourself first
 
 - Your greatest leverage as an individual is your ability to walk away
-- Emergency fund
 - Your reputation outlives any job you will have
+
+## Just walk out
+<img src="images/just-walk-out.jpg" style="height: 12em;">
+
+## Spend your political capital wisely
+
+- If the approval for Haskell flows from you, things will probably change when
+  you leave
+- Pointing out mistakes to management might not work
 
 ## Collective action is pretty great
 
 <img src="images/monkey-stronger-together.png" style="height: 12em;">
 
+## Collective action is pretty great
+
+<img src="images/tech-union.png" style="height: 12em;">
+
 ## Failure is not the end
 
+- Could do everything right and it might not matter
 - That API DSL is very much alive and in use
-- Personal and professional development
+- Make the most of the opportunities you have
 - Hope springs eternal
+
+# Is it worth it?
+
+## Moving to New York City
+<img src="images/personal/new-york.jpg" style="height: 12em;">
+
+## Starting my SPJ selfie collection
+<img src="images/personal/spj-selfie-1.jpg" style="height: 12em;">
+
+## Making new friends
+<img src="images/personal/new-friends.jpg" style="height: 12em;">
+
+## Moving back to Australia
+<img src="images/personal/sydney.jpg" style="height: 12em;">
+
+## Scuba diving with my mum
+<img src="images/personal/scuba-diving.jpg" style="height: 12em;">
+
+## SPJ selfie 2
+<img src="images/personal/spj-selfie-2.jpg" style="height: 12em;">
+
+## Pursuing my passions
+<img src="images/personal/pursuing-passions.jpg" style="height: 12em;">
+
+## One more SPJ selfie
+<img src="images/personal/spj-selfie-3.jpg" style="height: 12em;">
+
+# There's so much more Haskell to be written
 
 # Thank you!
 
