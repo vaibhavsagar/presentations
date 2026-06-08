@@ -1,6 +1,6 @@
 % How to stop writing Haskell
 % (and how to start again)
-% Vaibhav Sagar (@vbhvsgr)
+% Vaibhav Sagar (vaibhavsagar.com)
 
 # Why would you want to stop writing Haskell?
 
@@ -130,7 +130,7 @@ Hofstadter's law._
 ## Suggestions
 
 - Ask yourself why a rewrite is happening
-- Many successful Haskell adoptions look like sidecars
+- Many successful Haskell adoptions look like sidecars (microservices?)
 - Threatening someone's livelihood is not a good way to get them on your side
 - They probably don't want to learn a new language
 - Explore your options! (This will come up a lot)
@@ -289,6 +289,7 @@ Hofstadter's law._
 ## Suggestions
 
 - Ask the difficult questions about why technology choices are made
+- [Lindy effect](https://en.wikipedia.org/wiki/Lindy_effect)
 
 # The Rocket Explosion
 
@@ -408,5 +409,9 @@ Hofstadter's law._
 # There's so much more Haskell to be written
 
 # Thank you!
+
+## Slides
+
+https://vaibhavsagar.com/presentations/how-to-stop-writing-haskell/
 
 # Questions
