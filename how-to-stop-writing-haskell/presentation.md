@@ -1,6 +1,6 @@
 % How to stop writing Haskell
 % (and how to start again)
-% Vaibhav Sagar (vaibhavsagar.com)
+% Vaibhav Sagar ([vaibhavsagar.com](https://vaibhavsagar.com))
 
 # Why would you want to stop writing Haskell?
 
@@ -412,6 +412,6 @@ Hofstadter's law._
 
 ## Slides
 
-https://vaibhavsagar.com/presentations/how-to-stop-writing-haskell/
+[https://vaibhavsagar.com/presentations/how-to-stop-writing-haskell/](https://vaibhavsagar.com/presentations/how-to-stop-writing-haskell/)
 
 # Questions
