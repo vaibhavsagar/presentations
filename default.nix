@@ -50,6 +50,6 @@ in nixpkgs.symlinkJoin {
     (nixpkgs.linkFarm "presentations" (map presentation folders))
   ];
   postBuild = ''
-    install ${index folders} $out/index.html
+    ln -s ${index folders} $out/index.html
   '';
 }
